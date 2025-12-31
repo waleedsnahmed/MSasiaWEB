@@ -33,17 +33,18 @@ html {
     --bg-card: #FFFFFF;
 
     /* Text Colors */
-    --text-main: #374151;
+    --text-main: #6B7280;
+    /* Body text - Gray */
     --text-muted: #6B7280;
 
-    /* Heading Colors - (Lemon Yellow accent) */
+    /* Heading Colors - All headings use #47622A */
     --heading-h1: #47622A;
-    /* Dark Moss Green */
     --heading-h2: #47622A;
-    /* Dark Moss Green */
-    --heading-h3: #374426;
-    /* Darker green */
-    --heading-h4: #799851;
+    --heading-h3: #47622A;
+    --heading-h4: #47622A;
+
+    /* Accent Color */
+    --accent: #799851;
     /* Palm Leaf */
 
     /* Link Colors - (Green shades) */
@@ -204,6 +205,14 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Global Heading Styles */
+h1,
+h2,
+h3,
+h4 {
+    color: var(--heading-h1);
+}
+
 /* Dark mode body override */
 .dark body,
 body.dark,
@@ -352,7 +361,6 @@ nav {
     align-items: center;
     gap: 0.5rem;
 }
-
 
 /* Contact Us Button */
 .contact-container {
@@ -1726,6 +1734,53 @@ footer a:hover {
     border: 1px solid var(--nav-glass-border);
     box-shadow: 0 4px 20px -5px var(--nav-glass-shadow);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Fixed: restore original size and centering */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    /* Reduced from 40px */
+    width: fit-content !important;
+    margin: 0 auto !important;
+    padding: 0.5rem 1.5rem !important;
+    /* Reduced padding */
+}
+
+/* Glass pill के अंदर के items */
+.glass-pill>ul,
+.glass-pill>div:not(.mobile-logo) {
+    display: flex;
+    gap: 1rem;
+    /* Reduced from 40px */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: middle;
+}
+
+/* Glass pill के अंदर links */
+.glass-pill a {
+    text-decoration: none;
+    color: var(--text-muted);
+    /* Changed to use variable */
+    font-weight: 500;
+    font-size: 16px !important;
+    /* Enforce 16px size */
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    vertical-align: middle;
+}
+
+.glass-pill a:hover {
+    color: var(--nav-link-hover);
+}
+
+/* List items vertical alignment */
+.glass-pill li {
+    vertical-align: middle;
+    transform: translateY(3px);
 }
 
 /* --- SCROLLED STATE FOR PILL --- */
@@ -1767,6 +1822,11 @@ footer a:hover {
     pointer-events: none;
 }
 
+/* External contact vertical centering adjustment */
+#external-contact {
+    transform: translateY(2px);
+}
+
 #external-contact.hidden-state {
     transform: translateX(-20px) scale(0.95);
     opacity: 0;
@@ -1775,6 +1835,16 @@ footer a:hover {
 #external-logo.hidden-state {
     transform: translateX(20px) scale(0.95);
     opacity: 0;
+}
+
+/* External logo vertical centering adjustment */
+#external-logo {
+    transform: translateY(8px);
+}
+
+/* Theme toggle vertical centering adjustment */
+#theme-toggle {
+    transform: translateY(2px);
 }
 
 /* --- EXPANDABLE SEARCH STYLES --- */
