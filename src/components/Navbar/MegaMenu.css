@@ -1,0 +1,635 @@
+/* --- VARIABLES --- */
+:root {
+    --mm-bg: rgba(255, 255, 255, 0.25);
+    /* More transparent glass effect */
+    --mm-sidebar-bg: transparent;
+    /* Transparent for seamless glass */
+    --mm-text-main: #111111;
+    /* Dark Text */
+    --mm-text-muted: #6B7280;
+    /* Grey 500 */
+    --mm-accent: #799851;
+    /* Palm Leaf */
+    --mm-accent-hover: #111111;
+    /* Dark on Hover */
+    --mm-border: rgba(255, 255, 255, 0.15);
+    /* Subtle, almost invisible border */
+    --mm-card-bg: rgba(255, 255, 255, 0.15);
+    /* Lighter glass card */
+    --mm-hover-bg: rgba(255, 255, 255, 0.25);
+    /* Subtle hover */
+    --mm-placeholder-start: #F3F4F6;
+    --mm-placeholder-end: #E5E7EB;
+    --mm-shadow: rgba(0, 0, 0, 0.05);
+    --mm-glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode Overrides */
+.dark,
+:root[class~="dark"] {
+    --mm-bg: rgba(0, 0, 0, 0.3);
+    /* More transparent dark glass */
+    --mm-sidebar-bg: transparent;
+    /* Transparent */
+    --mm-text-main: #FFFFFF;
+    /* White Text */
+    --mm-text-muted: #A1A1AA;
+    /* Light Grey Muted */
+    --mm-accent: #799851;
+    /* Palm Leaf */
+    --mm-accent-hover: #FFFFFF;
+    /* White on Hover */
+    --mm-border: rgba(255, 255, 255, 0.05);
+    /* Very subtle border */
+    --mm-card-bg: rgba(17, 17, 17, 0.2);
+    --mm-hover-bg: rgba(255, 255, 255, 0.08);
+    /* Dark Hover */
+    --mm-placeholder-start: #111111;
+    --mm-placeholder-end: #000000;
+    --mm-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes dropdownOpen {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-dropdown {
+    animation: dropdownOpen 0.2s ease-out forwards;
+}
+
+@keyframes pulseSubtle {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+}
+
+.animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+}
+
+/* --- LAYOUT --- */
+.mega-menu-bridge {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 40px;
+    /* Bridge gap between pill and menu */
+    z-index: 9998;
+}
+
+.mega-menu-container {
+    position: fixed;
+    top: 105px;
+    /* Adjust based on navbar height */
+    left: 0;
+    width: 100%;
+    background-color: var(--mm-bg);
+    border-bottom: none;
+    border-top: none;
+    /* Removed all borders for seamless look */
+    box-shadow: none;
+    /* No shadow for cleaner glass */
+    z-index: 9999;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    /* Prevent unwanted bottom scrollbar */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(60px) saturate(200%) contrast(1.05);
+    /* Extra strong blur for premium glass */
+    -webkit-backdrop-filter: blur(60px) saturate(200%) contrast(1.05);
+}
+
+.mega-menu-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    /* Removed padding as sections have their own */
+    height: 500px;
+    /* Fixed height for consistency */
+}
+
+.mega-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(8px);
+    background-color: transparent;
+    z-index: 9997;
+    animation: fadeIn 0.3s ease-out forwards;
+    pointer-events: none;
+    /* Let clicks pass through if needed, though usually strictly visual */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- MOBILE DRAWER SPECIFIC --- */
+.mobile-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 99998;
+}
+
+.mobile-drawer-content {
+    position: fixed;
+    top: 70px;
+    /* Matches navbar minHeight to eliminate gap */
+    /* Start below fixed navbar header */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* Full width on phone */
+    background-color: var(--mm-bg);
+    /* Same as desktop mega menu */
+    backdrop-filter: blur(60px) saturate(200%) contrast(1.05);
+    /* Exact same as desktop mega menu */
+    -webkit-backdrop-filter: blur(60px) saturate(200%) contrast(1.05);
+    z-index: 99999;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    /* Glass effect matching desktop mega menu */
+}
+
+.mobile-drawer-content .custom-scrollbar {
+    scrollbar-gutter: stable;
+}
+
+
+.dark .mobile-drawer-content {
+    /* --mm-bg variable auto-handles dark mode */
+    color: white;
+}
+
+.mega-menu-grid {
+    display: grid;
+    grid-template-columns: 260px 420px 1fr;
+    /* Increased middle column to 420px to fit long text, reducing promo space */
+    height: 100%;
+}
+
+/* --- COLUMN 1: SIDEBAR --- */
+.mm-sidebar {
+    background-color: var(--mm-sidebar-bg);
+    border-right: none;
+    padding: 8px;
+    /* Equal 10px padding on all sides */
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    overflow-y: auto;
+    /* Consolidated from duplicate block */
+}
+
+.mm-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mm-text-muted);
+    padding: 0;
+    margin: 0 !important;
+}
+
+.mm-category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.mm-category-item {
+    padding: 8px;
+    /* Reduced vertical padding to fit 3 categories */
+    margin-bottom: 0px;
+    /* Removed margin */
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    color: #000000 !important;
+    /* Z Black - Forced */
+    opacity: 1 !important;
+    /* Ensure no transparency */
+    white-space: nowrap;
+    /* Ensure text doesn't wrap for auto-sizing */
+}
+
+.mm-category-item:hover {
+    background-color: var(--mm-hover-bg);
+    color: var(--mm-text-main);
+}
+
+.mm-category-item.active {
+    background-color: rgba(121, 152, 81, 0.15);
+    /* Green opacity bg */
+    border-left-color: var(--mm-accent);
+    color: var(--mm-accent) !important;
+    /* Protect Active Color */
+}
+
+.mm-category-text {
+    font-weight: 400;
+    /* Normal weight to match Links */
+    font-size: 16px !important;
+    /* Force exact 16px */
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+.mm-arrow-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--mm-accent);
+    stroke-width: 3px;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.2s;
+}
+
+.mm-category-item.active .mm-arrow-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- COLUMN 1: SIDEBAR (Consolidated above) --- */
+
+/* --- COLUMN 2: SUB-MENU --- */
+.mm-submenu {
+    padding: 8px;
+    /* Standardized 10px Padding */
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mm-submenu-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--mm-border);
+    padding-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.mm-category-heading {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--mm-text-main);
+    margin: 0 0 5px 0;
+}
+
+.mm-category-desc {
+    font-size: 14px;
+    color: var(--mm-text-muted);
+    margin: 0;
+}
+
+.mm-link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* User request: "niche scroll bar nahi chahiye" */
+}
+
+.mm-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    /* Reduced vertical padding to eliminate scrollbar */
+    color: var(--mm-text-main);
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.2s;
+    border-bottom: none;
+    gap: 10px;
+    white-space: nowrap;
+    /* Force single line globally */
+}
+
+.mm-link-item:hover {
+    color: var(--mm-accent);
+    transform: translateX(5px);
+    /* Use transform instead of padding to prevent layout shift */
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mm-link-icon {
+    color: var(--mm-accent);
+    width: 20px;
+    height: 20px;
+    /* Standardized 20px size */
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+/* Removed forceful stroke-width override to allow inline stroke-3 to work properly for both */
+
+/* --- COLUMN 3: PROMO CARD --- */
+.mm-promo {
+    padding: 8px;
+    /* Standardized 10px Padding */
+    background: radial-gradient(circle at top right, rgba(121, 152, 81, 0.1), transparent 70%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.mm-promo-card {
+    background-color: var(--mm-card-bg);
+    border: 1px solid var(--mm-border);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    /* Stretch vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.mm-promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--mm-shadow);
+    border-color: var(--mm-accent);
+}
+
+.featured-image-placeholder {
+    height: 220px;
+    /* Increased height for larger image */
+    background: linear-gradient(135deg, var(--mm-placeholder-start), var(--mm-placeholder-end));
+    display: block;
+    /* Changed from flex to block for full image */
+    padding: 0;
+    /* Remove padding */
+    position: relative;
+    overflow: hidden;
+    /* Ensure image fits */
+}
+
+.mm-promo-tag {
+    background-color: var(--mm-accent);
+    color: white;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    /* User requested absolute positioning */
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+}
+
+.mm-promo-content {
+    padding: 10px;
+    /* Standardized 10px Padding */
+    flex: 1;
+    /* Allow content to grow/fill space */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* Center text */
+    align-items: center;
+    /* Center button */
+}
+
+.mm-promo-content h5 {
+    margin: 0 !important;
+    color: var(--mm-text-main);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mm-promo-content p {
+    margin: 0 !important;
+    color: var(--mm-text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+    flex-grow: 1;
+    /* Push button to bottom */
+}
+
+.mm-promo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: max-content;
+    /* Fix button width */
+    padding: 10px 20px;
+    /* Add horizontal padding */
+    background-color: transparent;
+    border: 1px solid var(--mm-accent);
+    color: var(--mm-accent);
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0;
+    /* Remove auto spacing */
+}
+
+.mm-promo-btn:hover {
+    background-color: var(--mm-accent);
+    color: white;
+}
+
+.mm-promo-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- SCROLLBARS --- */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--mm-accent);
+}
+
+/* --- MOBILE NAVBAR STYLES --- */
+#navbar-pill-mobile {
+    /* No transitions needed - fixed position */
+    transition: box-shadow 0.2s ease;
+}
+
+#navbar-pill-mobile * {
+    /* Stabilize children */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Override global button styles for mobile navbar buttons */
+#navbar-pill-mobile button {
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+#navbar-pill-mobile button:hover,
+#navbar-pill-mobile button:focus,
+#navbar-pill-mobile button:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Override global heading styles inside Navbar and Mega Menu for SEO headings */
+#navbar-pill-mobile h6,
+.mobile-drawer-content h6 {
+    font-size: 16px;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+.mega-menu-container h6:not(.mm-section-title) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+/* Desktop navbar heading overrides */
+nav h6 {
+    font-size: 14px;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    display: inline;
+}
+
+/* --- EXPLICIT HEADING DEFINITIONS FOR MEGA MENU --- */
+.mega-menu-container h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--mm-text-main);
+}
+
+.mega-menu-container h2 {
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--mm-text-main);
+}
+
+.mega-menu-container h3 {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--mm-text-main);
+}
+
+.mega-menu-container h4 {
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--mm-text-main);
+}
+
+.mega-menu-container h5 {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--mm-text-main);
+}
+
+.mega-menu-container h6 {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--mm-text-main);
+}

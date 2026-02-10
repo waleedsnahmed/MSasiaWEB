@@ -5,9 +5,13 @@ function Footer() {
                 <div className="footer-grid">
                     {/* Column 1: Company Info */}
                     <div className="footer-column">
-                        <div className="footer-logo">
-                            <div className="footer-logo-badge">MA</div>
-                            <span className="footer-logo-text">Ms Asia</span>
+                        <div className="footer-logo flex items-center gap-2">
+                            <img
+                                src="/images/ms-asia-logo.png"
+                                alt="Ms Asia Logo"
+                                className="w-10 h-10 object-contain"
+                            />
+                            <span className="footer-logo-text text-xl font-bold">Ms Asia</span>
                         </div>
                         <p className="footer-description">
                             Leading pharmaceutical waste management solutions provider in Southeast Asia.
@@ -37,11 +41,11 @@ function Footer() {
                     <div className="footer-column">
                         <h4 className="footer-heading">Quick Links</h4>
                         <ul className="footer-links">
-                            <li><a href="#">What We Do</a></li>
-                            <li><a href="#">Industries We Serve</a></li>
-                            <li><a href="#">About Company</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="/what-we-do">What We Do</a></li>
+                            <li><a href="/industries">Industries We Serve</a></li>
+                            <li><a href="/about">About Company</a></li>
+                            <li><a href="/careers">Careers</a></li>
+                            <li><a href="/blog">Blog</a></li>
                         </ul>
                     </div>
 
@@ -109,8 +113,8 @@ function Footer() {
                 <div className="footer-container">
                     <p>&copy; 2024 Ms Asia. All rights reserved.</p>
                     <div className="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/terms-of-service">Terms of Service</a>
                     </div>
                 </div>
             </div>
