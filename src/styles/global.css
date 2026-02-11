@@ -1542,19 +1542,17 @@ button.bg-brand-btn-primary:hover {
 }
 
 .footer-container {
-    max-width: 100%;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 /* Footer Grid - 4 Columns */
 .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
+    display: flex;
+    justify-content: center;
     gap: 40px;
     padding-bottom: 0;
-    /* Remove bottom padding */
     border-bottom: 1px solid var(--footer-border);
 }
 
@@ -1562,7 +1560,10 @@ button.bg-brand-btn-primary:hover {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    /* Use gap for spacing between elements inside the column */
+}
+
+.footer-column:first-child {
+    max-width: 220px;
 }
 
 /* Footer Logo */
@@ -1731,14 +1732,13 @@ button.bg-brand-btn-primary:hover {
 
 /* Footer Bottom */
 .footer-bottom {
-    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-bottom .footer-container {
-    width: 100%;
-    /* max-width removed */
-    /* margin removed */
-    padding: 0 12px;
+    width: 850px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1772,8 +1772,16 @@ button.bg-brand-btn-primary:hover {
 /* ===== FOOTER RESPONSIVE - TABLET ===== */
 @media (max-width: 1024px) {
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .footer-column {
+        flex: 1 1 40%;
+    }
+
+    .footer-column:first-child {
+        max-width: 100%;
     }
 }
 
@@ -1784,14 +1792,16 @@ button.bg-brand-btn-primary:hover {
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        flex-direction: column;
+        gap: 24px;
     }
 
     .footer-bottom .footer-container {
+        width: 100%;
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+        height: auto;
     }
 }
 

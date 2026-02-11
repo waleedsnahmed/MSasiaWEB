@@ -95,7 +95,7 @@ function NavbarPill({
             <header className="hidden md:block fixed top-0 left-0 w-full z-[1000000] [&_*]:!border-0 [&_*]:!shadow-none [&_*]:!outline-none [&_*]:!ring-0">
 
                 {/* Inner Div */}
-                <div className="w-full relative flex items-center justify-between px-4 md:px-6 h-[56px] md:h-[64px] lg:h-[80px]">
+                <div className="w-full max-w-[1100px] mx-auto relative flex items-center justify-between px-4 md:px-6 h-[56px] md:h-[64px] lg:h-[80px]">
 
                     {/* LEFT: External Logo */}
                     <a
@@ -263,25 +263,25 @@ function NavbarPill({
                                 <span style={{ color: isExternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
                             </a>
                         </div>
-
-                        {/* Theme Toggle */}
-                        <button
-                            onClick={toggleTheme}
-                            className="w-8 h-8 md:w-9 md:h-9 lg:w-11 lg:h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group p-0"
-                            aria-label="Toggle Dark Mode"
-                        >
-                            {isDark ? (
-                                <svg className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-yellow-500 group-hover:rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                            ) : (
-                                <svg className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-700 dark:text-gray-200 group-hover:-rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                                </svg>
-                            )}
-                        </button>
                     </div>
                 </div>
+
+                {/* Theme Toggle - stays at screen edge */}
+                <button
+                    onClick={toggleTheme}
+                    className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-8 h-8 md:w-9 md:h-9 lg:w-11 lg:h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group p-0"
+                    aria-label="Toggle Dark Mode"
+                >
+                    {isDark ? (
+                        <svg className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-yellow-500 group-hover:rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    ) : (
+                        <svg className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-700 dark:text-gray-200 group-hover:-rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    )}
+                </button>
             </header>
 
             {/* ===== DROPDOWN PORTAL (MEGA MENU) ===== */}
