@@ -2,7 +2,7 @@ function Footer() {
     return (
         <footer className="site-footer">
             <div className="footer-container">
-                <div className="footer-grid">
+                <div className="footer-grid px-3">
                     {/* Column 1: Company Info */}
                     <div className="footer-column">
                         <div className="footer-logo flex items-center gap-2">

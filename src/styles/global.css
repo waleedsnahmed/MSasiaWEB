@@ -1538,27 +1538,31 @@ button.bg-brand-btn-primary:hover {
 .site-footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
-    padding-top: 4rem;
+    padding-top: 0;
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Footer Grid - 4 Columns */
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
-    gap: 3rem;
-    padding-bottom: 3rem;
+    gap: 40px;
+    padding-bottom: 0;
+    /* Remove bottom padding */
     border-bottom: 1px solid var(--footer-border);
 }
 
 .footer-column {
     display: flex;
     flex-direction: column;
+    gap: 24px;
+    /* Use gap for spacing between elements inside the column */
 }
 
 /* Footer Logo */
@@ -1566,7 +1570,8 @@ button.bg-brand-btn-primary:hover {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0;
+    /* No margin, use parent gap */
 }
 
 .footer-logo-badge {
@@ -1592,7 +1597,8 @@ button.bg-brand-btn-primary:hover {
     font-size: 0.875rem;
     line-height: 1.7;
     color: var(--footer-text);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    /* No margin, use parent gap */
 }
 
 /* Social Links */
@@ -1629,7 +1635,11 @@ button.bg-brand-btn-primary:hover {
     font-size: 1rem;
     font-weight: 600;
     color: var(--footer-heading);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0;
+    /* No margin, use parent gap */
+    height: 36px;
+    display: flex;
+    align-items: center;
 }
 
 /* Footer Links */
@@ -1637,10 +1647,18 @@ button.bg-brand-btn-primary:hover {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    /* Space between links */
 }
 
 .footer-links li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
+    /* No margin, use parent gap */
+    height: 36px;
+    display: flex;
+    align-items: center;
 }
 
 .footer-links a {
@@ -1658,14 +1676,16 @@ button.bg-brand-btn-primary:hover {
 .footer-certs {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 16px;
 }
 
 .footer-cert-badge {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
+    padding: 0;
+    /* Remove padding */
+    height: 36px;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     color: var(--footer-link);
@@ -1684,15 +1704,21 @@ button.bg-brand-btn-primary:hover {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    /* Space between contact items */
 }
 
 .footer-contact li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.75rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    /* No margin, use parent gap */
     font-size: 0.875rem;
     color: var(--footer-text);
+    height: 36px;
 }
 
 .footer-contact svg {
@@ -1705,14 +1731,21 @@ button.bg-brand-btn-primary:hover {
 
 /* Footer Bottom */
 .footer-bottom {
-    padding: 1.5rem 0;
+    padding: 0;
 }
 
 .footer-bottom .footer-container {
+    width: 100%;
+    /* max-width removed */
+    /* margin removed */
+    padding: 0 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
 }
+
+
 
 .footer-bottom p {
     font-size: 0.8125rem;
@@ -1740,19 +1773,19 @@ button.bg-brand-btn-primary:hover {
 @media (max-width: 1024px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
+        gap: 12px;
     }
 }
 
 /* ===== FOOTER RESPONSIVE - MOBILE ===== */
 @media (max-width: 640px) {
     .site-footer {
-        padding-top: 3rem;
+        padding-top: 0;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 12px;
     }
 
     .footer-bottom .footer-container {
