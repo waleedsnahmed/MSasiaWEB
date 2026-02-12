@@ -9,7 +9,7 @@ function Footer() {
                             <img
                                 src="/images/ms-asia-logo.png"
                                 alt="Ms Asia Logo"
-                                className="w-10 h-10 object-contain"
+                                className="w-12 h-12 object-contain"
                             />
                             <span className="footer-logo-text text-xl font-bold">Ms Asia</span>
                         </div>
@@ -76,7 +76,7 @@ function Footer() {
 
                     {/* Column 4: Contact */}
                     <div className="footer-column">
-                        <h4 className="footer-heading">Contact Us</h4>
+                        <h4 className="footer-heading pl-[30px]">Contact Us</h4>
                         <ul className="footer-contact">
                             <li>
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
