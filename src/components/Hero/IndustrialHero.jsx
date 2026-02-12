@@ -19,12 +19,12 @@ function IndustrialHero() {
            - !pt-32 etc : Controls top padding responsively (Mobile vs Laptop).
            - preserved 'industrial-hero' class to keep your Background Color intact.
         */
-        <section className="industrial-hero min-h-screen flex flex-col items-center justify-center gap-6 !pt-[72px] lg:pt-[74px] lg:pb-0 !px-[12px] !lg:px-0 relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white dark:from-gray-900 dark:via-gray-950 dark:to-black">
+        <section className="industrial-hero min-h-screen flex flex-col items-center justify-center gap-6 !pt-[80px] lg:pt-[82px] lg:pb-0 !px-[12px] !lg:px-0 relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white dark:from-gray-900 dark:via-gray-950 dark:to-black">
             {/* Ambient Background Glow for Glass Effect Visibility */}
-            <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-br from-[#799851]/10 via-transparent to-transparent pointer-events-none dark:opacity-20" />
+            <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-br from-[#799851]/10 via-transparent to-transparent pointer-events-none dark:opacity-20" />
 
             {/* Added max-w-7xl and mx-auto to center content professionally on large screens */}
-            <div className="industrial-hero-container items-center justify-center max-w-7xl mx-auto        w-full gap-12">
+            <div className="industrial-hero-container items-center justify-center max-w-7xl mx-auto w-full gap-12 h-[500px]">
 
                 {/* LEFT CONTENT (60%) */}
                 <div className="industrial-hero-content">

@@ -1553,6 +1553,7 @@ button.bg-brand-btn-primary:hover {
     display: flex;
     justify-content: center;
     gap: 40px;
+    padding-top: 8px;
     padding-bottom: 0;
     border-bottom: 1px solid var(--footer-border);
     width: 100%;
@@ -1641,7 +1642,7 @@ button.bg-brand-btn-primary:hover {
     color: var(--footer-heading);
     margin-bottom: 0;
     /* No margin, use parent gap */
-    height: 36px;
+    height: 48px;
     display: flex;
     align-items: center;
 }
@@ -1680,7 +1681,7 @@ button.bg-brand-btn-primary:hover {
 .footer-certs {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .footer-cert-badge {
