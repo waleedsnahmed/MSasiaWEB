@@ -132,3 +132,58 @@
         max-width: 100%;
     }
 }
+
+/* =================================================================
+   MOBILE RESPONSIVENESS (URGENT FIXES < 768px)
+   ================================================================= */
+@media (max-width: 767px) {
+    .scrap-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .scrap-card {
+        width: 90% !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .card-image-wrapper {
+        width: 100% !important;
+    }
+
+    .card-content {
+        padding: 0 !important;
+        /* Remove horizontal padding if card is 90% width */
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .card-title {
+        text-align: center !important;
+    }
+
+    .card-description {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+
+    .card-actions {
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        /* Allow full width on mobile if needed, or keep constrained */
+    }
+
+    .card-btn {
+        width: 100% !important;
+        max-width: 250px !important;
+        /* Cap button width */
+    }
+}

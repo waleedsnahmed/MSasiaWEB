@@ -61,29 +61,17 @@ function NavbarPill({
 
     // Lock Body Scroll when Mobile Menu is Open & Compensate for Scrollbar Shift
     useEffect(() => {
-        const nav = document.getElementById('navbar-pill-mobile');
         if (isMobileMenuOpen) {
             const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
             document.body.style.overflow = 'hidden';
             document.body.style.paddingRight = `${scrollbarWidth}px`;
-            if (nav) {
-                // Determine original paddingRight (assuming equal to paddingLeft or standard 12px)
-                // Simply add scrollbarWidth to our standard 12px right padding
-                nav.style.paddingRight = `${12 + scrollbarWidth}px`;
-            }
         } else {
             document.body.style.overflow = '';
             document.body.style.paddingRight = '';
-            if (nav) {
-                nav.style.paddingRight = '12px';
-            }
         }
         return () => {
             document.body.style.overflow = '';
             document.body.style.paddingRight = '';
-            if (nav) {
-                nav.style.paddingRight = '12px';
-            }
         };
     }, [isMobileMenuOpen]);
 
@@ -572,7 +560,7 @@ function NavbarPill({
                                         Contact Us
                                     </Link>
                                 </div>
-                                <div className="flex items-center gap-4 text-[12px] text-gray-400 font-medium py-[12px]">
+                                <div className="flex items-center justify-center gap-4 text-[12px] text-gray-400 font-medium py-[12px]">
                                     <a href="/privacy-policy" className="hover:text-[#47622A] transition-colors">Privacy</a>
                                     <span className="w-1 h-1 rounded-full bg-gray-300"></span>
                                     <a href="/terms-of-service" className="hover:text-[#47622A] transition-colors">Terms</a>
