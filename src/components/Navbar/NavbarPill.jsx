@@ -295,9 +295,15 @@ function NavbarPill({
             {/* ===== MOBILE NAVBAR - FIXED AT TOP ===== */}
             <nav
                 id="navbar-pill-mobile"
-                className="md:hidden fixed z-[100000] pointer-events-auto flex items-center justify-center gap-2 left-0 right-0 rounded-none"
+                className="md:hidden fixed z-[100000] pointer-events-auto flex items-center justify-center gap-2 left-0 rounded-none"
                 style={{
-                    top: '-1px',
+                    top: '0',
+                    left: '0',
+                    width: '100vw',
+                    boxSizing: 'border-box',
+                    transform: 'translateZ(0)',
+                    willChange: 'transform',
+                    transition: 'none',
                     minHeight: '72px',
                     height: '72px',
                     padding: '12px 12px',
@@ -386,26 +392,45 @@ function NavbarPill({
                             </a>
                         </div>
 
-                        {/* RIGHT: Mobile Search */}
-                        <button
-                            onClick={toggleSearch}
-                            className="flex items-center justify-center w-11 h-11 rounded-full bg-transparent p-0 active:scale-90 border-none outline-none shadow-none z-20"
-                            aria-label="Toggle Search"
-                        >
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#000000"
-                                strokeWidth="2.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+                        {/* RIGHT: Mobile Search & Theme Toggle */}
+                        <div className="flex items-center gap-1 z-20">
+                            {/* Search Trigger */}
+                            <button
+                                onClick={toggleSearch}
+                                className="flex items-center justify-center w-11 h-11 rounded-full bg-transparent p-0 active:scale-90 border-none outline-none shadow-none"
+                                aria-label="Toggle Search"
                             >
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                        </button>
+                                <svg
+                                    className="w-6 h-6"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#000000"
+                                    strokeWidth="2.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+
+                            {/* Theme Toggle */}
+                            <button
+                                onClick={toggleTheme}
+                                className="flex items-center justify-center w-11 h-11 rounded-full bg-transparent p-0 active:scale-90 border-none outline-none shadow-none"
+                                aria-label="Toggle Dark Mode"
+                            >
+                                {isDark ? (
+                                    <svg className="w-6 h-6 text-yellow-500 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                ) : (
+                                    <svg className="w-6 h-6 text-gray-700 dark:text-gray-200 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
                     </div>
                 ) : (
                     /* === MOBILE SEARCH UI === */
