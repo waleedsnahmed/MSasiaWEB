@@ -2385,9 +2385,9 @@ div.absolute button {
 
     /* --- HERO SECTION CENTERING --- */
     .industrial-hero-container {
-        flex-direction: column !important;
-        text-align: center !important;
-        align-items: center !important;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
 
     .industrial-hero-content {
@@ -2447,16 +2447,25 @@ div.absolute button {
         padding: 0 !important;
     }
 
+    /* Override padding for the main container */
+    .footer-container {
+        padding: 12px 12px 0 12px !important;
+    }
+
     /* --- STRICT GAP CONTROL & BACKGROUNDS --- */
     .site-footer {
         background-color: #47622A !important;
         /* Brand Green Base */
     }
 
-    .footer-grid,
-    .footer-column {
+    .footer-grid {
         gap: 15px !important;
-        /* Slightly increased for elegance */
+        /* Keep gap between major sections (Logo, Links, Certs) */
+    }
+
+    .footer-column {
+        gap: 0 !important;
+        /* ZERO GAP between Heading and Content */
     }
 
     /* --- ZERO MARGINS FOR HEADINGS & TEXT --- */
@@ -2480,147 +2489,163 @@ div.absolute button {
     /* --- SPECIFIC COMPONENT OVERRIDES --- */
 
     /* 1. Logo Section */
-    .footer-column:first-child {
-        padding-top: 12px !important;
-        gap: 12px !important;
+    .footer-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
     }
 
-    .footer-logo {
-        justify-content: center !important;
-        margin-bottom: 0 !important;
-        scale: 1.1 !important;
-        /* Slightly larger logo */
+    /* 2. Footer Links Wrapper */
+    .footer-links-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0 !important;
     }
 
-    .footer-description {
-        max-width: 320px !important;
-        font-size: 14px !important;
-        color: rgba(255, 255, 255, 0.85) !important;
-        font-weight: 400 !important;
+    /* SHOW "Contact Us" link in Quick Links on Mobile */
+    .mobile-only-link {
+        display: flex;
     }
 
-    /* 2. PREMIUM HEADERS */
-    .footer-heading {
-        font-size: 16px !important;
-        font-weight: 800 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1.5px !important;
-        color: #D9F99D !important;
-        /* Light Lime/Gold */
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        height: auto !important;
-        border-bottom: 1px solid rgba(217, 249, 157, 0.3) !important;
-        width: auto !important;
-        padding-left: 0 !important;
+    /* Column Styles */
+    .footer-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* 3. SOCIAL BUBBLES */
-    .footer-social {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        gap: 12px !important;
-        width: 100% !important;
-        margin: 0 !important;
-    }
-
-    .footer-social-link {
-        width: 44px !important;
-        height: 44px !important;
-        border-radius: 50% !important;
-        background: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        color: #fff !important;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-    }
-
-    .footer-social-link svg {
-        width: 20px !important;
-        height: 20px !important;
-    }
-
-    /* 4. LINKS & COLUMNS */
-    .footer-column:not(:first-child) {}
-
+    /* Quick Links Section */
     .footer-links {
-        gap: 10px !important;
-        width: 100% !important;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        /* Internal grid gap is okay, but user might want 0 here too? Let's keep 10px for readability unless specified */
+        width: 100%;
+        text-align: center !important;
+        padding: 0;
+        margin: 0 !important;
+        /* ZERO MARGIN */
     }
 
+    /* Ensure list items in grid are properly aligned */
     .footer-links li {
-        width: 100% !important;
-        display: flex !important;
+        display: flex;
+        align-items: center;
         justify-content: center !important;
+        line-height: 1.3;
+        font-size: 14px;
+        white-space: nowrap;
+        width: 100%;
+        padding: 0 !important;
         margin: 0 !important;
     }
 
-    .footer-links a {
-        font-size: 14px !important;
-        font-weight: 500 !important;
-        display: block !important;
-
-        color: #fff !important;
-    }
-
-    /* 5. CONTACT SECTION (Styled Box) */
-    /* 5. CONTACT SECTION (Simplified) */
-    .footer-contact {
-        width: 100% !important;
-        background: transparent !important;
-        border: none !important;
+    /* Center "Quick Links" & "Certifications" Heading using New Container */
+    .footer-heading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 !important;
+        margin-top: 5px !important;
+        /* Push down to align with content container */
+        margin-bottom: 0 !important;
+        /* No gap between heading and content */
         padding: 0 !important;
     }
 
-    .footer-contact li {
-        flex-direction: row !important;
+    /* Certifications heading — pull up slightly so it doesn't stick */
+    .footer-certifications .footer-heading-container {
+        margin-top: 0 !important;
+    }
+
+    .footer-column h4.footer-heading {
+        display: flex !important;
+        justify-content: center !important;
         align-items: center !important;
-        justify-content: center !important;
-        gap: 10px !important;
-        font-size: 14px !important;
-
+        text-align: center !important;
+        width: 100%;
+        height: auto !important;
+        /* Remove fixed 48px — wrap tightly around text */
+        font-size: 16px;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        line-height: 1.4 !important;
     }
 
-    .footer-contact svg {
-        width: 24px !important;
-        height: 24px !important;
-        color: #D9F99D !important;
-        /* Matching Header Gold */
+    .footer-description {
+        font-size: 14px;
+        text-align: center;
     }
 
-    /* 6. CERTIFICATIONS (Pills Row) */
+    /* Explicitly target nested elements for font size */
+    .footer-links a {
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    /* Certifications Section */
     .footer-certs {
-        flex-direction: row !important;
-        justify-content: center !important;
-        flex-wrap: wrap !important;
-        gap: 10px !important;
-        width: 100% !important;
-
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        margin: 0 !important;
+        /* STRICT ZERO MARGIN */
+        padding: 0 !important;
     }
 
     .footer-cert-badge {
-        height: auto !important;
-        min-height: 32px !important;
-        background: rgba(255, 255, 255, 0.1) !important;
-        border-radius: 99px !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        font-size: 10px !important;
-        font-weight: 600 !important;
-        letter-spacing: 0.5px !important;
-        text-transform: uppercase !important;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        font-size: 14px;
+        white-space: nowrap;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 99px;
+        margin: 0;
+        flex: 0 1 auto;
+        width: auto;
     }
 
     .footer-cert-badge svg {
-        width: 14px !important;
-        height: 14px !important;
-        stroke: #D9F99D !important;
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+    }
+}
+
+/* DESKTOP DEFAULTS / OVERRIDES */
+@media (min-width: 768px) {
+    .mobile-only-link {
+        display: none !important;
+        /* Force hide on desktop */
     }
 
-    /* 7. FOOTER BOTTOM (Two-Tone) */
+    .footer-contact-column {
+        display: block !important;
+    }
+}
+
+/* DESKTOP WRAPPER RESET */
+/* Ensures the wrapper disappears on desktop so grid columns work normally */
+@media (min-width: 768px) {
+    .footer-links-wrapper {
+        display: contents;
+    }
+}
+
+/* 7. FOOTER BOTTOM (Two-Tone) - Continuing Mobile Overrides */
+@media (max-width: 767px) {
     .footer-bottom {
         border-top: none !important;
         background-color: #47622A !important;
@@ -2632,20 +2657,20 @@ div.absolute button {
     .footer-bottom-links {
         flex-direction: row !important;
         justify-content: center !important;
-        gap: 20px !important;
-        flex-wrap: wrap !important;
+        gap: 15px !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
     }
 
     .footer-bottom-links a {
-        font-size: 12px !important;
+        font-size: 10px !important;
         color: rgba(255, 255, 255, 0.7) !important;
-        font-weight: 500 !important;
         text-transform: uppercase !important;
         letter-spacing: 0.5px !important;
     }
 
     .footer-bottom p {
-        font-size: 11px !important;
+        font-size: 10px !important;
         color: rgba(255, 255, 255, 0.5) !important;
         letter-spacing: 0.5px !important;
     }
@@ -2665,13 +2690,6 @@ div.absolute button {
         justify-content: space-between !important;
     }
 
-    /* Logos inside navbar */
-    #navbar-pill-mobile img {
-        height: 40px !important;
-        width: auto !important;
-        object-fit: contain !important;
-    }
-
     #navbar-pill-mobile span {
         font-size: 18px !important;
         line-height: 1 !important;
@@ -2685,5 +2703,107 @@ div.absolute button {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+    }
+
+    /* --- FINAL OVERRIDES: STRICT HIDING OF CONTACT SECTION --- */
+    /* Placing this at the end to ensure it overrides any previous display: flex rules */
+
+    .footer-links-wrapper>.footer-column.footer-contact-column,
+    .footer-links-wrapper>.footer-column:nth-child(2) {
+        display: none;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    /* Target the heading specifically just in case */
+    .footer-column.footer-contact-column .footer-heading,
+    .footer-contact-column h4 {
+        display: none;
+    }
+
+    /* Hiding the content list as a safety net */
+    .footer-contact {
+        display: none;
+    }
+
+    /* --- FINAL OVERRIDES: ALIGNMENT --- */
+
+    /* 1. Fix the Wrapper: Stop using display: contents which might strip centering context */
+    /* Use !important to override any structural layouts */
+    .footer-links-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* 2. Force Center Alignment for ALL Footer Headings */
+    /* Forces parent to align items center */
+    .footer-column {
+        align-items: center !important;
+    }
+
+    /* 2. Force Center Alignment for ALL Footer Headings */
+    /* Forces heading itself to behave - MUST be flex for vertical centering */
+    .site-footer .footer-heading,
+    .site-footer h4,
+    .footer-column h4 {
+        text-align: center !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0 !important;
+        align-self: center !important;
+    }
+
+    /* 3. STRICTLY HIDE "Contact Us" Heading & Column (Regression Fix) */
+    /* Must come AFTER the rule above to override display: block !important */
+    .footer-links-wrapper>.footer-contact-column,
+    .footer-column.footer-contact-column,
+    .footer-contact-column .footer-heading {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    /* Ensure Quick Links Heading is centered specifically */
+    .footer-links-wrapper .footer-column h4 {
+        text-align: center !important;
+    }
+
+    /* Ensure Certification Badges are centered */
+    .footer-certs {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* --- FINAL OVERRIDES: STRICT GRID CENTERING --- */
+    /* Remove default padding from the list */
+    .footer-links {
+        padding-left: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    /* Center the flex items inside the grid cells */
+    .footer-links li {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Center the anchor text itself */
+    .footer-links a {
+        text-align: center;
+        width: 100%;
+        display: block;
+        /* Ensure it takes full width to center text */
     }
 }
