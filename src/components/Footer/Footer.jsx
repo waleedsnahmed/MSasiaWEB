@@ -45,12 +45,12 @@ function Footer() {
                                 <h4 className="footer-heading">Quick Links</h4>
                             </div>
                             <ul className="footer-links">
-                                <li><a href="/what-we-do"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>What We Do</a></li>
-                                <li><a href="/industries"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Industries We Serve</a></li>
-                                <li><a href="/about"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>About Company</a></li>
-                                <li><a href="/careers"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Careers</a></li>
-                                <li><a href="/blog"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Blog</a></li>
-                                <li className="mobile-only-link"><a href="/contact"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Contact Us</a></li>
+                                <li><a href="/what-we-do" className="footer-quick-link"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>What We Do</a></li>
+                                <li><a href="/industries" className="footer-quick-link"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Industries We Serve</a></li>
+                                <li><a href="/about" className="footer-quick-link"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>About Company</a></li>
+                                <li><a href="/careers" className="footer-quick-link"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Careers</a></li>
+                                <li className="desktop-hide-blog"><a href="/blog" className="footer-quick-link"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Blog</a></li>
+                                <li className="mobile-only-link"><a href="/contact" className="footer-quick-link"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Contact Us</a></li>
                             </ul>
                         </div>
 
@@ -118,10 +118,10 @@ function Footer() {
             {/* Footer Bottom */}
             <div className="footer-bottom">
                 <div className="footer-container">
-                    <p>&copy; 2024 Ms Asia. All rights reserved.</p>
+                    <p className="footer-copyright">&copy; 2024 Ms Asia. All rights reserved.</p>
                     <div className="footer-bottom-links">
-                        <a href="/privacy-policy">Privacy Policy</a>
-                        <a href="/terms-of-service">Terms of Service</a>
+                        <a href="/privacy" className="footer-legal-link">Privacy Policy</a>
+                        <a href="/terms" className="footer-legal-link">Terms of Service</a>
                     </div>
                 </div>
             </div>

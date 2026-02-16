@@ -1534,7 +1534,7 @@ button.bg-brand-btn-primary:hover {
     --footer-link-hover: #000000;
     --footer-accent: #799851;
     --footer-border: rgba(255, 255, 255, 0.1);
-    --footer-width: 950px;
+    --footer-width: 1050px;
 }
 
 .site-footer {
@@ -1682,7 +1682,6 @@ button.bg-brand-btn-primary:hover {
 .footer-certs {
     display: flex;
     flex-direction: column;
-    gap: 14px;
 }
 
 .footer-cert-badge {
@@ -1808,7 +1807,7 @@ button.bg-brand-btn-primary:hover {
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 52px;
+        height: 36px;
         /* Increased height for better visibility as requested */
         padding: 0 !important;
         margin: 0 !important;
@@ -2517,6 +2516,17 @@ div.absolute button {
         align-items: center;
     }
 
+    /* Mobile Footer Logo: 40x40 */
+    .footer-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Mobile Footer Company Name: bigger */
+    .footer-logo .footer-logo-text {
+        font-size: 1.5rem;
+    }
+
     /* 2. Footer Links Wrapper */
     .footer-links-wrapper {
         display: flex;
@@ -2573,7 +2583,6 @@ div.absolute button {
         align-items: center;
         width: 100%;
         margin: 0 !important;
-        margin-top: 5px !important;
         /* Push down to align with content container */
         margin-bottom: 0 !important;
         /* No gap between heading and content */
@@ -2703,6 +2712,147 @@ div.absolute button {
     /* Hide chevron icons on desktop */
     .footer-link-icon {
         display: none;
+    }
+
+    /* --- DESKTOP FOOTER RESETS --- */
+    /* Reset first column: undo display:contents from mobile */
+    .footer-grid>.footer-column:first-child {
+        display: flex;
+        flex-direction: column;
+        order: unset;
+        gap: 12px;
+        max-width: 360px;
+    }
+
+    /* Consistent gap for ALL desktop columns */
+    .footer-column {
+        gap: 0;
+    }
+
+    /* Reset all order values for desktop */
+    .footer-logo {
+        order: unset;
+    }
+
+    p.footer-description {
+        order: unset;
+        transform: translateY(-6px);
+    }
+
+    div.footer-social {
+        order: unset;
+        transform: translateY(4px);
+    }
+
+    .footer-column.footer-certifications {
+        order: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Reset Quick Links column */
+    .footer-links-wrapper>.footer-column:first-child {
+        order: unset;
+    }
+
+    /* Restore Contact Us column on desktop */
+    .footer-contact-column {
+        display: flex !important;
+        flex-direction: column;
+        order: unset;
+        gap: 0;
+    }
+
+    .footer-column.footer-contact-column .footer-heading,
+    .footer-contact-column h4 {
+        display: flex !important;
+    }
+
+    .footer-contact {
+        display: flex !important;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    /* Reset footer-links to column layout for desktop */
+    /* Reset footer-links to column layout for desktop */
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 14px;
+    }
+
+    .footer-links li {
+        justify-content: flex-start;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        line-height: 1.2;
+    }
+
+    .footer-links a {
+        display: inline;
+        text-align: left;
+    }
+
+    /* Ensure ALL headings use same fixed height for cross-column alignment */
+    .footer-heading {
+        height: 48px;
+    }
+
+    /* Reset certifications heading container */
+    .footer-certifications .footer-heading-container {
+        display: flex;
+        align-items: center;
+        height: 48px;
+    }
+
+    /* Align cert badges in a clean column */
+    /* Align cert badges in a clean column */
+    .footer-certs {
+        flex-direction: column;
+        gap: 14px;
+        /* Unified Gap */
+    }
+
+    .footer-cert-badge {
+        height: 36px;
+        display: flex;
+        align-items: center;
+        line-height: 1.2;
+    }
+
+    /* Contact list consistent item spacing */
+    /* Contact list consistent item spacing */
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        /* Unified Gap */
+    }
+
+    .footer-contact li,
+    .footer-contact div {
+        height: 36px;
+        display: flex;
+        align-items: center;
+        line-height: 1.2;
+    }
+
+    .footer-cert-badge {
+        gap: 0.5rem;
+    }
+
+    /* Hide Blog from Quick Links on desktop only */
+    .desktop-hide-blog {
+        display: none !important;
+    }
+
+    /* Wider description column for 3-line text */
+    .footer-grid>.footer-column:first-child {
+        max-width: 360px;
     }
 }
 
@@ -2838,6 +2988,10 @@ div.absolute button {
     /* Ensure Quick Links Heading is centered specifically */
     .footer-links-wrapper .footer-column h4 {
         text-align: center !important;
+        height: 36px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
     /* Ensure Certification Badges are centered */
@@ -2849,23 +3003,90 @@ div.absolute button {
     /* --- FINAL OVERRIDES: STRICT GRID ALIGNMENT --- */
     /* Grid container centered via parent, items left-aligned */
     .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        row-gap: 12px;
+        column-gap: 15px;
         padding: 0;
         margin: 0;
-        text-align: left;
-    }
-
-    /* Left-align items inside the grid cells */
-    .footer-links li {
-        justify-content: flex-start;
         text-align: left;
         width: 100%;
     }
 
-    /* Left-align the anchor text with flex for icon */
-    .footer-links a {
-        text-align: left;
+    /* Align Icons & Text (Flexbox) */
+    .footer-links li {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        /* Remove fixed height forces */
+    }
+
+    /* Left-align the anchor text with flex for icon */
+    .footer-links a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 0;
+        margin: 0;
         gap: 8px;
+        width: 100%;
+        line-height: normal;
+        /* Remove uneven line-heights */
+    }
+
+    /* --- MOBILE FOOTER REORDER: Certifications UP, Social DOWN --- */
+    /* Flatten the first column so its children become direct flex children of .footer-grid */
+    .footer-grid>.footer-column:first-child {
+        display: contents !important;
+    }
+
+    /* Flatten the links wrapper so its children become direct flex children of .footer-grid */
+    .footer-links-wrapper {
+        display: contents !important;
+    }
+
+    /* Reorder: Logo(1) → Description(2) → Certifications(3) → Quick Links(4) → Social(5) */
+    .footer-logo {
+        order: 1 !important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    p.footer-description {
+        order: 2 !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-column.footer-certifications {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-links-wrapper>.footer-column:first-child {
+        order: 4 !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    div.footer-social {
+        order: 5 !important;
+        display: flex !important;
+        width: 100%;
+        justify-content: center;
+        gap: 0.75rem;
     }
 }
