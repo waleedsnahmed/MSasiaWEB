@@ -1802,6 +1802,27 @@ button.bg-brand-btn-primary:hover {
         gap: 24px;
     }
 
+    /* CENTER CERTIFICATIONS HEADING & REMOVE PADDING/MARGIN */
+    .footer-certifications .footer-heading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 52px;
+        /* Increased height for better visibility as requested */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .footer-certifications .footer-heading {
+        justify-content: center;
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 100%;
+        /* Fill container height */
+    }
+
     .footer-bottom .footer-container {
         width: 100%;
         flex-direction: column;
@@ -2523,25 +2544,26 @@ div.absolute button {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        /* Internal grid gap is okay, but user might want 0 here too? Let's keep 10px for readability unless specified */
-        width: 100%;
-        text-align: center !important;
+        width: 90%;
+        max-width: 340px;
+        margin: 0;
         padding: 0;
-        margin: 0 !important;
-        /* ZERO MARGIN */
+        text-align: left;
+        justify-self: center;
     }
 
     /* Ensure list items in grid are properly aligned */
     .footer-links li {
         display: flex;
         align-items: center;
-        justify-content: center !important;
+        justify-content: flex-start;
+        gap: 8px;
         line-height: 1.3;
         font-size: 14px;
         white-space: nowrap;
         width: 100%;
-        padding: 0 !important;
-        margin: 0 !important;
+        padding: 0;
+        margin: 0;
     }
 
     /* Center "Quick Links" & "Certifications" Heading using New Container */
@@ -2558,9 +2580,28 @@ div.absolute button {
         padding: 0 !important;
     }
 
-    /* Certifications heading — pull up slightly so it doesn't stick */
+    /* Certifications Heading Alignment - Box Style */
     .footer-certifications .footer-heading-container {
-        margin-top: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        /* Increased gap as requested */
+    }
+
+    .footer-certifications .footer-heading {
+        margin: 0 !important;
+        text-align: center !important;
+        width: auto !important;
+    }
+
+    /* Reset the column to default but ensure items are centered */
+    .footer-certifications {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
     }
 
     .footer-column h4.footer-heading {
@@ -2586,21 +2627,38 @@ div.absolute button {
     /* Explicitly target nested elements for font size */
     .footer-links a {
         font-size: 14px;
-        text-align: center;
-        width: 100%;
-        display: block;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Chevron icon styling */
+    .footer-link-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: rgba(255, 255, 255, 0.5);
+        transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover .footer-link-icon {
+        color: #FFFFFF;
     }
 
     /* Certifications Section */
     .footer-certs {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        /* Allow wrap if small screen */
         justify-content: center;
-        gap: 6px;
+        gap: 12px;
+        /* Professional Gap */
         width: 100%;
+        max-width: 100%;
         margin: 0 !important;
-        /* STRICT ZERO MARGIN */
         padding: 0 !important;
     }
 
@@ -2620,7 +2678,6 @@ div.absolute button {
     .footer-cert-badge svg {
         width: 14px;
         height: 14px;
-        margin-right: 4px;
     }
 }
 
@@ -2641,6 +2698,11 @@ div.absolute button {
 @media (min-width: 768px) {
     .footer-links-wrapper {
         display: contents;
+    }
+
+    /* Hide chevron icons on desktop */
+    .footer-link-icon {
+        display: none;
     }
 }
 
@@ -2784,26 +2846,26 @@ div.absolute button {
         width: 100%;
     }
 
-    /* --- FINAL OVERRIDES: STRICT GRID CENTERING --- */
-    /* Remove default padding from the list */
+    /* --- FINAL OVERRIDES: STRICT GRID ALIGNMENT --- */
+    /* Grid container centered via parent, items left-aligned */
     .footer-links {
-        padding-left: 0;
-        margin-left: 0;
-        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-align: left;
     }
 
-    /* Center the flex items inside the grid cells */
+    /* Left-align items inside the grid cells */
     .footer-links li {
-        justify-content: center;
-        text-align: center;
+        justify-content: flex-start;
+        text-align: left;
         width: 100%;
     }
 
-    /* Center the anchor text itself */
+    /* Left-align the anchor text with flex for icon */
     .footer-links a {
-        text-align: center;
-        width: 100%;
-        display: block;
-        /* Ensure it takes full width to center text */
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 }

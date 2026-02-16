@@ -45,12 +45,12 @@ function Footer() {
                                 <h4 className="footer-heading">Quick Links</h4>
                             </div>
                             <ul className="footer-links">
-                                <li><a href="/what-we-do">What We Do</a></li>
-                                <li><a href="/industries">Industries We Serve</a></li>
-                                <li><a href="/about">About Company</a></li>
-                                <li><a href="/careers">Careers</a></li>
-                                <li><a href="/blog">Blog</a></li>
-                                <li className="mobile-only-link"><a href="/contact">Contact Us</a></li>
+                                <li><a href="/what-we-do"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>What We Do</a></li>
+                                <li><a href="/industries"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Industries We Serve</a></li>
+                                <li><a href="/about"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>About Company</a></li>
+                                <li><a href="/careers"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Careers</a></li>
+                                <li><a href="/blog"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Blog</a></li>
+                                <li className="mobile-only-link"><a href="/contact"><span className="footer-link-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span>Contact Us</a></li>
                             </ul>
                         </div>
 
