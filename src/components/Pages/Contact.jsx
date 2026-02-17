@@ -43,8 +43,8 @@ function Contact() {
                                     <div>
                                         <h3 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Headquarters</h3>
                                         <p className="text-lg text-gray-900 dark:text-white leading-relaxed font-medium">
-                                            123 Pharma District,<br />
-                                            Singapore 018956
+                                            Dehradun Road, Bhagwanpur Industrial Area,<br />
+                                            Roorkee, Uttarakhand
                                         </p>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@ function Contact() {
                                     <div>
                                         <h3 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Phone</h3>
                                         <p className="text-lg text-gray-900 dark:text-white font-medium">
-                                            <a href="tel:+6561234567" className="hover:text-[#47622A] transition-colors">+65 6123 4567</a>
+                                            <a href="tel:+919837236962" className="hover:text-[#47622A] transition-colors">9837236962</a>
                                         </p>
                                         <p className="text-sm text-gray-500 mt-1">Mon - Fri: 8:00 AM - 6:00 PM</p>
                                     </div>

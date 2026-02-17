@@ -343,6 +343,12 @@ span {
 strong {
     font-weight: 600;
     color: var(--text-main);
+    --color-text-light: #ffffff;
+    --color-border: #e2e8f0;
+}
+
+.desktop-break {
+    display: none;
 }
 
 em {
@@ -378,13 +384,15 @@ ol {
 }
 
 /* ===== LINKS ===== */
-a {
+a,
+.main-link {
     color: var(--link-default);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-a:hover {
+a:hover,
+.main-link:hover {
     color: var(--link-hover);
     text-decoration: none;
 }
@@ -1552,8 +1560,8 @@ button.bg-brand-btn-primary:hover {
 /* Footer Grid - 4 Columns */
 .footer-grid {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
+    gap: 20px;
     padding-top: 8px;
     padding-bottom: 0;
     border-bottom: 1px solid var(--footer-border);
@@ -1667,14 +1675,14 @@ button.bg-brand-btn-primary:hover {
     align-items: center;
 }
 
-.footer-links a {
+.footer-quick-link {
     color: var(--footer-link);
     text-decoration: none;
     font-size: 0.875rem;
     transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
+.footer-quick-link:hover {
     color: var(--footer-link-hover);
 }
 
@@ -1731,7 +1739,6 @@ button.bg-brand-btn-primary:hover {
     height: 18px;
     stroke: var(--footer-accent);
     flex-shrink: 0;
-    margin-top: 2px;
 }
 
 /* Footer Bottom */
@@ -1752,7 +1759,8 @@ button.bg-brand-btn-primary:hover {
 
 
 
-.footer-bottom p {
+.footer-bottom p,
+.footer-copyright {
     font-size: 0.8125rem;
     color: var(--footer-text);
     margin: 0;
@@ -1763,14 +1771,16 @@ button.bg-brand-btn-primary:hover {
     gap: 1.5rem;
 }
 
-.footer-bottom-links a {
+.footer-bottom-links a,
+.footer-legal-link {
     font-size: 0.8125rem;
     color: var(--footer-text);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.footer-bottom-links a:hover {
+.footer-bottom-links a:hover,
+.footer-legal-link:hover {
     color: var(--footer-link-hover);
 }
 
@@ -2710,8 +2720,14 @@ div.absolute button {
     }
 
     /* Hide chevron icons on desktop */
-    .footer-link-icon {
-        display: none;
+    .footer-link-icon,
+    .desktop-hide-item,
+    .desktop-hide-blog {
+        display: none !important;
+    }
+
+    .desktop-break {
+        display: block !important;
     }
 
     /* --- DESKTOP FOOTER RESETS --- */
@@ -2792,9 +2808,13 @@ div.absolute button {
         line-height: 1.2;
     }
 
-    .footer-links a {
+    /* Reset headings/text for desktop alignment */
+    /* Ensure links display inline to prevent block wrapping issues */
+    .footer-links a,
+    .footer-quick-link {
         display: inline;
         text-align: left;
+        white-space: nowrap;
     }
 
     /* Ensure ALL headings use same fixed height for cross-column alignment */
@@ -2822,6 +2842,7 @@ div.absolute button {
         display: flex;
         align-items: center;
         line-height: 1.2;
+        white-space: nowrap;
     }
 
     /* Contact list consistent item spacing */
