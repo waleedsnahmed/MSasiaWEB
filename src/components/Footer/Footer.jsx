@@ -63,7 +63,7 @@ function Footer() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
-                                    <span className="footer-address">Dehradun Road, Bhagwanpur Industrial Area,<br className="desktop-break" /> Roorkee, Uttarakhand</span>
+                                    <span className="footer-address">Dehradun Road, Bhagwanpur Industrial Area,<br className="desktop-break" /> Roorkee, 247667 Uttarakhand</span>
                                 </li>
                                 <li>
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ function Footer() {
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
-                                    <span className="footer-email">info@msasia.com</span>
+                                    <span className="footer-email">contact@msasia.com</span>
                                 </li>
                                 <li className="desktop-hide-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,6 +113,10 @@ function Footer() {
                         </div>
                     </div>
                 </div>
+                {/* 12px Invisible Spacer for strict vertical spacing */}
+                <div style={{ width: '100%', height: '12px' }} aria-hidden="true" />
+                {/* Visual Border Line */}
+                <div style={{ width: '100%', maxWidth: '1050px', borderBottom: '1px solid var(--footer-border)' }} />
             </div>
 
             {/* Footer Bottom */}
