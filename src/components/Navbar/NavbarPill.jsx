@@ -189,7 +189,7 @@ function NavbarPill({
                                         color: isInternalHovered ? '#47622A' : '#ffffff',
                                         borderColor: isInternalHovered ? '#47622A' : 'transparent'
                                     }}
-                                    className={`flex items-center justify-center gap-1 md:gap-1.5 border hover:border-[#47622A] rounded-full text-xs md:text-sm lg:text-base font-medium transition-all duration-300 overflow-hidden no-underline hover:no-underline box-border ${isScrolled ? 'px-3 md:px-4 lg:px-6 h-8 md:h-9 lg:h-11 w-auto opacity-100 ml-0' : 'w-0 px-0 h-8 md:h-9 lg:h-11 opacity-0 ml-0 overflow-hidden'
+                                    className={`flex items-center justify-center gap-1 md:gap-1.5 border hover:border-[#47622A] rounded-full text-xs md:text-sm lg:text-base font-medium transition-all duration-300 overflow-hidden no-underline hover:no-underline box-border ${isScrolled ? 'px-4 md:px-6 lg:px-8 h-10 md:h-11 lg:h-12 w-auto opacity-100 ml-0' : 'w-0 px-0 h-10 md:h-11 lg:h-12 opacity-0 ml-0 overflow-hidden'
                                         }`}
                                 >
                                     <span className="whitespace-nowrap" style={{ color: isInternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
@@ -246,7 +246,7 @@ function NavbarPill({
                                     color: isExternalHovered ? '#47622A' : '#ffffff',
                                     borderColor: isExternalHovered ? '#47622A' : 'transparent'
                                 }}
-                                className="flex items-center justify-center border hover:border-[#47622A] rounded-full px-3 md:px-5 lg:px-7 h-8 md:h-9 lg:h-11 text-xs md:text-sm lg:text-base font-medium shadow-md transition-all no-underline hover:no-underline box-border"
+                                className="flex items-center justify-center border hover:border-[#47622A] rounded-full px-4 md:px-6 lg:px-8 h-10 md:h-11 lg:h-12 text-xs md:text-sm lg:text-base font-medium shadow-md transition-all no-underline hover:no-underline box-border"
                             >
                                 <span style={{ color: isExternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
                             </a>

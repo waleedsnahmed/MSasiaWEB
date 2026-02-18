@@ -10,7 +10,7 @@ function ExternalContact({ isHidden, isDark, toggleTheme }) {
             >
                 <a
                     href="#contact"
-                    className="bg-brand-btn-primary hover:bg-brand-btn-primary-hover text-white rounded-full pl-5 pr-2 py-2 shadow-lg shadow-brand-btn-primary/30 flex items-center gap-2 transition-transform hover:scale-105 active:scale-95"
+                    className="bg-brand-btn-primary hover:bg-brand-btn-primary-hover text-white rounded-full px-4 md:px-6 lg:px-8 h-10 md:h-11 lg:h-12 shadow-lg shadow-brand-btn-primary/30 flex items-center gap-2 transition-transform hover:scale-105 active:scale-95"
                 >
                     <span className="font-semibold text-sm" style={{ color: 'white' }}>Contact Us</span>
                     <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">

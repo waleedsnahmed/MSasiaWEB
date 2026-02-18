@@ -2833,6 +2833,8 @@ div.absolute button {
         display: flex !important;
         position: relative;
         left: 31px;
+        width: fit-content;
+        /* Make box smaller to fit text */
         /* Optical alignment with text */
     }
 
