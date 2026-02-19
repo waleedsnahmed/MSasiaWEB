@@ -119,10 +119,10 @@ function Footer() {
 
                 <div className="footer-bottom" style={{ borderTop: 'none', padding: 0, width: '100%' }}>
                     <div className="footer-container">
-                        <p className="footer-copyright">&copy; 2024 Ms Asia. All rights reserved.</p>
+                        <p className="footer-copyright">&copy; 2024 MS Asia. All rights reserved.</p>
                         <div className="footer-bottom-links">
                             <a href="/privacy" className="footer-legal-link">Privacy Policy</a>
-                            <a href="/terms" className="footer-legal-link">Terms of Service</a>
+                            <a href="/terms" className="footer-legal-link">Terms Of Services</a>
                         </div>
                     </div>
                 </div>
