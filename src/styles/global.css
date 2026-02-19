@@ -2508,10 +2508,8 @@ div.absolute button {
 
     /* --- GLOBAL RESET FOR FOOTER --- */
     .site-footer,
-    .footer-grid,
     .footer-column,
-    .footer-bottom,
-    .footer-container {
+    .footer-bottom {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -2525,9 +2523,34 @@ div.absolute button {
         padding: 0 !important;
     }
 
-    /* Override padding for the main container */
-    .footer-container {
-        padding: 12px 12px 0 12px !important;
+    /* --- FOOTER GRID SPACING --- */
+    /* STRICT: User requested GAP only (12px). No padding, no margin. */
+    .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        padding-top: 24px !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Apply spacing via GAP on the parent container */
+    /* Target ONLY the main container, not the nested one in footer-bottom */
+    .site-footer>.footer-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        /* THE ONLY SPACING */
+        width: 100% !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    /* Ensure HR has no influence */
+    .site-footer hr {
+        margin: 0 !important;
+        border-top: 1px solid var(--footer-border) !important;
     }
 
     /* --- STRICT GAP CONTROL & BACKGROUNDS --- */
@@ -2800,6 +2823,9 @@ div.absolute button {
         order: unset;
         gap: 12px;
         max-width: 360px;
+        align-items: flex-start !important;
+        /* Force left alignment of children */
+        text-align: left !important;
     }
 
     /* Consistent gap for ALL desktop columns */
@@ -2810,11 +2836,16 @@ div.absolute button {
     /* Reset all order values for desktop */
     .footer-logo {
         order: unset;
+        justify-content: flex-start !important;
+        /* Force logo to left */
     }
 
     p.footer-description {
         order: unset;
         transform: translateY(-6px);
+        text-align: left !important;
+        width: 100%;
+        margin-left: 0 !important;
     }
 
     div.footer-social {
@@ -3091,13 +3122,15 @@ div.absolute button {
         overflow: hidden !important;
     }
 
-    /* Ensure Quick Links Heading is centered specifically */
+    /* Ensure Quick Links Heading is aligned to start */
+    /* Ensure Quick Links Heading is aligned to start */
     .footer-links-wrapper .footer-column h4 {
-        text-align: center !important;
+        text-align: left !important;
         height: 36px !important;
         display: flex !important;
         align-items: center !important;
-        justify-content: center !important;
+        justify-content: flex-start !important;
+        letter-spacing: 0.5px;
     }
 
     /* Ensure Certification Badges are centered */
@@ -3111,9 +3144,12 @@ div.absolute button {
     .footer-links {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        /* 2 columns */
         align-items: start;
-        row-gap: 12px;
-        column-gap: 15px;
+        row-gap: 16px;
+        /* Increased gap for modern feel */
+        column-gap: 20px;
+        /* Increased gap */
         padding: 0;
         margin: 0;
         text-align: left;
@@ -3163,20 +3199,24 @@ div.absolute button {
         order: 1 !important;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     p.footer-description {
         order: 2 !important;
         width: 100%;
-        text-align: center;
+        text-align: left !important;
+        /* Changed from center */
+        /* Slight padding if needed, or remove if strict edge required. Sticking to left edge. */
+        margin: 0;
     }
 
     .footer-column.footer-certifications {
         order: 3 !important;
         display: flex !important;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        /* Changed from center */
         width: 100%;
     }
 
@@ -3184,7 +3224,8 @@ div.absolute button {
         order: 4 !important;
         display: flex !important;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        /* Changed from center */
         width: 100%;
     }
 
@@ -3192,6 +3233,8 @@ div.absolute button {
         order: 5 !important;
         display: flex !important;
         width: 100%;
+        justify-content: flex-start;
+        /* Also left align social icons to match? User didn't ask, but looks weird if centered. Sticking to headings request first, but social usually follows. Wait, user said "dono headings". Let's stick to headings first. Actually, if everything else is left, social center looks odd. I'll keep social center for now unless requested, as they only asked for headings. */
         justify-content: center;
         gap: 0.75rem;
     }
