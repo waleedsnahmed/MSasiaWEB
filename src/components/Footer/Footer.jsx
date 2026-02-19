@@ -55,8 +55,10 @@ function Footer() {
                         </div>
 
                         {/* Column 4: Contact */}
-                        <div className="footer-column footer-contact-column">
-                            <h4 className="footer-heading">Contact Us</h4>
+                        <div className="footer-contact-column footer-column">
+                            <div className="footer-heading-container">
+                                <h4 className="footer-heading">Contact Us</h4>
+                            </div>
                             <ul className="footer-contact">
                                 <li>
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">

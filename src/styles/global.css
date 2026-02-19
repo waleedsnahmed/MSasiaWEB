@@ -1711,21 +1711,22 @@ button.bg-brand-btn-primary:hover {
 .footer-cert-badge {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
     padding: 0;
-    /* Remove padding */
-    height: 36px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    color: var(--footer-link);
-    font-size: 0.8125rem;
-    font-weight: 500;
+    margin: 0;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .footer-cert-badge svg {
-    width: 18px;
-    height: 18px;
-    stroke: var(--footer-accent);
+    width: 14px;
+    height: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    stroke: currentColor;
 }
 
 /* Contact Info */
@@ -2731,19 +2732,33 @@ div.absolute button {
     .footer-cert-badge {
         display: flex;
         align-items: center;
-        padding: 8px;
+        padding: 0;
         font-size: 14px;
         white-space: nowrap;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 99px;
+        background: transparent;
+        border-radius: 0;
         margin: 0;
         flex: 0 1 auto;
         width: auto;
+        gap: 8px;
     }
 
     .footer-cert-badge svg {
         width: 14px;
         height: 14px;
+        color: rgba(255, 255, 255, 0.5);
+        /* Match other icons */
+    }
+
+    .footer-cert-name {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-cert-badge:hover .footer-cert-name,
+    .footer-cert-badge:hover svg {
+        color: #FFFFFF;
     }
 }
 
@@ -2828,11 +2843,18 @@ div.absolute button {
         gap: 0;
     }
 
+    .footer-contact-column .footer-heading-container {
+        display: flex;
+        position: relative;
+        left: 31px;
+        width: fit-content;
+    }
+
     .footer-column.footer-contact-column .footer-heading,
     .footer-contact-column h4 {
         display: flex !important;
         position: relative;
-        left: 31px;
+        left: 0;
         width: fit-content;
         /* Make box smaller to fit text */
         /* Optical alignment with text */
@@ -2842,6 +2864,16 @@ div.absolute button {
         display: flex !important;
         flex-direction: column;
         gap: 14px;
+    }
+
+    .footer-contact a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-contact a:hover {
+        color: #FFFFFF;
     }
 
     /* Reset footer-links to column layout for desktop */
