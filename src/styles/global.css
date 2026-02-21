@@ -442,6 +442,23 @@ button:focus {
     box-shadow: none;
 }
 
+/* Protect desktop navbar theme toggle button from global button transforms */
+header>button {
+    transform: translateY(-50%) !important;
+}
+
+header>button:hover {
+    transform: translateY(-50%) scale(1.05) !important;
+    background-color: inherit;
+    box-shadow: none;
+}
+
+header>button:active,
+header>button:focus {
+    transform: translateY(-50%) !important;
+    box-shadow: none;
+}
+
 /* ===== FORMS ===== */
 form {
     max-width: 600px;

@@ -80,7 +80,7 @@ function NavbarPill({
     return (
         <>
             {/* ===== DESKTOP NAVBAR ===== */}
-            <header className="hidden lg:block fixed top-0 left-0 w-full z-[1000000] [&_*]:!border-0 [&_*]:!shadow-none [&_*]:!outline-none [&_*]:!ring-0" style={{ backgroundColor: isDark ? '#000000' : 'transparent' }}>
+            <header className="hidden lg:block fixed top-0 left-0 w-full z-[1000000] [&_*]:!shadow-none [&_*]:!outline-none [&_*]:!ring-0">
 
                 {/* Inner Div */}
                 <div className="w-full max-w-[900px] xl:max-w-[1100px] mx-auto relative flex items-center justify-between px-4 lg:px-5 xl:px-6 h-[56px] lg:h-[60px] xl:h-[80px]">
@@ -107,12 +107,12 @@ function NavbarPill({
                     {/* CENTER: Navigation Pill */}
                     <nav
                         id="navbar-pill-desktop"
-                        className={`!px-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center rounded-full h-[56px] lg:h-[60px] xl:h-[72px] transition-all duration-500 ease-in-out ${isSearchExpanded
+                        className={`px-2 lg:px-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center rounded-full h-[56px] lg:h-[60px] xl:h-[72px] transition-all duration-500 ease-in-out ${isSearchExpanded
                             ? 'w-[400px] lg:w-[480px] xl:w-[650px] justify-between'
                             : 'w-auto gap-0.5 lg:gap-0.5 xl:gap-2'
                             }`}
                         style={{
-                            background: isScrolled ? (isDark ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.05)') : 'transparent',
+                            background: isScrolled ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
                             backdropFilter: isScrolled ? 'blur(30px) saturate(200%) contrast(1.1)' : 'none',
                             WebkitBackdropFilter: isScrolled ? 'blur(30px) saturate(200%) contrast(1.1)' : 'none',
                             border: 'none',
@@ -146,13 +146,13 @@ function NavbarPill({
                                             href={hasDropdown ? '#' : '/blog'}
                                             className={`flex items-center gap-0.5 p-[6px] lg:p-[8px] text-xs lg:text-[13px] xl:text-base font-medium rounded-full transition-all duration-300 whitespace-nowrap no-underline hover:no-underline bg-transparent hover:bg-transparent ${isActive
                                                 ? '!text-[#799851]'
-                                                : isDark ? 'text-white hover:text-[#799851]' : 'text-black hover:text-[#799851]'
+                                                : 'text-black hover:text-[#799851]'
                                                 }`}
                                             onMouseEnter={(e) => hasDropdown && handleMenuEnter(e, item)}
                                             onMouseLeave={handleMenuLeave}
                                             onClick={(e) => hasDropdown && e.preventDefault()}
                                         >
-                                            <h6 className="m-0 p-0 font-medium inline normal-case tracking-normal text-[16px]" style={{ color: 'inherit' }}>{item}</h6>
+                                            <h6 className="m-0 p-0 font-medium inline normal-case tracking-normal text-[16px]">{item}</h6>
                                             {hasDropdown && (
                                                 <svg
                                                     className={`w-3 h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 transition-transform duration-200 ${isActive ? 'rotate-180' : ''}`}
@@ -170,7 +170,7 @@ function NavbarPill({
                                 {/* SEARCH TRIGGER ICON */}
                                 <button
                                     onClick={toggleSearch}
-                                    className={`p-1 transition-colors outline-none !bg-transparent !border-none !shadow-none hover:!bg-transparent ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-500 hover:text-gray-800'}`}
+                                    className="p-1 text-gray-500 hover:text-gray-800 transition-colors outline-none !bg-transparent !border-none !shadow-none hover:!bg-transparent"
                                     style={{ transform: 'none' }}
                                     aria-label="Open Search"
                                 >
@@ -189,7 +189,7 @@ function NavbarPill({
                                         color: isInternalHovered ? '#47622A' : '#ffffff',
                                         borderColor: isInternalHovered ? '#47622A' : 'transparent'
                                     }}
-                                    className={`flex items-center justify-center gap-1 lg:gap-1.5 border hover:border-[#47622A] rounded-full text-xs lg:text-sm xl:text-base font-medium transition-all duration-300 no-underline hover:no-underline box-border px-4 lg:px-5 xl:px-8 h-10 lg:h-10 xl:h-12 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                                    className={`flex items-center justify-center gap-1 lg:gap-1.5 border-2 hover:border-[#47622A] rounded-full text-xs lg:text-sm xl:text-base font-medium transition-all duration-300 no-underline hover:no-underline box-border px-4 lg:px-5 xl:px-8 h-10 lg:h-10 xl:h-12 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
                                         }`}
                                 >
                                     <span className="whitespace-nowrap" style={{ color: isInternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
@@ -246,7 +246,7 @@ function NavbarPill({
                                     color: isExternalHovered ? '#47622A' : '#ffffff',
                                     borderColor: isExternalHovered ? '#47622A' : 'transparent'
                                 }}
-                                className="flex items-center justify-center border hover:border-[#47622A] rounded-full px-3 lg:px-5 xl:px-8 h-9 lg:h-10 xl:h-12 text-xs lg:text-[13px] xl:text-base font-medium shadow-md transition-all no-underline hover:no-underline box-border"
+                                className="flex items-center justify-center border-2 hover:border-[#47622A] rounded-full px-3 lg:px-5 xl:px-8 h-9 lg:h-10 xl:h-12 text-xs lg:text-[13px] xl:text-base font-medium shadow-md transition-all no-underline hover:no-underline box-border"
                             >
                                 <span style={{ color: isExternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
                             </a>
@@ -307,7 +307,7 @@ function NavbarPill({
                     minHeight: '72px',
                     height: '72px',
                     padding: '12px 12px',
-                    background: isDark ? '#000000' : '#ffffff',
+                    background: '#ffffff',
                     backdropFilter: 'none',
                     WebkitBackdropFilter: 'none',
                     boxShadow: isMobileScrolled ? '0 2px 8px rgba(0, 0, 0, 0.06)' : 'none',
@@ -344,7 +344,7 @@ function NavbarPill({
                                     height="24"
                                     viewBox="0 0 24 24"
                                     fill="none"
-                                    stroke={isDark ? '#ffffff' : '#000000'}
+                                    stroke="#000000"
                                     strokeWidth="2.5"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
@@ -361,7 +361,7 @@ function NavbarPill({
                                     height="24"
                                     viewBox="0 0 24 24"
                                     fill="none"
-                                    stroke={isDark ? '#ffffff' : '#000000'}
+                                    stroke="#000000"
                                     strokeWidth="2.5"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
@@ -388,7 +388,7 @@ function NavbarPill({
                                     alt="MS Asia Logo"
                                     className="w-9 h-9 min-[400px]:w-11 min-[400px]:h-11 flex-shrink-0 object-contain"
                                 />
-                                <span className={`font-bold text-lg min-[400px]:text-xl tracking-tight whitespace-nowrap ${isDark ? 'text-white' : 'text-[#111827]'}`}>MS Asia</span>
+                                <span className="font-bold text-lg min-[400px]:text-xl tracking-tight text-[#111827] whitespace-nowrap">MS Asia</span>
                             </a>
                         </div>
 
@@ -404,7 +404,7 @@ function NavbarPill({
                                     className="w-6 h-6"
                                     viewBox="0 0 24 24"
                                     fill="none"
-                                    stroke={isDark ? '#ffffff' : '#000000'}
+                                    stroke="#000000"
                                     strokeWidth="2.5"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
