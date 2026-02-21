@@ -180,7 +180,7 @@
 
 .mobile-drawer-content {
     position: fixed;
-    top: 70px;
+    top: 72px;
     /* Matches navbar minHeight to eliminate gap */
     /* Start below fixed navbar header */
     left: 0;

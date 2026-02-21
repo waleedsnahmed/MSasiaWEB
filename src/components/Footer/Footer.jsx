@@ -13,7 +13,7 @@ function Footer() {
                             />
                             <span className="footer-logo-text text-xl font-bold">MS Asia</span>
                         </div>
-                        <p className="footer-description">
+                        <p className="footer-description lg:text-[16px] !text-[14px]">
                             Leading pharmaceutical waste management solutions provider in Southeast Asia.<br />
                             Committed to environmental compliance and sustainable practices.
                         </p>

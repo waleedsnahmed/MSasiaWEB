@@ -2,15 +2,15 @@ import ThemeToggle from '../common/ThemeToggle'
 
 function ExternalContact({ isHidden, isDark, toggleTheme }) {
     return (
-        <div className="hidden md:flex fixed top-8 right-6 md:right-12 z-50 items-center gap-3 pointer-events-none">
+        <div className="hidden lg:flex fixed top-8 right-6 lg:right-12 z-50 items-center gap-3 pointer-events-none">
             {/* Contact Button */}
             <div
-                className={`external-element pointer-events-auto hidden md:block ${isHidden ? 'hidden-state' : ''
+                className={`external-element pointer-events-auto hidden lg:block ${isHidden ? 'hidden-state' : ''
                     }`}
             >
                 <a
                     href="#contact"
-                    className="bg-brand-btn-primary hover:bg-brand-btn-primary-hover text-white rounded-full px-4 md:px-6 lg:px-8 h-10 md:h-11 lg:h-12 shadow-lg shadow-brand-btn-primary/30 flex items-center gap-2 transition-transform hover:scale-105 active:scale-95"
+                    className="bg-brand-btn-primary hover:bg-brand-btn-primary-hover text-white rounded-full px-4 lg:px-6 xl:px-8 h-10 lg:h-11 xl:h-12 shadow-lg shadow-brand-btn-primary/30 flex items-center gap-2 transition-transform hover:scale-105 active:scale-95"
                 >
                     <span className="font-semibold text-sm" style={{ color: 'white' }}>Contact Us</span>
                     <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">

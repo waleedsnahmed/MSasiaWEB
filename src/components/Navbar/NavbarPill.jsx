@@ -80,10 +80,10 @@ function NavbarPill({
     return (
         <>
             {/* ===== DESKTOP NAVBAR ===== */}
-            <header className="hidden md:block fixed top-0 left-0 w-full z-[1000000] [&_*]:!border-0 [&_*]:!shadow-none [&_*]:!outline-none [&_*]:!ring-0">
+            <header className="hidden lg:block fixed top-0 left-0 w-full z-[1000000] [&_*]:!border-0 [&_*]:!shadow-none [&_*]:!outline-none [&_*]:!ring-0" style={{ backgroundColor: isDark ? '#000000' : 'transparent' }}>
 
                 {/* Inner Div */}
-                <div className="w-full max-w-[1100px] mx-auto relative flex items-center justify-between px-4 md:px-6 h-[56px] md:h-[64px] lg:h-[80px]">
+                <div className="w-full max-w-[900px] xl:max-w-[1100px] mx-auto relative flex items-center justify-between px-4 lg:px-5 xl:px-6 h-[56px] lg:h-[60px] xl:h-[80px]">
 
                     {/* LEFT: External Logo */}
                     <a
@@ -100,19 +100,19 @@ function NavbarPill({
                         <img
                             src="/images/ms-asia-logo.png"
                             alt="MS Asia Logo"
-                            className="w-8 h-8 md:w-18 md:h-18 lg:w-16 lg:h-16 flex-shrink-0 object-contain"
+                            className="w-8 h-8 lg:w-12 lg:h-12 xl:w-16 xl:h-16 flex-shrink-0 object-contain"
                         />
                     </a>
 
                     {/* CENTER: Navigation Pill */}
                     <nav
                         id="navbar-pill-desktop"
-                        className={`!px-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center rounded-full h-[56px] md:h-[60px] lg:h-[72px] transition-all duration-500 ease-in-out ${isSearchExpanded
-                            ? 'w-[400px] md:w-[500px] lg:w-[650px] justify-between'
-                            : 'w-auto gap-0.5 md:gap-1 lg:gap-2'
+                        className={`!px-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center rounded-full h-[56px] lg:h-[60px] xl:h-[72px] transition-all duration-500 ease-in-out ${isSearchExpanded
+                            ? 'w-[400px] lg:w-[480px] xl:w-[650px] justify-between'
+                            : 'w-auto gap-0.5 lg:gap-0.5 xl:gap-2'
                             }`}
                         style={{
-                            background: isScrolled ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
+                            background: isScrolled ? (isDark ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.05)') : 'transparent',
                             backdropFilter: isScrolled ? 'blur(30px) saturate(200%) contrast(1.1)' : 'none',
                             WebkitBackdropFilter: isScrolled ? 'blur(30px) saturate(200%) contrast(1.1)' : 'none',
                             border: 'none',
@@ -125,13 +125,13 @@ function NavbarPill({
                                 {/* Internal Logo on scroll */}
                                 <a
                                     href="/"
-                                    className={`flex items-center transition-all duration-300 overflow-hidden ${isScrolled ? 'w-7 md:w-8 lg:w-9 opacity-100 mr-1 md:mr-2' : 'w-0 opacity-0 mr-0'
-                                        }`}
+                                    className={`flex items-center transition-all duration-300 overflow-hidden ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                                        } w-7 lg:w-8 xl:w-9 mr-1 lg:mr-2`}
                                 >
                                     <img
                                         src="/images/ms-asia-logo.png"
                                         alt="MS Asia Logo"
-                                        className="w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 flex-shrink-0 object-contain"
+                                        className="w-7 h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 flex-shrink-0 object-contain"
                                     />
                                 </a>
 
@@ -144,18 +144,18 @@ function NavbarPill({
                                         <a
                                             key={item}
                                             href={hasDropdown ? '#' : '/blog'}
-                                            className={`flex items-center gap-0.5 md:gap-1 p-[8px] text-xs md:text-sm lg:text-base font-medium rounded-full transition-all duration-300 whitespace-nowrap no-underline hover:no-underline bg-transparent hover:bg-transparent ${isActive
+                                            className={`flex items-center gap-0.5 p-[6px] lg:p-[8px] text-xs lg:text-[13px] xl:text-base font-medium rounded-full transition-all duration-300 whitespace-nowrap no-underline hover:no-underline bg-transparent hover:bg-transparent ${isActive
                                                 ? '!text-[#799851]'
-                                                : 'text-black hover:text-[#799851]'
+                                                : isDark ? 'text-white hover:text-[#799851]' : 'text-black hover:text-[#799851]'
                                                 }`}
                                             onMouseEnter={(e) => hasDropdown && handleMenuEnter(e, item)}
                                             onMouseLeave={handleMenuLeave}
                                             onClick={(e) => hasDropdown && e.preventDefault()}
                                         >
-                                            <h6 className="m-0 p-0 font-medium inline normal-case tracking-normal text-[16px]">{item}</h6>
+                                            <h6 className="m-0 p-0 font-medium inline normal-case tracking-normal text-[16px]" style={{ color: 'inherit' }}>{item}</h6>
                                             {hasDropdown && (
                                                 <svg
-                                                    className={`w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 transition-transform duration-200 ${isActive ? 'rotate-180' : ''}`}
+                                                    className={`w-3 h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 transition-transform duration-200 ${isActive ? 'rotate-180' : ''}`}
                                                     fill="none"
                                                     stroke="currentColor"
                                                     viewBox="0 0 24 24"
@@ -170,11 +170,11 @@ function NavbarPill({
                                 {/* SEARCH TRIGGER ICON */}
                                 <button
                                     onClick={toggleSearch}
-                                    className="p-1 text-gray-500 hover:text-gray-800 transition-colors outline-none !bg-transparent !border-none !shadow-none hover:!bg-transparent"
+                                    className={`p-1 transition-colors outline-none !bg-transparent !border-none !shadow-none hover:!bg-transparent ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-500 hover:text-gray-800'}`}
                                     style={{ transform: 'none' }}
                                     aria-label="Open Search"
                                 >
-                                    <svg className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ transform: 'none' }}>
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" style={{ transform: 'none' }}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                 </button>
@@ -189,7 +189,7 @@ function NavbarPill({
                                         color: isInternalHovered ? '#47622A' : '#ffffff',
                                         borderColor: isInternalHovered ? '#47622A' : 'transparent'
                                     }}
-                                    className={`flex items-center justify-center gap-1 md:gap-1.5 border hover:border-[#47622A] rounded-full text-xs md:text-sm lg:text-base font-medium transition-all duration-300 overflow-hidden no-underline hover:no-underline box-border ${isScrolled ? 'px-4 md:px-6 lg:px-8 h-10 md:h-11 lg:h-12 w-auto opacity-100 ml-0' : 'w-0 px-0 h-10 md:h-11 lg:h-12 opacity-0 ml-0 overflow-hidden'
+                                    className={`flex items-center justify-center gap-1 lg:gap-1.5 border hover:border-[#47622A] rounded-full text-xs lg:text-sm xl:text-base font-medium transition-all duration-300 no-underline hover:no-underline box-border px-4 lg:px-5 xl:px-8 h-10 lg:h-10 xl:h-12 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
                                         }`}
                                 >
                                     <span className="whitespace-nowrap" style={{ color: isInternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
@@ -199,8 +199,8 @@ function NavbarPill({
                             /* === IN-PLACE SEARCH UI === */
                             <div className="w-full flex items-center justify-between h-full animate-fadeIn">
                                 {/* LEFT: Search Icon */}
-                                <div className="flex h-10 w-10 lg:h-12 lg:w-12 flex-none items-center justify-center rounded-full bg-transparent text-gray-500 ml-1">
-                                    <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                <div className="flex h-10 w-10 xl:h-12 xl:w-12 flex-none items-center justify-center rounded-full bg-transparent text-gray-500 ml-1">
+                                    <svg className="w-6 h-6 xl:w-7 xl:h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                 </div>
@@ -210,7 +210,7 @@ function NavbarPill({
                                     <input
                                         type="text"
                                         placeholder="Search..."
-                                        className="w-full bg-transparent text-lg lg:text-xl text-left text-gray-700 outline-none border-none ring-0 focus:ring-0 placeholder:text-gray-400 h-full !m-0 !mb-0 !p-0 !border-0"
+                                        className="w-full bg-transparent text-lg xl:text-xl text-left text-gray-700 outline-none border-none ring-0 focus:ring-0 placeholder:text-gray-400 h-full !m-0 !mb-0 !p-0 !border-0"
                                         autoFocus
                                     />
                                 </div>
@@ -219,9 +219,9 @@ function NavbarPill({
                                 <button
                                     onClick={toggleSearch}
                                     style={{ backgroundColor: 'transparent', boxShadow: 'none', border: 'none' }}
-                                    className="flex h-10 w-10 lg:h-12 lg:w-12 flex-none items-center justify-center rounded-full !bg-transparent !shadow-none !border-none !outline-none !p-0 hover:!transform-none text-gray-400 hover:text-gray-600 transition-colors mr-1"
+                                    className="flex h-10 w-10 xl:h-12 xl:w-12 flex-none items-center justify-center rounded-full !bg-transparent !shadow-none !border-none !outline-none !p-0 hover:!transform-none text-gray-400 hover:text-gray-600 transition-colors mr-1"
                                 >
-                                    <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                    <svg className="w-6 h-6 xl:w-7 xl:h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </button>
@@ -230,7 +230,7 @@ function NavbarPill({
                     </nav>
 
                     {/* RIGHT: External Contact Button & Theme Toggle */}
-                    <div className="flex items-center gap-2 md:gap-3 lg:gap-5">
+                    <div className="flex items-center gap-2 lg:gap-3 xl:gap-5">
                         {/* External Contact (Fades on Scroll) */}
                         <div className={`transition-all duration-300 ${isScrolled
                             ? 'opacity-0 translate-x-4 pointer-events-none'
@@ -246,7 +246,7 @@ function NavbarPill({
                                     color: isExternalHovered ? '#47622A' : '#ffffff',
                                     borderColor: isExternalHovered ? '#47622A' : 'transparent'
                                 }}
-                                className="flex items-center justify-center border hover:border-[#47622A] rounded-full px-4 md:px-6 lg:px-8 h-10 md:h-11 lg:h-12 text-xs md:text-sm lg:text-base font-medium shadow-md transition-all no-underline hover:no-underline box-border"
+                                className="flex items-center justify-center border hover:border-[#47622A] rounded-full px-3 lg:px-5 xl:px-8 h-9 lg:h-10 xl:h-12 text-xs lg:text-[13px] xl:text-base font-medium shadow-md transition-all no-underline hover:no-underline box-border"
                             >
                                 <span style={{ color: isExternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
                             </a>
@@ -257,15 +257,15 @@ function NavbarPill({
                 {/* Theme Toggle - stays at screen edge */}
                 <button
                     onClick={toggleTheme}
-                    className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-8 h-8 md:w-9 md:h-9 lg:w-11 lg:h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group p-0"
+                    className="absolute right-4 lg:right-5 xl:right-6 top-1/2 -translate-y-1/2 w-8 h-8 lg:w-8 lg:h-8 xl:w-11 xl:h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group p-0"
                     aria-label="Toggle Dark Mode"
                 >
                     {isDark ? (
-                        <svg className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-yellow-500 group-hover:rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 text-yellow-500 group-hover:rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg>
                     ) : (
-                        <svg className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-700 dark:text-gray-200 group-hover:-rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 text-gray-700 dark:text-gray-200 group-hover:-rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     )}
@@ -295,7 +295,7 @@ function NavbarPill({
             {/* ===== MOBILE NAVBAR - FIXED AT TOP ===== */}
             <nav
                 id="navbar-pill-mobile"
-                className="md:hidden fixed z-[100000] pointer-events-auto flex items-center justify-center gap-2 left-0 rounded-none"
+                className="lg:hidden fixed z-[100000] pointer-events-auto flex items-center justify-center gap-2 left-0 rounded-none"
                 style={{
                     top: '0',
                     left: '0',
@@ -307,7 +307,7 @@ function NavbarPill({
                     minHeight: '72px',
                     height: '72px',
                     padding: '12px 12px',
-                    background: '#ffffff',
+                    background: isDark ? '#000000' : '#ffffff',
                     backdropFilter: 'none',
                     WebkitBackdropFilter: 'none',
                     boxShadow: isMobileScrolled ? '0 2px 8px rgba(0, 0, 0, 0.06)' : 'none',
@@ -324,7 +324,7 @@ function NavbarPill({
                         {/* LEFT: Menu Button (Hamburger / X) */}
                         <button
                             onClick={toggleMobileMenu}
-                            className="flex items-center justify-center w-11 h-11 rounded-full p-0 flex-shrink-0 z-20 relative overflow-hidden"
+                            className="flex items-center justify-center w-10 h-10 min-[400px]:w-11 min-[400px]:h-11 rounded-full p-0 flex-shrink-0 z-20 relative overflow-hidden"
                             style={{
                                 WebkitAppearance: 'none',
                                 appearance: 'none',
@@ -344,7 +344,7 @@ function NavbarPill({
                                     height="24"
                                     viewBox="0 0 24 24"
                                     fill="none"
-                                    stroke="#000000"
+                                    stroke={isDark ? '#ffffff' : '#000000'}
                                     strokeWidth="2.5"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
@@ -361,7 +361,7 @@ function NavbarPill({
                                     height="24"
                                     viewBox="0 0 24 24"
                                     fill="none"
-                                    stroke="#000000"
+                                    stroke={isDark ? '#ffffff' : '#000000'}
                                     strokeWidth="2.5"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
@@ -386,9 +386,9 @@ function NavbarPill({
                                 <img
                                     src="/images/ms-asia-logo.png"
                                     alt="MS Asia Logo"
-                                    className="w-11 h-11 flex-shrink-0 object-contain"
+                                    className="w-9 h-9 min-[400px]:w-11 min-[400px]:h-11 flex-shrink-0 object-contain"
                                 />
-                                <span className="font-bold text-xl tracking-tight text-[#111827] whitespace-nowrap">MS Asia</span>
+                                <span className={`font-bold text-lg min-[400px]:text-xl tracking-tight whitespace-nowrap ${isDark ? 'text-white' : 'text-[#111827]'}`}>MS Asia</span>
                             </a>
                         </div>
 
@@ -397,14 +397,14 @@ function NavbarPill({
                             {/* Search Trigger */}
                             <button
                                 onClick={toggleSearch}
-                                className="flex items-center justify-center w-11 h-11 rounded-full bg-transparent p-0 active:scale-90 border-none outline-none shadow-none"
+                                className="flex items-center justify-center w-10 h-10 min-[400px]:w-11 min-[400px]:h-11 rounded-full bg-transparent p-0 active:scale-90 border-none outline-none shadow-none"
                                 aria-label="Toggle Search"
                             >
                                 <svg
                                     className="w-6 h-6"
                                     viewBox="0 0 24 24"
                                     fill="none"
-                                    stroke="#000000"
+                                    stroke={isDark ? '#ffffff' : '#000000'}
                                     strokeWidth="2.5"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
@@ -417,7 +417,7 @@ function NavbarPill({
                             {/* Theme Toggle */}
                             <button
                                 onClick={toggleTheme}
-                                className="flex items-center justify-center w-11 h-11 rounded-full bg-transparent p-0 active:scale-90 border-none outline-none shadow-none"
+                                className="flex items-center justify-center w-10 h-10 min-[400px]:w-11 min-[400px]:h-11 rounded-full bg-transparent p-0 active:scale-90 border-none outline-none shadow-none"
                                 aria-label="Toggle Dark Mode"
                             >
                                 {isDark ? (
@@ -468,7 +468,7 @@ function NavbarPill({
                     />
 
                     {/* Content Drawer - Slides in from left, starts BELOW fixed header */}
-                    <div className="mobile-drawer-content animate-slideInLeft" style={{ top: '70px' }}>
+                    <div className="mobile-drawer-content animate-slideInLeft" style={{ top: '72px' }}>
                         {/* Mobile Content - NO header here, header stays in place above */}
                         <div className="flex-1 p-[12px] overflow-y-auto custom-scrollbar">
                             <div className="space-y-1">
@@ -586,9 +586,9 @@ function NavbarPill({
                                     </Link>
                                 </div>
                                 <div className="flex items-center justify-center gap-4 text-[12px] text-gray-400 font-medium py-[12px]">
-                                    <a href="/privacy-policy" className="hover:text-[#47622A] transition-colors">Privacy</a>
+                                    <a href="/privacy" className="hover:text-[#47622A] transition-colors">Privacy</a>
                                     <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-                                    <a href="/terms-of-service" className="hover:text-[#47622A] transition-colors">Terms</a>
+                                    <a href="/terms" className="hover:text-[#47622A] transition-colors">Terms</a>
                                     <span className="w-1 h-1 rounded-full bg-gray-300"></span>
                                     <a href="#" className="hover:text-[#47622A] transition-colors">Support</a>
                                 </div>

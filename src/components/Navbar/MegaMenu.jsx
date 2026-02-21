@@ -133,7 +133,6 @@ const MegaMenu = ({ activeMenu, isVisible, onMouseEnter, onMouseLeave, onClose }
 
                         {/* COL 1: SIDEBAR (Categories) */}
                         <div className="mm-sidebar">
-                            <h6 className="mm-section-title text-center">Categories</h6>
                             <ul className="mm-category-list">
                                 {menuData.columns.map((column, index) => (
                                     <li
