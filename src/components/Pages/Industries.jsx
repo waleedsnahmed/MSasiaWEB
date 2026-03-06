@@ -24,13 +24,16 @@ function Industries() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {data.columns.map((category, idx) => (
                     <div key={idx} className="mb-16">
-                        <h2 className="text-2xl font-bold text-[#47622A] mb-8 border-b border-gray-200 dark:border-gray-800 pb-4 inline-block">
-                            {category.title}
-                        </h2>
+                        <div className="flex items-center gap-4 mb-8">
+                            <h2 className="text-2xl font-bold text-[#47622A] whitespace-nowrap">
+                                {category.title}
+                            </h2>
+                            <div className="h-px bg-gray-200 dark:bg-gray-800 flex-1"></div>
+                        </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {category.items.map((item, i) => (
-                                <div key={i} className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all">
+                                <div key={i} className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-[#47622A]/30 hover:-translate-y-1 transition-all duration-300">
                                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                                         {item.label}
                                     </h3>

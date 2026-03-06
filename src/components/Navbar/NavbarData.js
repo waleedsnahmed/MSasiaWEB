@@ -59,8 +59,10 @@ export const NAV_MENU_DATA = {
                 description: "Hazardous and medical waste disposal",
                 items: [
                     { label: "Biohazardous Medical Waste Disposal", desc: genericDesc, image: "/images/scene_healthcare.png" },
+                    { label: "Industrial & Field Services", desc: "On-site industrial waste collection and field services for complex operational environments.", image: "/images/scene_industrial.png" },
                     { label: "Pharmaceutical Waste", desc: genericDesc, image: "/images/scene_pharma.png" },
-                    { label: "Regulated Medical Waste Services", desc: genericDesc, image: "/images/scene_healthcare.png" }
+                    { label: "Regulated Medical Waste Services", desc: genericDesc, image: "/images/scene_healthcare.png" },
+                    { label: "Sharps Disposal Service", desc: "Safe collection and disposal of sharps, needles, and lancets for healthcare and non-healthcare settings.", image: "/images/scene_healthcare.png" }
                 ]
             }
         ]
@@ -84,8 +86,12 @@ export const NAV_MENU_DATA = {
                 items: [
                     { label: "Airports & Seaports", desc: "Waste management solutions for transportation hubs and logistics centers.", image: genericDesc },
                     { label: "Chemical & Manufacturing", desc: "Safe handling of industrial chemicals and manufacturing byproducts.", image: genericDesc },
+                    { label: "Engineering & Consulting", desc: "Waste management support for engineering firms and consulting practices.", image: genericDesc },
+                    { label: "General Manufacturing", desc: "Comprehensive waste solutions for general manufacturing facilities.", image: genericDesc },
                     { label: "Government & Military", desc: "Compliant waste disposal services for government agencies and defense facilities.", image: genericDesc },
                     { label: "Railroad & Transportation", desc: "Specialized waste services for rail and transportation infrastructure.", image: genericDesc },
+                    { label: "Refinery", desc: "Specialized waste and byproduct management for oil refineries and petrochemical plants.", image: genericDesc },
+                    { label: "Steel & Primary Metals", desc: "Industrial waste solutions for steel mills and primary metals production.", image: genericDesc },
                     { label: "Utilities & Energy", desc: "Waste management for power generation and utility companies.", image: genericDesc }
                 ]
             },

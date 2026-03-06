@@ -52,14 +52,17 @@ function Blog() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {posts.map(post => (
-                        <div key={post.id} className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-800 flex flex-col h-full">
-                            {/* Placeholder Image */}
-                            <div className={`h-48 w-full ${post.image} flex items-center justify-center`}>
-                                <span className="text-gray-400 font-medium">Image Placeholder</span>
+                        <div key={post.id} className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 flex flex-col h-full transform hover:-translate-y-1">
+                            {/* Gradient Image Placeholder */}
+                            <div className={`h-48 w-full ${post.image} flex items-center justify-center relative overflow-hidden`}>
+                                <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent"></div>
+                                <svg className="w-12 h-12 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                </svg>
                             </div>
 
                             <div className="p-6 flex-1 flex flex-col">
-                                <div className="text-sm text-[#47622A] font-semibold mb-2">{post.category}</div>
+                                <span className="inline-block px-3 py-1 rounded-full bg-[#47622A]/10 text-[#47622A] text-xs font-bold tracking-wider uppercase mb-3 w-fit">{post.category}</span>
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-[#47622A] cursor-pointer transition-colors">
                                     {post.title}
                                 </h3>
@@ -68,8 +71,8 @@ function Blog() {
                                 </p>
                                 <div className="mt-auto flex justify-between items-center pt-4 border-t border-gray-100 dark:border-gray-800">
                                     <span className="text-xs text-gray-500">{post.date}</span>
-                                    <span className="text-sm font-medium text-gray-900 dark:text-white group cursor-pointer">
-                                        Read More <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                                    <span className="text-sm font-medium text-[#47622A] cursor-pointer hover:underline">
+                                        Read More →
                                     </span>
                                 </div>
                             </div>

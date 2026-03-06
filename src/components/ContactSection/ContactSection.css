@@ -61,7 +61,7 @@
     align-items: center;
     gap: 8px;
     width: 100%;
-    max-width: 480px;
+    max-width: 540px;
 }
 
 .contact-label::before {
@@ -80,7 +80,7 @@
     line-height: 1.1;
     margin-left: -2px;
     width: 100%;
-    max-width: 480px;
+    max-width: 540px;
 }
 
 /* Form Styles */
@@ -91,13 +91,13 @@
     flex-direction: column;
     gap: 20px;
     padding: 40px;
-    background: rgba(240, 253, 244, 0.6);
-    /* Glass effect with requested base color */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(240, 253, 244, 0.75);
+    /* Glass effect */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(71, 98, 42, 0.12);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
 }
 
 .contact-row {
@@ -208,8 +208,7 @@
     }
 
     .contact-img {
-        /* Keep original size or slightly responsive if needed */
-        /* width: 260px; */
+        width: 240px;
     }
 }
 
@@ -295,4 +294,10 @@
 
 .dark .contact-label::before {
     background-color: #799851;
+}
+
+.dark .contact-form {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(121, 152, 81, 0.2);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4);
 }

@@ -8,7 +8,7 @@ function About() {
     return (
         <div className="pt-24 min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300 font-sans">
             {/* Hero Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                 <div className="text-center max-w-4xl mx-auto">
                     <span className="inline-block py-1 px-3 rounded-full bg-[#47622A]/10 text-[#47622A] font-bold text-xs tracking-wider uppercase mb-6">
                         Who We Are
@@ -25,7 +25,7 @@ function About() {
             </div>
 
             {/* Stats / Values Section */}
-            <div className="bg-gray-50 dark:bg-gray-900 py-20 px-4 transition-colors duration-300 border-t border-b border-gray-100 dark:border-gray-800">
+            <div className="bg-gray-50 dark:bg-gray-900 py-16 px-4 transition-colors duration-300 border-t border-b border-gray-100 dark:border-gray-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         {/* Card 1 */}
@@ -71,7 +71,7 @@ function About() {
             </div>
 
             {/* CTA Section */}
-            <div className="py-24 text-center px-4 bg-white dark:bg-gray-950">
+            <div className="py-16 text-center px-4 bg-white dark:bg-gray-950">
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Ready to make a difference?</h2>
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-10">
@@ -79,7 +79,7 @@ function About() {
                     </p>
                     <a
                         href="/#contact"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-[#47622A] text-white font-semibold rounded-full hover:bg-[#3d5423] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                        className="inline-flex items-center justify-center px-8 py-4 bg-[#47622A] text-white font-semibold rounded-xl hover:bg-[#3d5423] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                     >
                         Get in Touch
                     </a>

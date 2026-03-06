@@ -80,7 +80,7 @@ function NavbarPill({
     return (
         <>
             {/* ===== DESKTOP NAVBAR ===== */}
-            <header className="hidden lg:block fixed top-0 left-0 w-full z-[1000000] [&_*]:!shadow-none [&_*]:!outline-none [&_*]:!ring-0">
+            <header className="hidden lg:block fixed top-0 left-0 w-full z-[1000000]">
 
                 {/* Inner Div */}
                 <div className="w-full max-w-[900px] xl:max-w-[1100px] mx-auto relative flex items-center justify-between px-4 lg:px-5 xl:px-6 h-[56px] lg:h-[60px] xl:h-[80px]">
@@ -112,12 +112,12 @@ function NavbarPill({
                             : 'w-auto gap-0.5 lg:gap-0.5 xl:gap-2'
                             }`}
                         style={{
-                            background: isScrolled ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
-                            backdropFilter: isScrolled ? 'blur(30px) saturate(200%) contrast(1.1)' : 'none',
-                            WebkitBackdropFilter: isScrolled ? 'blur(30px) saturate(200%) contrast(1.1)' : 'none',
+                            background: isScrolled ? 'rgba(255, 255, 255, 0.4)' : 'transparent',
+                            backdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'none',
+                            WebkitBackdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'none',
                             border: 'none',
                             outline: 'none',
-                            boxShadow: isScrolled ? '0 4px 30px rgba(0, 0, 0, 0.02)' : 'none'
+                            boxShadow: isScrolled ? '0 8px 32px -8px rgba(0, 0, 0, 0.05)' : 'none'
                         }}
                     >
                         {!isSearchExpanded ? (
@@ -144,15 +144,15 @@ function NavbarPill({
                                         <a
                                             key={item}
                                             href={hasDropdown ? '#' : '/blog'}
-                                            className={`flex items-center gap-0.5 p-[6px] lg:p-[8px] text-xs lg:text-[13px] xl:text-base font-medium rounded-full transition-all duration-300 whitespace-nowrap no-underline hover:no-underline bg-transparent hover:bg-transparent ${isActive
-                                                ? '!text-[#799851]'
-                                                : 'text-black hover:text-[#799851]'
+                                            className={`flex items-center gap-1 px-4 py-2 lg:px-5 lg:py-2.5 text-[14px] xl:text-[15px] font-medium rounded-full transition-all duration-300 whitespace-nowrap no-underline hover:no-underline bg-transparent hover:bg-black/5 dark:hover:bg-white/5 ${isActive
+                                                ? '!text-[#47622A] dark:!text-[#799851] bg-black/5 dark:bg-white/5'
+                                                : 'text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white'
                                                 }`}
                                             onMouseEnter={(e) => hasDropdown && handleMenuEnter(e, item)}
                                             onMouseLeave={handleMenuLeave}
                                             onClick={(e) => hasDropdown && e.preventDefault()}
                                         >
-                                            <h6 className="m-0 p-0 font-medium inline normal-case tracking-normal text-[16px]">{item}</h6>
+                                            <span className="m-0 p-0 tracking-tight font-medium inline normal-case">{item}</span>
                                             {hasDropdown && (
                                                 <svg
                                                     className={`w-3 h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 transition-transform duration-200 ${isActive ? 'rotate-180' : ''}`}
@@ -184,15 +184,10 @@ function NavbarPill({
                                     href="/contact"
                                     onMouseEnter={() => setIsInternalHovered(true)}
                                     onMouseLeave={() => setIsInternalHovered(false)}
-                                    style={{
-                                        backgroundColor: isInternalHovered ? '#ffffff' : '#47622A',
-                                        color: isInternalHovered ? '#47622A' : '#ffffff',
-                                        borderColor: isInternalHovered ? '#47622A' : 'transparent'
-                                    }}
-                                    className={`flex items-center justify-center gap-1 lg:gap-1.5 border-2 hover:border-[#47622A] rounded-full text-xs lg:text-sm xl:text-base font-medium transition-all duration-300 no-underline hover:no-underline box-border px-4 lg:px-5 xl:px-8 h-10 lg:h-10 xl:h-12 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                                        }`}
+                                    className={`flex items-center justify-center gap-1 lg:gap-1.5 rounded-full text-[14px] xl:text-[15px] font-medium transition-all duration-300 no-underline hover:no-underline box-border px-5 xl:px-8 h-[38px] xl:h-[42px] ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                                        } ${isInternalHovered ? 'bg-transparent text-[#47622A] ring-1 ring-inset ring-[#47622A] !shadow-none' : 'bg-[#47622A] text-white ring-1 ring-inset ring-transparent'}`}
                                 >
-                                    <span className="whitespace-nowrap" style={{ color: isInternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
+                                    <span className="whitespace-nowrap font-medium tracking-tight">Contact Us</span>
                                 </a>
                             </>
                         ) : (
@@ -241,14 +236,9 @@ function NavbarPill({
                                 id="external-contact"
                                 onMouseEnter={() => setIsExternalHovered(true)}
                                 onMouseLeave={() => setIsExternalHovered(false)}
-                                style={{
-                                    backgroundColor: isExternalHovered ? '#ffffff' : '#47622A',
-                                    color: isExternalHovered ? '#47622A' : '#ffffff',
-                                    borderColor: isExternalHovered ? '#47622A' : 'transparent'
-                                }}
-                                className="flex items-center justify-center border-2 hover:border-[#47622A] rounded-full px-3 lg:px-5 xl:px-8 h-9 lg:h-10 xl:h-12 text-xs lg:text-[13px] xl:text-base font-medium shadow-md transition-all no-underline hover:no-underline box-border"
+                                className={`flex items-center justify-center rounded-full px-5 xl:px-8 h-[38px] xl:h-[42px] text-[14px] xl:text-[15px] font-medium transition-all duration-300 no-underline hover:no-underline box-border ${isExternalHovered ? 'bg-transparent text-[#47622A] ring-1 ring-inset ring-[#47622A] !shadow-none' : 'bg-[#47622A] text-white shadow-[0_4px_12px_rgba(71,98,42,0.2)] ring-1 ring-inset ring-transparent'}`}
                             >
-                                <span style={{ color: isExternalHovered ? '#47622A' : '#ffffff' }}>Contact Us</span>
+                                <span className="font-medium tracking-tight">Contact Us</span>
                             </a>
                         </div>
                     </div>

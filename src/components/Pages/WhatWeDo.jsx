@@ -43,7 +43,7 @@ function WhatWeDo() {
                                 <Link
                                     to={`/services/${getSlug(item.label)}`}
                                     key={i}
-                                    className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-white dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 shadow-sm hover:shadow-lg transition-all group"
+                                    className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-white dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 group transform hover:-translate-y-1"
                                 >
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="w-10 h-10 bg-[#47622A]/10 text-[#47622A] rounded-lg flex items-center justify-center shrink-0">

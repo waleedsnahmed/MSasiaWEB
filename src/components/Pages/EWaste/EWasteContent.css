@@ -1,0 +1,453 @@
+/* =============================================
+   E-WASTE RECYCLING PAGE — Component Styles
+   File: EWasteContent.css
+   ============================================= */
+
+/* --- Page Wrapper --- */
+.ewaste-page {
+    /* Full-width wrapper for entire E-Waste content */
+}
+
+/* =============================================
+   1. HERO SECTION (Left-Aligned)
+   ============================================= */
+.ewaste-hero {
+    /* Top hero section with left-aligned layout */
+}
+
+.ewaste-hero__overlay {
+    /* Gradient overlay behind hero content */
+}
+
+.ewaste-hero__container {
+    /* Max-width centered container */
+}
+
+.ewaste-hero__content {
+    /* Text-left content wrapper */
+}
+
+/* Pill Badge */
+.ewaste-hero__badge {
+    /* Small pill-shaped badge at top */
+}
+
+.ewaste-hero__badge-dot {
+    /* Pulsing green dot inside badge */
+}
+
+.ewaste-hero__badge-text {
+    /* "ELECTRONICS RECYCLING" label */
+}
+
+/* Heading */
+.ewaste-hero__heading {
+    /* Main two-tone heading */
+}
+
+.ewaste-hero__heading-accent {
+    /* Gradient-colored portion of heading */
+}
+
+/* Description */
+.ewaste-hero__description {
+    /* Paragraph below heading */
+}
+
+/* CTA Buttons */
+.ewaste-hero__actions {
+    /* Button row container */
+}
+
+.ewaste-hero__btn-primary {
+    /* "Explore Our Process" button */
+}
+
+.ewaste-hero__btn-secondary {
+    /* "Contact Us" outline button */
+}
+
+/* =============================================
+   2. INTRO TEXT SECTION
+   ============================================= */
+.ewaste-intro {
+    /* Intro section wrapper */
+}
+
+.ewaste-intro__container {
+    /* Max-width centered container */
+}
+
+.ewaste-intro__content {
+    /* Text wrapper (centered, max-w-4xl) */
+}
+
+.ewaste-intro__text {
+    /* Paragraph text */
+}
+
+/* =============================================
+   3. WHY CHOOSE US SECTION
+   ============================================= */
+.ewaste-why {
+    /* "Why Proper Electronics Management" section */
+}
+
+.ewaste-why__container {
+    /* Max-width centered container */
+}
+
+.ewaste-why__header {
+    /* Section header wrapper */
+}
+
+.ewaste-why__label {
+    /* "Why Choose Us" uppercase label */
+}
+
+.ewaste-why__heading {
+    /* Section heading */
+}
+
+.ewaste-why__heading-accent {
+    /* Gradient text part of heading */
+}
+
+.ewaste-why__subtitle {
+    /* Subtitle paragraph */
+}
+
+/* Why Points Grid */
+.ewaste-why__grid {
+    /* 2-column grid of why-point cards */
+}
+
+.ewaste-why__card {
+    /* Individual why-point card */
+}
+
+.ewaste-why__card-icon-wrap {
+    /* Icon container inside card */
+}
+
+.ewaste-why__card-title {
+    /* Card title */
+}
+
+.ewaste-why__card-description {
+    /* Card description text */
+}
+
+/* CTA Banner */
+.ewaste-why__cta-wrapper {
+    /* Wrapper for the green CTA banner */
+}
+
+.ewaste-why__cta-banner {
+    /* Green gradient CTA banner */
+}
+
+.ewaste-why__cta-glow {
+    /* Decorative glow blob */
+}
+
+.ewaste-why__cta-text {
+    /* Banner paragraph text */
+}
+
+.ewaste-why__cta-strong {
+    /* Bold headline inside banner */
+}
+
+/* =============================================
+   4. CERTIFIED PROCESS SECTION
+   ============================================= */
+.ewaste-process {
+    /* Process section wrapper */
+}
+
+.ewaste-process__container {
+    /* Max-width centered container */
+}
+
+.ewaste-process__header {
+    /* Section header wrapper */
+}
+
+.ewaste-process__label {
+    /* "Our Expertise" uppercase label */
+}
+
+.ewaste-process__heading {
+    /* Section heading */
+}
+
+.ewaste-process__heading-accent {
+    /* Gradient text part */
+}
+
+.ewaste-process__subtitle {
+    /* Subtitle paragraph */
+}
+
+/* Process Steps List */
+.ewaste-process__list {
+    /* Vertical stack of step cards */
+}
+
+.ewaste-process__step {
+    /* Individual process step card (alternating layout) */
+}
+
+.ewaste-process__step-icon-wrap {
+    /* Wrapper for the icon column */
+}
+
+.ewaste-process__step-icon {
+    /* Green gradient icon box */
+}
+
+.ewaste-process__step-body {
+    /* Text content area of the step */
+}
+
+.ewaste-process__step-phase {
+    /* "Phase X" label */
+}
+
+.ewaste-process__step-title {
+    /* Step title */
+}
+
+.ewaste-process__step-description {
+    /* Step description text */
+}
+
+/* =============================================
+   5. CATEGORIES TABLE SECTION
+   ============================================= */
+.ewaste-categories {
+    /* Categories table section wrapper */
+}
+
+.ewaste-categories__container {
+    /* Max-width centered container */
+}
+
+.ewaste-categories__header {
+    /* Section header wrapper */
+}
+
+.ewaste-categories__label {
+    /* "Capabilities" uppercase label */
+}
+
+.ewaste-categories__heading {
+    /* Section heading */
+}
+
+.ewaste-categories__heading-accent {
+    /* Gradient text part */
+}
+
+.ewaste-categories__subtitle {
+    /* Subtitle paragraph */
+}
+
+/* Table */
+.ewaste-categories__table-wrapper {
+    /* Scroll container for the table */
+}
+
+.ewaste-categories__table-outer {
+    /* Bordered, rounded outer shell */
+}
+
+.ewaste-categories__table {
+    /* <table> element */
+}
+
+.ewaste-categories__thead {
+    /* Table header row */
+}
+
+.ewaste-categories__th {
+    /* Table header cell */
+}
+
+.ewaste-categories__tbody {
+    /* Table body */
+}
+
+.ewaste-categories__row {
+    /* Table data row */
+}
+
+.ewaste-categories__td-category {
+    /* Category name cell */
+}
+
+.ewaste-categories__td-examples {
+    /* Examples cell */
+}
+
+.ewaste-categories__td-handling {
+    /* Handling cell */
+}
+
+/* =============================================
+   6. INDUSTRIES / SECTORS SECTION
+   ============================================= */
+.ewaste-industries {
+    /* Industries section wrapper */
+}
+
+.ewaste-industries__container {
+    /* Max-width centered container */
+}
+
+.ewaste-industries__header {
+    /* Section header wrapper */
+}
+
+.ewaste-industries__label {
+    /* "Sectors" uppercase label */
+}
+
+.ewaste-industries__heading {
+    /* Section heading */
+}
+
+.ewaste-industries__heading-accent {
+    /* Gradient text part */
+}
+
+.ewaste-industries__subtitle {
+    /* Subtitle paragraph */
+}
+
+/* Industry Grid */
+.ewaste-industries__grid {
+    /* 4-column grid */
+}
+
+.ewaste-industries__card {
+    /* Individual industry card */
+}
+
+.ewaste-industries__card-icon {
+    /* Green icon box */
+}
+
+.ewaste-industries__card-title {
+    /* Card title */
+}
+
+.ewaste-industries__card-description {
+    /* Card description */
+}
+
+/* =============================================
+   7. WHY PARTNER / BENEFITS SECTION
+   ============================================= */
+.ewaste-benefits {
+    /* Benefits section wrapper */
+}
+
+.ewaste-benefits__container {
+    /* Max-width centered container */
+}
+
+.ewaste-benefits__header {
+    /* Section header wrapper */
+}
+
+.ewaste-benefits__label {
+    /* "Why Partner" uppercase label */
+}
+
+.ewaste-benefits__heading {
+    /* Section heading */
+}
+
+.ewaste-benefits__heading-accent {
+    /* Green brand text */
+}
+
+.ewaste-benefits__subtitle {
+    /* Subtitle paragraph */
+}
+
+/* Benefits Grid */
+.ewaste-benefits__grid {
+    /* 3-column grid */
+}
+
+.ewaste-benefits__card {
+    /* Individual benefit card */
+}
+
+.ewaste-benefits__card-icon-wrap {
+    /* Light-green icon box */
+}
+
+.ewaste-benefits__card-title {
+    /* Card title */
+}
+
+.ewaste-benefits__card-description {
+    /* Card description */
+}
+
+/* =============================================
+   8. CONTACT CTA SECTION
+   ============================================= */
+.ewaste-contact {
+    /* Contact CTA section wrapper */
+}
+
+.ewaste-contact__container {
+    /* Max-width centered container */
+}
+
+.ewaste-contact__banner {
+    /* Green gradient banner */
+}
+
+.ewaste-contact__glow-top {
+    /* Decorative glow blob (top-right) */
+}
+
+.ewaste-contact__glow-bottom {
+    /* Decorative glow blob (bottom-left) */
+}
+
+.ewaste-contact__heading {
+    /* Banner heading */
+}
+
+.ewaste-contact__description {
+    /* Banner description */
+}
+
+.ewaste-contact__actions {
+    /* Button row */
+}
+
+.ewaste-contact__btn {
+    /* "Contact Us Today" button */
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

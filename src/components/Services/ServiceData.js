@@ -6,7 +6,7 @@ export const SERVICE_DATA = {
         title: "Corporate IT & Asset Disposal",
         subtitle: "Secure Data Destruction & Sustainable Recycling",
         description: "We provide certified destruction of data-bearing devices and responsible recycling of obsolete IT infrastructure. Our chain-of-custody protocols ensure 100% data security and compliance with environmental regulations.",
-        image: "/images/scene_electronics.png",
+        image: "/images/corporate_it_scrap_hero.png",
         features: ["On-site Hard Drive Shredding", "Serialized Audit Trails", "R2v3 Certified Recycling", "Certificate of Destruction"],
         benefits: ["Mitigate Data Breach Risks", "recover Value from Assets", "Zero-Landfill Guarantee"]
     },
@@ -14,7 +14,7 @@ export const SERVICE_DATA = {
         title: "E-Waste Recycling",
         subtitle: "End-of-Life Electronics Solutions",
         description: "From consumer electronics to enterprise servers, we process all forms of e-waste. Our advanced separation technologies recover high-purity metals and plastics, returning them to the circular economy.",
-        image: "/images/scene_electronics.png",
+        image: "/images/ewaste_recycling_hero.png",
         features: ["CRT & Flat Screen Processing", "Circuit Board Recovery", "Battery Sorting", "Hazardous Component Removal"],
         benefits: ["Regulatory Compliance", "Reduced Carbon Footprint", "Circular Economy Support"]
     },
@@ -53,6 +53,14 @@ export const SERVICE_DATA = {
         image: "/images/scene_metals.png",
         features: ["XRF Alloy Analysis", "Wire Stripping & Granulation", "Mixed Metal Sorting", "Secure Metal Storage"],
         benefits: ["Top-Tier Pricing", "Transparent Weighing", "Prompt Payment"]
+    },
+    "motor-and-transformer-scrap": {
+        title: "Motor And Transformer Scrap",
+        subtitle: "Professional Waste Management Services",
+        description: "MS Asia provides specialized Motor And Transformer Scrap solutions tailored to your industry's needs. We ensure full compliance, safety, and operational efficiency.",
+        image: "/images/motor_transformer_scrap_hero.png",
+        features: ["Regulatory Compliance", "Safe Handling", "Efficient Transport", "Sustainable Disposal"],
+        benefits: ["Cost Optimization", "Risk Mitigation", "Environmental Responsibility"]
     },
 
     // Special Waste

@@ -255,11 +255,6 @@ main {
 }
 
 /* ===== SECTION STYLES ===== */
-section {
-    padding: var(--spacing-2xl) 0;
-    margin-bottom: var(--spacing-2xl);
-}
-
 section:last-of-type {
     margin-bottom: 0;
 }
@@ -280,7 +275,7 @@ h5,
 h6 {
     font-family: var(--font-heading);
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0;
     color: var(--heading-h1);
 }
 
@@ -330,7 +325,6 @@ h6 {
 
 p {
     font-size: clamp(1rem, 2vw, 1.125rem);
-    margin-bottom: var(--spacing-md);
     color: var(--text-main);
     line-height: 1.7;
 }
@@ -3554,4 +3548,242 @@ div.absolute button {
     .footer-bottom p {
         font-size: 9px !important;
     }
+}
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes widthGrow {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 6rem;
+    }
+}
+
+/* Animation Utility Classes */
+.animate-fadeIn {
+    animation: fadeIn 0.7s ease-out both;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.7s ease-out both;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 0.7s ease-out both;
+}
+
+.animate-widthGrow {
+    animation: widthGrow 0.8s ease-out 0.4s both;
+}
+
+/* Dark Mode Form Border Fix */
+.dark input,
+.dark textarea,
+.dark select {
+    border-color: #4b5563;
+}
+
+/* =========================================
+   Custom E-Waste Component Modifiers
+   ========================================= */
+
+/* Brand Classes */
+.gradient-brand {
+    background: linear-gradient(135deg, #47622A 0%, #799851 50%, #47622A 100%);
+    background-size: 200% 200%;
+}
+
+.gradient-brand-light {
+    background: linear-gradient(135deg, rgba(71, 98, 42, 0.08) 0%, rgba(121, 152, 81, 0.08) 100%);
+}
+
+.gradient-brand-subtle {
+    background: linear-gradient(180deg, rgba(71, 98, 42, 0.03) 0%, transparent 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #47622A 0%, #799851 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-brand-green-primary {
+    color: #47622A;
+}
+
+.text-brand-green-accent {
+    color: #799851;
+}
+
+.bg-brand-green-accent\/10 {
+    background-color: rgba(121, 152, 81, 0.1);
+}
+
+.bg-brand-green-primary\/5 {
+    background-color: rgba(71, 98, 42, 0.05);
+}
+
+.border-brand-green-accent\/20 {
+    border-color: rgba(121, 152, 81, 0.2);
+}
+
+.border-brand-green-primary {
+    border-color: #47622A;
+}
+
+/* Base Card Elevators */
+.card-elevated {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 13px rgba(0, 0, 0, 0.05);
+}
+
+.card-elevated-hover {
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 25px 50px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Keyframes */
+@keyframes fadeInUpEW {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDownEW {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomInEW {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeftEW {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRightEW {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floatEW {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-16px);
+    }
+}
+
+/* Animations that won't conflict with main.css naming */
+.animate-fade-in-up {
+    animation: fadeInUpEW 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDownEW 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-zoom-in {
+    animation: zoomInEW 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeftEW 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-in-right {
+    animation: slideInRightEW 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-float {
+    animation: floatEW 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1), transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }

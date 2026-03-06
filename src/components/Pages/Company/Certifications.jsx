@@ -8,7 +8,7 @@ const Certifications = () => {
     return (
         <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 font-sans">
             {/* Header */}
-            <div className="bg-[#111] text-white py-20 lg:py-28 relative overflow-hidden">
+            <div className="bg-[#111] text-white py-16 lg:py-24 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[#799851]/10"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl md:text-5xl font-black mb-4">Certifications & Compliance</h1>
@@ -19,7 +19,7 @@ const Certifications = () => {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Cert Card 1 */}
                     <div className="flex gap-6 p-8 border border-gray-200 dark:border-gray-800 rounded-2xl bg-gray-50 dark:bg-[#0a0a0a] hover:shadow-xl transition-shadow">

@@ -27,24 +27,10 @@ function IndustrialHero() {
             <div className="industrial-hero-container items-center justify-center max-w-7xl mx-auto w-full gap-12 h-[500px]">
 
                 {/* LEFT CONTENT (60%) */}
-                <div className="industrial-hero-content">
-                    {/* New Pill Badge */}
-                    <div className="industrial-hero-pill-badge">
 
-                    </div>
 
-                    {/* Main Heading */}
-                    <h1 className="industrial-hero-heading !text-3xl sm:!text-4xl lg:!text-5xl !leading-tight !mb-4">
-
-                    </h1>
-
-                    {/* Sub-heading */}
-                    <p className="industrial-hero-subheading !text-base sm:!text-lg !max-w-xl !mb-6">
-
-                    </p>
-
-                    {/* CTA Buttons */}
-                    {/*<div className="industrial-hero-cta">
+                {/* CTA Buttons */}
+                {/*<div className="industrial-hero-cta">
                         <a href="#audit" className="industrial-btn-primary">
 
                         </a>
@@ -52,7 +38,6 @@ function IndustrialHero() {
 
                         </a>
                     </div>*/}
-                </div>
 
                 {/* RIGHT IMAGE (40%) */}
                 <div className="industrial-hero-image">

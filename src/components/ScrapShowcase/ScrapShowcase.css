@@ -22,6 +22,11 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.scrap-card:hover {
+    transform: translateY(-6px);
 }
 
 .card-image-wrapper {
@@ -30,6 +35,7 @@
     /* Based on Kia card ratio */
     overflow: hidden;
     margin-bottom: 24px;
+    border-radius: 12px;
 }
 
 .card-image {
@@ -90,23 +96,23 @@
 }
 
 .know-more-btn {
-    background-color: #05141f;
-    /* Dark navy/black */
-    color: white;
+    background-color: transparent;
+    color: #05141f;
+    border: 2px solid #05141f;
 }
 
 .know-more-btn:hover {
-    background-color: #1a2e3b;
+    background-color: #05141f;
+    color: white;
 }
 
 .book-now-btn {
-    background-color: #05141f;
-    /* Same dark color as Kia screenshot */
+    background-color: #47622A;
     color: white;
 }
 
 .book-now-btn:hover {
-    background-color: #1a2e3b;
+    background-color: #374426;
 }
 
 /* Responsive Design */
@@ -186,4 +192,37 @@
         max-width: 250px !important;
         /* Cap button width */
     }
+}
+
+/* ===== DARK MODE ===== */
+.dark .scrap-showcase-section {
+    background-color: #111111;
+}
+
+.dark .card-title {
+    color: #f1f5f9;
+}
+
+.dark .card-description {
+    color: #94a3b8;
+}
+
+.dark .know-more-btn {
+    border-color: #cbd5e1;
+    color: #e2e8f0;
+    background-color: transparent;
+}
+
+.dark .know-more-btn:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+.dark .book-now-btn {
+    background-color: #799851;
+    color: white;
+}
+
+.dark .book-now-btn:hover {
+    background-color: #47622A;
 }
