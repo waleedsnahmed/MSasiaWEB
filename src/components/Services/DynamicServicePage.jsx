@@ -27,7 +27,7 @@ const DynamicServicePage = () => {
                 </div>
 
                 {/* Hero Content */}
-                <div className="relative h-full max-w-[1200px] mx-auto px-6 flex flex-col justify-center items-start text-white">
+                <div className="relative h-full max-w-screen-2xl mx-auto px-[12px] flex flex-col justify-center items-start text-white">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-2 animate-slideInLeft text-white">
                         {data.title}
                     </h1>
@@ -57,8 +57,8 @@ const DynamicServicePage = () => {
                                     </span>
                                 </div>
 
-                                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-montserrat font-extrabold text-gray-900 dark:text-white leading-[1.15] tracking-tight">
-                                    Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">{data.title}</span>
+                                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-montserrat font-extrabold leading-[1.15] tracking-tight">
+                                    <span className="text-gray-900 dark:text-white">Advanced </span><span className="!text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">{data.title}</span>
                                 </h2>
 
                                 <div className="prose prose-lg prose-gray dark:prose-invert max-w-none pt-4">

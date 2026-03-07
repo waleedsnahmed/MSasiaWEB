@@ -43,7 +43,7 @@ function PrivacyPolicy() {
 
                         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-10 mb-4">4. Contact Us</h2>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@msasia.com" className="text-[#47622A] hover:underline font-medium">info@msasia.com</a>.
+                            If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@msasia.com" className="text-[#47622A] dark:text-[#799851] hover:underline font-medium">info@msasia.com</a>.
                         </p>
                     </div>
                 </div>

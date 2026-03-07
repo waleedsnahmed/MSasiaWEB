@@ -146,7 +146,7 @@ function NavbarPill({
                                             href={hasDropdown ? '#' : '/blog'}
                                             className={`flex items-center gap-1 px-4 py-2 lg:px-5 lg:py-2.5 text-[14px] xl:text-[15px] font-medium rounded-full transition-all duration-300 whitespace-nowrap no-underline hover:no-underline bg-transparent hover:bg-black/5 dark:hover:bg-white/5 ${isActive
                                                 ? '!text-[#47622A] dark:!text-[#799851] bg-black/5 dark:bg-white/5'
-                                                : 'text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white'
+                                                : isScrolled ? 'text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white' : location.pathname === '/' ? 'text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white' : 'text-white hover:text-gray-200'
                                                 }`}
                                             onMouseEnter={(e) => hasDropdown && handleMenuEnter(e, item)}
                                             onMouseLeave={handleMenuLeave}
@@ -170,7 +170,8 @@ function NavbarPill({
                                 {/* SEARCH TRIGGER ICON */}
                                 <button
                                     onClick={toggleSearch}
-                                    className="p-1 text-gray-500 hover:text-gray-800 transition-colors outline-none !bg-transparent !border-none !shadow-none hover:!bg-transparent"
+                                    className={`p-1 transition-colors outline-none !bg-transparent !border-none !shadow-none hover:!bg-transparent ${isScrolled ? 'text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white' : location.pathname === '/' ? 'text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white' : 'text-white hover:text-gray-200'
+                                        }`}
                                     style={{ transform: 'none' }}
                                     aria-label="Open Search"
                                 >
@@ -194,7 +195,8 @@ function NavbarPill({
                             /* === IN-PLACE SEARCH UI === */
                             <div className="w-full flex items-center justify-between h-full animate-fadeIn">
                                 {/* LEFT: Search Icon */}
-                                <div className="flex h-10 w-10 xl:h-12 xl:w-12 flex-none items-center justify-center rounded-full bg-transparent text-gray-500 ml-1">
+                                <div className={`flex h-10 w-10 xl:h-12 xl:w-12 flex-none items-center justify-center rounded-full bg-transparent ml-1 ${isScrolled ? 'text-gray-800 dark:text-gray-200' : location.pathname === '/' ? 'text-gray-800 dark:text-gray-200' : 'text-white'
+                                    }`}>
                                     <svg className="w-6 h-6 xl:w-7 xl:h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
@@ -205,7 +207,8 @@ function NavbarPill({
                                     <input
                                         type="text"
                                         placeholder="Search..."
-                                        className="w-full bg-transparent text-lg xl:text-xl text-left text-gray-700 outline-none border-none ring-0 focus:ring-0 placeholder:text-gray-400 h-full !m-0 !mb-0 !p-0 !border-0"
+                                        className={`w-full bg-transparent text-lg xl:text-xl text-left outline-none border-none ring-0 focus:ring-0 h-full !m-0 !mb-0 !p-0 !border-0 ${isScrolled ? 'text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-400' : location.pathname === '/' ? 'text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-400' : 'text-white placeholder:text-gray-300'
+                                            }`}
                                         autoFocus
                                     />
                                 </div>
@@ -214,7 +217,8 @@ function NavbarPill({
                                 <button
                                     onClick={toggleSearch}
                                     style={{ backgroundColor: 'transparent', boxShadow: 'none', border: 'none' }}
-                                    className="flex h-10 w-10 xl:h-12 xl:w-12 flex-none items-center justify-center rounded-full !bg-transparent !shadow-none !border-none !outline-none !p-0 hover:!transform-none text-gray-400 hover:text-gray-600 transition-colors mr-1"
+                                    className={`flex h-10 w-10 xl:h-12 xl:w-12 flex-none items-center justify-center rounded-full !bg-transparent !shadow-none !border-none !outline-none !p-0 hover:!transform-none transition-colors mr-1 ${isScrolled ? 'text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200' : location.pathname === '/' ? 'text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200' : 'text-gray-300 hover:text-white'
+                                        }`}
                                 >
                                     <svg className="w-6 h-6 xl:w-7 xl:h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

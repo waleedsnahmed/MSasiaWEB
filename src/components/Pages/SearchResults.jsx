@@ -41,7 +41,7 @@ function SearchResults() {
                         {results.map((res, index) => (
                             <div key={index} className="group">
                                 <Link to={res.link} className="block">
-                                    <h3 className="text-xl font-bold text-[#47622A] group-hover:underline mb-1">
+                                    <h3 className="text-xl font-bold text-[#47622A] dark:text-[#799851] group-hover:underline mb-1">
                                         {res.title}
                                     </h3>
                                 </Link>

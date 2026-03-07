@@ -1,7 +1,7 @@
 function Footer() {
     return (
-        <footer className="site-footer">
-            <div className="footer-container">
+        <footer className="site-footer w-full">
+            <div className="footer-container max-w-screen-2xl mx-auto px-[12px] w-full">
                 <div className="footer-grid ">
                     {/* Column 1: Company Info */}
                     <div className="footer-column">
@@ -118,7 +118,7 @@ function Footer() {
                 <hr style={{ width: '100%', maxWidth: '1050px', border: 'none', borderTop: '1px solid var(--footer-border)', margin: 0 }} />
 
                 <div className="footer-bottom" style={{ borderTop: 'none', padding: 0, width: '100%' }}>
-                    <div className="footer-container">
+                    <div className="footer-container max-w-screen-2xl mx-auto px-[12px] w-full">
                         <p className="footer-copyright">&copy; 2024 MS Asia. All rights reserved.</p>
                         <div className="footer-bottom-links">
                             <a href="/privacy" className="footer-legal-link">Privacy Policy</a>

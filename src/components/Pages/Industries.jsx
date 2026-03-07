@@ -25,7 +25,7 @@ function Industries() {
                 {data.columns.map((category, idx) => (
                     <div key={idx} className="mb-16">
                         <div className="flex items-center gap-4 mb-8">
-                            <h2 className="text-2xl font-bold text-[#47622A] whitespace-nowrap">
+                            <h2 className="text-2xl font-bold text-[#47622A] dark:text-[#799851] whitespace-nowrap">
                                 {category.title}
                             </h2>
                             <div className="h-px bg-gray-200 dark:bg-gray-800 flex-1"></div>
@@ -42,7 +42,7 @@ function Industries() {
                                     </p>
                                     <Link
                                         to={`/industries/${item.label.toLowerCase().replace(/ & /g, '-and-').replace(/ /g, '-').replace(/[^a-z0-9-]/g, '')}`}
-                                        className="text-sm font-semibold text-[#47622A] hover:underline cursor-pointer inline-flex items-center gap-1"
+                                        className="text-sm font-semibold text-[#47622A] dark:text-[#799851] hover:underline cursor-pointer inline-flex items-center gap-1"
                                     >
                                         View Solutions &rarr;
                                     </Link>

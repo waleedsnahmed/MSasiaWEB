@@ -190,66 +190,79 @@ const EWasteContent = () => {
     return (
         <div className="ewaste-page w-full">
 
-            {/* ============ 1. HERO / INTRO SECTION (Matches DynamicServicePage Style) ============ */}
-            <section className="ewaste-hero">
-                <main className="max-w-[1240px] mx-0 px-4 py-4 lg:py-4">
-                    <div className="space-y-
-                     animate-fadeIn">
+            {/* ============ 1. HERO / INTRO SECTION ============ */}
+            <section className="ewaste-hero relative w-full overflow-hidden bg-gray-50 dark:bg-[#111]">
+                <div className="max-w-screen-2xl mx-auto px-[12px] h-[500px] flex items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full h-full">
+                        {/* Text Content Column */}
+                        <div className="flex flex-col gap-4 justify-center h-full animate-fadeIn lg:pr-8">
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#47622A]/10 dark:bg-[#799851]/10 border border-[#47622A]/20 dark:border-[#799851]/20 shadow-sm w-fit">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#47622A] dark:bg-[#799851] animate-pulse"></span>
+                                <span className="text-[#47622A] dark:text-[#799851] font-bold text-[10px] tracking-widest uppercase">
+                                    Electronics Recycling
+                                </span>
+                            </div>
 
-                        {/* Pill Badge */}
-                        <div className="ewaste-hero__badge inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gray-50 dark:bg-[#111111] border border-gray-100 dark:border-gray-800 shadow-sm">
-                            <span className="ewaste-hero__badge-dot w-2 h-2 rounded-full bg-[#47622A] animate-pulse"></span>
-                            <span className="ewaste-hero__badge-text text-[#47622A] dark:text-[#799851] font-bold text-[11px] tracking-[0.2em] uppercase font-montserrat">
-                                Electronics Recycling
-                            </span>
+                            <h2 className="text-4xl lg:text-5xl font-extrabold leading-[1.1] tracking-tight text-gray-900 dark:text-white">
+                                Advanced <span className="!text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">E-Waste Recycling</span>
+                            </h2>
+
+                            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-lg">
+                                Secure, compliant processing for enterprise IT assets and consumer electronics. We recover maximum value and ensure zero landfill waste.
+                            </p>
+
+                            <div className="flex gap-4 pt-2">
+                                <a href="/contact" className="px-6 py-2.5 bg-[#47622A] hover:bg-[#5a7638] text-white font-semibold rounded-lg transition-colors shadow-md text-sm">
+                                    Request Audit
+                                </a>
+                                <a href="#process" className="px-6 py-2.5 bg-white dark:bg-[#1a1a1a] border border-[#47622A] text-[#47622A] dark:text-[#799851] hover:bg-gray-50 dark:hover:bg-[#111] font-semibold rounded-lg transition-colors text-sm">
+                                    Our Capabilities
+                                </a>
+                            </div>
                         </div>
 
-                        {/* Large Two-Tone Heading */}
-                        <h2 className="ewaste-hero__heading text-4xl lg:text-5xl xl:text-6xl font-montserrat font-extrabold text-gray-900 dark:text-white leading-[1.15] tracking-tight">
-                            Advanced <span className="ewaste-hero__heading-accent text-transparent bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">E-Waste Recycling</span>
-                        </h2>
-
-                        {/* Concise Description */}
-                        <div className="ewaste-hero__content prose prose-lg prose-gray dark:prose-invert max-w-none pt-">
-                            <p className="ewaste-hero__description text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-light font-sans">
-                                From consumer electronics to enterprise servers, we process all forms of e-waste. Our advanced separation technologies recover high-purity metals and plastics, returning them to the circular economy.
-                            </p>
-                            <p className="ewaste-hero__description-secondary text-lg text-gray-500 dark:text-gray-400 leading-relaxed mt-0 font-sans">
-                                Our certified experts utilize state-of-the-art methodology to ensure every aspect of your requirement is met with precision, absolute compliance, and environmental stewardship. We deliver enterprise-grade performance built for modern regulatory challenges.
-                            </p>
+                        {/* Image Content Column */}
+                        <div className="animate-fadeIn hidden md:flex justify-end items-center h-full py-8">
+                            <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800">
+                                <div className="absolute inset-0 bg-gradient-to-tr from-[#47622A]/20 to-transparent mix-blend-overlay z-10"></div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1550005973-54cd798b31ea?q=80&w=2670&auto=format&fit=crop"
+                                    alt="Advanced E-Waste Recycling Facility"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
                         </div>
-
                     </div>
-                </main>
+                </div>
             </section>
 
             {/* ============ 3. WHY CHOOSE US SECTION ============ */}
-            <section className="ewaste-why py-4 px-4 sm:px-6 lg:px-4 bg-gray-50 dark:bg-[#111]">
-                <div className="ewaste-why__container max-w-[1240px] mx-auto">
-                    <div className="ewaste-why__header text-center flex flex-col items-center mb-0 py-4 scroll-reveal">
-                        <p className="ewaste-why__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase mb-0">Why Choose Us</p>
-                        <h2 className="ewaste-why__heading text-4xl md:text-5xl font-bold mb-0 dark:text-white text-gray-900 leading-tight">
+            <section className="ewaste-why py-4 bg-gray-50 dark:bg-[#111]">
+                <div className="ewaste-why__container max-w-screen-2xl mx-auto px-[12px]">
+                    <div className="ewaste-why__header text-center flex flex-col items-center  py-4 scroll-reveal">
+                        <p className="ewaste-why__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Why Choose Us</p>
+                        <h2 className="ewaste-why__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
                             Why Proper Electronics <br className="hidden md:block" />
-                            <span className="ewaste-why__heading-accent text-transparent bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">Management is Non-Negotiable</span>
+                            <span className="ewaste-why__heading-accent !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">Management is Non-Negotiable</span>
                         </h2>
-                        <p className="ewaste-why__subtitle text-lg dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed mb-0">
+                        <p className="ewaste-why__subtitle text-lg dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed ">
                             Electronic waste is India's fastest-growing waste stream, with over 3.2 million
                             metric tons generated annually. The informal sector handles a significant portion,
                             leading to dangerous practices.
                         </p>
                     </div>
 
-                    <div className="ewaste-why__grid grid md:grid-cols-2 gap-6 mb-12">
+                    <div className="ewaste-why__grid grid md:grid-cols-2 gap-6 ">
                         {whyPoints.map((point, index) => (
                             <div
                                 key={index}
                                 className="ewaste-why__card scroll-reveal p-6 lg:p-8 rounded-3xl dark:bg-[#1a1a1a] bg-white border border-gray-100 dark:border-white/5 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
-                                <div className="ewaste-why__card-icon-wrap inline-flex p-3 rounded-xl bg-[#47622A]/10 dark:bg-[#799851]/10 mb-5">
+                                <div className="ewaste-why__card-icon-wrap inline-flex p-3 rounded-xl bg-[#47622A]/10 dark:bg-[#799851]/10 ">
                                     <point.icon className="w-6 h-6 text-[#47622A] dark:text-[#799851]" strokeWidth={2} />
                                 </div>
-                                <h3 className="ewaste-why__card-title text-xl font-bold mb-3 dark:text-white text-gray-900">
+                                <h3 className="ewaste-why__card-title text-xl font-bold  dark:text-white text-gray-900">
                                     {point.title}
                                 </h3>
                                 <p className="ewaste-why__card-description dark:text-gray-400 text-gray-600 leading-relaxed text-sm md:text-base">
@@ -263,7 +276,7 @@ const EWasteContent = () => {
                         <div className="ewaste-why__cta-banner p-8 lg:p-10 rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] text-white relative overflow-hidden">
                             <div className="ewaste-why__cta-glow absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
                             <p className="ewaste-why__cta-text text-lg lg:text-xl leading-relaxed relative z-10 font-medium">
-                                <strong className="ewaste-why__cta-strong text-xl lg:text-2xl block mb-2">MS Asia Enterprises is the definitive solution.</strong>
+                                <strong className="ewaste-why__cta-strong text-xl lg:text-2xl block ">MS Asia Enterprises is the definitive solution.</strong>
                                 We close the loop with a formal, auditable process that protects your business, recovers value, and
                                 ensures every component is handled according to the highest environmental and data
                                 security standards.
@@ -274,12 +287,12 @@ const EWasteContent = () => {
             </section>
 
             {/* ============ 4. CERTIFIED PROCESS SECTION ============ */}
-            <section id="process" className="ewaste-process py-8 px-4 sm:px-6 lg:px-8 dark:bg-[#0a0a0a] bg-white">
-                <div className="ewaste-process__container max-w-[1240px] mx-auto">
-                    <div className="ewaste-process__header text-center flex flex-col items-center mb-12 scroll-reveal">
-                        <p className="ewaste-process__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase mb-3">Our Expertise</p>
-                        <h2 className="ewaste-process__heading text-4xl md:text-5xl font-bold mb-4 dark:text-white text-gray-900 leading-tight">
-                            Our <span className="ewaste-process__heading-accent text-transparent bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">Certified Process</span>
+            <section id="process" className="ewaste-process py-8 dark:bg-[#0a0a0a] bg-white">
+                <div className="ewaste-process__container max-w-screen-2xl mx-auto px-[12px]">
+                    <div className="ewaste-process__header text-center flex flex-col items-center  scroll-reveal">
+                        <p className="ewaste-process__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Our Expertise</p>
+                        <h2 className="ewaste-process__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
+                            Our <span className="ewaste-process__heading-accent !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">Certified Process</span>
                         </h2>
                         <p className="ewaste-process__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
                             A Step-by-Step Framework for India: We operate on a foundation of transparency,
@@ -287,7 +300,7 @@ const EWasteContent = () => {
                         </p>
                     </div>
 
-                    <div className="ewaste-process__list space-y-6">
+                    <div className="ewaste-process__list ">
                         {processSteps.map((step, index) => {
                             const isEven = index % 2 === 0;
                             return (
@@ -301,10 +314,10 @@ const EWasteContent = () => {
                                         </div>
                                     </div>
                                     <div className="ewaste-process__step-body flex-grow w-full text-center md:text-left">
-                                        <div className="ewaste-process__step-phase text-[#47622A] dark:text-[#799851] font-bold text-xs tracking-widest uppercase mb-1">
+                                        <div className="ewaste-process__step-phase text-[#47622A] dark:text-[#799851] font-bold text-xs tracking-widest uppercase ">
                                             {step.phase}
                                         </div>
-                                        <h3 className="ewaste-process__step-title text-xl font-bold mb-2 dark:text-white text-gray-900">
+                                        <h3 className="ewaste-process__step-title text-xl font-bold  dark:text-white text-gray-900">
                                             {step.title}
                                         </h3>
                                         <p className="ewaste-process__step-description dark:text-gray-400 text-gray-600 leading-relaxed text-sm md:text-base">
@@ -319,12 +332,12 @@ const EWasteContent = () => {
             </section>
 
             {/* ============ 5. CATEGORIES TABLE SECTION ============ */}
-            <section className="ewaste-categories py-8 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[#111]">
-                <div className="ewaste-categories__container max-w-[1240px] mx-auto">
-                    <div className="ewaste-categories__header text-center flex flex-col items-center mb-12 scroll-reveal">
-                        <p className="ewaste-categories__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase mb-3">Capabilities</p>
-                        <h2 className="ewaste-categories__heading text-4xl md:text-5xl font-bold mb-4 dark:text-white text-gray-900 leading-tight">
-                            <span className="ewaste-categories__heading-accent text-transparent bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">Electronics</span> We Collect
+            <section className="ewaste-categories py-8 bg-gray-50 dark:bg-[#111]">
+                <div className="ewaste-categories__container max-w-screen-2xl mx-auto px-[12px]">
+                    <div className="ewaste-categories__header text-center flex flex-col items-center  scroll-reveal">
+                        <p className="ewaste-categories__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Capabilities</p>
+                        <h2 className="ewaste-categories__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
+                            <span className="ewaste-categories__heading-accent !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">Electronics</span> We Collect
                         </h2>
                         <p className="ewaste-categories__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
                             We provide solutions for virtually every category of end-of-life electronic equipment
@@ -364,12 +377,12 @@ const EWasteContent = () => {
             </section>
 
             {/* ============ 6. INDUSTRIES / SECTORS SECTION ============ */}
-            <section className="ewaste-industries py-8 px-4 sm:px-6 lg:px-8 dark:bg-[#0a0a0a] bg-white">
-                <div className="ewaste-industries__container max-w-[1240px] mx-auto">
-                    <div className="ewaste-industries__header text-center flex flex-col items-center mb-12 scroll-reveal">
-                        <p className="ewaste-industries__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase mb-3">Sectors</p>
-                        <h2 className="ewaste-industries__heading text-4xl md:text-5xl font-bold mb-4 dark:text-white text-gray-900 leading-tight">
-                            Industries <span className="ewaste-industries__heading-accent text-transparent bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">We Serve</span>
+            <section className="ewaste-industries py-8 dark:bg-[#0a0a0a] bg-white">
+                <div className="ewaste-industries__container max-w-screen-2xl mx-auto px-[12px]">
+                    <div className="ewaste-industries__header text-center flex flex-col items-center  scroll-reveal">
+                        <p className="ewaste-industries__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Sectors</p>
+                        <h2 className="ewaste-industries__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
+                            Industries <span className="ewaste-industries__heading-accent !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">We Serve</span>
                         </h2>
                         <p className="ewaste-industries__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
                             Tailored solutions for diverse sectors across India.
@@ -383,10 +396,10 @@ const EWasteContent = () => {
                                 className="ewaste-industries__card scroll-reveal p-8 flex flex-col items-center text-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
                                 style={{ animationDelay: `${index * 0.05}s` }}
                             >
-                                <div className="ewaste-industries__card-icon w-16 h-16 rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851] mb-6 flex items-center justify-center">
+                                <div className="ewaste-industries__card-icon w-16 h-16 rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851]  flex items-center justify-center">
                                     <industry.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
                                 </div>
-                                <h3 className="ewaste-industries__card-title text-[17px] font-bold mb-3 dark:text-white text-gray-900 leading-snug tracking-tight px-2">
+                                <h3 className="ewaste-industries__card-title text-[17px] font-bold  dark:text-white text-gray-900 leading-snug tracking-tight px-2">
                                     {industry.title}
                                 </h3>
                                 <p className="ewaste-industries__card-description dark:text-gray-400 text-gray-500 text-[13px] leading-relaxed">
@@ -399,12 +412,12 @@ const EWasteContent = () => {
             </section>
 
             {/* ============ 7. WHY PARTNER / BENEFITS SECTION ============ */}
-            <section className="ewaste-benefits py-8 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[#111]">
-                <div className="ewaste-benefits__container max-w-[1240px] mx-auto">
-                    <div className="ewaste-benefits__header text-center flex flex-col items-center mb-12 scroll-reveal">
-                        <p className="ewaste-benefits__label text-[#5a7638] dark:text-[#799851] font-bold text-xs tracking-widest uppercase mb-3">Why Partner</p>
-                        <h2 className="ewaste-benefits__heading text-4xl md:text-5xl font-extrabold mb-4 dark:text-white text-gray-900 leading-tight">
-                            Why Choose <span className="ewaste-benefits__heading-accent text-[#5a7638]">MS Asia Enterprises</span>
+            <section className="ewaste-benefits py-8 bg-gray-50 dark:bg-[#111]">
+                <div className="ewaste-benefits__container max-w-screen-2xl mx-auto px-[12px]">
+                    <div className="ewaste-benefits__header text-center flex flex-col items-center  scroll-reveal">
+                        <p className="ewaste-benefits__label text-[#5a7638] dark:text-[#799851] font-bold text-xs tracking-widest uppercase ">Why Partner</p>
+                        <h2 className="ewaste-benefits__heading text-4xl md:text-5xl font-extrabold  dark:text-white text-gray-900 leading-tight">
+                            Why Choose <span className="ewaste-benefits__heading-accent text-[#5a7638] dark:text-[#799851]">MS Asia Enterprises</span>
                         </h2>
                         <p className="ewaste-benefits__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
                             Leading Indian and multinational companies trust us for secure, compliant, and sustainable e-<br className="hidden md:block" />waste management.
@@ -418,10 +431,10 @@ const EWasteContent = () => {
                                 className="ewaste-benefits__card scroll-reveal p-8 rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col items-start text-left"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
-                                <div className="ewaste-benefits__card-icon-wrap w-14 h-14 rounded-2xl bg-[#eff1ea] dark:bg-[#2a3024] mb-6 flex items-center justify-center border border-[#e5e9de] dark:border-white/5">
+                                <div className="ewaste-benefits__card-icon-wrap w-14 h-14 rounded-2xl bg-[#eff1ea] dark:bg-[#2a3024]  flex items-center justify-center border border-[#e5e9de] dark:border-white/5">
                                     <benefit.icon className="w-6 h-6 text-[#5a7638] dark:text-[#799851]" strokeWidth={1.5} />
                                 </div>
-                                <h3 className="ewaste-benefits__card-title text-lg font-bold mb-3 dark:text-white text-gray-900 leading-snug">
+                                <h3 className="ewaste-benefits__card-title text-lg font-bold  dark:text-white text-gray-900 leading-snug">
                                     {benefit.title}
                                 </h3>
                                 <p className="ewaste-benefits__card-description dark:text-gray-400 text-gray-500 text-[14px] leading-relaxed">
@@ -434,25 +447,25 @@ const EWasteContent = () => {
             </section>
 
             {/* ============ 8. CONTACT CTA SECTION ============ */}
-            <section className="ewaste-contact py-8 px-4 sm:px-6 lg:px-8 dark:bg-[#0a0a0a] bg-white">
-                <div className="ewaste-contact__container max-w-[1240px] mx-auto">
+            <section className="ewaste-contact py-8 dark:bg-[#0a0a0a] bg-white">
+                <div className="ewaste-contact__container max-w-screen-2xl mx-auto px-[12px]">
                     <div className="ewaste-contact__banner bg-gradient-to-r from-[#47622A] to-[#799851] rounded-3xl p-10 lg:p-16 text-center text-white relative overflow-hidden scroll-reveal">
                         <div className="ewaste-contact__glow-top absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
                         <div className="ewaste-contact__glow-bottom absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
 
-                        <h2 className="ewaste-contact__heading text-3xl lg:text-5xl font-bold mb-6 relative z-10 text-white">
+                        <h2 className="ewaste-contact__heading text-3xl lg:text-5xl font-bold  relative z-10 text-white">
                             Ready to Secure Your E-Waste?
                         </h2>
-                        <p className="ewaste-contact__description text-lg lg:text-xl font-medium mb-10 max-w-2xl mx-auto relative z-10 text-white/90">
+                        <p className="ewaste-contact__description text-lg lg:text-xl font-medium  max-w-2xl mx-auto relative z-10 text-white/90">
                             Get in touch with our experts to design a tailored electronics recycling program for your organization.
                         </p>
 
                         <div className="ewaste-contact__actions flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
                             <a
                                 href="/contact"
-                                className="ewaste-contact__btn group px-8 py-4 rounded-xl bg-white text-[#47622A] font-bold text-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all inline-flex items-center space-x-2"
+                                className="ewaste-contact__btn group px-8 py-4 rounded-xl bg-white !text-[#47622A] font-bold text-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all inline-flex items-center space-x-2"
                             >
-                                <span>Contact Us Today</span>
+                                <span className="text-[#47622A] dark:text-[#47622A]">Contact Us Today</span>
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </a>
                         </div>

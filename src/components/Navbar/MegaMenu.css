@@ -109,7 +109,7 @@
     box-shadow: none;
     /* No shadow for cleaner glass */
     z-index: 9999;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     /* Prevent unwanted bottom scrollbar */
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -261,8 +261,7 @@
     justify-content: space-between;
     transition: all 0.2s ease;
     border-left: 3px solid transparent;
-    color: #000000 !important;
-    /* Z Black - Forced */
+    color: var(--mm-text-main) !important;
     opacity: 1 !important;
     /* Ensure no transparency */
     white-space: nowrap;

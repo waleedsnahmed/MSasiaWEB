@@ -15,7 +15,7 @@ html {
 /* ===== FONT DEFINITIONS & VARIABLES ===== */
 :root {
     /* Font Families */
-    --font-heading: 'Montserrat', sans-serif;
+    --font-heading: 'Roboto', sans-serif;
     --font-body: 'Roboto', sans-serif;
 
     /* ============================================
@@ -175,6 +175,7 @@ html {
     --glass-bg-scrolled: rgba(0, 0, 0, 0.75);
     --glass-border: rgba(255, 255, 255, 0.15);
     --glass-shadow: rgba(255, 255, 255, 0.05);
+
 }
 
 body {
@@ -1554,6 +1555,15 @@ button.bg-brand-btn-primary:hover {
     --footer-accent: #799851;
     --footer-border: rgba(255, 255, 255, 0.1);
     --footer-width: 1050px;
+}
+
+.dark .site-footer {
+    --footer-bg: #0a0a0a;
+    --footer-text: #9ca3af;
+    --footer-heading: #ffffff;
+    --footer-link: #d1d5db;
+    --footer-link-hover: #799851;
+    --footer-border: rgba(255, 255, 255, 0.05);
 }
 
 .site-footer {

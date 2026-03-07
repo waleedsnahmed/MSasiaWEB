@@ -46,16 +46,16 @@ function WhatWeDo() {
                                     className="p-6 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-white dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 group transform hover:-translate-y-1"
                                 >
                                     <div className="flex items-start justify-between mb-4">
-                                        <div className="w-10 h-10 bg-[#47622A]/10 text-[#47622A] rounded-lg flex items-center justify-center shrink-0">
+                                        <div className="w-10 h-10 bg-[#47622A]/10 text-[#47622A] dark:text-[#799851] rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                             </svg>
                                         </div>
-                                        <svg className="w-5 h-5 text-gray-400 group-hover:text-[#47622A] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 text-gray-400 group-hover:text-[#47622A] dark:group-hover:text-[#799851] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                                         </svg>
                                     </div>
-                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#47622A] transition-colors">
+                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#47622A] dark:group-hover:text-[#799851] transition-colors">
                                         {item.label}
                                     </h3>
                                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">

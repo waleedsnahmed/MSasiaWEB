@@ -62,8 +62,8 @@ function Blog() {
                             </div>
 
                             <div className="p-6 flex-1 flex flex-col">
-                                <span className="inline-block px-3 py-1 rounded-full bg-[#47622A]/10 text-[#47622A] text-xs font-bold tracking-wider uppercase mb-3 w-fit">{post.category}</span>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-[#47622A] cursor-pointer transition-colors">
+                                <span className="inline-block px-3 py-1 rounded-full bg-[#47622A]/10 text-[#47622A] dark:text-[#799851] text-xs font-bold tracking-wider uppercase mb-3 w-fit">{post.category}</span>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-[#47622A] dark:hover:text-[#799851] cursor-pointer transition-colors">
                                     {post.title}
                                 </h3>
                                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed flex-1">
@@ -71,7 +71,7 @@ function Blog() {
                                 </p>
                                 <div className="mt-auto flex justify-between items-center pt-4 border-t border-gray-100 dark:border-gray-800">
                                     <span className="text-xs text-gray-500">{post.date}</span>
-                                    <span className="text-sm font-medium text-[#47622A] cursor-pointer hover:underline">
+                                    <span className="text-sm font-medium text-[#47622A] dark:text-[#799851] cursor-pointer hover:underline">
                                         Read More →
                                     </span>
                                 </div>
