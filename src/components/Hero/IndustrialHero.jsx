@@ -40,7 +40,7 @@ function IndustrialHero() {
                     </div>*/}
 
                 {/* RIGHT IMAGE (40%) */}
-                <div className="industrial-hero-image w-full max-w-[500px] mx-auto">
+                <div className="industrial-hero-image">
                     <div className="industrial-hero-image-wrapper">
                         {/* Blob Background handled in CSS ::before */}
 
