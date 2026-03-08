@@ -36,15 +36,15 @@ const benefits = [
 
 const EWasteBenefits = () => {
     return (
-        <section className="ewaste-benefits bg-gray-50 dark:bg-[#111]">
-            <div className="ewaste-benefits__container max-w-screen-2xl mx-auto flex flex-col gap-12 lg:gap-16">
+        <section className="ewaste-benefits bg-white dark:bg-black">
+            <div className="ewaste-benefits__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-12 lg:gap-16">
                 <div className="ewaste-benefits__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <p className="ewaste-benefits__label text-[#5a7638] dark:text-[#799851] font-bold text-xs tracking-widest uppercase ">Why Partner</p>
                     <h2 className="ewaste-benefits__heading text-4xl md:text-5xl font-extrabold  dark:text-white text-gray-900 leading-tight">
                         Why Choose <span className="ewaste-benefits__heading-accent text-[#5a7638] dark:text-[#799851]">MS Asia Enterprises</span>
                     </h2>
-                    <p className="ewaste-benefits__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
-                        Leading Indian and multinational companies trust us for secure, compliant, and sustainable e-<br className="hidden md:block" />waste management.
+                    <p className="ewaste-benefits__subtitle text-lg md:text-xl dark:text-gray-400 text-gray-600 max-w-none leading-relaxed">
+                        Leading Indian and multinational companies trust us for secure, compliant, and sustainable e-waste management.
                     </p>
                 </div>
 

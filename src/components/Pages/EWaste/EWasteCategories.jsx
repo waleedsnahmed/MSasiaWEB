@@ -40,8 +40,8 @@ const categories = [
 
 const EWasteCategories = () => {
     return (
-        <section className="ewaste-categories bg-gray-50 dark:bg-[#111]">
-            <div className="ewaste-categories__container max-w-screen-2xl mx-auto flex flex-col gap-12 lg:gap-16">
+        <section className="ewaste-categories bg-white dark:bg-black">
+            <div className="ewaste-categories__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[48px]">
                 <div className="ewaste-categories__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <p className="ewaste-categories__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Capabilities</p>
                     <h2 className="ewaste-categories__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">

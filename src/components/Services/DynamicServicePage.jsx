@@ -12,7 +12,7 @@ const DynamicServicePage = () => {
     }, [slug]);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
+        <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
             {/* 1. HERO SECTION */}
             <div className="relative w-full h-[400px] lg:h-[500px] overflow-hidden">
                 {/* Background Image Placeholder */}

@@ -14,8 +14,8 @@ const industries = [
 
 const EWasteIndustries = () => {
     return (
-        <section className="ewaste-industries dark:bg-[#0a0a0a] bg-white">
-            <div className="ewaste-industries__container max-w-screen-2xl mx-auto flex flex-col gap-12 lg:gap-16">
+        <section className="ewaste-industries bg-white dark:bg-black">
+            <div className="ewaste-industries__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[48px]">
                 <div className="ewaste-industries__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <p className="ewaste-industries__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Sectors</p>
                     <h2 className="ewaste-industries__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
@@ -26,17 +26,17 @@ const EWasteIndustries = () => {
                     </p>
                 </div>
 
-                <div className="ewaste-industries__grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <div className="ewaste-industries__grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {industries.map((industry, index) => (
                         <div
                             key={index}
-                            className="ewaste-industries__card scroll-reveal flex flex-col gap-5 p-8 items-center text-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
+                            className="ewaste-industries__card scroll-reveal flex flex-col gap-4 p-8 items-center text-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
                             style={{ animationDelay: `${index * 0.05}s` }}
                         >
                             <div className="ewaste-industries__card-icon w-16 h-16 rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851]  flex items-center justify-center">
                                 <industry.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
                             </div>
-                            <h3 className="ewaste-industries__card-title text-[17px] font-bold  dark:text-white text-gray-900 leading-snug tracking-tight px-2">
+                            <h3 className="ewaste-industries__card-title text-[17px] font-bold  dark:text-white text-gray-900 leading-snug tracking-tight">
                                 {industry.title}
                             </h3>
                             <p className="ewaste-industries__card-description dark:text-gray-400 text-gray-500 text-[13px] leading-relaxed">

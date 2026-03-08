@@ -39,7 +39,7 @@ const EWasteContent = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-2xl w-full mx-auto flex flex-col gap-4 md:gap-12">
+        <div className="max-w-screen-2xl w-full px-3 lg:px-3 mx-auto flex flex-col gap-[48px]">
             <EWasteHero />
 
             <Suspense fallback={<div className="flex justify-center items-center h-48">Loading...</div>}>
@@ -65,6 +65,9 @@ const EWasteContent = () => {
             <Suspense fallback={<div className="flex justify-center items-center h-48">Loading Contact...</div>}>
                 <EWasteContactCTA />
             </Suspense>
+
+            {/* Empty div to trigger the flex gap of 48px at the bottom without using padding/margin */}
+            <div></div>
         </div>
     );
 };

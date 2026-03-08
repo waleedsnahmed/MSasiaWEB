@@ -4,8 +4,8 @@ import { Recycle } from 'lucide-react';
 const EWasteHero = () => {
     return (
         <section className="ewaste-hero flex flex-col gap-8 before:content-[''] after:content-['']">
-            <div className="max-w-screen-2xl mx-auto w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:h-[375px] animate-fadeIn">
+            <div className="max-w-screen-2xl mx-auto px-0 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:h-[440px] animate-fadeIn">
 
                     {/* LEFT COLUMN: Text Content */}
                     <div className="flex flex-col items-start text-left h-full justify-center gap-y-7 lg:gap-y-8">

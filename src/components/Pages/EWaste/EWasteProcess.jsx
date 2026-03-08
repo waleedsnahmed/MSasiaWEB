@@ -42,16 +42,15 @@ const processSteps = [
 
 const EWasteProcess = () => {
     return (
-        <section id="process" className="ewaste-process dark:bg-[#0a0a0a] bg-white">
-            <div className="ewaste-process__container max-w-screen-2xl mx-auto flex flex-col gap-12 lg:gap-16">
+        <section id="process" className="ewaste-process bg-white dark:bg-black">
+            <div className="ewaste-process__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[48px]">
                 <div className="ewaste-process__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <p className="ewaste-process__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Our Expertise</p>
                     <h2 className="ewaste-process__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
                         Our <span className="ewaste-process__heading-accent !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">Certified Process</span>
                     </h2>
-                    <p className="ewaste-process__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
-                        A Step-by-Step Framework for India: We operate on a foundation of transparency,
-                        security, and compliance.
+                    <p className="ewaste-process__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-none leading-relaxed">
+                        A Step-by-Step Framework for India: We operate on a foundation of transparency, security, and compliance.
                     </p>
                 </div>
 
