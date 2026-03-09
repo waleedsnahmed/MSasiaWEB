@@ -60,7 +60,7 @@ const EWasteProcess = () => {
                         return (
                             <div
                                 key={index}
-                                className={`ewaste-process__step scroll-reveal flex flex-col items-center gap-6 p-6 lg:p-8 rounded-3xl dark:bg-[#111] bg-gray-50 border border-transparent dark:border-white/5 hover:border-gray-200 dark:hover:border-white/10 transition-colors ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                                className={`ewaste-process__step scroll-reveal flex flex-col items-center gap-6 p-[24px] rounded-3xl dark:bg-[#111] bg-gray-50 border border-transparent dark:border-white/5 hover:border-gray-200 dark:hover:border-white/10 transition-colors ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                             >
                                 <div className="ewaste-process__step-icon-wrap flex-shrink-0 w-full md:w-auto">
                                     <div className="ewaste-process__step-icon w-16 h-16 mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-[#47622A] to-[#799851] flex items-center justify-center shadow-md">

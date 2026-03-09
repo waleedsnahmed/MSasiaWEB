@@ -63,7 +63,7 @@ const EWasteWhyChooseUs = () => {
                 </div>
 
                 <div className="ewaste-why__cta-wrapper scroll-reveal">
-                    <div className="ewaste-why__cta-banner p-8 lg:p-10 rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] text-white relative overflow-hidden">
+                    <div className="ewaste-why__cta-banner p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] text-white relative overflow-hidden">
                         <p className="ewaste-why__cta-text text-lg lg:text-xl leading-relaxed relative z-10 font-medium">
                             <strong className="ewaste-why__cta-strong text-xl lg:text-2xl block ">MS Asia Enterprises is the definitive solution.</strong>
                             We close the loop with a formal, auditable process that protects your business, recovers value, and
