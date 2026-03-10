@@ -15,13 +15,13 @@ const industries = [
 const EWasteIndustries = () => {
     return (
         <section className="ewaste-industries bg-white dark:bg-black">
-            <div className="ewaste-industries__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[48px]">
+            <div className="ewaste-industries__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
                 <div className="ewaste-industries__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <p className="ewaste-industries__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Sectors</p>
                     <h2 className="ewaste-industries__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
                         Industries <span className="ewaste-industries__heading-accent !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">We Serve</span>
                     </h2>
-                    <p className="ewaste-industries__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
+                    <p className="ewaste-industries__subtitle text-lg dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
                         Tailored solutions for diverse sectors across India.
                     </p>
                 </div>
@@ -30,7 +30,7 @@ const EWasteIndustries = () => {
                     {industries.map((industry, index) => (
                         <div
                             key={index}
-                            className="ewaste-industries__card scroll-reveal flex flex-col gap-4 p-8 items-center text-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
+                            className="ewaste-industries__card scroll-reveal flex flex-col gap-4 p-[12px] min-h-[280px] items-center text-center justify-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
                             style={{ animationDelay: `${index * 0.05}s` }}
                         >
                             <div className="ewaste-industries__card-icon w-16 h-16 rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851]  flex items-center justify-center">

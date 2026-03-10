@@ -115,7 +115,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <hr style={{ width: '100%', maxWidth: '1050px', border: 'none', borderTop: '1px solid var(--footer-border)', margin: 0 }} />
+                <hr style={{ width: '100%', border: 'none', borderTop: '1px solid var(--footer-border)', margin: 0 }} />
 
                 <div className="footer-bottom" style={{ borderTop: 'none', padding: 0, width: '100%' }}>
                     <div className="footer-container max-w-screen-2xl mx-auto px-[12px] w-full">

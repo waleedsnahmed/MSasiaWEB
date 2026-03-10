@@ -37,7 +37,7 @@ const benefits = [
 const EWasteBenefits = () => {
     return (
         <section className="ewaste-benefits bg-white dark:bg-black">
-            <div className="ewaste-benefits__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-12 lg:gap-16">
+            <div className="ewaste-benefits__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
                 <div className="ewaste-benefits__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <p className="ewaste-benefits__label text-[#5a7638] dark:text-[#799851] font-bold text-xs tracking-widest uppercase ">Why Partner</p>
                     <h2 className="ewaste-benefits__heading text-4xl md:text-5xl font-extrabold  dark:text-white text-gray-900 leading-tight">
@@ -52,7 +52,7 @@ const EWasteBenefits = () => {
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
-                            className="ewaste-benefits__card scroll-reveal p-8 rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-4 items-start text-left"
+                            className="ewaste-benefits__card scroll-reveal p-[12px] min-h-[245px] rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-4 items-start text-left"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className="ewaste-benefits__card-icon-wrap w-14 h-14 rounded-2xl bg-[#eff1ea] dark:bg-[#2a3024]  flex items-center justify-center border border-[#e5e9de] dark:border-white/5">

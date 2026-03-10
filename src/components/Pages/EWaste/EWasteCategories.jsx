@@ -41,13 +41,13 @@ const categories = [
 const EWasteCategories = () => {
     return (
         <section className="ewaste-categories bg-white dark:bg-black">
-            <div className="ewaste-categories__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[48px]">
+            <div className="ewaste-categories__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
                 <div className="ewaste-categories__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <p className="ewaste-categories__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Capabilities</p>
                     <h2 className="ewaste-categories__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
                         <span className="ewaste-categories__heading-accent !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">Electronics</span> We Collect
                     </h2>
-                    <p className="ewaste-categories__subtitle text-lg mx-auto dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
+                    <p className="ewaste-categories__subtitle text-lg dark:text-gray-400 text-gray-600 max-w-3xl leading-relaxed">
                         We provide solutions for virtually every category of end-of-life electronic equipment
                         across India.
                     </p>

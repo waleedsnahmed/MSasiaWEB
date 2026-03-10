@@ -40,11 +40,15 @@ const EWasteContent = () => {
 
     return (
         <div className="max-w-screen-2xl w-full px-3 lg:px-3 mx-auto flex flex-col gap-[48px]">
-            <EWasteHero />
+            {/* Empty div to trigger the flex gap of 48px at the top without using padding/margin */}
+            <div></div>
 
-            <Suspense fallback={<div className="flex justify-center items-center h-48">Loading...</div>}>
-                <EWasteWhyChooseUs />
-            </Suspense>
+            <div className="flex flex-col gap-[48px]">
+                <EWasteHero />
+                <Suspense fallback={<div className="flex justify-center items-center h-48">Loading...</div>}>
+                    <EWasteWhyChooseUs />
+                </Suspense>
+            </div>
 
             <Suspense fallback={<div className="flex justify-center items-center h-48">Loading Process...</div>}>
                 <EWasteProcess />

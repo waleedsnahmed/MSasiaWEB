@@ -27,8 +27,8 @@ const whyPoints = [
 const EWasteWhyChooseUs = () => {
     return (
         <section className="ewaste-why bg-white dark:bg-black">
-            <div className="ewaste-why__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[48px]">
-                <div className="ewaste-why__header text-center flex flex-col items-center gap-4 scroll-reveal">
+            <div className="ewaste-why__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
+                <div className="ewaste-why__header text-center flex flex-col items-center justify-start gap-4 scroll-reveal min-h-[178px]">
                     <p className="ewaste-why__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Why Choose Us</p>
                     <h2 className="ewaste-why__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
                         Why Proper Electronics <br className="hidden md:block" />
@@ -55,7 +55,7 @@ const EWasteWhyChooseUs = () => {
                                     {point.title}
                                 </h3>
                             </div>
-                            <p className="ewaste-why__card-description dark:text-gray-400 text-gray-600 leading-relaxed text-sm md:text-base pl-1">
+                            <p className="ewaste-why__card-description dark:text-gray-400 text-gray-600 leading-relaxed text-sm md:text-base">
                                 {point.description}
                             </p>
                         </div>
@@ -63,13 +63,13 @@ const EWasteWhyChooseUs = () => {
                 </div>
 
                 <div className="ewaste-why__cta-wrapper scroll-reveal">
-                    <div className="ewaste-why__cta-banner p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] text-white relative overflow-hidden">
-                        <p className="ewaste-why__cta-text text-lg lg:text-xl leading-relaxed relative z-10 font-medium">
-                            <strong className="ewaste-why__cta-strong text-xl lg:text-2xl block ">MS Asia Enterprises is the definitive solution.</strong>
-                            We close the loop with a formal, auditable process that protects your business, recovers value, and
-                            ensures every component is handled according to the highest environmental and data
-                            security standards.
-                        </p>
+                    <div className="ewaste-why__cta-banner p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] text-black relative overflow-hidden">
+                        <div className="ewaste-why__cta-text text-lg lg:text-xl leading-relaxed relative z-10 font-medium flex flex-col gap-[16px]">
+                            <strong className="ewaste-why__cta-strong text-xl lg:text-2xl block text-black">MS Asia Enterprises is the definitive solution.</strong>
+                            <span>We close the loop with a formal, auditable process that protects your business, recovers value, and
+                                ensures every component is handled according to the highest environmental and data
+                                security standards.</span>
+                        </div>
                     </div>
                 </div>
             </div>
