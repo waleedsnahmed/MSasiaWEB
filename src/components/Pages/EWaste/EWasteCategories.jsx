@@ -53,26 +53,31 @@ const EWasteCategories = () => {
                     </p>
                 </div>
 
-                <div className="ewaste-categories__table-wrapper scroll-reveal">
+                <div className="ewaste-categories__table-wrapper scroll-reveal max-w-[1152px] mx-auto w-full">
                     <div className="ewaste-categories__table-outer overflow-x-auto rounded-3xl border dark:border-white/10 border-gray-200 bg-white dark:bg-[#1a1a1a] shadow-sm">
-                        <table className="ewaste-categories__table w-full text-left">
+                        <table className="ewaste-categories__table w-full table-fixed">
+                            <colgroup>
+                                <col className="w-[20%]" />
+                                <col className="w-[40%]" />
+                                <col className="w-[40%]" />
+                            </colgroup>
                             <thead className="ewaste-categories__thead bg-[#47622A] dark:bg-[#1a1a1a] border-b dark:border-white/10 border-transparent text-white dark:text-gray-200">
                                 <tr>
-                                    <th className="ewaste-categories__th p-[12px] text-sm font-bold uppercase tracking-wider">Category</th>
-                                    <th className="ewaste-categories__th p-[12px] text-sm font-bold uppercase tracking-wider">Examples</th>
-                                    <th className="ewaste-categories__th p-[12px] text-sm font-bold uppercase tracking-wider">Our Specialized Handling</th>
+                                    <th className="ewaste-categories__th p-[8px] md:p-[16px] text-sm font-bold uppercase tracking-wider text-center">Category</th>
+                                    <th className="ewaste-categories__th p-[8px] md:p-[16px] text-sm font-bold uppercase tracking-wider text-center">Examples</th>
+                                    <th className="ewaste-categories__th p-[8px] md:p-[16px] text-sm font-bold uppercase tracking-wider text-center">Our Specialized Handling</th>
                                 </tr>
                             </thead>
                             <tbody className="ewaste-categories__tbody divide-y dark:divide-white/5 divide-gray-100">
                                 {categories.map((cat, index) => (
                                     <tr key={index} className="ewaste-categories__row hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                                        <td className="ewaste-categories__td-category p-[12px] font-bold dark:text-gray-200 text-[#47622A] text-sm align-top">
+                                        <td className="ewaste-categories__td-category p-[8px] md:p-[16px] font-bold dark:text-gray-200 text-[#47622A] text-sm text-center align-middle">
                                             {cat.category}
                                         </td>
-                                        <td className="ewaste-categories__td-examples p-[12px] dark:text-gray-400 text-gray-600 text-sm align-top">
+                                        <td className="ewaste-categories__td-examples p-[8px] md:p-[16px] dark:text-gray-400 text-gray-600 text-sm text-center align-middle">
                                             {cat.examples}
                                         </td>
-                                        <td className="ewaste-categories__td-handling p-[12px] dark:text-gray-400 text-gray-600 text-sm align-top">
+                                        <td className="ewaste-categories__td-handling p-[8px] md:p-[16px] dark:text-gray-400 text-gray-600 text-sm text-center align-middle">
                                             {cat.handling}
                                         </td>
                                     </tr>

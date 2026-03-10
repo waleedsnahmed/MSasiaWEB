@@ -18,18 +18,18 @@ const EWasteHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
-                        <h2 className="ewaste-hero__heading text-3xl lg:text-4xl xl:text-5xl font-montserrat font-extrabold leading-[1.15] tracking-tight">
+                        <h1 className="ewaste-hero__heading text-3xl lg:text-4xl xl:text-5xl font-montserrat font-extrabold leading-[1.15] tracking-tight">
                             <span className="text-gray-900 dark:text-white">Advanced </span><span className="ewaste-hero__heading-accent !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">E-Waste Recycling</span>
-                        </h2>
+                        </h1>
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content prose prose-lg prose-gray dark:prose-invert max-w-none flex flex-col gap-y-3">
-                            <p className="ewaste-hero__description m-0 text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light font-sans tracking-tight">
+                            <h4 className="ewaste-hero__description m-0 text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light font-sans tracking-tight">
                                 From consumer electronics to enterprise servers, we process all forms of e-waste. Our advanced separation technologies recover high-purity metals and plastics, returning them to the circular economy.
-                            </p>
-                            <p className="ewaste-hero__description-secondary m-0 text-base text-gray-500 dark:text-gray-400 leading-snug font-sans tracking-tight">
+                            </h4>
+                            <h6 className="ewaste-hero__description-secondary m-0 text-base text-gray-500 dark:text-gray-400 leading-snug font-sans font-normal normal-case tracking-tight">
                                 Our certified experts utilize state-of-the-art methodology to ensure every aspect of your requirement is met with precision, absolute compliance, and environmental stewardship.
-                            </p>
+                            </h6>
                         </div>
                     </div>
 

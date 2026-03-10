@@ -30,15 +30,15 @@ const EWasteIndustries = () => {
                     {industries.map((industry, index) => (
                         <div
                             key={index}
-                            className="ewaste-industries__card scroll-reveal flex flex-col gap-4 p-[12px] min-h-[280px] items-center text-center justify-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
+                            className="ewaste-industries__card scroll-reveal flex flex-col gap-4 p-[12px] md:p-[24px] min-h-[280px] items-center text-center justify-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
                             style={{ animationDelay: `${index * 0.05}s` }}
                         >
                             <div className="ewaste-industries__card-icon w-16 h-16 rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851]  flex items-center justify-center">
                                 <industry.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
                             </div>
-                            <h3 className="ewaste-industries__card-title text-[17px] font-bold  dark:text-white text-gray-900 leading-snug tracking-tight">
+                            <h4 className="ewaste-industries__card-title text-[17px] font-bold  dark:text-white text-gray-900 leading-snug tracking-tight">
                                 {industry.title}
-                            </h3>
+                            </h4>
                             <p className="ewaste-industries__card-description dark:text-gray-400 text-gray-500 text-[13px] leading-relaxed">
                                 {industry.description}
                             </p>

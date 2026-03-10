@@ -48,12 +48,12 @@ const EWasteWhyChooseUs = () => {
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className="ewaste-why__card-header flex items-center gap-4">
-                                <div className="ewaste-why__card-icon-wrap flex items-center justify-center p-3 rounded-2xl bg-gradient-to-br from-[#47622A]/10 to-[#799851]/10 dark:from-[#799851]/20 dark:to-[#47622A]/20 shadow-sm border border-[#47622A]/5 dark:border-[#799851]/10 transition-colors duration-300 ease-in-out group-hover:bg-[#22c55e]/10">
+                                <div className="ewaste-why__card-icon-wrap flex items-center justify-center p-[12px] rounded-2xl bg-gradient-to-br from-[#47622A]/10 to-[#799851]/10 dark:from-[#799851]/20 dark:to-[#47622A]/20 shadow-sm border border-[#47622A]/5 dark:border-[#799851]/10 transition-colors duration-300 ease-in-out group-hover:bg-[#22c55e]/10">
                                     <point.icon className="w-7 h-7 text-[#47622A] dark:text-[#799851] transition-all duration-300 ease-in-out group-hover:text-[#22c55e] dark:group-hover:text-[#22c55e]" strokeWidth={2} />
                                 </div>
-                                <h3 className="ewaste-why__card-title text-xl font-bold dark:text-white text-gray-900 leading-tight">
+                                <h4 className="ewaste-why__card-title text-xl font-bold dark:text-white text-gray-900 leading-tight">
                                     {point.title}
-                                </h3>
+                                </h4>
                             </div>
                             <p className="ewaste-why__card-description dark:text-gray-400 text-gray-600 leading-relaxed text-sm md:text-base">
                                 {point.description}
@@ -65,7 +65,7 @@ const EWasteWhyChooseUs = () => {
                 <div className="ewaste-why__cta-wrapper scroll-reveal">
                     <div className="ewaste-why__cta-banner p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] text-black relative overflow-hidden">
                         <div className="ewaste-why__cta-text text-lg lg:text-xl leading-relaxed relative z-10 font-medium flex flex-col gap-[16px]">
-                            <strong className="ewaste-why__cta-strong text-xl lg:text-2xl block text-black">MS Asia Enterprises is the definitive solution.</strong>
+                            <h5 className="ewaste-why__cta-strong text-xl lg:text-2xl block text-black font-bold">MS Asia Enterprises is the definitive solution.</h5>
                             <span>We close the loop with a formal, auditable process that protects your business, recovers value, and
                                 ensures every component is handled according to the highest environmental and data
                                 security standards.</span>

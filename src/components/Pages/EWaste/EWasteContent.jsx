@@ -69,9 +69,6 @@ const EWasteContent = () => {
             <Suspense fallback={<div className="flex justify-center items-center h-48">Loading Contact...</div>}>
                 <EWasteContactCTA />
             </Suspense>
-
-            {/* Empty div to trigger the flex gap of 48px at the bottom without using padding/margin */}
-            <div></div>
         </div>
     );
 };

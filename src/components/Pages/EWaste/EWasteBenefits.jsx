@@ -52,15 +52,15 @@ const EWasteBenefits = () => {
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
-                            className="ewaste-benefits__card scroll-reveal p-[12px] min-h-[245px] rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-4 items-start text-left"
+                            className="ewaste-benefits__card scroll-reveal p-[12px] md:p-[32px] min-h-[245px] rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-4 items-start text-left"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className="ewaste-benefits__card-icon-wrap w-14 h-14 rounded-2xl bg-[#eff1ea] dark:bg-[#2a3024]  flex items-center justify-center border border-[#e5e9de] dark:border-white/5">
                                 <benefit.icon className="w-6 h-6 text-[#5a7638] dark:text-[#799851]" strokeWidth={1.5} />
                             </div>
-                            <h3 className="ewaste-benefits__card-title text-lg font-bold  dark:text-white text-gray-900 leading-snug">
+                            <h4 className="ewaste-benefits__card-title text-lg font-bold  dark:text-white text-gray-900 leading-snug">
                                 {benefit.title}
-                            </h3>
+                            </h4>
                             <p className="ewaste-benefits__card-description dark:text-gray-400 text-gray-500 text-[14px] leading-relaxed">
                                 {benefit.description}
                             </p>
