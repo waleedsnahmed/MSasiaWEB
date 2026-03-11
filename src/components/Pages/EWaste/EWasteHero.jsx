@@ -27,7 +27,7 @@ const EWasteHero = () => {
                             <h4 className="ewaste-hero__description m-0 text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light font-sans tracking-tight">
                                 From consumer electronics to enterprise servers, we process all forms of e-waste. Our advanced separation technologies recover high-purity metals and plastics, returning them to the circular economy.
                             </h4>
-                            <h6 className="ewaste-hero__description-secondary m-0 text-base text-gray-500 dark:text-gray-400 leading-snug font-sans font-normal normal-case tracking-tight">
+                            <h6 className="ewaste-hero__description-secondary m-0 text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-light font-sans normal-case tracking-tight">
                                 Our certified experts utilize state-of-the-art methodology to ensure every aspect of your requirement is met with precision, absolute compliance, and environmental stewardship.
                             </h6>
                         </div>

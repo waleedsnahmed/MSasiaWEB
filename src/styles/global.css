@@ -1546,13 +1546,13 @@ button.bg-brand-btn-primary:hover {
    ======================================== */
 
 .site-footer {
-    --footer-bg: #47622A;
-    /* GREEN FOOTER */
+    --footer-bg: #3d5220;
+    /* GREEN FOOTER - matches CTA gradient end */
     --footer-text: #F9FAFB;
     --footer-heading: #FFFFFF;
     --footer-link: #E5E7EB;
     --footer-link-hover: #000000;
-    --footer-accent: #799851;
+    --footer-accent: #5a7638;
     --footer-border: rgba(255, 255, 255, 0.1);
     --footer-width: 100%;
 }

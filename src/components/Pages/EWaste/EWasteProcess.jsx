@@ -72,8 +72,8 @@ const processSteps = [
 
 const EWasteProcess = () => {
     return (
-        <section id="process" className="ewaste-process bg-white dark:bg-black">
-            <div className="ewaste-process__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
+        <section id="process" className="ewaste-process bg-white dark:bg-black flex justify-center">
+            <div className="ewaste-process__container max-w-[1152px] px-0 flex flex-col gap-[24px] w-full">
                 <div className="ewaste-process__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <p className="ewaste-process__label text-[#47622A] dark:text-[#799851] font-bold text-sm tracking-widest uppercase ">Our Expertise</p>
                     <h2 className="ewaste-process__heading text-4xl md:text-5xl font-bold  dark:text-white text-gray-900 leading-tight">
@@ -84,13 +84,13 @@ const EWasteProcess = () => {
                     </p>
                 </div>
 
-                <div className="ewaste-process__list flex flex-col gap-6 lg:gap-8">
+                <div className="ewaste-process__list flex flex-col gap-6 lg:gap-8 w-full">
                     {processSteps.map((step, index) => {
                         const isEven = index % 2 === 0;
                         return (
                             <div
                                 key={index}
-                                className={`ewaste-process__step scroll-reveal flex flex-col items-center gap-6 p-[12px] md:p-[24px] rounded-3xl dark:bg-[#111] bg-gray-50 border border-transparent dark:border-white/5 hover:border-gray-200 dark:hover:border-white/10 transition-colors max-w-[1152px] w-full mx-auto ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                                className={`ewaste-process__step scroll-reveal flex flex-col items-center gap-6 p-[12px] md:p-[24px] rounded-3xl dark:bg-[#111] bg-gray-50 border border-transparent dark:border-white/5 hover:border-gray-200 dark:hover:border-white/10 transition-colors w-full ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                             >
                                 <div className="ewaste-process__step-icon-wrap flex-shrink-0 w-full md:w-auto">
                                     <div className="ewaste-process__step-icon w-16 h-16 mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-[#47622A] to-[#799851] flex items-center justify-center shadow-md">

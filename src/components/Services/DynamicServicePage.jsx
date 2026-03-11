@@ -27,11 +27,11 @@ const DynamicServicePage = () => {
                 </div>
 
                 {/* Hero Content */}
-                <div className="relative h-full max-w-screen-2xl mx-auto px-[12px] flex flex-col justify-center items-start text-white">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-2 animate-slideInLeft text-white">
+                <div className="relative h-full max-w-screen-2xl mx-auto px-[12px] flex flex-col gap-4 justify-center items-start text-white">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight animate-slideInLeft text-white">
                         {data.title}
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-200 mb-6 font-light max-w-2xl animate-slideInLeft" style={{ animationDelay: '0.1s' }}>
+                    <p className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl animate-slideInLeft" style={{ animationDelay: '0.1s' }}>
                         {data.subtitle}
                     </p>
                     <div className="w-24 h-1.5 bg-[#799851] rounded-full animate-widthGrow"></div>
