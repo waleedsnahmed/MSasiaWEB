@@ -6,12 +6,12 @@ function ExternalLogo({ isHidden }) {
                     }`}
             >
                 <a href="/" className="navbar-logo flex items-center gap-2 no-underline">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-heading-h1 to-brand-icon-primary flex items-center justify-center text-white font-bold text-base shadow-lg">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-heading-h1 to-brand-icon-primary flex items-center justify-center text-white font-bold shadow-lg">
                         MA
                     </div>
-                    <span className="text-xl font-bold text-brand-heading-h1 hidden sm:block">
+                    <h5 className="font-bold text-brand-heading-h1 hidden sm:block">
                         Ms Asia
-                    </span>
+                    </h5>
                 </a>
             </div>
         </div>

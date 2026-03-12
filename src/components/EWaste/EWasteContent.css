@@ -1,0 +1,45 @@
+/* =============================================
+   E-WASTE RECYCLING PAGE — Component Styles
+   File: EWasteContent.css
+   ============================================= */
+
+/* =============================================
+   1. WHY CHOOSE US SECTION
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .ewaste-why,
+.dark .ewaste-process,
+.dark .ewaste-categories,
+.dark .ewaste-industries,
+.dark .ewaste-benefits,
+.dark .ewaste-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.ewaste-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

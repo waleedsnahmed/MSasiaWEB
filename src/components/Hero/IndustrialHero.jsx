@@ -28,17 +28,6 @@ function IndustrialHero() {
 
                 {/* LEFT CONTENT (60%) */}
 
-
-                {/* CTA Buttons */}
-                {/*<div className="industrial-hero-cta">
-                        <a href="#audit" className="industrial-btn-primary">
-
-                        </a>
-                        <a href="#services" className="industrial-btn-secondary">
-
-                        </a>
-                    </div>*/}
-
                 {/* RIGHT IMAGE (40%) */}
                 <div className="industrial-hero-image">
                     <div className="industrial-hero-image-wrapper">
@@ -57,7 +46,7 @@ function IndustrialHero() {
 
             {/* Logo Loop Section - Trusted Partners */}
             <div className="industrial-hero-logos">
-                <p className="text-center text-sm text-brand-text-muted mb-6 font-medium tracking-wide uppercase">
+                <p className="text-center text-brand-text-muted mb-6 font-medium tracking-wide uppercase">
                     Trusted By Industry Leaders & Certified Partners
                 </p>
                 <LogoLoop

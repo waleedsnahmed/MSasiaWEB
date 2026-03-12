@@ -53,7 +53,7 @@ function SearchBar({ isExpanded, toggleSearch }) {
                             ref={inputRef}
                             type="text"
                             placeholder="Search Website..."
-                            className="flex-1 bg-transparent border-none outline-none text-gray-700 placeholder-gray-400 text-lg h-full font-medium"
+                            className="flex-1 bg-transparent border-none outline-none text-gray-700 placeholder-gray-400 h-full font-medium"
                             style={{ paddingTop: 0, paddingBottom: 0, lineHeight: 'normal' }}
                         />
 

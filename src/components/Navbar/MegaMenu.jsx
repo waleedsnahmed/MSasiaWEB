@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { NAV_MENU_DATA } from './NavbarData';
+import { NAV_MENU_DATA } from '../../data/NavbarData';
 import './MegaMenu.css';
 
 // Content content map for Mega Menu Interactivity

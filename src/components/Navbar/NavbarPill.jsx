@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
-import { NAV_MENU_DATA } from './NavbarData';
+import { NAV_MENU_DATA } from '../../data/NavbarData';
 import MegaMenu from './MegaMenu';
 import './MegaMenu.css';
 
@@ -22,8 +22,6 @@ function NavbarPill({
     const [activeSubMenu, setActiveSubMenu] = useState(null); // Level 2 Accordion State
     const [isInternalHovered, setIsInternalHovered] = useState(false);
     const [isExternalHovered, setIsExternalHovered] = useState(false);
-    const [activeCategory, setActiveCategory] = useState(null);
-    const [menuLeft, setMenuLeft] = useState(0);
     const closeTimeoutRef = useRef(null);
 
     // Smooth Scroll to Top for Logo OR navigate to home
@@ -44,18 +42,12 @@ function NavbarPill({
             clearTimeout(closeTimeoutRef.current);
             closeTimeoutRef.current = null;
         }
-        if (e && e.currentTarget) {
-            const rect = e.currentTarget.getBoundingClientRect();
-            setMenuLeft(rect.left + rect.width / 2);
-        }
         setActiveMenu(menuName);
-        setActiveCategory(0);
     };
 
     const handleMenuLeave = () => {
         closeTimeoutRef.current = setTimeout(() => {
             setActiveMenu(null);
-            setActiveCategory(null);
         }, 150);
     };
 
@@ -144,7 +136,7 @@ function NavbarPill({
                                         <a
                                             key={item}
                                             href={hasDropdown ? '#' : '/blog'}
-                                            className={`flex items-center gap-1 px-4 py-2 lg:px-5 lg:py-2.5 text-[14px] xl:text-[15px] font-medium rounded-full transition-all duration-300 whitespace-nowrap no-underline hover:no-underline bg-transparent hover:bg-black/5 dark:hover:bg-white/5 ${isActive
+                                            className={`flex items-center gap-1 px-4 py-2 lg:px-5 lg:py-2.5 font-medium rounded-full transition-all duration-300 whitespace-nowrap no-underline hover:no-underline bg-transparent hover:bg-black/5 dark:hover:bg-white/5 ${isActive
                                                 ? '!text-[#47622A] dark:!text-[#799851] bg-black/5 dark:bg-white/5'
                                                 : isScrolled ? 'text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white' : location.pathname === '/' ? 'text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white' : 'text-white hover:text-gray-200'
                                                 }`}
@@ -185,7 +177,7 @@ function NavbarPill({
                                     href="/contact"
                                     onMouseEnter={() => setIsInternalHovered(true)}
                                     onMouseLeave={() => setIsInternalHovered(false)}
-                                    className={`flex items-center justify-center gap-1 lg:gap-1.5 rounded-full text-[14px] xl:text-[15px] font-medium transition-all duration-300 no-underline hover:no-underline box-border px-5 xl:px-8 h-[38px] xl:h-[42px] ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                                    className={`flex items-center justify-center gap-1 lg:gap-1.5 rounded-full font-medium transition-all duration-300 no-underline hover:no-underline box-border px-5 xl:px-8 h-[38px] xl:h-[42px] ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
                                         } ${isInternalHovered ? 'bg-transparent text-[#47622A] ring-1 ring-inset ring-[#47622A] !shadow-none' : 'bg-[#47622A] text-white ring-1 ring-inset ring-transparent'}`}
                                 >
                                     <span className="whitespace-nowrap font-medium tracking-tight">Contact Us</span>
@@ -207,7 +199,7 @@ function NavbarPill({
                                     <input
                                         type="text"
                                         placeholder="Search..."
-                                        className={`w-full bg-transparent text-lg xl:text-xl text-left outline-none border-none ring-0 focus:ring-0 h-full !m-0 !mb-0 !p-0 !border-0 ${isScrolled ? 'text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-400' : location.pathname === '/' ? 'text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-400' : 'text-white placeholder:text-gray-300'
+                                        className={`w-full bg-transparent text-left outline-none border-none ring-0 focus:ring-0 h-full !m-0 !mb-0 !p-0 !border-0 ${isScrolled ? 'text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-400' : location.pathname === '/' ? 'text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-400' : 'text-white placeholder:text-gray-300'
                                             }`}
                                         autoFocus
                                     />
@@ -240,7 +232,7 @@ function NavbarPill({
                                 id="external-contact"
                                 onMouseEnter={() => setIsExternalHovered(true)}
                                 onMouseLeave={() => setIsExternalHovered(false)}
-                                className={`flex items-center justify-center rounded-full px-5 xl:px-8 h-[38px] xl:h-[42px] text-[14px] xl:text-[15px] font-medium transition-all duration-300 no-underline hover:no-underline box-border ${isExternalHovered ? 'bg-transparent text-[#47622A] ring-1 ring-inset ring-[#47622A] !shadow-none' : 'bg-[#47622A] text-white shadow-[0_4px_12px_rgba(71,98,42,0.2)] ring-1 ring-inset ring-transparent'}`}
+                                className={`flex items-center justify-center rounded-full px-5 xl:px-8 h-[38px] xl:h-[42px] font-medium transition-all duration-300 no-underline hover:no-underline box-border ${isExternalHovered ? 'bg-transparent text-[#47622A] ring-1 ring-inset ring-[#47622A] !shadow-none' : 'bg-[#47622A] text-white shadow-[0_4px_12px_rgba(71,98,42,0.2)] ring-1 ring-inset ring-transparent'}`}
                             >
                                 <span className="font-medium tracking-tight">Contact Us</span>
                             </a>
@@ -382,7 +374,7 @@ function NavbarPill({
                                     alt="MS Asia Logo"
                                     className="w-9 h-9 min-[400px]:w-11 min-[400px]:h-11 flex-shrink-0 object-contain"
                                 />
-                                <span className="font-bold text-lg min-[400px]:text-xl tracking-tight text-[#111827] whitespace-nowrap">MS Asia</span>
+                                <h5 className="font-bold tracking-tight text-[#111827] whitespace-nowrap">MS Asia</h5>
                             </a>
                         </div>
 
@@ -437,7 +429,7 @@ function NavbarPill({
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="flex-1 bg-transparent text-base text-gray-700 outline-none border-none ring-0 focus:ring-0 placeholder:text-gray-400 mx-[10px] h-full relative top-[5px]"
+                            className="flex-1 bg-transparent text-gray-700 outline-none border-none ring-0 focus:ring-0 placeholder:text-gray-400 mx-[10px] h-full relative top-[5px]"
                             autoFocus
                         />
                         <button
@@ -482,7 +474,7 @@ function NavbarPill({
                                                     onClick={() => toggleMobileMenu()}
                                                     className="flex items-center justify-between py-[12px] group cursor-pointer"
                                                 >
-                                                    <h6 className="m-0 p-0 text-[16px] font-bold !text-black dark:text-gray-100 group-hover:!text-[#47622A] transition-colors normal-case tracking-normal">
+                                                    <h6 className="m-0 p-0 font-bold group-hover:!text-[#47622A] transition-colors normal-case tracking-normal">
                                                         {item}
                                                     </h6>
                                                     <svg className="w-5 h-5 text-gray-600 transition-all" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -497,7 +489,7 @@ function NavbarPill({
                                                             setMobileActiveL1(isL1Active ? null : item);
                                                         }}
                                                     >
-                                                        <h6 className={`m-0 p-0 text-[16px] font-bold transition-colors normal-case tracking-normal ${isL1Active ? 'text-[#3d5423]' : 'text-gray-900 dark:text-gray-100'}`}>
+                                                        <h6 className={`m-0 p-0 font-bold transition-colors normal-case tracking-normal ${isL1Active ? 'text-[#3d5423]' : 'text-gray-900 dark:text-gray-100'}`}>
                                                             {item}
                                                         </h6>
                                                         <div className={`transition-transform duration-300 ${isL1Active ? 'rotate-180' : ''}`}>
@@ -523,7 +515,7 @@ function NavbarPill({
                                                                             className={`flex items-center justify-between p-[12px] cursor-pointer transition-all duration-300 ${isL2Active ? 'bg-[#47622A]/20 text-[#2d4016]' : 'bg-gray-100 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800'}`}
                                                                             onClick={() => setActiveSubMenu(isL2Active ? null : col.title)}
                                                                         >
-                                                                            <h6 className="m-0 p-0 text-[16px] font-bold normal-case tracking-normal">
+                                                                            <h6 className="m-0 p-0 font-bold normal-case tracking-normal">
                                                                                 {col.title}
                                                                             </h6>
                                                                             <div className={`transition-transform duration-300 ${isL2Active ? 'rotate-180' : ''}`}>
@@ -545,9 +537,9 @@ function NavbarPill({
                                                                                             <Link
                                                                                                 to={`/services/${slug}`}
                                                                                                 onClick={() => toggleMobileMenu()}
-                                                                                                className="block py-[12px] px-[12px] rounded-lg transition-colors"
+                                                                                                className="block py-[12px] rounded-lg transition-colors"
                                                                                             >
-                                                                                                <h6 className="m-0 p-0 text-[16px] font-semibold text-gray-900 dark:text-gray-100 hover:text-[#3d5423] dark:hover:text-[#799851] normal-case tracking-normal">
+                                                                                                <h6 className="m-0 p-0 font-semibold hover:text-[#3d5423] dark:hover:text-[#799851] normal-case tracking-normal">
                                                                                                     {label}
                                                                                                 </h6>
                                                                                             </Link>
@@ -574,12 +566,12 @@ function NavbarPill({
                                     <Link
                                         to="/contact"
                                         onClick={() => toggleMobileMenu()}
-                                        className="bg-[#47622A] text-white font-semibold px-5 py-2.5 rounded-lg transition-colors duration-200 text-sm focus:outline-none focus:bg-[#47622A] active:bg-[#47622A] hover:bg-[#5a7a35] transform-none active:transform-none block text-center"
+                                        className="bg-[#47622A] text-white font-semibold px-5 py-2.5 rounded-lg transition-colors duration-200 focus:outline-none focus:bg-[#47622A] active:bg-[#47622A] hover:bg-[#5a7a35] transform-none active:transform-none block text-center"
                                     >
                                         Contact Us
                                     </Link>
                                 </div>
-                                <div className="flex items-center justify-center gap-4 text-[12px] text-gray-400 font-medium py-[12px]">
+                                <div className="flex items-center justify-center gap-4 text-gray-400 font-medium py-[12px]">
                                     <a href="/privacy" className="hover:text-[#47622A] transition-colors">Privacy</a>
                                     <span className="w-1 h-1 rounded-full bg-gray-300"></span>
                                     <a href="/terms" className="hover:text-[#47622A] transition-colors">Terms</a>

@@ -11,9 +11,9 @@ function Footer() {
                                 alt="Ms Asia Logo"
                                 className="w-12 h-12 object-contain"
                             />
-                            <span className="footer-logo-text text-xl font-bold">MS Asia</span>
+                            <h6 className="footer-logo-text font-bold">MS Asia</h6>
                         </div>
-                        <p className="footer-description lg:text-[16px] !text-[14px]">
+                        <p className="footer-description">
                             Leading pharmaceutical waste management solutions provider in Southeast Asia.<br />
                             Committed to environmental compliance and sustainable practices.
                         </p>

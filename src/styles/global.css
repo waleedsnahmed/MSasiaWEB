@@ -1,4 +1,4 @@
-﻿/* Tailwind CSS Directives */
+/* Tailwind CSS Directives */
 
 @tailwind base;
 @tailwind components;
@@ -84,22 +84,16 @@ html {
     --primary-green: #47622A;
     --secondary-green: #799851;
     --dark-green: #374426;
-    --pastel-blue: #E5E7EB;
-    /* Changed to Grey */
-    --lemon-yellow: #000000;
-    /* Changed to Black */
     --text-black: #000000;
-    --light-gray-bg: #F3F4F6;
-    --accent-yellow: #799851;
 
     /* Icon Size System */
-    --icon-xs: 1rem;
-    --icon-sm: 1.25rem;
-    --icon-md: 1.5rem;
-    --icon-lg: 2rem;
-    --icon-xl: 2.5rem;
-    --icon-2xl: 3rem;
-    --icon-3xl: 3.5rem;
+    --icon-xs: 16px;
+    --icon-sm: 20px;
+    --icon-md: 24px;
+    --icon-lg: 32px;
+    --icon-xl: 40px;
+    --icon-2xl: 48px;
+    --icon-3xl: 56px;
 
     /* Icon Stroke Weights */
     --icon-stroke-thin: 1px;
@@ -108,12 +102,11 @@ html {
     --icon-stroke-bold: 2.5px;
 
     /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --spacing-2xl: 4rem;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
 
     /* Container Widths */
     --container-max: 1200px;
@@ -187,13 +180,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Global Heading Styles */
-h1,
-h2,
-h3,
-h4 {
-    color: var(--heading-h1);
-}
+/* Global Heading Styles applied via Universal Heading System below */
 
 /* Dark mode body override */
 .dark body,
@@ -244,7 +231,7 @@ html.dark body {
 .internal-element.visible-state {
     opacity: 1;
     max-width: 200px;
-    margin-right: 0.5rem;
+    margin-right: 8px;
 }
 
 
@@ -265,7 +252,7 @@ section:last-of-type {
 
 
 /* ===== TYPOGRAPHY ===== */
-/* ===== GLOBAL HEADING SYSTEM (Professional Scale) ===== */
+/* ===== GLOBAL HEADING SYSTEM (No Clamp - Fixed Base Sizes) ===== */
 
 /* Universal Heading Styles */
 h1,
@@ -280,44 +267,44 @@ h6 {
     color: var(--heading-h1);
 }
 
-/* H1 Styles */
+/* H1 Styles - Base (Desktop) */
 h1 {
-    font-size: clamp(36px, 5vw, 52px);
+    font-size: 56px;
     line-height: 1.15;
     color: var(--heading-h1);
 }
 
-/* H2 Styles */
+/* H2 Styles - Base (Desktop) */
 h2 {
-    font-size: clamp(28px, 4vw, 42px);
+    font-size: 40px;
     line-height: 1.25;
     color: var(--heading-h2);
 }
 
-/* H3 Styles */
+/* H3 Styles - Base (Desktop) */
 h3 {
-    font-size: clamp(24px, 3.5vw, 34px);
+    font-size: 32px;
     line-height: 1.3;
     color: var(--heading-h3);
 }
 
-/* H4 Styles */
+/* H4 Styles - Base (Desktop) */
 h4 {
-    font-size: clamp(20px, 3vw, 28px);
+    font-size: 24px;
     line-height: 1.3;
     color: var(--heading-h4);
 }
 
-/* H5 Styles */
+/* H5 Styles - Base (Desktop) */
 h5 {
-    font-size: clamp(18px, 2.5vw, 22px);
+    font-size: 18px;
     line-height: 1.3;
     color: var(--text-muted);
 }
 
-/* H6 Styles */
+/* H6 Styles - Base (Desktop) */
 h6 {
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: 16px;
     line-height: 1.3;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -325,7 +312,7 @@ h6 {
 }
 
 p {
-    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-size: 16px;
     color: var(--text-main);
     line-height: 1.7;
 }
@@ -360,7 +347,7 @@ ol {
 
 li {
     margin-bottom: var(--spacing-xs);
-    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-size: 16px;
 }
 
 /* Reset margin for navbar list items */
@@ -406,7 +393,7 @@ figure {
 }
 
 figcaption {
-    font-size: 0.875rem;
+    font-size: 14px;
     color: var(--text-muted);
     margin-top: var(--spacing-xs);
     font-style: italic;
@@ -415,8 +402,8 @@ figcaption {
 /* ===== INTERACTIVE ELEMENTS ===== */
 button {
     font-family: var(--font-heading);
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    padding: 0.75rem 1.5rem;
+    font-size: 16px;
+    padding: 12px 24px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -470,19 +457,19 @@ label {
     font-weight: 600;
     color: var(--text-main);
     font-family: var(--font-heading);
-    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-size: 16px;
 }
 
 input,
 textarea,
 select {
     width: 100%;
-    padding: 0.75rem;
+    padding: 12px;
     margin-bottom: var(--spacing-md);
     border: 1px solid var(--border-soft);
     border-radius: 4px;
     font-family: var(--font-body);
-    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-size: 16px;
     background-color: var(--bg-main);
     color: var(--text-main);
     transition: border-color 0.3s ease;
@@ -584,21 +571,21 @@ option {
 
 /* Specific Icon Classes */
 .icon-document {
-    width: clamp(2.5rem, 5vw, var(--icon-2xl));
-    height: clamp(2.5rem, 5vw, var(--icon-2xl));
+    width: var(--icon-2xl);
+    height: var(--icon-2xl);
     stroke-width: var(--icon-stroke-medium);
 }
 
 .icon-arrow {
-    width: clamp(1.25rem, 3vw, var(--icon-md));
-    height: clamp(1.25rem, 3vw, var(--icon-md));
+    width: var(--icon-md);
+    height: var(--icon-md);
     stroke-width: var(--icon-stroke-light);
 }
 
 .icon-pair-container {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 3vw, 2rem);
+    gap: 32px;
     width: fit-content;
 }
 
@@ -614,7 +601,7 @@ option {
     }
 
     html {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .hero-img {
@@ -651,8 +638,8 @@ option {
 @media (min-width: 1366px) and (max-width: 1599px) {
     :root {
         --container-max: 1100px;
-        --spacing-lg: 1.75rem;
-        --spacing-xl: 2.5rem;
+        --spacing-lg: 28px;
+        --spacing-xl: 40px;
     }
 
     nav {
@@ -669,9 +656,8 @@ option {
     }
 }
 
-/* ===== 5. MACBOOK (1440px - 1365px) ===== */
-@media (min-width: 1440px) and (max-width: 1365px),
-(min-width: 1280px) and (max-width: 1439px) {
+/* ===== 5. MACBOOK (1280px - 1439px) ===== */
+@media (min-width: 1280px) and (max-width: 1439px) {
     :root {
         --container-max: 1000px;
     }
@@ -701,24 +687,49 @@ option {
 @media (min-width: 1024px) and (max-width: 1279px) {
     :root {
         --container-max: 900px;
-        --spacing-xl: 2rem;
-        --spacing-2xl: 3rem;
+        --spacing-xl: 32px;
+        --spacing-2xl: 48px;
     }
 
     html {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 48px;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 36px;
     }
 
     h3 {
-        font-size: 1.75rem;
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    p,
+    li {
+        font-size: 16px;
+    }
+
+    button,
+    label,
+    input,
+    textarea,
+    select {
+        font-size: 16px;
     }
 
     nav {
@@ -769,13 +780,13 @@ option {
     }
 
     .icon-document {
-        width: 2.75rem;
-        height: 2.75rem;
+        width: 44px;
+        height: 44px;
     }
 
     .icon-arrow {
-        width: 1.375rem;
-        height: 1.375rem;
+        width: 22px;
+        height: 22px;
     }
 }
 
@@ -783,24 +794,49 @@ option {
 @media (min-width: 768px) and (max-width: 1023px) {
     :root {
         --container-max: 100%;
-        --spacing-xl: 1.5rem;
-        --spacing-2xl: 2.5rem;
+        --spacing-xl: 24px;
+        --spacing-2xl: 40px;
     }
 
     html {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     h1 {
-        font-size: 2.25rem;
+        font-size: 40px;
     }
 
     h2 {
-        font-size: 1.75rem;
+        font-size: 32px;
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    p,
+    li {
+        font-size: 16px;
+    }
+
+    button,
+    label,
+    input,
+    textarea,
+    select {
+        font-size: 16px;
     }
 
     main {
@@ -880,38 +916,67 @@ option {
     }
 
     .icon-document {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 40px;
+        height: 40px;
     }
 
     .icon-arrow {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 20px;
+        height: 20px;
     }
 
     .icon-pair-container {
-        gap: 1rem;
+        gap: 16px;
     }
 }
 
 /* ===== 8. MOBILE LANDSCAPE (640px - 767px) ===== */
 @media (min-width: 640px) and (max-width: 767px) {
     :root {
-        --spacing-md: 1rem;
-        --spacing-lg: 1.5rem;
-        --spacing-xl: 2rem;
+        --spacing-md: 16px;
+        --spacing-lg: 24px;
+        --spacing-xl: 32px;
     }
 
     html {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 36px;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    p,
+    li {
+        font-size: 16px;
+    }
+
+    button,
+    label,
+    input,
+    textarea,
+    select {
+        font-size: 16px;
     }
 
     .container {
@@ -919,7 +984,7 @@ option {
     }
 
     nav {
-        padding: 0.5rem;
+        padding: 8px;
     }
 
     .logo-container,
@@ -936,7 +1001,7 @@ option {
 
     .nav-menu {
         gap: 12px;
-        padding: 0.5rem 0;
+        padding: 8px 0;
     }
 
     .nav-item {
@@ -958,28 +1023,53 @@ option {
 /* ===== 9. MOBILE PORTRAIT (480px - 639px) ===== */
 @media (min-width: 480px) and (max-width: 639px) {
     :root {
-        --spacing-xs: 0.375rem;
-        --spacing-sm: 0.75rem;
-        --spacing-md: 1rem;
-        --spacing-lg: 1.25rem;
-        --spacing-xl: 1.5rem;
-        --spacing-2xl: 2rem;
+        --spacing-xs: 6px;
+        --spacing-sm: 12px;
+        --spacing-md: 16px;
+        --spacing-lg: 20px;
+        --spacing-xl: 24px;
+        --spacing-2xl: 32px;
     }
 
     html {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     h1 {
-        font-size: 1.75rem;
+        font-size: 32px;
     }
 
     h2 {
-        font-size: 1.25rem;
+        font-size: 26px;
     }
 
     h3 {
-        font-size: 1.125rem;
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    p,
+    li {
+        font-size: 16px;
+    }
+
+    button,
+    label,
+    input,
+    textarea,
+    select {
+        font-size: 16px;
     }
 
     body {
@@ -987,7 +1077,7 @@ option {
     }
 
     nav {
-        padding: 0.5rem;
+        padding: 8px;
         height: 60px;
     }
 
@@ -1004,7 +1094,7 @@ option {
     }
 
     .mobile-menu-toggle {
-        font-size: 1.25rem;
+        font-size: 20px;
     }
 
     .nav-menu {
@@ -1012,8 +1102,8 @@ option {
         height: auto;
         max-height: 300px;
         overflow-y: auto;
-        gap: 0.5rem;
-        padding: 0.5rem;
+        gap: 8px;
+        padding: 8px;
         align-items: flex-start;
     }
 
@@ -1049,18 +1139,18 @@ option {
     }
 
     .icon-document {
-        width: 2rem;
-        height: 2rem;
+        width: 32px;
+        height: 32px;
     }
 
     .icon-arrow {
-        width: 1rem;
-        height: 1rem;
+        width: 16px;
+        height: 16px;
     }
 
     .icon-pair-container {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 8px;
         align-items: center;
     }
 }
@@ -1068,33 +1158,58 @@ option {
 /* ===== 10. SMALL MOBILE (below 480px) ===== */
 @media (max-width: 479px) {
     :root {
-        --spacing-xs: 0.25rem;
-        --spacing-sm: 0.5rem;
-        --spacing-md: 0.75rem;
-        --spacing-lg: 1rem;
-        --spacing-xl: 1.25rem;
-        --spacing-2xl: 1.5rem;
+        --spacing-xs: 4px;
+        --spacing-sm: 8px;
+        --spacing-md: 12px;
+        --spacing-lg: 16px;
+        --spacing-xl: 20px;
+        --spacing-2xl: 24px;
     }
 
     html {
-        font-size: 11px;
+        font-size: 16px;
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 28px;
         margin-bottom: var(--spacing-sm);
     }
 
     h2 {
-        font-size: 1.25rem;
+        font-size: 24px;
     }
 
-    p {
-        font-size: 0.875rem;
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    p,
+    li {
+        font-size: 16px;
+    }
+
+    button,
+    label,
+    input,
+    textarea,
+    select {
+        font-size: 16px;
     }
 
     nav {
-        padding: 0.25rem;
+        padding: 4px;
         height: 55px;
     }
 
@@ -1120,13 +1235,13 @@ option {
     }
 
     .mobile-menu-toggle {
-        font-size: 1.125rem;
+        font-size: 16px;
     }
 
     .nav-menu {
         flex-direction: column;
-        gap: 0.25rem;
-        padding: 0.25rem;
+        gap: 4px;
+        padding: 4px;
     }
 
     .nav-item {
@@ -1165,25 +1280,25 @@ option {
     }
 
     .icon-document {
-        width: 1.75rem;
-        height: 1.75rem;
+        width: 28px;
+        height: 28px;
     }
 
     .icon-arrow {
-        width: 0.875rem;
-        height: 0.875rem;
+        width: 14px;
+        height: 14px;
     }
 }
 
 /* ===== 11. FOLDABLE PHONES (below 360px) ===== */
 @media (max-width: 359px) {
     :root {
-        --spacing-sm: 0.375rem;
-        --spacing-md: 0.5rem;
+        --spacing-sm: 6px;
+        --spacing-md: 8px;
     }
 
     html {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .logo {
@@ -1470,7 +1585,7 @@ option {
 
 
 
-/* (Device-specific breakpoints removed - legacy code) */
+/* Responsive Breakpoints */
 
 /* ======================================== 
    CONTACT US BUTTON - WHITE TEXT ON HOVER
@@ -1572,7 +1687,6 @@ button.bg-brand-btn-primary:hover {
     padding-top: 0;
     display: flex;
     flex-direction: column;
-
 }
 
 .site-footer::before {
@@ -2174,40 +2288,7 @@ html.dark .footer-bottom {
 }
 
 /* All Sections Dark Mode */
-.dark section,
-html.dark section {
-    background-color: var(--bg-main);
-}
-
-.dark section:nth-child(even),
-html.dark section:nth-child(even) {
-    background-color: var(--bg-alt);
-}
-
-/* Text Elements Dark Mode */
-.dark h1,
-.dark h2,
-.dark h3,
-.dark h4,
-.dark h5,
-.dark h6,
-html.dark h1,
-html.dark h2,
-html.dark h3,
-html.dark h4,
-html.dark h5,
-html.dark h6 {
-    color: var(--heading-h1);
-}
-
-.dark p,
-.dark span,
-.dark li,
-html.dark p,
-html.dark span,
-html.dark li {
-    color: var(--text-main);
-}
+/* Dark Mode Overrides - Primarily handled via CSS Variables */
 
 /* Form Elements Dark Mode */
 .dark input,
@@ -2298,7 +2379,7 @@ html.dark .backdrop {
 
 /* Subtext */
 .industrial-hero-subheading {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     color: #64748B;
     max-width: 90%;
@@ -2419,7 +2500,7 @@ html.dark .backdrop {
 }
 
 .industrial-hero-placeholder span {
-    font-size: 14px;
+    font-size: 16px;
     color: #64748B;
     font-weight: 500;
 }
@@ -2462,7 +2543,7 @@ html.dark .backdrop {
     }
 
     .industrial-hero-subheading {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -2497,40 +2578,7 @@ html.dark .backdrop {
 }
 
 /* Dark Mode Support */
-.dark .industrial-hero {
-    background-color: var(--bg-main);
-}
-
-.dark .industrial-hero-heading {
-    color: #F1F5F9;
-}
-
-.dark .industrial-hero-subheading {
-    color: #94A3B8;
-}
-
-.dark .industrial-hero-feature span {
-    color: #F1F5F9;
-}
-
-.dark .industrial-hero-placeholder {
-    background-color: #243318;
-    border-color: #374426;
-}
-
-.dark .industrial-hero-placeholder svg,
-.dark .industrial-hero-placeholder span {
-    color: #94A3B8;
-}
-
-.dark .industrial-hero-badge {
-    background-color: #243318;
-    border-color: #374426;
-}
-
-.dark .industrial-hero-badge span {
-    color: #F1F5F9;
-}
+/* Industrial Hero Dark Mode handled via variables */
 
 /* ===== MOBILE THEME TOGGLE - Phone Only (max-width: 640px) ===== */
 /* Hide this separate toggle on tablet (641-768px) - only show on phones */
@@ -2856,8 +2904,8 @@ div.absolute button {
         align-items: center;
         justify-content: flex-start;
         gap: 8px;
-        line-height: 1.3;
-        font-size: 14px;
+        line-height: 1.4;
+        font-size: 16px;
         white-space: nowrap;
         width: 100%;
         padding: 0;
@@ -2909,7 +2957,7 @@ div.absolute button {
         width: 100%;
         height: auto !important;
         /* Remove fixed 48px — wrap tightly around text */
-        font-size: 16px;
+        font-size: 20px;
         margin: 0 !important;
         padding: 0 !important;
         border: none !important;
@@ -2922,7 +2970,7 @@ div.absolute button {
 
     /* Explicitly target nested elements for font size */
     .footer-links a {
-        font-size: 14px;
+        font-size: 16px;
         text-align: left;
         display: flex;
         align-items: center;
