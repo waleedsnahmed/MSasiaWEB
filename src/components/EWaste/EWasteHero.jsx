@@ -18,7 +18,7 @@ const EWasteHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
-                        <h1 className="ewaste-hero__heading text-gray-900 dark:text-white !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
+                        <h1 className="ewaste-hero__heading leading-tight lg:whitespace-nowrap !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                             Advanced E-Waste Recycling
                         </h1>
 

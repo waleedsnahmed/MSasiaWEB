@@ -44,7 +44,7 @@ const EWasteCategories = () => {
             <div className="ewaste-categories__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
                 <div className="ewaste-categories__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <h6 className="ewaste-categories__label text-[#47622A] dark:text-[#799851] uppercase">Capabilities</h6>
-                    <h2 className="ewaste-categories__heading dark:text-white text-gray-900 !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
+                    <h2 className="ewaste-categories__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                         Electronics We Collect
                     </h2>
                     <p className="ewaste-categories__subtitle dark:text-gray-400 text-gray-600 max-w-3xl">
@@ -58,22 +58,22 @@ const EWasteCategories = () => {
                         
                         {/* Grid Header */}
                         <div className="ewaste-categories__grid-header hidden md:grid grid-cols-[1fr_2fr_2fr] bg-[#47622A] dark:bg-[#1a1a1a] border-b dark:border-white/10 border-transparent text-white dark:text-gray-200">
-                            <h6 className="ewaste-categories__th p-[16px] font-bold uppercase tracking-wider text-center">Category</h6>
-                            <h6 className="ewaste-categories__th p-[16px] font-bold uppercase tracking-wider text-center">Examples</h6>
-                            <h6 className="ewaste-categories__th p-[16px] font-bold uppercase tracking-wider text-center">Our Specialized Handling</h6>
+                            <h6 className="ewaste-categories__th p-[12px] font-bold uppercase tracking-wider text-center">Category</h6>
+                            <h6 className="ewaste-categories__th p-[12px] font-bold uppercase tracking-wider text-center">Examples</h6>
+                            <h6 className="ewaste-categories__th p-[12px] font-bold uppercase tracking-wider text-center">Our Specialized Handling</h6>
                         </div>
 
                         {/* Grid Body */}
                         <div className="ewaste-categories__grid-body divide-y dark:divide-white/5 divide-gray-100">
                             {categories.map((cat, index) => (
                                 <div key={index} className="ewaste-categories__grid-row grid grid-cols-1 md:grid-cols-[1fr_2fr_2fr] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                                    <div className="ewaste-categories__cell ewaste-categories__td-category p-[16px] font-bold dark:text-gray-200 text-[#47622A] text-left flex items-center justify-start border-b md:border-b-0 dark:border-white/5 border-gray-100">
+                                    <div className="ewaste-categories__cell ewaste-categories__td-category p-[12px] font-bold dark:text-gray-200 text-[#47622A] text-left flex items-center justify-start border-b md:border-b-0 dark:border-white/5 border-gray-100">
                                         <p>{cat.category}</p>
                                     </div>
-                                    <div className="ewaste-categories__cell ewaste-categories__td-examples p-[16px] dark:text-gray-400 text-gray-600 text-left flex items-center justify-start border-b md:border-b-0 dark:border-white/5 border-gray-100">
+                                    <div className="ewaste-categories__cell ewaste-categories__td-examples p-[12px] dark:text-gray-400 text-gray-600 text-center flex items-center justify-center border-b md:border-b-0 dark:border-white/5 border-gray-100">
                                         <p>{cat.examples}</p>
                                     </div>
-                                    <div className="ewaste-categories__cell ewaste-categories__td-handling p-[16px] dark:text-gray-400 text-gray-600 text-left flex items-center justify-start">
+                                    <div className="ewaste-categories__cell ewaste-categories__td-handling p-[12px] dark:text-gray-400 text-gray-600 text-center flex items-center justify-center">
                                         <p>{cat.handling}</p>
                                     </div>
                                 </div>

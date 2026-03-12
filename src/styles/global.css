@@ -269,7 +269,7 @@ h6 {
 
 /* H1 Styles - Base (Desktop) */
 h1 {
-    font-size: 56px;
+    font-size: 52px;
     line-height: 1.15;
     color: var(--heading-h1);
 }
