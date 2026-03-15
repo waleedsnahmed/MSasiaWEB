@@ -2,12 +2,12 @@ import React from 'react';
 import { Server, Database, Factory, Cpu, GraduationCap, Zap, ShoppingCart, Building2 } from 'lucide-react';
 
 const industries = [
-    { icon: Server, title: 'Information Technology & ITeS', description: 'Secure decommissioning for data centers and office IT refresh cycles.' },
+    { icon: Server, title: 'IT & ITeS', description: 'Secure decommissioning for data centers and office IT refresh cycles.' },
     { icon: Database, title: 'BFSI', description: 'High-security data destruction for retired servers, ATMs, and storage media.' },
     { icon: Factory, title: 'Manufacturing & Automotive', description: 'Recycling of industrial automation, control systems, and electronic production scrap.' },
-    { icon: Cpu, title: 'Healthcare & Pharmaceuticals', description: 'Compliant disposal of diagnostic and lab electronics after necessary decontamination.' },
+    { icon: Cpu, title: 'Healthcare & Pharma', description: 'Compliant disposal of diagnostic and lab electronics after necessary decontamination.' },
     { icon: GraduationCap, title: 'Education & Government', description: 'Cost-effective, pan-India collection and recycling programs for institutions.' },
-    { icon: Zap, title: 'Telecommunications & Media', description: 'Decommissioning of network infrastructure and broadcast equipment.' },
+    { icon: Zap, title: 'Telecom & Media', description: 'Decommissioning of network infrastructure and broadcast equipment.' },
     { icon: ShoppingCart, title: 'Retail & Consumer Goods', description: 'Take-back schemes and end-of-life management for electronic products.' },
     { icon: Building2, title: 'Real Estate & Hospitality', description: 'End-of-lifecycle management for building automation and hospitality systems.' },
 ];
