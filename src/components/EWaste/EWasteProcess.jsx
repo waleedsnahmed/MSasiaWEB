@@ -1,6 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FileCheck, Shield, MapPin, Recycle, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-react';
-import { motion, useScroll, useSpring, useInView } from 'framer-motion';
+import React, { useLayoutEffect, useRef } from 'react';
+import { FileCheck, Shield, MapPin, Recycle, TrendingUp, CheckCircle2 } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const processSteps = [
     {
@@ -41,221 +44,137 @@ const processSteps = [
     },
 ];
 
-// Sub-component for the flowing roadmap line
-const FlowingLiquidPath = ({ pathProgress }) => {
+const EWasteProcess = () => {
     const containerRef = useRef(null);
-    const [pathData, setPathData] = useState("");
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+    const lineRef = useRef(null);
+    const stepsRef = useRef([]);
 
-    useEffect(() => {
-        const calculatePath = () => {
-            if (!containerRef.current) return;
-            const container = containerRef.current.parentElement;
-            if (!container) return;
-
-            const cards = container.querySelectorAll("[data-phase-card]");
-            if (cards.length === 0) return;
-
-            const containerRect = container.getBoundingClientRect();
-            const r = 32; // Corner radius for the flowing path
-            const padding = 0; // Padding from card edge
-
-            let path = "";
-            let currentX = containerRect.width / 2;
-
-            // Start from top center
-            path = `M ${currentX} 0`;
-
-            cards.forEach((card, index) => {
-                const cardRect = card.getBoundingClientRect();
-                const left = cardRect.left - containerRect.left;
-                const right = cardRect.right - containerRect.left;
-                const top = cardRect.top - containerRect.top;
-                const bottom = cardRect.bottom - containerRect.top;
-                const centerX = left + (right - left) / 2;
-
-                // 1. Line to top center of the card
-                path += ` L ${centerX} ${top}`;
-
-                if (index % 2 === 0) {
-                    // Phase 1, 3, 5: Snake Right
-                    path += ` L ${right} ${top}`;
-                    path += ` L ${right} ${bottom}`;
-                    path += ` L ${centerX} ${bottom}`;
-                } else {
-                    // Phase 2, 4, 6: Snake Left
-                    path += ` L ${left} ${top}`;
-                    path += ` L ${left} ${bottom}`;
-                    path += ` L ${centerX} ${bottom}`;
+    useLayoutEffect(() => {
+        // Initial visibility check - ensure everything is visible if JS fails later
+        // But for GSAP we want them to animate, so we use a context
+        
+        const ctx = gsap.context(() => {
+            // 1. Header Animation
+            gsap.fromTo(".ewaste-process__header", 
+                { y: 30, opacity: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: ".ewaste-process__header",
+                        start: "top 90%",
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power3.out",
+                    clearProps: "all"
                 }
+            );
+
+            // 2. Progress Line Growth
+            gsap.to(lineRef.current, {
+                scrollTrigger: {
+                    trigger: ".ewaste-process__list",
+                    start: "top 60%",
+                    end: "bottom 80%",
+                    scrub: 1,
+                },
+                height: "100%",
+                ease: "none"
             });
 
-            // Final extension to bottom of container
-            path += ` L ${containerRect.width / 2} ${containerRect.height}`;
+            // 3. Card Entrance Animations
+            stepsRef.current.forEach((step, index) => {
+                if (!step) return;
 
-            setPathData(path);
-            setDimensions({ width: containerRect.width, height: containerRect.height });
-        };
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: step,
+                        start: "top 85%",
+                    }
+                });
 
-        const timer = setTimeout(calculatePath, 500); // Wait for animations
-        const resizeObserver = new ResizeObserver(() => setTimeout(calculatePath, 100));
-        if (containerRef.current?.parentElement) {
-            resizeObserver.observe(containerRef.current.parentElement);
-        }
+                tl.fromTo(step, 
+                    { y: 30, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.6,
+                        ease: "power2.out",
+                        force3D: true,
+                        clearProps: "transform,opacity"
+                    }
+                )
+                .fromTo(step.querySelector('.ewaste-process__step-icon'), 
+                    { scale: 0.8, opacity: 0 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.4,
+                        ease: "back.out(1.7)",
+                        clearProps: "scale,opacity"
+                    }, 
+                    "-=0.3"
+                );
+            });
+        }, containerRef.current);
+
+        const timer = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 500);
 
         return () => {
+            ctx.revert();
             clearTimeout(timer);
-            resizeObserver.disconnect();
         };
     }, []);
 
     return (
-        <div ref={containerRef} className="absolute inset-0 pointer-events-none z-0">
-            <svg
-                width={dimensions.width}
-                height={dimensions.height}
-                className="absolute inset-0"
-                style={{ overflow: "visible" }}
-            >
-                <defs>
-                    <linearGradient id="liquidGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#799851" stopOpacity="0.9" />
-                        <stop offset="50%" stopColor="#47622A" stopOpacity="1" />
-                        <stop offset="100%" stopColor="#799851" stopOpacity="0.9" />
-                    </linearGradient>
-                    <filter id="liquidGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="4" result="blur" />
-                        <feFlood floodColor="#47622A" floodOpacity="0.5" result="color" />
-                        <feComposite in="color" in2="blur" operator="in" result="glow" />
-                        <feMerge>
-                            <feMergeNode in="glow" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
-                <path
-                    d={pathData}
-                    fill="none"
-                    stroke="#47622A"
-                    strokeWidth="4"
-                    strokeOpacity="0.05"
-                    strokeLinecap="square"
-                    strokeLinejoin="miter"
-                />
-                <motion.path
-                    d={pathData}
-                    fill="none"
-                    stroke="url(#liquidGradient)"
-                    strokeWidth="4"
-                    strokeLinecap="square"
-                    strokeLinejoin="miter"
-                    filter="url(#liquidGlow)"
-                    style={{ pathLength: pathProgress }}
-                    initial={{ pathLength: 0 }}
-                />
-                <motion.path
-                    d={pathData}
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeOpacity="0.4"
-                    strokeLinecap="square"
-                    strokeLinejoin="miter"
-                    style={{ pathLength: pathProgress }}
-                    initial={{ pathLength: 0 }}
-                />
-            </svg>
-        </div>
-    );
-};
-
-const EWasteProcess = () => {
-    const sectionRef = useRef(null);
-    const containerRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start 0.8", "end 0.2"]
-    });
-
-    const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 40,
-        damping: 15,
-        restDelta: 0.001
-    });
-
-    return (
-        <section ref={sectionRef} id="process" className="ewaste-process bg-white dark:bg-black flex justify-center py-12 md:py-20 overflow-hidden">
-            <div className="ewaste-process__container max-w-[1152px] px-4 md:px-0 flex flex-col gap-[48px] w-full">
-                <motion.div 
-                    className="ewaste-process__header text-center flex flex-col items-center gap-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h6 className="ewaste-process__label text-[#47622A] dark:text-[#799851] uppercase font-bold tracking-widest text-xs">Our Expertise</h6>
-                    <h2 className="ewaste-process__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851] text-3xl md:text-5xl font-bold">
+        <section id="roadmap-process" className="ewaste-process bg-white dark:bg-black flex justify-center" ref={containerRef}>
+            <div className="ewaste-process__container max-w-[1152px] px-4 md:px-0 flex flex-col gap-[24px] w-full">
+                <div className="ewaste-process__header text-center flex flex-col items-center gap-4">
+                    <h6 className="ewaste-process__label text-[#47622A] dark:text-[#799851] uppercase">Our Expertise</h6>
+                    <h2 className="ewaste-process__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                         Our Certified Process
                     </h2>
-                    <p className="ewaste-process__subtitle dark:text-gray-400 text-gray-600 max-w-2xl text-sm md:text-base">
+                    <p className="ewaste-process__subtitle dark:text-gray-400 text-gray-600 max-w-none">
                         A Step-by-Step Framework for India: We operate on a foundation of transparency, security, and compliance.
                     </p>
-                </motion.div>
+                </div>
 
-                <div ref={containerRef} className="relative w-full">
-                    {/* Start Orb */}
-                    <motion.div 
-                        className="absolute left-1/2 -top-8 -translate-x-1/2 z-20"
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={isInView ? { scale: 1, opacity: 1 } : {}}
-                        transition={{ delay: 0.2 }}
-                    >
-                        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-[#799851] to-[#47622A] shadow-[0_0_15px_rgba(71,98,42,0.6)]" />
-                    </motion.div>
-
-                    {/* Flowing Liquid Path */}
-                    <FlowingLiquidPath pathProgress={smoothProgress} />
-
-                    <div className="ewaste-process__list flex flex-col gap-8 w-full relative z-10">
-                        {processSteps.map((step, index) => {
-                            const isEven = index % 2 === 0;
-                            return (
-                                <div
-                                    key={index}
-                                    data-phase-card
-                                    className={`ewaste-process__step flex flex-col items-center gap-6 p-[20px] md:p-[32px] rounded-3xl dark:bg-[#111] bg-gray-50/50 border border-transparent dark:border-white/5 hover:border-[#47622A]/20 dark:hover:border-[#799851]/20 transition-all duration-500 w-full relative group ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                                >
-                                    <div className="ewaste-process__step-icon-wrap flex-shrink-0 w-full md:w-auto">
-                                        <div className="ewaste-process__step-icon w-16 h-16 mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-[#47622A] to-[#799851] flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-500">
-                                            <step.icon className="w-8 h-8 text-white" strokeWidth={2} />
-                                        </div>
-                                    </div>
-                                    <div className={`ewaste-process__step-body flex-1 w-full flex flex-col text-center ${isEven ? 'md:text-left' : 'md:text-right'}`}>
-                                        <h6 className="ewaste-process__step-phase text-[#47622A] dark:text-[#799851] uppercase font-bold text-[10px] tracking-widest mb-1">
-                                            {step.phase}
-                                        </h6>
-                                        <h3 className="ewaste-process__step-title text-xl md:text-2xl font-bold mb-2 transition-colors duration-300 group-hover:text-[#47622A] dark:group-hover:text-[#799851]">
-                                            {step.title}
-                                        </h3>
-                                        <p className="ewaste-process__step-description dark:text-gray-400 text-gray-600 text-[15px] leading-relaxed">
-                                            {step.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            );
-                        })}
+                <div className="ewaste-process__list relative flex flex-col gap-8 w-full">
+                    <div className="ewaste-process__progress-line-container">
+                        <div className="ewaste-process__progress-line-bg"></div>
+                        <div className="ewaste-process__progress-line-fill" ref={lineRef}></div>
                     </div>
 
-                    {/* End Orb */}
-                    <motion.div 
-                        className="absolute left-1/2 -bottom-8 -translate-x-1/2 z-20"
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={isInView ? { scale: 1, opacity: 1 } : {}}
-                        transition={{ delay: 0.5 }}
-                    >
-                        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-[#799851] to-[#47622A] shadow-[0_0_15px_rgba(71,98,42,0.6)]" />
-                    </motion.div>
+                    {processSteps.map((step, index) => {
+                        const isEven = index % 2 === 0;
+                        return (
+                            <div
+                                key={index}
+                                ref={el => stepsRef.current[index] = el}
+                                className={`group ewaste-process__step flex flex-col items-center gap-6 p-[24px] rounded-[24px] bg-white dark:bg-[#111] border border-[#799851] transition-all duration-300 w-full relative z-10 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:border-[#47622A] ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                            >
+                                <div className="ewaste-process__step-icon-wrap flex-shrink-0 w-full md:w-auto">
+                                    <div className="ewaste-process__step-icon w-16 h-16 mx-auto md:mx-0 rounded-2xl bg-[#799851] dark:bg-[#47622A] flex items-center justify-center shadow-md transition-transform duration-300">
+                                        <step.icon className="w-8 h-8 text-white" strokeWidth={2} />
+                                    </div>
+                                </div>
+                                <div className="ewaste-process__step-body flex-1 w-full flex flex-col text-center md:text-left">
+                                    <h6 className="ewaste-process__step-phase text-[#799851] dark:text-[#799851] uppercase font-bold text-sm tracking-widest">
+                                        {step.phase}
+                                    </h6>
+                                    <h3 className="ewaste-process__step-title text-2xl font-bold text-black dark:text-white">
+                                        {step.title}
+                                    </h3>
+                                    <p className="ewaste-process__step-description text-gray-600 dark:text-gray-400 text-base leading-relaxed text-justify md:text-left">
+                                        {step.description}
+                                    </p>
+                                </div>
+                            </div>
+
+                        )
+                    })}
                 </div>
             </div>
         </section>
@@ -263,3 +182,4 @@ const EWasteProcess = () => {
 };
 
 export default EWasteProcess;
+

@@ -62,10 +62,10 @@ const EWasteWhyChooseUs = () => {
                 </div>
 
                 <div className="ewaste-why__cta-wrapper flex justify-center scroll-reveal">
-                    <div className="ewaste-why__cta-banner w-full max-w-[1152px] p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] text-black relative overflow-hidden">
+                    <div className="ewaste-why__cta-banner w-full max-w-[1152px] p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] text-white relative overflow-hidden">
                         <div className="ewaste-why__cta-text relative z-10 flex flex-col gap-[16px]">
-                            <h4 className="ewaste-why__cta-strong block text-black font-bold">MS Asia Enterprises is the definitive solution.</h4>
-                            <p className="font-semibold">We close the loop with a formal, auditable process that protects your business, recovers value, and
+                            <h4 className="ewaste-why__cta-strong block text-white font-bold">MS Asia Enterprises is the definitive solution.</h4>
+                            <p className="font-semibold text-white/90">We close the loop with a formal, auditable process that protects your business, recovers value, and
                                 ensures every component is handled according to the highest environmental and data
                                 security standards.</p>
                         </div>

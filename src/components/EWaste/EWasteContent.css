@@ -43,3 +43,53 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.ewaste-process {
+    position: relative;
+    overflow: hidden;
+}
+
+.ewaste-process__container {
+    position: relative;
+}
+
+/* Progress Line Container */
+.ewaste-process__progress-line-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5%; /* Start slightly inside */
+    bottom: 0;
+    width: 2px;
+    z-index: 0;
+    pointer-events: none;
+    display: none; /* Hidden on mobile by default */
+}
+
+@media (min-width: 768px) {
+    .ewaste-process__progress-line-container {
+        display: block;
+    }
+}
+
+.ewaste-process__progress-line-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(121, 152, 81, 0.2);
+}
+
+.ewaste-process__progress-line-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%; /* Animated by GSAP */
+    background: #799851;
+}
