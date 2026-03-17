@@ -92,4 +92,10 @@
     width: 100%;
     height: 0%; /* Animated by GSAP */
     background: #799851;
+    box-shadow: 0 0 12px rgba(121, 152, 81, 0.6);
+}
+
+.dark .ewaste-process__progress-line-fill {
+    background: #8ab05e; /* Slightly brighter green for dark mode */
+    box-shadow: 0 0 15px rgba(121, 152, 81, 0.8), 0 0 30px rgba(121, 152, 81, 0.4);
 }

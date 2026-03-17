@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const categories = [
     {
@@ -39,10 +43,52 @@ const categories = [
 ];
 
 const EWasteCategories = () => {
+    const containerRef = useRef(null);
+    const headerRef = useRef(null);
+    const gridRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            // 1. Header fades in
+            gsap.fromTo(headerRef.current,
+                { y: 50, opacity: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: headerRef.current,
+                        start: "top 75%", // As roadmap leaves process
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power4.out"
+                }
+            );
+
+            // 2. Table fades up exactly as the line sweeps over it
+            gsap.fromTo(gridRef.current,
+                { y: 60, opacity: 0, scale: 0.97 },
+                {
+                    scrollTrigger: {
+                        trigger: gridRef.current,
+                        start: "top 65%", // Perfect sync with the horizontal roadmap sweep over the table top
+                    },
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1.5,
+                    ease: "expo.out",
+                    clearProps: "transform,scale" // Free transform scaling post rendering
+                }
+            );
+        }, containerRef.current);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="ewaste-categories bg-white dark:bg-black">
+        <section className="ewaste-categories bg-transparent relative" ref={containerRef}>
             <div className="ewaste-categories__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
-                <div className="ewaste-categories__header text-center flex flex-col items-center gap-4 scroll-reveal">
+                <div ref={headerRef} className="ewaste-categories__header text-center flex flex-col items-center gap-4">
                     <h6 className="ewaste-categories__label text-[#47622A] dark:text-[#799851] uppercase">Capabilities</h6>
                     <h2 className="ewaste-categories__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                         Electronics We Collect
@@ -53,8 +99,8 @@ const EWasteCategories = () => {
                     </p>
                 </div>
 
-                <div className="ewaste-categories__grid-wrapper scroll-reveal max-w-[1152px] mx-auto w-full">
-                    <div className="ewaste-categories__grid-outer overflow-hidden rounded-3xl border dark:border-white/10 border-gray-200 bg-white dark:bg-[#1a1a1a] shadow-sm">
+                <div id="ew-categories-table" className="ewaste-categories__grid-wrapper max-w-[1152px] mx-auto w-full">
+                    <div ref={gridRef} className="ewaste-categories__grid-outer overflow-hidden rounded-3xl border dark:border-white/10 border-gray-200 bg-white dark:bg-[#1a1a1a] shadow-sm relative z-10">
                         
                         {/* Grid Header */}
                         <div className="ewaste-categories__grid-header hidden md:grid grid-cols-[1fr_2fr_2fr] bg-[#47622A] dark:bg-[#1a1a1a] border-b dark:border-white/10 border-transparent text-white dark:text-gray-200">

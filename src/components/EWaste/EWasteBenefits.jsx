@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import { Shield, FileCheck, TrendingUp, Zap, CheckCircle2, Users } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const benefits = [
     {
@@ -35,10 +39,55 @@ const benefits = [
 ];
 
 const EWasteBenefits = () => {
+    const containerRef = useRef(null);
+    const headerRef = useRef(null);
+    const cardsRef = useRef([]);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            // 1. Header fades in
+            gsap.fromTo(headerRef.current,
+                { y: 50, opacity: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: headerRef.current,
+                        start: "top 75%", 
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power4.out"
+                }
+            );
+
+            // 2. Cards fade in sequentially as the single purple line travels down the left margin
+            cardsRef.current.forEach((card, index) => {
+                if (!card) return;
+                gsap.fromTo(card,
+                    { y: 60, opacity: 0, scale: 0.96 },
+                    {
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 65%", // Line runs parallel
+                        },
+                        y: 0,
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1.4,
+                        ease: "expo.out",
+                        clearProps: "transform,scale" // Free hover state
+                    }
+                );
+            });
+        }, containerRef.current);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="ewaste-benefits bg-white dark:bg-black">
+        <section className="ewaste-benefits bg-transparent relative" ref={containerRef}>
             <div className="ewaste-benefits__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
-                <div className="ewaste-benefits__header text-center flex flex-col items-center gap-4 scroll-reveal">
+                <div ref={headerRef} className="ewaste-benefits__header text-center flex flex-col items-center gap-4">
                     <h6 className="ewaste-benefits__label text-[#5a7638] dark:text-[#799851] uppercase">Why Partner</h6>
                     <h2 className="ewaste-benefits__heading text-[#47622A] dark:text-[#799851]">
                         Why Choose MS Asia Enterprises
@@ -52,8 +101,8 @@ const EWasteBenefits = () => {
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
-                            className="ewaste-benefits__card scroll-reveal p-[12px] md:p-[32px] min-h-[245px] rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-4 items-start text-left"
-                            style={{ animationDelay: `${index * 0.1}s` }}
+                            ref={el => cardsRef.current[index] = el}
+                            className="ewaste-benefits__card p-[12px] md:p-[32px] min-h-[245px] rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-4 items-start text-left"
                         >
                             <div className="ewaste-benefits__card-icon-wrap w-14 h-14 rounded-2xl bg-[#eff1ea] dark:bg-[#2a3024]  flex items-center justify-center border border-[#e5e9de] dark:border-white/5">
                                 <benefit.icon className="w-6 h-6 text-[#5a7638] dark:text-[#799851]" strokeWidth={1.5} />

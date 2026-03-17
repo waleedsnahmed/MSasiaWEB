@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import { FileCheck, Shield, MapPin, Recycle, TrendingUp, CheckCircle2 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -46,90 +46,73 @@ const processSteps = [
 
 const EWasteProcess = () => {
     const containerRef = useRef(null);
-    const lineRef = useRef(null);
-    const stepsRef = useRef([]);
+    const innersRef = useRef([]);
 
     useLayoutEffect(() => {
-        // Initial visibility check - ensure everything is visible if JS fails later
-        // But for GSAP we want them to animate, so we use a context
-        
         const ctx = gsap.context(() => {
-            // 1. Header Animation
-            gsap.fromTo(".ewaste-process__header", 
-                { y: 30, opacity: 0 },
-                {
-                    scrollTrigger: {
-                        trigger: ".ewaste-process__header",
-                        start: "top 90%",
-                    },
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    ease: "power3.out",
-                    clearProps: "all"
-                }
-            );
+            innersRef.current.forEach((inner, index) => {
+                if (!inner) return;
 
-            // 2. Progress Line Growth
-            gsap.to(lineRef.current, {
-                scrollTrigger: {
-                    trigger: ".ewaste-process__list",
-                    start: "top 60%",
-                    end: "bottom 80%",
-                    scrub: 1,
-                },
-                height: "100%",
-                ease: "none"
-            });
-
-            // 3. Card Entrance Animations
-            stepsRef.current.forEach((step, index) => {
-                if (!step) return;
+                // Elements inside the inner wrap
+                const icon = inner.querySelector('.ewaste-process__step-icon');
+                const phase = inner.querySelector('.ewaste-process__step-phase');
+                const title = inner.querySelector('.ewaste-process__step-title');
+                const desc = inner.querySelector('.ewaste-process__step-description');
 
                 const tl = gsap.timeline({
                     scrollTrigger: {
-                        trigger: step,
-                        start: "top 85%",
+                        trigger: inner.parentElement, // Trigger exactly when the static outer boundary hits
+                        start: "top 65%", // Typically matches the leading edge of the roadmap drawing
+                    },
+                    onComplete: () => {
+                        // Clear inline GSAP styles after completion so hover CSS keeps working
+                        gsap.set([inner, icon, phase, title, desc], { clearProps: "all" });
                     }
                 });
 
-                tl.fromTo(step, 
-                    { y: 30, opacity: 0 },
+                // 1. Inner Card: Smooth fade and lift
+                tl.fromTo(inner, 
+                    { y: 60, opacity: 0, scale: 0.97 },
                     {
                         y: 0,
                         opacity: 1,
-                        duration: 0.6,
-                        ease: "power2.out",
-                        force3D: true,
-                        clearProps: "transform,opacity"
+                        scale: 1,
+                        duration: 1.4,
+                        ease: "expo.out",
+                        force3D: true
                     }
                 )
-                .fromTo(step.querySelector('.ewaste-process__step-icon'), 
-                    { scale: 0.8, opacity: 0 },
+                // 2. Icon: Pop-in
+                .fromTo(icon, 
+                    { scale: 0.7, opacity: 0, },
                     {
                         scale: 1,
                         opacity: 1,
-                        duration: 0.4,
-                        ease: "back.out(1.7)",
-                        clearProps: "scale,opacity"
+                        duration: 1.2,
+                        ease: "elastic.out(1, 0.7)"
                     }, 
-                    "-=0.3"
+                    "-=1.1"
+                )
+                // 3. Text Elements
+                .fromTo([phase, title, desc],
+                    { y: 20, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1.2,
+                        stagger: 0.15,
+                        ease: "power4.out"
+                    },
+                    "-=1.1"
                 );
             });
         }, containerRef.current);
 
-        const timer = setTimeout(() => {
-            ScrollTrigger.refresh();
-        }, 500);
-
-        return () => {
-            ctx.revert();
-            clearTimeout(timer);
-        };
+        return () => ctx.revert();
     }, []);
 
     return (
-        <section id="roadmap-process" className="ewaste-process bg-white dark:bg-black flex justify-center" ref={containerRef}>
+        <section id="roadmap-process" className="ewaste-process bg-transparent flex justify-center relative" ref={containerRef}>
             <div className="ewaste-process__container max-w-[1152px] px-4 md:px-0 flex flex-col gap-[24px] w-full">
                 <div className="ewaste-process__header text-center flex flex-col items-center gap-4">
                     <h6 className="ewaste-process__label text-[#47622A] dark:text-[#799851] uppercase">Our Expertise</h6>
@@ -142,19 +125,21 @@ const EWasteProcess = () => {
                 </div>
 
                 <div className="ewaste-process__list relative flex flex-col gap-8 w-full">
-                    <div className="ewaste-process__progress-line-container">
-                        <div className="ewaste-process__progress-line-bg"></div>
-                        <div className="ewaste-process__progress-line-fill" ref={lineRef}></div>
-                    </div>
+                    {/* Progress Line removed for global ScrollVibe overlay */}
 
                     {processSteps.map((step, index) => {
                         const isEven = index % 2 === 0;
                         return (
                             <div
                                 key={index}
-                                ref={el => stepsRef.current[index] = el}
-                                className={`group ewaste-process__step flex flex-col items-center gap-6 p-[24px] rounded-[24px] bg-white dark:bg-[#111] border border-[#799851] transition-all duration-300 w-full relative z-10 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:border-[#47622A] ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                                id={`ew-process-step-${index}`}
+                                className={`group w-full relative z-10 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                             >
+                                {/* Inner wrapper for animation to prevent outer bounding rect shift */}
+                                <div 
+                                    ref={el => innersRef.current[index] = el}
+                                    className={`ewaste-process__step-inner flex flex-col items-center gap-6 p-[24px] rounded-[24px] bg-white dark:bg-[#111] border border-[#799851] transition-all duration-300 w-full hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:border-[#47622A] ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                                >
                                 <div className="ewaste-process__step-icon-wrap flex-shrink-0 w-full md:w-auto">
                                     <div className="ewaste-process__step-icon w-16 h-16 mx-auto md:mx-0 rounded-2xl bg-[#799851] dark:bg-[#47622A] flex items-center justify-center shadow-md transition-transform duration-300">
                                         <step.icon className="w-8 h-8 text-white" strokeWidth={2} />
@@ -171,7 +156,9 @@ const EWasteProcess = () => {
                                         {step.description}
                                     </p>
                                 </div>
+                                </div>
                             </div>
+
 
                         )
                     })}
