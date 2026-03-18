@@ -7,15 +7,8 @@
    1. WHY CHOOSE US SECTION
    ============================================= */
 
-/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
-.dark .ewaste-why,
-.dark .ewaste-process,
-.dark .ewaste-categories,
-.dark .ewaste-industries,
-.dark .ewaste-benefits,
-.dark .ewaste-contact {
-    background-color: #000000 !important;
-}
+/* --- Dark Mode: Transparent backgrounds so that the roadmap SVG (z-0) is visible through gaps --- */
+/* The page-level body background provides the dark colour; sections stay transparent. */
 
 /* =============================================
    2. CATEGORIES GRID SECTION
@@ -50,7 +43,7 @@
 
 .ewaste-process {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .ewaste-process__container {

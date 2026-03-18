@@ -102,7 +102,7 @@ const EWasteBenefits = () => {
                         <div
                             key={index}
                             ref={el => cardsRef.current[index] = el}
-                            className="ewaste-benefits__card p-[12px] md:p-[32px] min-h-[245px] rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-4 items-start text-left"
+                            className="ewaste-benefits__card p-[12px] md:p-[32px] min-h-[245px] rounded-2xl bg-white dark:bg-[#1a1a1a] shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-4 items-start text-left relative z-10"
                         >
                             <div className="ewaste-benefits__card-icon-wrap w-14 h-14 rounded-2xl bg-[#eff1ea] dark:bg-[#2a3024]  flex items-center justify-center border border-[#e5e9de] dark:border-white/5">
                                 <benefit.icon className="w-6 h-6 text-[#5a7638] dark:text-[#799851]" strokeWidth={1.5} />

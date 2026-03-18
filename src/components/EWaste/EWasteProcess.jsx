@@ -70,15 +70,38 @@ const EWasteProcess = () => {
                     }
                 });
 
-                // 1. Inner Card: Smooth fade and lift
+                const isEven = index % 2 === 0;
+
+                // 1. Inner Card: Directional Entry + Anticipation Overshoot
                 tl.fromTo(inner, 
-                    { y: 60, opacity: 0, scale: 0.97 },
-                    {
-                        y: 0,
-                        opacity: 1,
+                    { 
+                        x: isEven ? 80 : -80, // Right entry for even, left entry for odd
+                        opacity: 0, 
                         scale: 1,
-                        duration: 1.4,
-                        ease: "expo.out",
+                        boxShadow: "0px 0px 0px rgba(0,0,0,0)",
+                        willChange: "transform, opacity" // Hardware acceleration
+                    },
+                    {
+                        keyframes: [
+                            // Phase 1: Shoot past target naturally with active glow & scale
+                            { 
+                                x: isEven ? -10 : 10, 
+                                opacity: 1, 
+                                scale: 1.03, 
+                                boxShadow: "0px 20px 40px rgba(121, 152, 81, 0.15)",
+                                duration: 0.45, 
+                                ease: "power2.out" 
+                            },
+                            // Phase 2: Settle organically into pocket
+                            { 
+                                x: 0, 
+                                scale: 1, 
+                                boxShadow: "0px 0px 0px rgba(0,0,0,0)",
+                                duration: 0.25, 
+                                ease: "power2.inOut" 
+                            }
+                        ],
+                        delay: 0.12, // ~120ms organic delay after line reaches it
                         force3D: true
                     }
                 )
@@ -91,19 +114,19 @@ const EWasteProcess = () => {
                         duration: 1.2,
                         ease: "elastic.out(1, 0.7)"
                     }, 
-                    "-=1.1"
+                    "-=0.5"
                 )
                 // 3. Text Elements
                 .fromTo([phase, title, desc],
-                    { y: 20, opacity: 0 },
+                    { y: 15, opacity: 0 },
                     {
                         y: 0,
                         opacity: 1,
-                        duration: 1.2,
-                        stagger: 0.15,
-                        ease: "power4.out"
+                        duration: 1.0,
+                        stagger: 0.1,
+                        ease: "power3.out"
                     },
-                    "-=1.1"
+                    "-=0.9"
                 );
             });
         }, containerRef.current);

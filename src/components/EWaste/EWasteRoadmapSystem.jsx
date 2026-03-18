@@ -183,49 +183,42 @@ const EWasteRoadmapSystem = () => {
 
             // Path 4: CIRCUIT MULTI-LINES - Wrapping the Final CTA
             if (cta) {
-                const cL = cta.left - 30; // Left flank of CTA
-                const cR = cta.right + 30; // Right flank of CTA
                 const startY = cta.top - 80;
 
-                // Outer Right Blue
+                const btn = getRelBounds('ew-cta-button');
+                
+                // Exact button edges directly from DOM Inspector (or fallbacks)
+                const btnLeft = btn ? btn.left - 2 : (w / 2) - 102; 
+                const btnRight = btn ? btn.right + 2 : (w / 2) + 102;
+                const btnCY = btn ? btn.cy : cta.top + (cta.height / 2) + 50; 
+
+                // Outer Right Blue -> Drops straight down the right margin, hooks into right edge
                 p.push({
                     color: '#3b82f6', 
                     path: getRoundedPath([
-                        [w - 20, startY - 140],
                         [w * 0.92, startY - 140],
-                        [w * 0.92, startY],
-                        [cR + 25, startY],
-                        [cR + 25, cta.bottom + 40],
-                        [w * 0.5, cta.bottom + 40],
-                        [w * 0.5, cta.bottom + 100] // Goes entirely down
+                        [w * 0.92, btnCY - 6], // Straight drop down right margin
+                        [btnRight, btnCY - 6]  // Hook squarely into the button
                     ], 24)
                 });
 
-                // Inner Right Yellow
+                // Inner Right Yellow -> Drops straight down right margin, hooks into right edge
                 p.push({
                     color: '#facc15',
                     path: getRoundedPath([
-                        [w + 20, startY - 60],
                         [w * 0.88, startY - 60],
-                        [w * 0.88, cta.top + 100], // Pierces downwards
-                        [cR + 10, cta.top + 100],
-                        [cR + 10, cta.bottom + 55],
-                        [w * 0.55, cta.bottom + 55],
-                        [w * 0.55, cta.bottom + 100]
+                        [w * 0.88, btnCY + 6], // Straight drop down right margin
+                        [btnRight, btnCY + 6]  // Hook squarely into the button
                     ], 24)
                 });
 
-                // Left Green
+                // Left Green -> Drops straight down left margin, hooks into left edge
                 p.push({
                     color: '#22c55e',
                     path: getRoundedPath([
-                        [20, startY - 40],
                         [w * 0.12, startY - 40],
-                        [w * 0.12, cta.top + 40],
-                        [cL - 15, cta.top + 40],
-                        [cL - 15, cta.bottom + 55],
-                        [w * 0.45, cta.bottom + 55],
-                        [w * 0.45, cta.bottom + 100]
+                        [w * 0.12, btnCY],  // Straight drop down left margin
+                        [btnLeft, btnCY]    // Hook squarely into the button
                     ], 24)
                 });
             }
@@ -246,6 +239,9 @@ const EWasteRoadmapSystem = () => {
         const onResize = () => requestAnimationFrame(updatePaths);
         window.addEventListener('resize', onResize);
         
+        const onReactFinish = () => requestAnimationFrame(updatePaths);
+        window.addEventListener('roadmap-recalc', onReactFinish);
+        
         // Initial setups to capture potential late paints
         const t1 = setTimeout(updatePaths, 150);
         const t2 = setTimeout(updatePaths, 600);
@@ -254,6 +250,7 @@ const EWasteRoadmapSystem = () => {
         return () => {
             resizeObserver.disconnect();
             window.removeEventListener('resize', onResize);
+            window.removeEventListener('roadmap-recalc', onReactFinish);
             clearTimeout(t1); clearTimeout(t2); clearTimeout(t3);
         };
     }, []);
@@ -273,11 +270,23 @@ const EWasteRoadmapSystem = () => {
                 const rect = node.getBoundingClientRect();
                 
                 // The path starts drawing when its top enters the bottom of the viewport
-                // The path finishes drawing when its bottom leaves the bottom of the viewport bounds
-                const distanceTotal = rect.height + windowHeight * 0.5; // Offset by 50% screen so it draws ahead of scroll
+                // We want it to finish drawing fully by the time the bottom of the path hits the bottom of the viewport.
+                // However, if the path sits at the very bottom of the document, the user might hit page-bottom before rect.bottom reaches screen-bottom.
+                // So we dynamically clamp the total distance based on max scrollability.
+
+                const documentHeight = document.body.offsetHeight;
+                const maxScrollY = documentHeight - windowHeight;
                 const distanceTraveled = windowHeight - rect.top;
                 
-                let rawProgress = distanceTraveled / distanceTotal;
+                // Compress the total distance needed so it visibly finishes drawing much earlier,
+                // guaranteeing the strokes physically plug into the button before the user hits the footer wall.
+                const baseDistanceTotal = rect.height * 0.8; 
+                let rawProgress = distanceTraveled / baseDistanceTotal;
+
+                if (scrollY >= maxScrollY - 50) {
+                    rawProgress = 1.0; // Force immediate 100% completion at absolute page bottom
+                }
+
                 const progress = Math.max(0, Math.min(1, rawProgress));
                 
                 node.style.strokeDasharray = "1";
@@ -288,6 +297,15 @@ const EWasteRoadmapSystem = () => {
                 if (glowNode) {
                     glowNode.style.strokeDasharray = "1";
                     glowNode.style.strokeDashoffset = (1 - progress).toString();
+                }
+
+                // Sync the glowing tracking dot mathematically to the exact leading edge
+                const dotNode = node.nextElementSibling;
+                if (dotNode && dotNode.classList.contains('animate-roadmap-dot')) {
+                    // Magic equation to perfectly pin a 0.5% dash to the exact tip:
+                    // offset = 1.01 - progress (pattern repeats every 1.005)
+                    dotNode.style.strokeDasharray = "0.005 1";
+                    dotNode.style.strokeDashoffset = (1.01 - progress).toString();
                 }
             });
         };
@@ -301,7 +319,7 @@ const EWasteRoadmapSystem = () => {
 
     return (
         <div 
-            className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-[0]" 
+            className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-[5]" 
             ref={containerRef}
         >
             {paths.length > 0 && (
@@ -345,6 +363,19 @@ const EWasteRoadmapSystem = () => {
                                 className="animate-roadmap-path opacity-100 transition-[stroke-dashoffset] duration-[300ms] ease-out"
                                 pathLength="1"
                                 style={{ strokeDasharray: "1", strokeDashoffset: "1" }}
+                            />
+                            {/* Brilliant White Leading Tracker Dot */}
+                            <path 
+                                className="animate-roadmap-dot opacity-100 transition-[stroke-dashoffset] duration-[300ms] ease-out"
+                                d={p.path}
+                                fill="none"
+                                stroke="#ffffff"
+                                strokeWidth="5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                pathLength="1"
+                                style={{ strokeDasharray: "0.005 1", strokeDashoffset: "1.01" }}
+                                filter="drop-shadow(0 0 10px rgba(255, 255, 255, 1))"
                             />
                         </g>
                     ))}

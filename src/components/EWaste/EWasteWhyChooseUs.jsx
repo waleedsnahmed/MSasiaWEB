@@ -110,7 +110,7 @@ const EWasteWhyChooseUs = () => {
                         <div
                             key={index}
                             ref={el => cardsRef.current[index] = el}
-                            className="group ewaste-why__card flex flex-col gap-4 p-6 lg:p-8 rounded-3xl dark:bg-[#1a1a1a] bg-white border border-gray-100 dark:border-white/5 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md"
+                            className="group ewaste-why__card flex flex-col gap-4 p-6 lg:p-8 rounded-3xl dark:bg-[#1a1a1a] bg-white border border-gray-100 dark:border-white/5 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md relative z-10"
                         >
                             <div className="ewaste-why__card-header flex items-center gap-4">
                                 <div className="ewaste-why__card-icon-wrap flex items-center justify-center p-[12px] rounded-2xl bg-gradient-to-br from-[#47622A]/10 to-[#799851]/10 dark:from-[#799851]/20 dark:to-[#47622A]/20 shadow-sm border border-[#47622A]/5 dark:border-[#799851]/10 transition-colors duration-300 ease-in-out group-hover:bg-[#22c55e]/10">

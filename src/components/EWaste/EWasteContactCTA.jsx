@@ -1,36 +1,13 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const EWasteContactCTA = () => {
     const containerRef = useRef(null);
-    const textRef = useRef(null);
 
     useLayoutEffect(() => {
-        const ctx = gsap.context(() => {
-            if (!textRef.current) return;
-            
-            // Staggered fade up exactly matching the three vertical neon lines hitting the block
-            gsap.fromTo(textRef.current.children,
-                { y: 40, opacity: 0 },
-                {
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top 65%", 
-                    },
-                    y: 0,
-                    opacity: 1,
-                    duration: 1.5,
-                    stagger: 0.25, // Stagger text -> subtitle -> button
-                    ease: "power4.out"
-                }
-            );
-        }, containerRef.current);
-
-        return () => ctx.revert();
+        // Fire event so the RoadmapSystem knows the lazy component is fully mounted
+        // GSAP entry animation removed from here to guarantee static button coordinates for Roadmap routing
+        window.dispatchEvent(new Event('roadmap-recalc'));
     }, []);
 
     return (
@@ -43,7 +20,7 @@ const EWasteContactCTA = () => {
                     <div className="ewaste-contact__glow-bottom absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
 
                     <div className="ewaste-contact__content-wrapper flex justify-center w-full relative z-10">
-                        <div ref={textRef} className="flex flex-col gap-6 items-center w-full max-w-[1152px]">
+                        <div className="flex flex-col gap-6 items-center w-full max-w-[1152px]">
                             <h2 className="ewaste-contact__heading text-white font-bold">
                                 Ready to Secure Your E-Waste?
                             </h2>
@@ -53,6 +30,7 @@ const EWasteContactCTA = () => {
 
                             <div className="ewaste-contact__actions flex flex-col gap-[16px] justify-center items-center w-full">
                                 <a
+                                    id="ew-cta-button"
                                     href="/contact"
                                     className="ewaste-contact__btn group h-[44px] w-[200px] max-w-full rounded-xl bg-white !text-[#47622A] hover:shadow-lg transition-all flex items-center justify-center gap-2"
                                 >
