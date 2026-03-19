@@ -17,7 +17,7 @@ const categories = [
         handling: 'Often contain high-grade metals; handled with precision dismantling.',
     },
     {
-        category: 'Consumer & Domestic Appliances',
+        category: 'Home Appliances',
         examples: 'Televisions, Refrigerators, ACs, Washing Machines, Audio/Video Equipment.',
         handling: 'Safe removal of refrigerants (CFCs) and compressor oils before recycling.',
     },

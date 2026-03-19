@@ -75,7 +75,7 @@ const PhaseCard = ({ phase, index }) => {
             initial={{ opacity: 0, y: 80 }}
             animate={isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative mb-8 md:mb-12 last:mb-0"
+            className="relative mb-2 md:mb-4 last:mb-0"
         >
             <div className={`flex items-center gap-8 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:flex-row`}>
                 
@@ -99,13 +99,13 @@ const PhaseCard = ({ phase, index }) => {
                         `}
                     >
                         <div className={`flex items-center gap-3 justify-center md:justify-start ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                            <span className={`text-xl font-bold bg-gradient-to-r from-[#47622A] to-[#799851] bg-clip-text text-transparent uppercase tracking-wider`}>
-                                Phase {phase.number}
+                            <span className={`text-[18px] font-bold bg-gradient-to-r from-[#47622A] to-[#799851] bg-clip-text text-transparent normal-case`}>
+                                phase {phase.number}
                             </span>
                         </div>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        <h4 className="text-2xl font-bold text-gray-900 dark:text-white">
                             {phase.title}
-                        </h3>
+                        </h4>
                         <p className={`text-gray-700 dark:text-gray-300 leading-relaxed text-justify md:text-auto`} style={{ textAlign: isEven ? 'right' : 'left' }}>
                             {phase.description}
                         </p>
@@ -141,7 +141,7 @@ const EWasteProcess = () => {
 
     return (
         <section id="roadmap-process" className="ewaste-process bg-white dark:bg-black px-4 flex justify-center overflow-hidden">
-            <div className="ewaste-process__container max-w-[1152px] w-full flex flex-col gap-4">
+            <div className="ewaste-process__container max-w-[1400px] w-full flex flex-col gap-6">
                 <div className="text-center flex flex-col items-center gap-4">
                     <motion.h6 
                         initial={{ opacity: 0, y: 20 }}
