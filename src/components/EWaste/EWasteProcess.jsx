@@ -1,190 +1,203 @@
-import React, { useRef, useLayoutEffect } from 'react';
-import { FileCheck, Shield, MapPin, Recycle, TrendingUp, CheckCircle2 } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useRef } from 'react';
+import { ClipboardCheck, Truck, MapPin, Cog, Recycle, Award } from 'lucide-react';
+import { motion, useScroll, useInView } from 'framer-motion';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const processSteps = [
-    {
-        phase: 'Phase 1',
-        title: 'Assessment & Planning',
-        description: 'A dedicated account manager conducts a detailed assessment (on-site or virtual) to securely catalog your IT equipment, lab devices, and industrial scrap. We then create a fully customized recycling plan aligned with your operational schedule and sustainability goals.',
-        icon: FileCheck,
-    },
-    {
-        phase: 'Phase 2',
-        title: 'Secure On-Site Collection',
-        description: (<>Our certified collection crews arrive at your scheduled time to securely log each electronic asset into our advanced digital tracking system.<br />For data-bearing devices, we perform specialized on-site data wiping or apply tamper-proof seals for complete chain-of-custody security.</>),
-        icon: Shield,
-    },
-    {
-        phase: 'Phase 3',
-        title: 'GPS-Tracked Transportation',
-        description: 'All collected electronic assets are transported in our GPS-tracked, fully insured, and secured vehicles directly to our authorized processing facilities. We maintain complete legal and operational liability and provide real-time shipment tracking throughout transit.',
-        icon: MapPin,
-    },
-    {
-        phase: 'Phase 4',
-        title: 'Systematic Processing',
-        description: 'Material is accurately weighed and audited, and all data storage devices undergo irreversible physical destruction via specialized industrial shredding. Skilled technicians efficiently disassemble items, segregating components into forty distinct pure recovery streams.',
-        icon: Recycle,
-    },
-    {
-        phase: 'Phase 5',
-        title: 'Material Recovery',
-        description: 'Recovered electronic components undergo advanced mechanical processing to achieve diverse high-purity material grades for industrial reuse. These materials directly power the circular economy, becoming essential raw inputs for new products at authorized smelters.',
-        icon: TrendingUp,
-    },
-    {
-        phase: 'Phase 6',
-        title: 'Certification & Reporting',
-        description: 'You receive a comprehensive, legally recognized Certificate of Recycling and Data Destruction detailing the precise processing outcome for every asset. This documentation demonstrates EPR compliance and provides verifiable evidence for your corporate ESG reporting.',
-        icon: CheckCircle2,
-    },
+const phases = [
+  {
+    number: 1,
+    title: 'Assessment & Planning',
+    description: 'A dedicated account manager conducts a detailed assessment (on-site or virtual) to securely catalog your IT equipment, lab devices, and industrial scrap. We then create a fully customized recycling plan aligned with your operational schedule and sustainability goals.',
+    icon: ClipboardCheck,
+    color: 'from-blue-400 to-cyan-500',
+    gradient: 'bg-gradient-to-br from-blue-50/60 to-cyan-50/60 dark:from-blue-900/30 dark:to-cyan-900/30',
+    shadowColor: 'rgba(56, 189, 248, 0.4)'
+  },
+  {
+    number: 2,
+    title: 'Secure On-Site Collection',
+    description: 'Our certified collection crews arrive at your scheduled time to securely log each electronic asset into our advanced digital tracking system. For data-bearing devices, we perform specialized on-site data wiping or apply tamper-proof seals for complete chain-of-custody security.',
+    icon: Award,
+    color: 'from-emerald-400 to-teal-500',
+    gradient: 'bg-gradient-to-br from-emerald-50/60 to-teal-50/60 dark:from-emerald-900/30 dark:to-teal-900/30',
+    shadowColor: 'rgba(20, 184, 166, 0.4)'
+  },
+  {
+    number: 3,
+    title: 'GPS-Tracked Transportation',
+    description: 'All collected electronic assets are transported in our GPS-tracked, fully insured, and secured vehicles directly to our authorized processing facilities. We maintain complete legal and operational liability and provide real-time shipment tracking throughout transit.',
+    icon: MapPin,
+    color: 'from-amber-400 to-orange-500',
+    gradient: 'bg-gradient-to-br from-amber-50/60 to-orange-50/60 dark:from-amber-900/30 dark:to-orange-900/30',
+    shadowColor: 'rgba(245, 158, 11, 0.4)'
+  },
+  {
+    number: 4,
+    title: 'Systematic Processing',
+    description: 'Material is accurately weighed and audited, and all data storage devices undergo irreversible physical destruction via specialized industrial shredding. Skilled technicians efficiently disassemble items, segregating components into forty distinct pure recovery streams.',
+    icon: Cog,
+    color: 'from-rose-400 to-pink-500',
+    gradient: 'bg-gradient-to-br from-rose-50/60 to-pink-50/60 dark:from-rose-900/30 dark:to-pink-900/30',
+    shadowColor: 'rgba(244, 63, 94, 0.4)'
+  },
+  {
+    number: 5,
+    title: 'Material Recovery',
+    description: 'Recovered electronic components undergo advanced mechanical processing to achieve diverse high-purity material grades for industrial reuse. These materials directly power the circular economy, becoming essential raw inputs for new products at authorized smelters.',
+    icon: Recycle,
+    color: 'from-green-400 to-lime-500',
+    gradient: 'bg-gradient-to-br from-green-50/60 to-lime-50/60 dark:from-green-900/30 dark:to-lime-900/30',
+    shadowColor: 'rgba(132, 204, 22, 0.4)'
+  },
+  {
+    number: 6,
+    title: 'Certification & Reporting',
+    description: 'You receive a comprehensive, legally recognized Certificate of Recycling and Data Destruction detailing the precise processing outcome for every asset. This documentation demonstrates EPR compliance and provides verifiable evidence for your corporate ESG reporting.',
+    icon: Truck,
+    color: 'from-sky-400 to-blue-500',
+    gradient: 'bg-gradient-to-br from-sky-50/60 to-blue-50/60 dark:from-sky-900/30 dark:to-blue-900/30',
+    shadowColor: 'rgba(14, 165, 233, 0.4)'
+  }
 ];
 
-const EWasteProcess = () => {
-    const containerRef = useRef(null);
-    const innersRef = useRef([]);
+const PhaseCard = ({ phase, index }) => {
+    const cardRef = useRef(null);
+    const Icon = phase.icon;
+    const isEven = index % 2 === 0;
 
-    useLayoutEffect(() => {
-        const ctx = gsap.context(() => {
-            innersRef.current.forEach((inner, index) => {
-                if (!inner) return;
-
-                // Elements inside the inner wrap
-                const icon = inner.querySelector('.ewaste-process__step-icon');
-                const phase = inner.querySelector('.ewaste-process__step-phase');
-                const title = inner.querySelector('.ewaste-process__step-title');
-                const desc = inner.querySelector('.ewaste-process__step-description');
-
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: inner.parentElement, // Trigger exactly when the static outer boundary hits
-                        start: "top 65%", // Typically matches the leading edge of the roadmap drawing
-                    },
-                    onComplete: () => {
-                        // Clear inline GSAP styles after completion so hover CSS keeps working
-                        gsap.set([inner, icon, phase, title, desc], { clearProps: "all" });
-                    }
-                });
-
-                const isEven = index % 2 === 0;
-
-                // 1. Inner Card: Directional Entry + Anticipation Overshoot
-                tl.fromTo(inner, 
-                    { 
-                        x: isEven ? 80 : -80, // Right entry for even, left entry for odd
-                        opacity: 0, 
-                        scale: 1,
-                        boxShadow: "0px 0px 0px rgba(0,0,0,0)",
-                        willChange: "transform, opacity" // Hardware acceleration
-                    },
-                    {
-                        keyframes: [
-                            // Phase 1: Shoot past target naturally with active glow & scale
-                            { 
-                                x: isEven ? -10 : 10, 
-                                opacity: 1, 
-                                scale: 1.03, 
-                                boxShadow: "0px 20px 40px rgba(121, 152, 81, 0.15)",
-                                duration: 0.45, 
-                                ease: "power2.out" 
-                            },
-                            // Phase 2: Settle organically into pocket
-                            { 
-                                x: 0, 
-                                scale: 1, 
-                                boxShadow: "0px 0px 0px rgba(0,0,0,0)",
-                                duration: 0.25, 
-                                ease: "power2.inOut" 
-                            }
-                        ],
-                        delay: 0.12, // ~120ms organic delay after line reaches it
-                        force3D: true
-                    }
-                )
-                // 2. Icon: Pop-in
-                .fromTo(icon, 
-                    { scale: 0.7, opacity: 0, },
-                    {
-                        scale: 1,
-                        opacity: 1,
-                        duration: 1.2,
-                        ease: "elastic.out(1, 0.7)"
-                    }, 
-                    "-=0.5"
-                )
-                // 3. Text Elements
-                .fromTo([phase, title, desc],
-                    { y: 15, opacity: 0 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 1.0,
-                        stagger: 0.1,
-                        ease: "power3.out"
-                    },
-                    "-=0.9"
-                );
-            });
-        }, containerRef.current);
-
-        return () => ctx.revert();
-    }, []);
+    // Trigger reveal once when it enters screen
+    const isRevealed = useInView(cardRef, { once: true, margin: "-10% 0px" });
+    // Trigger highlight continuously when near center of screen
+    const isActive = useInView(cardRef, { margin: "-40% 0px -40% 0px" });
 
     return (
-        <section id="roadmap-process" className="ewaste-process bg-transparent flex justify-center relative" ref={containerRef}>
-            <div className="ewaste-process__container max-w-[1152px] px-4 md:px-0 flex flex-col gap-[24px] w-full">
-                <div className="ewaste-process__header text-center flex flex-col items-center gap-4">
-                    <h6 className="ewaste-process__label text-[#47622A] dark:text-[#799851] uppercase">Our Expertise</h6>
-                    <h2 className="ewaste-process__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                        Our Certified Process
-                    </h2>
-                    <p className="ewaste-process__subtitle dark:text-gray-400 text-gray-600 max-w-none">
-                        A Step-by-Step Framework for India: We operate on a foundation of transparency, security, and compliance.
-                    </p>
+        <motion.div
+            ref={cardRef}
+            initial={{ opacity: 0, y: 80 }}
+            animate={isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative mb-8 md:mb-12 last:mb-0"
+        >
+            <div className={`flex items-center gap-8 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:flex-row`}>
+                
+                <div className={`flex-1 w-full ${isEven ? 'md:text-right text-center' : 'md:text-left text-center'}`}>
+                    <motion.div
+                        animate={isActive ? { 
+                            scale: 1.05, 
+                            opacity: 1, 
+                            filter: "blur(0px)"
+                        } : { 
+                            scale: 0.98, 
+                            opacity: 0.5, 
+                            filter: "blur(2px)"
+                        }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className={`
+                            bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 p-6 rounded-[24px]
+                            backdrop-blur-md bg-white/90 dark:bg-[#111]/90
+                            border border-[#47622A]/10 dark:border-[#799851]/20
+                            relative z-20 group
+                        `}
+                    >
+                        <div className={`flex items-center gap-3 justify-center md:justify-start ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                            <span className={`text-xl font-bold bg-gradient-to-r from-[#47622A] to-[#799851] bg-clip-text text-transparent uppercase tracking-wider`}>
+                                Phase {phase.number}
+                            </span>
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                            {phase.title}
+                        </h3>
+                        <p className={`text-gray-700 dark:text-gray-300 leading-relaxed text-justify md:text-auto`} style={{ textAlign: isEven ? 'right' : 'left' }}>
+                            {phase.description}
+                        </p>
+                    </motion.div>
                 </div>
 
-                <div className="ewaste-process__list relative flex flex-col gap-8 w-full">
-                    {/* Progress Line removed for global ScrollVibe overlay */}
+                <div className="relative flex-shrink-0 group z-20 my-4 md:my-0">
+                    <motion.div
+                        animate={isActive ? { scale: 1.15, rotate: 0 } : { scale: 1, rotate: 0 }}
+                        whileHover={{ scale: 1.25, rotate: 10 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className={`
+                            w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#47622A] to-[#799851]
+                            flex items-center justify-center
+                        `}
+                    >
+                        <Icon className="w-7 h-7 md:w-8 md:h-8 text-white" strokeWidth={2.5} />
+                    </motion.div>
+                </div>
 
-                    {processSteps.map((step, index) => {
-                        const isEven = index % 2 === 0;
-                        return (
-                            <div
-                                key={index}
-                                id={`ew-process-step-${index}`}
-                                className={`group w-full relative z-10 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                            >
-                                {/* Inner wrapper for animation to prevent outer bounding rect shift */}
-                                <div 
-                                    ref={el => innersRef.current[index] = el}
-                                    className={`ewaste-process__step-inner flex flex-col items-center gap-6 p-[24px] rounded-[24px] bg-white dark:bg-[#111] border border-[#799851] transition-all duration-300 w-full hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:border-[#47622A] ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                                >
-                                <div className="ewaste-process__step-icon-wrap flex-shrink-0 w-full md:w-auto">
-                                    <div className="ewaste-process__step-icon w-16 h-16 mx-auto md:mx-0 rounded-2xl bg-[#799851] dark:bg-[#47622A] flex items-center justify-center shadow-md transition-transform duration-300">
-                                        <step.icon className="w-8 h-8 text-white" strokeWidth={2} />
-                                    </div>
-                                </div>
-                                <div className="ewaste-process__step-body flex-1 w-full flex flex-col text-center md:text-left">
-                                    <h6 className="ewaste-process__step-phase text-[#799851] dark:text-[#799851] uppercase font-bold text-sm tracking-widest">
-                                        {step.phase}
-                                    </h6>
-                                    <h3 className="ewaste-process__step-title text-2xl font-bold text-black dark:text-white">
-                                        {step.title}
-                                    </h3>
-                                    <p className="ewaste-process__step-description text-gray-600 dark:text-gray-400 text-base leading-relaxed text-justify md:text-left">
-                                        {step.description}
-                                    </p>
-                                </div>
-                                </div>
-                            </div>
+                <div className="flex-1 w-full hidden md:block" />
+            </div>
+        </motion.div>
+    );
+};
 
+const EWasteProcess = () => {
+    const listRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: listRef,
+        offset: ["start center", "end center"]
+    });
 
-                        )
-                    })}
+    return (
+        <section id="roadmap-process" className="ewaste-process bg-white dark:bg-black px-4 flex justify-center overflow-hidden">
+            <div className="ewaste-process__container max-w-[1152px] w-full flex flex-col gap-4">
+                <div className="text-center flex flex-col items-center gap-4">
+                    <motion.h6 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-[#47622A] dark:text-[#799851] uppercase font-bold tracking-wider"
+                    >
+                        Our Expertise
+                    </motion.h6>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl font-bold !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]"
+                    >
+                        Our Certified Process
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg text-gray-600 dark:text-gray-400"
+                    >
+                        A Step-by-Step Framework for India: We operate on a foundation of transparency, security, and compliance.
+                    </motion.p>
+                </div>
+
+                <div className="relative" ref={listRef}>
+                    {/* SVG Animated Center Line (Desktop Only) */}
+                    <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 hidden md:block z-0">
+                        <svg className="absolute w-full h-[100%] overflow-visible" preserveAspectRatio="none">
+                            {/* Background Track */}
+                            <line 
+                                x1="50%" y1="0" 
+                                x2="50%" y2="100%" 
+                                className="stroke-gray-300 dark:stroke-gray-800" 
+                                strokeWidth="4" 
+                                strokeDasharray="8 8" 
+                            />
+                            {/* Animated Foreground Line */}
+                            <motion.line 
+                                x1="50%" y1="0" 
+                                x2="50%" y2="100%" 
+                                className="stroke-[#799851]" 
+                                strokeWidth="4" 
+                                strokeLinecap="round"
+                                style={{ pathLength: scrollYProgress }} 
+                            />
+                        </svg>
+                    </div>
+
+                    {phases.map((phase, index) => (
+                        <PhaseCard key={phase.number} phase={phase} index={index} />
+                    ))}
                 </div>
             </div>
         </section>

@@ -1,17 +1,9 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const EWasteContactCTA = () => {
-    const containerRef = useRef(null);
-
-    useLayoutEffect(() => {
-        // Fire event so the RoadmapSystem knows the lazy component is fully mounted
-        // GSAP entry animation removed from here to guarantee static button coordinates for Roadmap routing
-        window.dispatchEvent(new Event('roadmap-recalc'));
-    }, []);
-
     return (
-        <section className="ewaste-contact bg-transparent relative" ref={containerRef}>
+        <section className="ewaste-contact bg-white dark:bg-black">
             <div className="ewaste-contact__container max-w-screen-2xl mx-auto px-0">
                 <div className="ewaste-contact__banner flex flex-col gap-6 bg-gradient-to-b from-[#5a7638] to-[#3d5220] dark:!bg-none dark:bg-black justify-center text-center text-white relative overflow-hidden w-[100vw] left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
                     {/* Top Gap Spacer */}
@@ -30,7 +22,6 @@ const EWasteContactCTA = () => {
 
                             <div className="ewaste-contact__actions flex flex-col gap-[16px] justify-center items-center w-full">
                                 <a
-                                    id="ew-cta-button"
                                     href="/contact"
                                     className="ewaste-contact__btn group h-[44px] w-[200px] max-w-full rounded-xl bg-white !text-[#47622A] hover:shadow-lg transition-all flex items-center justify-center gap-2"
                                 >

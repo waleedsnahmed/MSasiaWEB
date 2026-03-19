@@ -471,8 +471,9 @@
 
 .mm-promo-content p {
     margin: 0 !important;
-    color: var(--mm-text-muted);
+    color: var(--mm-text-main);
     font-size: 14px;
+    font-weight: 500;
     line-height: 1.5;
     flex-grow: 1;
     /* Push button to bottom */

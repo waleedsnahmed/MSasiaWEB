@@ -5,7 +5,6 @@ import './EWasteContent.css';
 
 // Direct import for Hero as it's the first thing seen
 import EWasteHero from './EWasteHero';
-import EWasteRoadmapSystem from './EWasteRoadmapSystem';
 
 // Lazy load the rest of the page components
 const EWasteWhyChooseUs = lazy(() => import('./EWasteWhyChooseUs'));
@@ -40,37 +39,35 @@ const EWasteContent = () => {
     }, []);
 
     return (
-        <div className="relative max-w-screen-2xl w-full px-3 lg:px-3 mx-auto flex flex-col gap-[48px]">
-            <EWasteRoadmapSystem />
-            
+        <div className="max-w-screen-2xl w-full px-3 lg:px-3 mx-auto flex flex-col gap-[48px]">
             {/* Empty div to trigger the flex gap of 48px at the top without using padding/margin */}
             <div></div>
 
             <div className="flex flex-col gap-[48px]">
-                <div id="ew-hero"><EWasteHero /></div>
+                <EWasteHero />
                 <Suspense fallback={<div className="flex justify-center items-center h-48"><p>Loading...</p></div>}>
-                    <div id="ew-why"><EWasteWhyChooseUs /></div>
+                    <EWasteWhyChooseUs />
                 </Suspense>
             </div>
 
             <Suspense fallback={<div className="flex justify-center items-center h-48"><p>Loading Process...</p></div>}>
-                <div id="ew-process"><EWasteProcess /></div>
+                <EWasteProcess />
             </Suspense>
 
             <Suspense fallback={<div className="flex justify-center items-center h-48"><p>Loading Categories...</p></div>}>
-                <div id="ew-categories"><EWasteCategories /></div>
+                <EWasteCategories />
             </Suspense>
 
             <Suspense fallback={<div className="flex justify-center items-center h-48"><p>Loading Industries...</p></div>}>
-                <div id="ew-industries"><EWasteIndustries /></div>
+                <EWasteIndustries />
             </Suspense>
 
             <Suspense fallback={<div className="flex justify-center items-center h-48"><p>Loading Benefits...</p></div>}>
-                <div id="ew-benefits"><EWasteBenefits /></div>
+                <EWasteBenefits />
             </Suspense>
 
             <Suspense fallback={<div className="flex justify-center items-center h-48"><p>Loading Contact...</p></div>}>
-                <div id="ew-cta"><EWasteContactCTA /></div>
+                <EWasteContactCTA />
             </Suspense>
         </div>
     );

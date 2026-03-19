@@ -1,9 +1,5 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import { Shield, FileCheck, Zap, TrendingUp } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const whyPoints = [
     {
@@ -29,72 +25,10 @@ const whyPoints = [
 ];
 
 const EWasteWhyChooseUs = () => {
-    const containerRef = useRef(null);
-    const headerRef = useRef(null);
-    const cardsRef = useRef([]);
-    const ctaRef = useRef(null);
-
-    useLayoutEffect(() => {
-        const ctx = gsap.context(() => {
-            // 1. Header fades in
-            gsap.fromTo(headerRef.current,
-                { y: 50, opacity: 0 },
-                {
-                    scrollTrigger: {
-                        trigger: headerRef.current,
-                        start: "top 75%", // Header hits earlier before the line fully commits
-                    },
-                    y: 0,
-                    opacity: 1,
-                    duration: 1.5,
-                    ease: "power4.out"
-                }
-            );
-
-            // 2. Cards fade in staggered exactly as the line sweeps the left margin
-            cardsRef.current.forEach((card, index) => {
-                if (!card) return;
-                gsap.fromTo(card,
-                    { y: 60, opacity: 0, scale: 0.96 },
-                    {
-                        scrollTrigger: {
-                            trigger: card,
-                            start: "top 65%", // Perfect sync with the left sweeping line
-                        },
-                        y: 0,
-                        opacity: 1,
-                        scale: 1,
-                        duration: 1.4,
-                        ease: "expo.out",
-                        onComplete: () => gsap.set(card, { clearProps: "transform,scale" }) // Maintain hover
-                    }
-                );
-            });
-
-            // 3. CTA Banner fades in
-            gsap.fromTo(ctaRef.current,
-                { y: 50, opacity: 0, scale: 0.97 },
-                {
-                    scrollTrigger: {
-                        trigger: ctaRef.current,
-                        start: "top 70%", 
-                    },
-                    y: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 1.5,
-                    ease: "power4.out"
-                }
-            );
-        }, containerRef.current);
-
-        return () => ctx.revert();
-    }, []);
-
     return (
-        <section className="ewaste-why bg-transparent relative" ref={containerRef}>
+        <section className="ewaste-why bg-white dark:bg-black">
             <div className="ewaste-why__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
-                <div ref={headerRef} className="ewaste-why__header text-center flex flex-col items-center justify-start gap-4 min-h-[178px]">
+                <div className="ewaste-why__header text-center flex flex-col items-center justify-start gap-4 scroll-reveal min-h-[178px]">
                     <h6 className="ewaste-why__label text-[#47622A] dark:text-[#799851] uppercase">Why Choose Us</h6>
                     <h2 className="ewaste-why__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                         Why Proper Electronics Management is Non-Negotiable
@@ -109,8 +43,8 @@ const EWasteWhyChooseUs = () => {
                     {whyPoints.map((point, index) => (
                         <div
                             key={index}
-                            ref={el => cardsRef.current[index] = el}
-                            className="group ewaste-why__card flex flex-col gap-4 p-6 lg:p-8 rounded-3xl dark:bg-[#1a1a1a] bg-white border border-gray-100 dark:border-white/5 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md relative z-10"
+                            className="group ewaste-why__card flex flex-col gap-4 scroll-reveal p-6 lg:p-8 rounded-3xl dark:bg-[#1a1a1a] bg-white border border-gray-100 dark:border-white/5 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md"
+                            style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className="ewaste-why__card-header flex items-center gap-4">
                                 <div className="ewaste-why__card-icon-wrap flex items-center justify-center p-[12px] rounded-2xl bg-gradient-to-br from-[#47622A]/10 to-[#799851]/10 dark:from-[#799851]/20 dark:to-[#47622A]/20 shadow-sm border border-[#47622A]/5 dark:border-[#799851]/10 transition-colors duration-300 ease-in-out group-hover:bg-[#22c55e]/10">
@@ -127,8 +61,8 @@ const EWasteWhyChooseUs = () => {
                     ))}
                 </div>
 
-                <div className="ewaste-why__cta-wrapper flex justify-center">
-                    <div ref={ctaRef} className="ewaste-why__cta-banner w-full max-w-[1152px] p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] dark:!bg-none dark:bg-black text-white relative overflow-hidden">
+                <div className="ewaste-why__cta-wrapper flex justify-center scroll-reveal">
+                    <div className="ewaste-why__cta-banner w-full max-w-[1152px] p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] dark:!bg-none dark:bg-black text-white relative overflow-hidden">
                         <div className="ewaste-why__cta-text relative z-10 flex flex-col gap-[16px]">
                             <h4 className="ewaste-why__cta-strong block text-white font-bold">MS Asia Enterprises is the definitive solution.</h4>
                             <p className="font-semibold text-white/90">We close the loop with a formal, auditable process that protects your business, recovers value, and

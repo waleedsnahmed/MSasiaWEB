@@ -27,6 +27,7 @@ import SustainabilityReport from './pages/Company/SustainabilityReport'
 import Testimonials from './pages/Company/Testimonials'
 import CaseStudies from './pages/Company/CaseStudies'
 import StandardOfExcellence from './pages/Company/StandardOfExcellence'
+import DemoRoadmap from './pages/DemoRoadmap'
 
 // HomePage Component (Existing Content)
 const HomePage = () => (
@@ -90,6 +91,7 @@ function App() {
                 <Route path="/client-testimonials" element={<Testimonials />} />
                 <Route path="/case-studies" element={<CaseStudies />} />
                 <Route path="/standard-of-excellence" element={<StandardOfExcellence />} />
+                <Route path="/demoroadmap" element={<DemoRoadmap />} />
 
                 <Route path="*" element={<NotFound />} />
             </Routes>

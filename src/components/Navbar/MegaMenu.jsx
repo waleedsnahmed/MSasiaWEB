@@ -84,9 +84,14 @@ const MegaMenu = ({ activeMenu, isVisible, onMouseEnter, onMouseLeave, onClose }
 
     // Reset state whenever the main menu changes
     useEffect(() => {
-        if (isVisible) {
+        if (isVisible && activeMenu) {
             setActiveCategoryIndex(0);
-            setHoveredLink(null);
+            const menuData = NAV_MENU_DATA[activeMenu];
+            if (menuData && menuData.columns && menuData.columns.length > 0 && menuData.columns[0].items && menuData.columns[0].items.length > 0) {
+                setHoveredLink(menuData.columns[0].items[0]);
+            } else {
+                setHoveredLink(null);
+            }
         }
     }, [activeMenu, isVisible]);
 
@@ -140,7 +145,7 @@ const MegaMenu = ({ activeMenu, isVisible, onMouseEnter, onMouseLeave, onClose }
                                         className={`mm-category-item ${index === activeCategoryIndex ? 'active' : ''}`}
                                         onMouseEnter={() => {
                                             setActiveCategoryIndex(index);
-                                            setHoveredLink(null);
+                                            setHoveredLink(column.items && column.items.length > 0 ? column.items[0] : null);
                                         }}
                                     >
                                         <h6 className="m-0 p-0 font-medium mm-category-text">{column.title}</h6>
@@ -157,19 +162,18 @@ const MegaMenu = ({ activeMenu, isVisible, onMouseEnter, onMouseLeave, onClose }
                             <ul className="mm-link-list custom-scrollbar">
                                 {activeCategoryData?.items?.map((item, idx) => (
                                     <li key={idx}>
-                                        <Link
-                                            to={activeMenu === 'Company'
-                                                ? (item.label === 'About Us' ? '/about' :
-                                                    item.label === 'Contact Us' ? '/contact' :
-                                                        `/${getSlug(item.label)}`)
-                                                : activeMenu === 'Industries We Serve'
-                                                    ? `/industries/${getSlug(item.label)}`
-                                                    : `/services/${getSlug(item.label)}`}
-                                            className="mm-link-item group"
-                                            onMouseEnter={() => setHoveredLink(item)}
-                                            onMouseLeave={() => setHoveredLink(null)}
-                                            onClick={onClose}
-                                        >
+                                            <Link
+                                                to={activeMenu === 'Company'
+                                                    ? (item.label === 'About Us' ? '/about' :
+                                                        item.label === 'Contact Us' ? '/contact' :
+                                                            `/${getSlug(item.label)}`)
+                                                    : activeMenu === 'Industries We Serve'
+                                                        ? `/industries/${getSlug(item.label)}`
+                                                        : `/services/${getSlug(item.label)}`}
+                                                className="mm-link-item group"
+                                                onMouseEnter={() => setHoveredLink(item)}
+                                                onClick={onClose}
+                                            >
                                             <h6 className="m-0 p-0 font-normal normal-case tracking-normal">{item.label}</h6>
                                             <svg className="mm-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" />
