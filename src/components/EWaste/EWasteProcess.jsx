@@ -69,6 +69,14 @@ const PhaseCard = ({ phase, index }) => {
     // Trigger highlight continuously when near center of screen
     const isActive = useInView(cardRef, { margin: "-40% 0px -40% 0px" });
 
+    const [isMobile, setIsMobile] = React.useState(false);
+    React.useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <motion.div
             ref={cardRef}
@@ -81,8 +89,8 @@ const PhaseCard = ({ phase, index }) => {
                 
                 <div className={`flex-1 w-full ${isEven ? 'md:text-right text-center' : 'md:text-left text-center'}`}>
                     <motion.div
-                        animate={isActive ? { 
-                            scale: 1.05, 
+                        animate={(isActive || isMobile) ? { 
+                            scale: isMobile ? 1 : 1.05, 
                             opacity: 1, 
                             filter: "blur(0px)"
                         } : { 
@@ -114,8 +122,8 @@ const PhaseCard = ({ phase, index }) => {
 
                 <div className="relative flex-shrink-0 group z-20 my-0 md:my-0">
                     <motion.div
-                        animate={isActive ? { scale: 1.15, rotate: 0 } : { scale: 1, rotate: 0 }}
-                        whileHover={{ scale: 1.25, rotate: 10 }}
+                        animate={(isActive && !isMobile) ? { scale: 1.15, rotate: 0 } : { scale: 1, rotate: 0 }}
+                        whileHover={!isMobile ? { scale: 1.25, rotate: 10 } : {}}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         className={`
                             w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#47622A] to-[#799851]
@@ -171,7 +179,7 @@ const EWasteProcess = () => {
                     </motion.p>
                 </div>
 
-                <div className="relative" ref={listRef}>
+                <div className="relative flex flex-col gap-10 md:block md:gap-0" ref={listRef}>
                     {/* SVG Animated Center Line (Desktop Only) */}
                     <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 hidden md:block z-0">
                         <svg className="absolute w-full h-[100%] overflow-visible" preserveAspectRatio="none">

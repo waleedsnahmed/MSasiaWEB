@@ -420,21 +420,19 @@ function NavbarPill({
                     </div>
                 ) : (
                     /* === MOBILE SEARCH UI === */
-                    <div className="w-full flex items-center h-full animate-fadeIn px-[10px] bg-white/10 rounded-full">
-                        <div className="flex-none flex items-center text-[#47622A]">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </div>
+                    <div className="w-full h-full flex items-center gap-2 animate-fadeIn bg-transparent">
+                        <svg className="w-5 h-5 flex-none text-[#47622A]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="flex-1 bg-transparent text-gray-700 outline-none border-none ring-0 focus:ring-0 placeholder:text-gray-400 mx-[10px] h-full relative top-[5px]"
+                            className="flex-1 bg-transparent text-gray-700 outline-none border-none ring-0 focus:ring-0 placeholder:text-gray-400 h-full m-0 p-0"
                             autoFocus
                         />
                         <button
                             onClick={toggleSearch}
-                            className="flex-none p-1 text-gray-400 hover:text-red-500 transition-colors !bg-transparent !border-none !shadow-none outline-none"
+                            className="flex-none text-gray-400 hover:text-red-500 transition-colors !bg-transparent !border-none !shadow-none outline-none m-0 p-0"
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
