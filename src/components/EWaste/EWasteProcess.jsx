@@ -75,9 +75,9 @@ const PhaseCard = ({ phase, index }) => {
             initial={{ opacity: 0, y: 80 }}
             animate={isRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative mb-2 md:mb-4 last:mb-0"
+            className="relative mb-0 md:mb-4 last:mb-0"
         >
-            <div className={`flex items-center gap-8 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:flex-row`}>
+            <div className={`flex items-center gap-8 flex-col-reverse ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 
                 <div className={`flex-1 w-full ${isEven ? 'md:text-right text-center' : 'md:text-left text-center'}`}>
                     <motion.div
@@ -106,13 +106,13 @@ const PhaseCard = ({ phase, index }) => {
                         <h4 className="text-2xl font-bold text-gray-900 dark:text-white">
                             {phase.title}
                         </h4>
-                        <p className={`text-gray-700 dark:text-gray-300 leading-relaxed text-justify md:text-auto`} style={{ textAlign: isEven ? 'right' : 'left' }}>
+                        <p className={`text-gray-700 dark:text-gray-300 leading-relaxed text-center ${isEven ? 'md:text-right' : 'md:text-left'}`}>
                             {phase.description}
                         </p>
                     </motion.div>
                 </div>
 
-                <div className="relative flex-shrink-0 group z-20 my-4 md:my-0">
+                <div className="relative flex-shrink-0 group z-20 my-0 md:my-0">
                     <motion.div
                         animate={isActive ? { scale: 1.15, rotate: 0 } : { scale: 1, rotate: 0 }}
                         whileHover={{ scale: 1.25, rotate: 10 }}

@@ -53,4 +53,35 @@
     overflow: hidden;
 }
 
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.ewaste-hero,
+    section.ewaste-why,
+    section.ewaste-process,
+    section.ewaste-categories,
+    section.ewaste-industries,
+    section.ewaste-benefits,
+    section.ewaste-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.ewaste-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.ewaste-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.ewaste-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}
+
 

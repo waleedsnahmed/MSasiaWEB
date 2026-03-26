@@ -39,7 +39,7 @@ const EWasteContent = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-2xl w-full px-3 lg:px-3 mx-auto flex flex-col gap-[48px]">
+        <div className="max-w-screen-2xl w-full px-3 lg:px-3 mx-0 lg:mx-auto flex flex-col gap-[48px]">
             {/* Empty div to trigger the flex gap of 48px at the top without using padding/margin */}
             <div></div>
 

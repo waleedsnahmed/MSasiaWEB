@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 const EWasteContactCTA = () => {
     return (
         <section className="ewaste-contact bg-white dark:bg-black">
-            <div className="ewaste-contact__container max-w-screen-2xl mx-auto px-0">
+            <div className="ewaste-contact__container max-w-screen-2xl mx-0 md:mx-auto px-0">
                 <div className="ewaste-contact__banner flex flex-col gap-6 bg-gradient-to-b from-[#5a7638] to-[#3d5220] dark:!bg-none dark:bg-black justify-center text-center text-white relative overflow-hidden w-[100vw] left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
                     {/* Top Gap Spacer */}
                     <div></div>

@@ -37,7 +37,7 @@ const benefits = [
 const EWasteBenefits = () => {
     return (
         <section className="ewaste-benefits bg-white dark:bg-black">
-            <div className="ewaste-benefits__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
+            <div className="ewaste-benefits__container max-w-screen-2xl mx-0 md:mx-auto px-0 flex flex-col gap-[24px]">
                 <div className="ewaste-benefits__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <h6 className="ewaste-benefits__label text-[#5a7638] dark:text-[#799851] uppercase">Why Partner</h6>
                     <h2 className="ewaste-benefits__heading text-[#47622A] dark:text-[#799851]">

@@ -41,7 +41,7 @@ const categories = [
 const EWasteCategories = () => {
     return (
         <section className="ewaste-categories bg-white dark:bg-black">
-            <div className="ewaste-categories__container max-w-screen-2xl mx-auto px-0 flex flex-col gap-[24px]">
+            <div className="ewaste-categories__container max-w-screen-2xl mx-0 md:mx-auto px-0 flex flex-col gap-[24px]">
                 <div className="ewaste-categories__header text-center flex flex-col items-center gap-4 scroll-reveal">
                     <h6 className="ewaste-categories__label text-[#47622A] dark:text-[#799851] uppercase">Capabilities</h6>
                     <h2 className="ewaste-categories__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
@@ -53,7 +53,7 @@ const EWasteCategories = () => {
                     </p>
                 </div>
 
-                <div className="ewaste-categories__grid-wrapper scroll-reveal max-w-[1152px] mx-auto w-full">
+                <div className="ewaste-categories__grid-wrapper scroll-reveal max-w-[1152px] mx-0 md:mx-auto w-full">
                     <div className="ewaste-categories__grid-outer overflow-hidden rounded-3xl border dark:border-white/10 border-gray-200 bg-white dark:bg-[#1a1a1a] shadow-sm">
                         
                         {/* Grid Header */}
@@ -67,7 +67,7 @@ const EWasteCategories = () => {
                         <div className="ewaste-categories__grid-body divide-y dark:divide-white/5 divide-gray-100">
                             {categories.map((cat, index) => (
                                 <div key={index} className="ewaste-categories__grid-row grid grid-cols-1 md:grid-cols-[1fr_2fr_2fr] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                                    <div className="ewaste-categories__cell ewaste-categories__td-category p-[12px] font-bold dark:text-gray-200 text-[#47622A] text-left flex items-center justify-start border-b md:border-b-0 dark:border-white/5 border-gray-100">
+                                    <div className="ewaste-categories__cell ewaste-categories__td-category p-[12px] font-bold dark:text-gray-200 text-[#47622A] text-center md:text-left flex items-center justify-center md:justify-start border-b md:border-b-0 dark:border-white/5 border-gray-100">
                                         <p>{cat.category}</p>
                                     </div>
                                     <div className="ewaste-categories__cell ewaste-categories__td-examples p-[12px] dark:text-gray-400 text-gray-600 text-center flex items-center justify-center border-b md:border-b-0 dark:border-white/5 border-gray-100">

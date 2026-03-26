@@ -2802,16 +2802,21 @@ div.absolute button {
         padding-right: 12px !important;
     }
 
-    /* Ensure HR has no influence */
+    /* Hide HR separator on mobile — no line between footer content and privacy bar */
     .site-footer hr {
-        margin: 0 !important;
-        border-top: 1px solid var(--footer-border) !important;
+        display: none !important;
     }
 
     /* --- STRICT GAP CONTROL & BACKGROUNDS --- */
     .site-footer {
-        background-color: #47622A !important;
-        /* Brand Green Base */
+        background-color: #3d5220 !important;
+        border-top: none !important;
+        margin-top: -1px !important;
+        /* Match CTA gradient end color for seamless join */
+    }
+
+    .dark .site-footer {
+        background-color: #000000 !important;
     }
 
     .footer-grid {
@@ -3037,6 +3042,37 @@ div.absolute button {
     .footer-cert-badge:hover svg {
         color: #FFFFFF;
     }
+
+    /* --- FOOTER BOTTOM BAR (Privacy Policy / Copyright) --- */
+    .footer-bottom {
+        background-color: #3d5220 !important;
+        width: 100% !important;
+    }
+
+    .dark .footer-bottom {
+        background-color: #000000 !important;
+    }
+
+    .footer-bottom .footer-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 4px !important;
+        height: auto !important;
+        padding: 10px 12px !important;
+    }
+
+    .footer-bottom .footer-copyright,
+    .footer-bottom .footer-bottom-links,
+    .footer-bottom .footer-legal-link {
+        color: var(--footer-text) !important;
+        font-size: 0.75rem !important;
+    }
+
+    .footer-bottom .footer-bottom-links {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1rem !important;
+    }
 }
 
 /* DESKTOP DEFAULTS / OVERRIDES */
@@ -3251,8 +3287,7 @@ div.absolute button {
 @media (max-width: 767px) {
     .footer-bottom {
         border-top: none !important;
-        background-color: #47622A !important;
-        /* Brand Green Base */
+        background-color: transparent !important; /* Inherit Brand Green Base or Dark mode from parent */
         width: 100% !important;
         padding-bottom: 12px !important;
     }

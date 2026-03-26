@@ -4,11 +4,11 @@ import { Recycle } from 'lucide-react';
 const EWasteHero = () => {
     return (
         <section className="ewaste-hero flex flex-col before:content-[''] after:content-['']">
-            <div className="max-w-screen-2xl mx-auto px-0 w-full">
+            <div className="max-w-screen-2xl mx-0 md:mx-auto px-0 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:h-[440px] animate-fadeIn">
 
                     {/* LEFT COLUMN: Text Content */}
-                    <div className="flex flex-col items-start text-left h-full justify-center gap-y-7 lg:gap-y-8">
+                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left h-full justify-center gap-y-7 lg:gap-y-8">
                         {/* Pill Badge */}
                         <div className="ewaste-hero__badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-50 dark:bg-[#111111] border border-gray-100 dark:border-gray-800 shadow-sm">
                             <div className="ewaste-hero__badge-dot w-1.5 h-1.5 rounded-full bg-[#47622A] animate-pulse"></div>
