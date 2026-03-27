@@ -85,7 +85,7 @@ const PhaseCard = ({ phase, index }) => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative mb-0 md:mb-4 last:mb-0"
         >
-            <div className={`flex items-center gap-8 flex-col-reverse ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+            <div className={`flex items-center gap-2 md:gap-8 flex-col-reverse ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 
                 <div className={`flex-1 w-full ${isEven ? 'md:text-right text-center' : 'md:text-left text-center'}`}>
                     <motion.div
@@ -100,7 +100,7 @@ const PhaseCard = ({ phase, index }) => {
                         }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                         className={`
-                            bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 p-6 rounded-[24px]
+                            bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 p-4 md:p-6 rounded-[24px]
                             backdrop-blur-md bg-white/90 dark:bg-[#111]/90
                             border border-[#47622A]/10 dark:border-[#799851]/20
                             relative z-20 group
@@ -148,9 +148,9 @@ const EWasteProcess = () => {
     });
 
     return (
-        <section id="roadmap-process" className="ewaste-process bg-white dark:bg-black px-4 flex justify-center overflow-hidden">
-            <div className="ewaste-process__container max-w-[1400px] w-full flex flex-col gap-6">
-                <div className="text-center flex flex-col items-center gap-4">
+        <section id="roadmap-process" className="ewaste-process bg-white dark:bg-black !p-0 flex justify-center overflow-hidden">
+            <div className="ewaste-process__container max-w-[1400px] w-full flex flex-col gap-4 md:gap-6">
+                <div className="text-center flex flex-col items-center gap-2 md:gap-4">
                     <motion.h6 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -179,7 +179,7 @@ const EWasteProcess = () => {
                     </motion.p>
                 </div>
 
-                <div className="relative flex flex-col gap-10 md:block md:gap-0" ref={listRef}>
+                <div className="relative flex flex-col gap-4 md:block md:gap-0" ref={listRef}>
                     {/* SVG Animated Center Line (Desktop Only) */}
                     <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 hidden md:block z-0">
                         <svg className="absolute w-full h-[100%] overflow-visible" preserveAspectRatio="none">

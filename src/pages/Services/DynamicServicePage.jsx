@@ -12,9 +12,12 @@ const DynamicServicePage = () => {
     }, [slug]);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+        <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 flex flex-col gap-4 md:block md:gap-0">
+            {/* Spacer for fixed mobile navbar */}
+            <div className="w-full h-[72px] shrink-0 md:hidden"></div>
+            
             {/* 1. HERO SECTION */}
-            <div className="relative w-full h-[400px] lg:h-[500px] overflow-hidden">
+            <div className="relative w-[350px] max-w-full mx-auto md:w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden md:rounded-none rounded-2xl">
                 {/* Background Image Placeholder */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
@@ -28,7 +31,7 @@ const DynamicServicePage = () => {
 
                 {/* Hero Content */}
                 <div className="relative h-full max-w-screen-2xl mx-auto px-[12px] flex flex-col gap-4 justify-center items-start text-white">
-                    <h1 className="font-black tracking-tight animate-slideInLeft text-white">
+                    <h1 className="font-black tracking-tight animate-slideInLeft text-white !mb-0">
                         {data.title}
                     </h1>
                     <h4 className="text-gray-200 font-light max-w-2xl animate-slideInLeft" style={{ animationDelay: '0.1s' }}>

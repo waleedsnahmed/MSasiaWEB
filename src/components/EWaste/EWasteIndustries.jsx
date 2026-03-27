@@ -14,9 +14,9 @@ const industries = [
 
 const EWasteIndustries = () => {
     return (
-        <section className="ewaste-industries bg-white dark:bg-black">
-            <div className="ewaste-industries__container max-w-screen-2xl mx-0 md:mx-auto px-0 flex flex-col gap-[24px]">
-                <div className="ewaste-industries__header text-center flex flex-col items-center gap-4 scroll-reveal">
+        <section className="ewaste-industries bg-white dark:bg-black !py-0">
+            <div className="ewaste-industries__container max-w-screen-2xl mx-0 md:mx-auto px-0 flex flex-col gap-4 md:gap-[24px]">
+                <div className="ewaste-industries__header text-center flex flex-col items-center gap-2 md:gap-4 scroll-reveal">
                     <h6 className="ewaste-industries__label text-[#47622A] dark:text-[#799851] uppercase">Sectors</h6>
                     <h2 className="ewaste-industries__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                         Industries We Serve
@@ -30,16 +30,18 @@ const EWasteIndustries = () => {
                     {industries.map((industry, index) => (
                         <div
                             key={index}
-                            className="ewaste-industries__card scroll-reveal flex flex-col gap-4 p-[12px] md:p-[24px] min-h-[280px] items-center text-center justify-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
+                            className="ewaste-industries__card scroll-reveal flex flex-col gap-2 md:gap-4 p-4 md:p-[24px] min-h-fit md:min-h-[280px] items-start md:items-center text-left md:text-center justify-start md:justify-center rounded-2xl bg-white dark:bg-[#111] border border-gray-100 dark:border-white/5 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1"
                             style={{ animationDelay: `${index * 0.05}s` }}
                         >
-                            <div className="ewaste-industries__card-icon w-16 h-16 rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851]  flex items-center justify-center">
-                                <industry.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                            <div className="flex flex-row md:flex-col items-center md:items-center gap-2 md:gap-4 w-full">
+                                <div className="ewaste-industries__card-icon shrink-0 w-16 h-16 rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851] flex items-center justify-center">
+                                    <industry.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                                </div>
+                                 <h4 className="ewaste-industries__card-title text-left md:text-center w-full">
+                                    {industry.title}
+                                </h4>
                             </div>
-                             <h4 className="ewaste-industries__card-title">
-                                {industry.title}
-                            </h4>
-                            <p className="ewaste-industries__card-description dark:text-gray-400 text-gray-500">
+                            <p className="ewaste-industries__card-description dark:text-gray-400 text-gray-500 text-left md:text-center">
                                 {industry.description}
                             </p>
                         </div>

@@ -3,12 +3,12 @@ import { Recycle } from 'lucide-react';
 
 const EWasteHero = () => {
     return (
-        <section className="ewaste-hero flex flex-col before:content-[''] after:content-['']">
+        <section className="ewaste-hero flex flex-col before:content-[''] after:content-[''] !py-0">
             <div className="max-w-screen-2xl mx-0 md:mx-auto px-0 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:h-[440px] animate-fadeIn">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center lg:h-[440px] animate-fadeIn">
 
                     {/* LEFT COLUMN: Text Content */}
-                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left h-full justify-center gap-y-7 lg:gap-y-8">
+                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left h-full justify-center gap-2 md:gap-4 lg:gap-8">
                         {/* Pill Badge */}
                         <div className="ewaste-hero__badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-50 dark:bg-[#111111] border border-gray-100 dark:border-gray-800 shadow-sm">
                             <div className="ewaste-hero__badge-dot w-1.5 h-1.5 rounded-full bg-[#47622A] animate-pulse"></div>
@@ -34,7 +34,7 @@ const EWasteHero = () => {
                     </div>
 
                     {/* RIGHT COLUMN: Image */}
-                    <div className="relative w-full h-[300px] lg:h-full flex flex-col justify-center items-center bg-gray-50 dark:bg-[#111111] border border-gray-200 dark:border-white/5 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
+                    <div className="relative w-[350px] max-w-full mx-auto md:w-full h-[300px] lg:h-full flex flex-col justify-center items-center bg-gray-50 dark:bg-[#111111] border border-gray-200 dark:border-white/5 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
                         {/* Decorative Background Blob */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gradient-to-br from-[#47622A]/20 to-[#799851]/5 rounded-full blur-3xl pointer-events-none"></div>
 

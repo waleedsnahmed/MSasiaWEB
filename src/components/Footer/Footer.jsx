@@ -2,7 +2,7 @@ function Footer() {
     return (
         <footer className="site-footer w-full">
             <div className="footer-container max-w-screen-2xl mx-auto px-[12px] w-full">
-                <div className="footer-grid ">
+                <div className="footer-grid !pt-0 md:!pt-[12px]">
                     {/* Column 1: Company Info */}
                     <div className="footer-column">
                         <div className="footer-logo flex items-center gap-2">

@@ -3,18 +3,18 @@ import { ArrowRight } from 'lucide-react';
 
 const EWasteContactCTA = () => {
     return (
-        <section className="ewaste-contact bg-white dark:bg-black relative z-10">
-            {/* Bridge to prevent 1px white line gap on iPads/mobile */}
-            <div className="absolute -bottom-[2px] left-0 w-full h-[4px] bg-[#3d5220] dark:hidden -z-10"></div>
+        <section className="ewaste-contact bg-white dark:bg-black relative z-10 !py-0">
+            {/* Visible separator line between CTA and Footer on mobile */}
+            <div className="absolute bottom-0 left-0 w-full h-[4px] bg-[#799851] dark:bg-[#47622A] z-20"></div>
             <div className="ewaste-contact__container max-w-screen-2xl mx-0 md:mx-auto px-0">
-                <div className="ewaste-contact__banner flex flex-col gap-6 bg-gradient-to-b from-[#5a7638] to-[#3d5220] dark:!bg-none dark:bg-black justify-center text-center text-white relative overflow-hidden w-[100vw] left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+                <div className="ewaste-contact__banner flex flex-col gap-2 md:gap-6 bg-gradient-to-b from-[#5a7638] to-[#3d5220] dark:!bg-none dark:bg-black justify-center text-center text-white relative overflow-hidden w-[100vw] left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
                     {/* Top Gap Spacer */}
                     <div></div>
 
                     <div className="ewaste-contact__glow-bottom absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
 
                     <div className="ewaste-contact__content-wrapper flex justify-center w-full relative z-10">
-                        <div className="flex flex-col gap-6 items-center w-full max-w-[1152px]">
+                        <div className="flex flex-col gap-2 md:gap-6 items-center w-full max-w-[1152px]">
                             <h2 className="ewaste-contact__heading text-white font-bold">
                                 Ready to Secure Your E-Waste?
                             </h2>
