@@ -54,7 +54,7 @@ const EWasteCategories = () => {
                 </div>
 
                 <div className="ewaste-categories__grid-wrapper scroll-reveal max-w-[1152px] mx-0 md:mx-auto w-full">
-                    <div className="ewaste-categories__grid-outer overflow-hidden rounded-3xl border dark:border-white/10 border-gray-200 bg-white dark:bg-[#1a1a1a] shadow-sm">
+                    <div className="ewaste-categories__grid-outer overflow-hidden rounded-3xl border border-[#47622A]/10 dark:border-[#799851]/20 bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 backdrop-blur-md bg-white/90 dark:bg-[#111]/90 shadow-sm">
                         
                         {/* Grid Header */}
                         <div className="ewaste-categories__grid-header hidden md:grid grid-cols-[1fr_2fr_2fr] bg-[#47622A] dark:bg-[#1a1a1a] border-b dark:border-white/10 border-transparent text-white dark:text-gray-200">

@@ -43,7 +43,7 @@ const EWasteWhyChooseUs = () => {
                     {whyPoints.map((point, index) => (
                         <div
                             key={index}
-                            className="group ewaste-why__card flex flex-col gap-2 md:gap-4 scroll-reveal p-4 md:p-6 lg:p-8 rounded-3xl dark:bg-[#1a1a1a] bg-white border border-gray-100 dark:border-white/5 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md"
+                            className="group ewaste-why__card flex flex-col gap-2 md:gap-4 scroll-reveal p-4 md:p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 backdrop-blur-md bg-white/90 dark:bg-[#111]/90 border border-[#47622A]/10 dark:border-[#799851]/20 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className="ewaste-why__card-header flex items-center gap-2 md:gap-4">

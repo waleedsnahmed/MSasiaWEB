@@ -1673,7 +1673,7 @@ button.bg-brand-btn-primary:hover {
 }
 
 .dark .site-footer {
-    --footer-bg: #0a0a0a;
+    --footer-bg: #000000;
     --footer-text: #9ca3af;
     --footer-heading: #ffffff;
     --footer-link: #d1d5db;
@@ -2277,7 +2277,7 @@ html.dark .feature-card {
 .dark footer,
 html.dark .site-footer,
 html.dark footer {
-    background-color: var(--bg-alt);
+    background-color: #000000;
     color: var(--text-main);
 }
 
