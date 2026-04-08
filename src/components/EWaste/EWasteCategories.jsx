@@ -1,40 +1,48 @@
 import React from 'react';
+import { Server, Printer, Cpu, Tv, Stethoscope, Zap, Package } from 'lucide-react';
 
 const categories = [
     {
         category: 'Corporate IT & Telecom',
         examples: 'Servers, Laptops, Desktops, Switches, Routers, PBX Systems, UPS.',
         handling: 'Focus on certified data destruction & high-value component recovery.',
+        icon: Server,
     },
     {
         category: 'Office Equipment',
         examples: 'Printers, Photocopiers, Scanners, Projectors, EPABX Systems.',
         handling: 'Toner/cartridge removal, separation of plastics, metals, and electronics.',
+        icon: Printer,
     },
     {
         category: 'Industrial Electronics',
         examples: 'PLCs, Control Panels, Drives, Sensors, HMIs, Manufacturing Control Systems.',
         handling: 'Often contain high-grade metals; handled with precision dismantling.',
+        icon: Cpu,
     },
     {
         category: 'Home Appliances',
         examples: 'Televisions, Refrigerators, ACs, Washing Machines, Audio/Video Equipment.',
         handling: 'Safe removal of refrigerants (CFCs) and compressor oils before recycling.',
+        icon: Tv,
     },
     {
         category: 'Lab & Medical Equipment',
         examples: 'Diagnostic Machines, Analyzers, Lab Ovens, Microscopes (after decontamination).',
         handling: 'Compliance with biomedical waste rules if applicable; careful component recovery.',
+        icon: Stethoscope,
     },
     {
         category: 'Electrical Scrap',
         examples: 'Motors, Transformers, DG Sets, Capacitors, HV/LV Panels.',
         handling: 'Safe oil drainage, PCB management, and recovery of copper windings.',
+        icon: Zap,
     },
     {
         category: 'Miscellaneous',
         examples: 'Cables, Wires, Batteries of all types, PCBs from any source.',
         handling: 'Granulation, separation, and sending to specialized authorized recyclers.',
+        icon: Package,
     },
 ];
 
@@ -64,10 +72,15 @@ const EWasteCategories = () => {
                         </div>
 
                         {/* Grid Body */}
-                        <div className="ewaste-categories__grid-body divide-y dark:divide-white/5 divide-gray-100">
-                            {categories.map((cat, index) => (
-                                <div key={index} className="ewaste-categories__grid-row grid grid-cols-1 md:grid-cols-[1fr_2fr_2fr] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                                    <div className="ewaste-categories__cell ewaste-categories__td-category p-[12px] font-bold dark:text-gray-200 text-[#47622A] text-center md:text-left flex items-center justify-center md:justify-start border-b md:border-b-0 dark:border-white/5 border-gray-100">
+                        <div className="ewaste-categories__grid-body grid grid-cols-2 md:flex md:flex-col gap-[8px] md:gap-0 divide-y-0 md:divide-y dark:divide-white/5 divide-gray-100">
+                            {categories.map((cat, index) => {
+                                const Icon = cat.icon;
+                                return (
+                                <div key={index} className="ewaste-categories__grid-row flex flex-col md:grid md:grid-cols-[1fr_2fr_2fr] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border md:border-0 border-gray-100 dark:border-white/5 rounded-xl md:rounded-none">
+                                    <div className="ewaste-categories__cell ewaste-categories__td-category p-[12px] font-bold dark:text-gray-200 text-[#47622A] text-center md:text-left flex flex-col md:flex-row items-center justify-center md:justify-start gap-[8px] md:gap-0 border-b md:border-b-0 dark:border-white/5 border-gray-100">
+                                        <div className="flex md:hidden items-center justify-center w-[40px] h-[40px] rounded-full border dark:border-white/5 border-gray-100 shrink-0">
+                                            <Icon className="w-[18px] h-[18px]" />
+                                        </div>
                                         <p>{cat.category}</p>
                                     </div>
                                     <div className="ewaste-categories__cell ewaste-categories__td-examples p-[12px] dark:text-gray-400 text-gray-600 text-center flex items-center justify-center border-b md:border-b-0 dark:border-white/5 border-gray-100">
@@ -77,7 +90,7 @@ const EWasteCategories = () => {
                                         <p>{cat.handling}</p>
                                     </div>
                                 </div>
-                            ))}
+                            )})}
                         </div>
 
                     </div>
