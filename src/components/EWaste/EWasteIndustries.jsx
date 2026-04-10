@@ -34,8 +34,8 @@ const EWasteIndustries = () => {
                             style={{ animationDelay: `${index * 0.05}s` }}
                         >
                             <div className="flex flex-row md:flex-col items-center md:items-center gap-2 md:gap-4 w-full">
-                                <div className="ewaste-industries__card-icon shrink-0 w-16 h-16 rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851] flex items-center justify-center">
-                                    <industry.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                                <div className="ewaste-industries__card-icon shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-[1.25rem] bg-[#5a7638] dark:bg-[#799851] flex items-center justify-center">
+                                    <industry.icon className="w-5 h-5 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
                                 </div>
                                  <h4 className="ewaste-industries__card-title text-left md:text-center w-full">
                                     {industry.title}

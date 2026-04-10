@@ -34,7 +34,7 @@ const EWasteHero = () => {
                     </div>
 
                     {/* RIGHT COLUMN: Image */}
-                    <div className="relative w-[350px] max-w-full mx-auto md:w-full h-[300px] lg:h-full flex flex-col justify-center items-center bg-gray-50 dark:bg-[#111111] border border-gray-200 dark:border-white/5 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
+                    <div className="relative -mx-3 w-[calc(100%+24px)] md:mx-auto md:w-full h-[300px] lg:h-full flex flex-col justify-center items-center bg-gray-50 dark:bg-[#111111] border-y md:border border-gray-200 dark:border-white/5 rounded-none md:rounded-3xl shadow-sm overflow-hidden">
                         {/* Decorative Background Blob */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gradient-to-br from-[#47622A]/20 to-[#799851]/5 rounded-full blur-3xl pointer-events-none"></div>
 

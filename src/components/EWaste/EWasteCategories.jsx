@@ -65,28 +65,28 @@ const EWasteCategories = () => {
                     <div className="ewaste-categories__grid-outer overflow-hidden rounded-3xl border border-[#47622A]/10 dark:border-[#799851]/20 bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 backdrop-blur-md bg-white/90 dark:bg-[#111]/90 shadow-sm">
                         
                         {/* Grid Header */}
-                        <div className="ewaste-categories__grid-header hidden md:grid grid-cols-[1fr_2fr_2fr] bg-[#47622A] dark:bg-[#1a1a1a] border-b dark:border-white/10 border-transparent text-white dark:text-gray-200">
-                            <h6 className="ewaste-categories__th p-[12px] font-bold uppercase tracking-wider text-center">Category</h6>
-                            <h6 className="ewaste-categories__th p-[12px] font-bold uppercase tracking-wider text-center">Examples</h6>
-                            <h6 className="ewaste-categories__th p-[12px] font-bold uppercase tracking-wider text-center">Our Specialized Handling</h6>
+                        <div className="ewaste-categories__grid-header grid grid-cols-[1.2fr_2fr_2fr] md:grid-cols-[1fr_2fr_2fr] bg-[#47622A] dark:bg-[#1a1a1a] border-b dark:border-white/10 border-transparent text-white dark:text-gray-200">
+                            <h6 className="ewaste-categories__th p-2 md:p-[12px] text-[16px] md:text-base font-bold uppercase tracking-wider text-center border-r md:border-r-0 border-white/20">Category</h6>
+                            <h6 className="ewaste-categories__th p-2 md:p-[12px] text-[16px] md:text-base font-bold uppercase tracking-wider text-center border-r md:border-r-0 border-white/20">Examples</h6>
+                            <h6 className="ewaste-categories__th p-2 md:p-[12px] text-[16px] md:text-base font-bold uppercase tracking-wider text-center">Handling</h6>
                         </div>
 
                         {/* Grid Body */}
-                        <div className="ewaste-categories__grid-body grid grid-cols-2 md:flex md:flex-col gap-[8px] md:gap-0 divide-y-0 md:divide-y dark:divide-white/5 divide-gray-100">
+                        <div className="ewaste-categories__grid-body flex flex-col divide-y dark:divide-white/5 divide-gray-100">
                             {categories.map((cat, index) => {
                                 const Icon = cat.icon;
                                 return (
-                                <div key={index} className="ewaste-categories__grid-row flex flex-col md:grid md:grid-cols-[1fr_2fr_2fr] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border md:border-0 border-gray-100 dark:border-white/5 rounded-xl md:rounded-none">
-                                    <div className="ewaste-categories__cell ewaste-categories__td-category p-[12px] font-bold dark:text-gray-200 text-[#47622A] text-center md:text-left flex flex-col md:flex-row items-center justify-center md:justify-start gap-[8px] md:gap-0 border-b md:border-b-0 dark:border-white/5 border-gray-100">
-                                        <div className="flex md:hidden items-center justify-center w-[40px] h-[40px] rounded-full border dark:border-white/5 border-gray-100 shrink-0">
-                                            <Icon className="w-[18px] h-[18px]" />
+                                <div key={index} className="ewaste-categories__grid-row grid grid-cols-[1.2fr_2fr_2fr] md:grid-cols-[1fr_2fr_2fr] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                                    <div className="ewaste-categories__cell ewaste-categories__td-category p-2 md:p-[12px] font-bold dark:text-gray-200 text-[#47622A] text-center md:text-left flex flex-col md:flex-row items-center justify-center md:justify-start gap-1 md:gap-[8px] border-r md:border-r-0 border-gray-100 dark:border-white/5">
+                                        <div className="flex md:hidden items-center justify-center w-[28px] h-[28px] rounded-full border dark:border-white/5 border-gray-100 shrink-0">
+                                            <Icon className="w-[14px] h-[14px]" />
                                         </div>
-                                        <p>{cat.category}</p>
+                                        <p className="text-[16px] md:text-base leading-tight">{cat.category}</p>
                                     </div>
-                                    <div className="ewaste-categories__cell ewaste-categories__td-examples p-[12px] dark:text-gray-400 text-gray-600 text-center flex items-center justify-center border-b md:border-b-0 dark:border-white/5 border-gray-100">
+                                    <div className="ewaste-categories__cell ewaste-categories__td-examples p-2 md:p-[12px] text-[10px] md:text-base leading-tight md:leading-normal dark:text-gray-400 text-gray-600 text-center flex items-center justify-center border-r md:border-r-0 border-gray-100 dark:border-white/5">
                                         <p>{cat.examples}</p>
                                     </div>
-                                    <div className="ewaste-categories__cell ewaste-categories__td-handling p-[12px] dark:text-gray-400 text-gray-600 text-center flex items-center justify-center">
+                                    <div className="ewaste-categories__cell ewaste-categories__td-handling p-2 md:p-[12px] text-[10px] md:text-base leading-tight md:leading-normal dark:text-gray-400 text-gray-600 text-center flex items-center justify-center">
                                         <p>{cat.handling}</p>
                                     </div>
                                 </div>

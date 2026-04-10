@@ -13,9 +13,10 @@ function Footer() {
                             />
                             <h6 className="footer-logo-text font-bold">MS Asia</h6>
                         </div>
-                        <p className="footer-description">
-                            Leading pharmaceutical waste management solutions provider in Southeast Asia.<br />
-                            Committed to environmental compliance and sustainable practices.
+                        <p className="footer-description flex flex-col gap-4 md:block">
+                            <span>Leading pharmaceutical waste management solutions provider in Southeast Asia.</span>
+                            <br className="hidden md:block" />
+                            <span>Committed to environmental compliance and sustainable practices.</span>
                         </p>
                         <div className="footer-social">
                             <a href="#" className="footer-social-link" aria-label="LinkedIn">

@@ -17,7 +17,7 @@ const DynamicServicePage = () => {
             <div className="w-full h-[72px] shrink-0 md:hidden"></div>
             
             {/* 1. HERO SECTION */}
-            <div className="relative w-[350px] max-w-full mx-auto md:w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden md:rounded-none rounded-2xl">
+            <div className="relative w-full mx-auto md:w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-none">
                 {/* Background Image Placeholder */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
