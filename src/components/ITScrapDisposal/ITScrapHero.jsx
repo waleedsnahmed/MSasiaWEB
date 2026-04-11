@@ -12,7 +12,7 @@ const ITScrapHero = () => {
                         {/* Pill Badge */}
                         <div className="itscrap-hero__badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-50 dark:bg-[#111111] border border-gray-100 dark:border-gray-800 shadow-sm">
                             <div className="itscrap-hero__badge-dot w-1.5 h-1.5 rounded-full bg-[#47622A] animate-pulse"></div>
-                            <h6 className="itscrap-hero__badge-text text-[#47622A] dark:text-[#799851] uppercase">
+                            <h6 className="itscrap-hero__badge-text text-[#47622A] dark:text-[#799851] uppercase font-medium">
                                 IT Asset Disposition
                             </h6>
                         </div>

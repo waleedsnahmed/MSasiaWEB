@@ -1,0 +1,87 @@
+/* =============================================
+   HPLC SOLVENT WASTE PAGE — Component Styles
+   File: HPLCSolventWasteContent.css
+   ============================================= */
+
+/* =============================================
+   1. SECTION BACKGROUNDS
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .hplc-why,
+.dark .hplc-process,
+.dark .hplc-categories,
+.dark .hplc-industries,
+.dark .hplc-benefits,
+.dark .hplc-faq,
+.dark .hplc-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.hplc-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.hplc-process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.hplc-hero,
+    section.hplc-why,
+    section.hplc-process,
+    section.hplc-categories,
+    section.hplc-industries,
+    section.hplc-benefits,
+    section.hplc-faq,
+    section.hplc-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.hplc-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.hplc-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.hplc-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}

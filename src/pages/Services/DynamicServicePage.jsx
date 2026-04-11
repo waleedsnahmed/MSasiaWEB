@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { getServiceData } from '../../data/ServiceData';
 import EWasteContent from '../../components/EWaste/EWasteContent';
 import ITScrapContent from '../../components/ITScrapDisposal/ITScrapContent';
+import HPLCSolventWasteContent from '../../components/HPLCSolventWaste/HPLCSolventWasteContent';
+import MotorTransformerScrapContent from '../../components/MotorTransformerScrap/MotorTransformerScrapContent';
 
 const DynamicServicePage = () => {
     const { slug } = useParams();
@@ -11,6 +13,12 @@ const DynamicServicePage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [slug]);
+
+    // Handle slug variations
+    const isEwaste = slug === 'e-waste-recycling';
+    const isITScrap = slug === 'corporate-it-scrap-disposal' || slug === 'corporate it scrap disposal';
+    const isHPLC = slug === 'hplc-solvent-waste-collection';
+    const isMotor = slug === 'motor-&-transformer-scrap' || slug === 'motor-and-transformer-scrap';
 
     return (
         <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 flex flex-col gap-4 md:block md:gap-0">
@@ -43,10 +51,14 @@ const DynamicServicePage = () => {
             </div>
 
             {/* 2. MAIN CONTENT AREA */}
-            {slug === 'e-waste-recycling' ? (
+            {isEwaste ? (
                 <EWasteContent />
-            ) : (slug === 'corporate-it-scrap-disposal' || slug === 'corporate it scrap disposal') ? (
+            ) : isITScrap ? (
                 <ITScrapContent />
+            ) : isHPLC ? (
+                <HPLCSolventWasteContent />
+            ) : isMotor ? (
+                <MotorTransformerScrapContent />
             ) : (
                 <main className="max-w-[1240px] mx-auto px-6 py-16 lg:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">

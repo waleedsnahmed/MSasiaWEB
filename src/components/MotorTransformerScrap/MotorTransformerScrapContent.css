@@ -1,0 +1,87 @@
+/* =============================================
+   MOTOR AND TRANSFORMER SCRAP PAGE — Component Styles
+   File: MotorTransformerScrapContent.css
+   ============================================= */
+
+/* =============================================
+   1. SECTION BACKGROUNDS
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .mts-why,
+.dark .mts-process,
+.dark .mts-categories,
+.dark .mts-industries,
+.dark .mts-benefits,
+.dark .mts-faq,
+.dark .mts-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.mts-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.mts-process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.mts-hero,
+    section.mts-why,
+    section.mts-process,
+    section.mts-categories,
+    section.mts-industries,
+    section.mts-benefits,
+    section.mts-faq,
+    section.mts-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.mts-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.mts-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.mts-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}

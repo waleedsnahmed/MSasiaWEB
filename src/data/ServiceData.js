@@ -1,6 +1,26 @@
 export const SERVICE_DATA = {
     // --- WHAT WE DO (SERVICES) ---
 
+    // Metals
+    "motor-&-transformer-scrap": {
+        title: "Motor and Transformer Scrap",
+        subtitle: "Maximal Recovery. Zero Liability.",
+        description: "Complete On-Site Decommissioning and Dismantling Service that manages every aspect—from safe disconnection and hazardous component handling to high-purity material recovery and certified disposal.",
+        image: "/images/scene_metals.png",
+        features: ["Safe Disconnection", "Hazardous Oil Handling", "Copper Extraction", "Certified Recycling"],
+        benefits: ["Maximized Return", "Space Clearance", "Full Compliance"]
+    },
+
+    // Analytical Waste
+    "hplc-solvent-waste-collection": {
+        title: "HPLC Solvent Waste Collection",
+        subtitle: "Compliant Hazardous Waste Management for Laboratories",
+        description: "MS Asia Enterprises offers a specialized, fully compliant collection and disposal service for HPLC solvent waste, ensuring your laboratory maintains safety standards, passes regulatory audits, and protects its staff and the environment.",
+        image: "/images/scene_pharma.png",
+        features: ["Scheduled & On-Demand Pickup", "Chemical Safety Protocols", "Authorized TSDF Disposal", "Compliance Documentation"],
+        benefits: ["Audit Readiness", "Regulatory Expertise", "Zero Laboratory Disruption"]
+    },
+
     // Electronics
     "corporate-it-scrap-disposal": {
         title: "Secure IT Scrap Disposal",
