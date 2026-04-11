@@ -11,7 +11,6 @@ const EWasteContactCTA = () => {
                     {/* Top Gap Spacer */}
                     <div></div>
 
-                    <div className="ewaste-contact__glow-bottom absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
 
                     <div className="ewaste-contact__content-wrapper flex justify-center w-full relative z-10">
                         <div className="flex flex-col gap-2 md:gap-6 items-center w-full max-w-[1152px]">

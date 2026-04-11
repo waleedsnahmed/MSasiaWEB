@@ -3,7 +3,7 @@ export const SERVICE_DATA = {
 
     // Electronics
     "corporate-it-scrap-disposal": {
-        title: "Corporate IT & Asset Disposal",
+        title: "Secure IT Scrap Disposal",
         subtitle: "Secure Data Destruction & Sustainable Recycling",
         description: "We provide certified destruction of data-bearing devices and responsible recycling of obsolete IT infrastructure. Our chain-of-custody protocols ensure 100% data security and compliance with environmental regulations.",
         image: "/images/corporate_it_scrap_hero.png",

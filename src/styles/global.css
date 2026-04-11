@@ -3058,7 +3058,7 @@ div.absolute button {
         align-items: center !important;
         gap: 4px !important;
         height: auto !important;
-        padding: 10px 12px !important;
+        padding: 8px !important;
     }
 
     .footer-bottom .footer-copyright,
@@ -3289,7 +3289,7 @@ div.absolute button {
         border-top: none !important;
         background-color: transparent !important; /* Inherit Brand Green Base or Dark mode from parent */
         width: 100% !important;
-        padding-bottom: 12px !important;
+        padding-bottom: 0 !important;
     }
 
     .footer-bottom-links {

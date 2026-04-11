@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getServiceData } from '../../data/ServiceData';
 import EWasteContent from '../../components/EWaste/EWasteContent';
+import ITScrapContent from '../../components/ITScrapDisposal/ITScrapContent';
 
 const DynamicServicePage = () => {
     const { slug } = useParams();
@@ -44,6 +45,8 @@ const DynamicServicePage = () => {
             {/* 2. MAIN CONTENT AREA */}
             {slug === 'e-waste-recycling' ? (
                 <EWasteContent />
+            ) : (slug === 'corporate-it-scrap-disposal' || slug === 'corporate it scrap disposal') ? (
+                <ITScrapContent />
             ) : (
                 <main className="max-w-[1240px] mx-auto px-6 py-16 lg:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">

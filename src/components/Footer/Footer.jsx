@@ -13,7 +13,7 @@ function Footer() {
                             />
                             <h6 className="footer-logo-text font-bold">MS Asia</h6>
                         </div>
-                        <p className="footer-description flex flex-col gap-4 md:block">
+                        <p className="footer-description flex flex-col gap-1 md:block">
                             <span>Leading pharmaceutical waste management solutions provider in Southeast Asia.</span>
                             <br className="hidden md:block" />
                             <span>Committed to environmental compliance and sustainable practices.</span>

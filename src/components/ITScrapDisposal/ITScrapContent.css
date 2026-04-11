@@ -1,0 +1,85 @@
+/* =============================================
+   IT SCRAP DISPOSAL PAGE — Component Styles
+   File: ITScrapContent.css
+   ============================================= */
+
+/* =============================================
+   1. SECTION BACKGROUNDS
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .itscrap-why,
+.dark .itscrap-process,
+.dark .itscrap-categories,
+.dark .itscrap-industries,
+.dark .itscrap-benefits,
+.dark .itscrap-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.itscrap-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.itscrap-process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.itscrap-hero,
+    section.itscrap-why,
+    section.itscrap-process,
+    section.itscrap-categories,
+    section.itscrap-industries,
+    section.itscrap-benefits,
+    section.itscrap-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.itscrap-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.itscrap-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.itscrap-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}
