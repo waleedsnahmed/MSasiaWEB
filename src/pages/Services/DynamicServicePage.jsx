@@ -5,6 +5,15 @@ import EWasteContent from '../../components/EWaste/EWasteContent';
 import ITScrapContent from '../../components/ITScrapDisposal/ITScrapContent';
 import HPLCSolventWasteContent from '../../components/HPLCSolventWaste/HPLCSolventWasteContent';
 import MotorTransformerScrapContent from '../../components/MotorTransformerScrap/MotorTransformerScrapContent';
+import WireCableScrapContent from '../../components/WireCableScrap/WireCableScrapContent';
+import BatteryScrapContent from '../../components/BatteryScrap/BatteryScrapContent';
+import ChemicalPackingContent from '../../components/ChemicalPacking/ChemicalPackingContent';
+import ConstructionDemolitionContent from '../../components/ConstructionDemolition/ConstructionDemolitionContent';
+import HvacScrapContent from '../../components/HvacScrapRecovery/HvacScrapContent';
+import AluminiumScrapContent from '../../components/AluminiumScrap/AluminiumScrapContent';
+import BrassBronzeScrapContent from '../../components/BrassBronzeScrap/BrassBronzeScrapContent';
+import FerrousMetalScrapContent from '../../components/FerrousMetalScrap/FerrousMetalScrapContent';
+import HeavyEquipmentScrapContent from '../../components/HeavyEquipmentScrap/HeavyEquipmentScrapContent';
 
 const DynamicServicePage = () => {
     const { slug } = useParams();
@@ -19,6 +28,15 @@ const DynamicServicePage = () => {
     const isITScrap = slug === 'corporate-it-scrap-disposal' || slug === 'corporate it scrap disposal';
     const isHPLC = slug === 'hplc-solvent-waste-collection';
     const isMotor = slug === 'motor-&-transformer-scrap' || slug === 'motor-and-transformer-scrap';
+    const isWireCable = slug === 'wire-&-cable-scrap' || slug === 'wire-and-cable-scrap';
+    const isBattery = slug === 'battery-scrap-collection';
+    const isChemical = slug === 'chemical-packing';
+    const isConstructionDemolition = slug === 'construction-&-demolition-scrap' || slug === 'construction-and-demolition-scrap';
+    const isHvac = slug === 'hvac-scrap-recovery';
+    const isAluminium = slug === 'aluminium-scrap-recycling';
+    const isBrassBronze = slug === 'brass-&-bronze-scrap' || slug === 'brass-and-bronze-scrap' || slug === 'brass-bronze-scrap';
+    const isFerrous = slug === 'ferrous-metal-scrap' || slug === 'ferrous-scrap';
+    const isHeavyEquipment = slug === 'heavy-equipment-scrap' || slug === 'heavy-machinery-scrap';
 
     return (
         <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 flex flex-col gap-4 md:block md:gap-0">
@@ -59,6 +77,24 @@ const DynamicServicePage = () => {
                 <HPLCSolventWasteContent />
             ) : isMotor ? (
                 <MotorTransformerScrapContent />
+            ) : isWireCable ? (
+                <WireCableScrapContent />
+            ) : isBattery ? (
+                <BatteryScrapContent />
+            ) : isChemical ? (
+                <ChemicalPackingContent />
+            ) : isConstructionDemolition ? (
+                <ConstructionDemolitionContent />
+            ) : isHvac ? (
+                <HvacScrapContent />
+            ) : isAluminium ? (
+                <AluminiumScrapContent />
+            ) : isBrassBronze ? (
+                <BrassBronzeScrapContent />
+            ) : isFerrous ? (
+                <FerrousMetalScrapContent />
+            ) : isHeavyEquipment ? (
+                <HeavyEquipmentScrapContent />
             ) : (
                 <main className="max-w-[1240px] mx-auto px-6 py-16 lg:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">

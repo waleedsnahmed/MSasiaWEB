@@ -1,11 +1,11 @@
 import React from 'react';
-import { Recycle } from 'lucide-react';
+import { Settings } from 'lucide-react';
 
-const EWasteHero = () => {
+const BrassBronzeScrapHero = () => {
     return (
         <section className="ewaste-hero flex flex-col before:content-[''] after:content-[''] !py-0">
             <div className="max-w-screen-2xl mx-0 md:mx-auto px-0 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center lg:h-[440px] animate-fadeIn">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center lg:min-h-[440px] animate-fadeIn">
 
                     {/* LEFT COLUMN: Text Content */}
                     <div className="flex flex-col items-center lg:items-start text-center lg:text-left h-full justify-center gap-2 md:gap-4 lg:gap-8">
@@ -13,22 +13,22 @@ const EWasteHero = () => {
                         <div className="ewaste-hero__badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-50 dark:bg-[#111111] border border-gray-100 dark:border-gray-800 shadow-sm">
                             <div className="ewaste-hero__badge-dot w-1.5 h-1.5 rounded-full bg-[#47622A] animate-pulse"></div>
                             <h6 className="ewaste-hero__badge-text text-[#47622A] dark:text-[#799851] uppercase">
-                                Electronics Recycling
+                                Non-Ferrous Metal Recycling
                             </h6>
                         </div>
 
                         {/* Large Two-Tone Heading */}
                         <h1 className="ewaste-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Advanced E-Waste Recycling
+                            Brass and Bronze Scrap
                         </h1>
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
                             <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                From consumer electronics to enterprise servers, we process all forms of e-waste. Our advanced separation technologies recover high-purity metals and plastics, returning them to the circular economy.
+                                Precision Recycling for High-Value Copper Alloys. Expert alloy management and value recovery for India's foundry, manufacturing, and engineering sectors.
                             </h5>
                             <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Our certified experts utilize state-of-the-art methodology to ensure every aspect of your requirement is met with precision, absolute compliance, and environmental stewardship.
+                                Brass and bronze are essential non-ferrous alloys primarily composed of copper. MS Asia Enterprises operates a technologically advanced sorting service employing metallurgical expertise and X-ray fluorescence (XRF) technology to ensure each kilogram of scrap is accurately identified, purified, and channeled to its appropriate industrial consumer.
                             </p>
                         </div>
                     </div>
@@ -41,9 +41,9 @@ const EWasteHero = () => {
                         {/* Placeholder Icon */}
                         <div className="relative z-10 flex flex-col items-center gap-3 text-gray-400 dark:text-gray-500">
                             <div className="p-4 rounded-xl md:rounded-2xl bg-white/50 dark:bg-white/5 shadow-sm border border-gray-100 dark:border-white/5 backdrop-blur-sm">
-                                <Recycle className="w-10 h-10 md:w-12 md:h-12 text-[#47622A] dark:text-[#799851]" strokeWidth={1.5} />
+                                <Settings className="w-10 h-10 md:w-12 md:h-12 text-[#47622A] dark:text-[#799851]" strokeWidth={1.5} />
                             </div>
-                            <p className="uppercase">Facility Image Placeholder</p>
+                            <p className="uppercase">Brass & Bronze Facility Placeholder</p>
                         </div>
                     </div>
 
@@ -53,4 +53,4 @@ const EWasteHero = () => {
     );
 };
 
-export default EWasteHero;
+export default BrassBronzeScrapHero;

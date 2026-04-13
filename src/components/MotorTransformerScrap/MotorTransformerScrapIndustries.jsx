@@ -72,7 +72,7 @@ const MotorTransformerScrapIndustries = () => {
                                     <span className="text-xs text-[#47622A] dark:text-[#799851] font-medium uppercase tracking-wider">{ind.examples}</span>
                                 </div>
                             </div>
-                            <p className="mts-industries__card-description dark:text-gray-400 text-gray-500 text-sm md:text-base pt-1 md:pt-2">
+                            <p className="mts-industries__card-description dark:text-gray-400 text-gray-500 text-sm md:text-base">
                                 {ind.description}
                             </p>
                         </div>

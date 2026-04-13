@@ -18,7 +18,7 @@ const HPLCSolventWasteHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
-                        <h1 className="hplc-hero__heading leading-tight 2xl:whitespace-nowrap !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
+                        <h1 className="hplc-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                             HPLC Solvent Waste Collection
                         </h1>
 

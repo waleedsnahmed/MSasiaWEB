@@ -10,6 +10,32 @@ export const SERVICE_DATA = {
         features: ["Safe Disconnection", "Hazardous Oil Handling", "Copper Extraction", "Certified Recycling"],
         benefits: ["Maximized Return", "Space Clearance", "Full Compliance"]
     },
+    // Metals
+    "ferrous-metal-scrap": {
+        title: "Ferrous Metal Scrap",
+        subtitle: "Heavy-Duty Collection & High-Volume Recycling",
+        description: "Comprehensive management of structural steel, machinery frames, and heavy scrap. We process mixed iron into furnace-ready material to power India's secondary steel sector.",
+        image: "/images/scene_metals.png",
+        features: ["3000-Ton Shearing", "On-Site Dismantling", "ISRI Classification", "Mill-Direct Supply"],
+        benefits: ["Maximized Financial Return", "Transparent Digital Weighbridges", "ISRI Standard Grading"]
+    },
+    // Specialized Industrial
+    "heavy-equipment-scrap": {
+        title: "Heavy Equipment Scrap",
+        subtitle: "Controlled Dismantling & Certified Asset Retirement",
+        description: "Comprehensive decommissioning and asset recovery for industrial machinery. We manage rigorous hazard extraction and high-tonnage dismantling for safe, compliant material recovery.",
+        image: "/images/scene_industrial.png",
+        features: ["Site Hazard Audits", "Exothermic Shearing", "250-Ton Lifting Logic", "Component Salvage"],
+        benefits: ["Zero-Accident Safety Protocol", "Complete Environmental Manifests", "Maximized Return"]
+    },
+    "brass-and-bronze-scrap": {
+        title: "Brass and Bronze Scrap",
+        subtitle: "High-Value Copper Alloy Recycling",
+        description: "Precision recycling service engineered to maximize recovery, preserve metal quality, and unlock the full economic value of industrial copper-alloy scrap.",
+        image: "/images/scene_metals.png",
+        features: ["XRF Alloy Analysis", "Briquetting Processing", "Foundry Certification", "LME Valuation"],
+        benefits: ["Maximized Return", "Metallurgical Purity", "Certified Audit Trail"]
+    },
 
     // Analytical Waste
     "hplc-solvent-waste-collection": {
@@ -19,6 +45,23 @@ export const SERVICE_DATA = {
         image: "/images/scene_pharma.png",
         features: ["Scheduled & On-Demand Pickup", "Chemical Safety Protocols", "Authorized TSDF Disposal", "Compliance Documentation"],
         benefits: ["Audit Readiness", "Regulatory Expertise", "Zero Laboratory Disruption"]
+    },
+
+    "wire-and-cable-scrap": {
+        title: "Wire and Cable Scrap Recycling",
+        subtitle: "Maximizing Value from Metal Wiring and Cable",
+        description: "MS Asia Enterprises offers a clean, efficient, and profitable recycling solution for all grades and types of wire and cable scrap, ensuring you get the best value and the most responsible disposal.",
+        image: "/images/scene_metals.png",
+        features: ["Advanced Granulation", "Eco-Friendly Insulation Recycling", "Bulk Transport"],
+        benefits: ["Superior Yield", "Zero Pollution", "Transparent Payment"]
+    },
+    "wire-&-cable-scrap": {
+        title: "Wire and Cable Scrap Recycling",
+        subtitle: "Maximizing Value from Metal Wiring and Cable",
+        description: "MS Asia Enterprises offers a clean, efficient, and profitable recycling solution for all grades and types of wire and cable scrap, ensuring you get the best value and the most responsible disposal.",
+        image: "/images/scene_metals.png",
+        features: ["Advanced Granulation", "Eco-Friendly Insulation Recycling", "Bulk Transport"],
+        benefits: ["Superior Yield", "Zero Pollution", "Transparent Payment"]
     },
 
     // Electronics

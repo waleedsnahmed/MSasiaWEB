@@ -1,34 +1,34 @@
 import React from 'react';
-import { Zap } from 'lucide-react';
+import { Battery } from 'lucide-react';
 
-const MotorTransformerScrapHero = () => {
+const BatteryScrapHero = () => {
     return (
-        <section className="mts-hero flex flex-col before:content-[''] after:content-[''] !py-0">
+        <section className="ewaste-hero flex flex-col before:content-[''] after:content-[''] !py-0">
             <div className="max-w-screen-2xl mx-0 md:mx-auto px-0 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center lg:h-[440px] animate-fadeIn">
 
                     {/* LEFT COLUMN: Text Content */}
                     <div className="flex flex-col items-center lg:items-start text-center lg:text-left h-full justify-center gap-2 md:gap-4 lg:gap-8">
                         {/* Pill Badge */}
-                        <div className="mts-hero__badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-50 dark:bg-[#111111] border border-gray-100 dark:border-gray-800 shadow-sm">
-                            <div className="mts-hero__badge-dot w-1.5 h-1.5 rounded-full bg-[#47622A] animate-pulse"></div>
-                            <h6 className="mts-hero__badge-text text-[#47622A] dark:text-[#799851] uppercase font-medium">
-                                Value Recovery from Industrial Electrical Scrap
+                        <div className="ewaste-hero__badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-50 dark:bg-[#111111] border border-gray-100 dark:border-gray-800 shadow-sm">
+                            <div className="ewaste-hero__badge-dot w-1.5 h-1.5 rounded-full bg-[#47622A] animate-pulse"></div>
+                            <h6 className="ewaste-hero__badge-text text-[#47622A] dark:text-[#799851] uppercase">
+                                Battery Recycling
                             </h6>
                         </div>
 
                         {/* Large Two-Tone Heading */}
-                        <h1 className="mts-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Motor & Transformer Scrap Recycling
+                        <h1 className="ewaste-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
+                            Battery Scrap Collection
                         </h1>
 
                         {/* Concise Description */}
-                        <div className="mts-hero__content flex flex-col gap-y-3">
-                            <h5 className="mts-hero__description text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Industrial and manufacturing facilities regularly replace large electrical components—motors, transformers, and heavy wiring—as part of upgrades or routine preventive maintenance. These components are rich sources of high-value metals, yet often end up cluttering storage areas.
+                        <div className="ewaste-hero__content flex flex-col gap-y-3">
+                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                                Your trusted partner for complete, compliant, and safe handling of all types of industrial and commercial battery waste.
                             </h5>
-                            <p className="mts-hero__description-secondary text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Instead of leaving them in storage or selling them to informal recyclers, MS Asia Enterprises offers a professional, organized collection and recycling service that extracts maximum capital value while ensuring safe and lawful recovery.
+                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
+                                Battery scrap isn’t like regular waste. It’s risky, reactive, and regulated for a reason. Whether it’s industrial power backups, UPS components, solar batteries, or heavy machinery cells, they all contain acids and heavy metals that cause contamination. What your business needs is a safe, lawful, value-focused battery disposal partner.
                             </p>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ const MotorTransformerScrapHero = () => {
                         {/* Placeholder Icon */}
                         <div className="relative z-10 flex flex-col items-center gap-3 text-gray-400 dark:text-gray-500">
                             <div className="p-4 rounded-xl md:rounded-2xl bg-white/50 dark:bg-white/5 shadow-sm border border-gray-100 dark:border-white/5 backdrop-blur-sm">
-                                <Zap className="w-10 h-10 md:w-12 md:h-12 text-[#47622A] dark:text-[#799851]" strokeWidth={1.5} />
+                                <Battery className="w-10 h-10 md:w-12 md:h-12 text-[#47622A] dark:text-[#799851]" strokeWidth={1.5} />
                             </div>
                             <p className="uppercase">Facility Image Placeholder</p>
                         </div>
@@ -53,4 +53,4 @@ const MotorTransformerScrapHero = () => {
     );
 };
 
-export default MotorTransformerScrapHero;
+export default BatteryScrapHero;
