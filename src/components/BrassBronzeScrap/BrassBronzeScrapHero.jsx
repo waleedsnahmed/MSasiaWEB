@@ -24,10 +24,10 @@ const BrassBronzeScrapHero = () => {
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
                                 Precision Recycling for High-Value Copper Alloys. Expert alloy management and value recovery for India's foundry, manufacturing, and engineering sectors.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
+                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
                                 Brass and bronze are essential non-ferrous alloys primarily composed of copper. MS Asia Enterprises operates a technologically advanced sorting service employing metallurgical expertise and X-ray fluorescence (XRF) technology to ensure each kilogram of scrap is accurately identified, purified, and channeled to its appropriate industrial consumer.
                             </p>
                         </div>

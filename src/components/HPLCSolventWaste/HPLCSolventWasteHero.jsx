@@ -24,10 +24,10 @@ const HPLCSolventWasteHero = () => {
 
                         {/* Concise Description */}
                         <div className="hplc-hero__content flex flex-col gap-y-3">
-                            <h5 className="hplc-hero__description text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                            <h5 className="hplc-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
                                 Laboratories and research facilities generate hazardous solvent waste every day, especially from HPLC systems. This waste cannot be disposed of casually because it contains chemicals that pose risks to people and the environment.
                             </h5>
-                            <p className="hplc-hero__description-secondary text-gray-700 dark:text-gray-300 normal-case font-normal">
+                            <p className="hplc-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
                                 MS Asia Enterprises offers a secure, compliant, and professionally managed HPLC Solvent Waste Collection service designed for labs that need safe waste handling without operational disruption.
                             </p>
                         </div>

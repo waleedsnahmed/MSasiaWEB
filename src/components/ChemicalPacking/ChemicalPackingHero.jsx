@@ -24,10 +24,10 @@ const ChemicalPackingHero = () => {
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
                                 Safe, compliant, and professional chemical packing solutions for industrial, commercial, and laboratory environments.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
+                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
                                 Chemical waste is one of the most sensitive categories of industrial disposal. Even small errors in handling or packing can lead to contamination, fire hazards, environmental violations, and serious health risks. What your business needs is a systematic, certified, and careful packing process that prepares all chemical waste for safe transport and disposal.
                             </p>
                         </div>

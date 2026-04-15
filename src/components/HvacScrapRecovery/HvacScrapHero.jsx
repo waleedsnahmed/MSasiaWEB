@@ -24,10 +24,10 @@ const HvacScrapHero = () => {
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
                                 Safe Retirement for Complex HVAC Assets. Heating, ventilation, and air-conditioning systems are capital assets rich in recoverable metals, but their end-of-life retirement poses unique environmental and logistical challenges.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
+                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
                                 Once decommissioned, these bulky units become complicated scrap, containing regulated refrigerants requiring specialized dismantling. MS Asia Enterprises offers a safe, systematic solution for HVAC scrap, managing certified extraction and damage-free dismantling to ensure your project remains compliant, clean, and profitable.
                             </p>
                         </div>

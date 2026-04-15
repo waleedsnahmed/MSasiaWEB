@@ -28,7 +28,7 @@ const ITScrapWhyChooseUs = () => {
     return (
         <section className="itscrap-why bg-white dark:bg-black !py-0">
             <div className="itscrap-why__container max-w-screen-2xl mx-0 md:mx-auto px-0 flex flex-col gap-4 md:gap-[24px]">
-                <div className="itscrap-why__header text-center flex flex-col items-center justify-start gap-2 md:gap-4 scroll-reveal min-h-[178px]">
+                <div className="itscrap-why__header text-center flex flex-col items-center justify-start gap-2 md:gap-4 scroll-reveal">
                     <h6 className="itscrap-why__label text-[#47622A] dark:text-[#799851] uppercase">The Critical Need</h6>
                     <h2 className="itscrap-why__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                         The High Stakes of Informal IT Disposal

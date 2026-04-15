@@ -24,10 +24,10 @@ const AluminiumScrapHero = () => {
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
                                 Maximize Value, Minimize Energy. Efficient collection, processing, and recycling of aluminium scrap for industries, businesses, and large-scale operations.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
+                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
                                 Aluminium is one of the most valuable and recyclable metals in the industrial ecosystem. When handled correctly, it reduces environmental impact and delivers strong economic value. At MS Asia Enterprises, we provide a complete recycling solution from collection to responsible material recovery.
                             </p>
                         </div>

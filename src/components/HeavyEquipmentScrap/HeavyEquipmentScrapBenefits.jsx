@@ -1,5 +1,4 @@
-import React from 'react';
-import { Target, HardHat, TrendingUp, Truck, FileCheck } from 'lucide-react';
+import { Target, HardHat, TrendingUp, Truck, FileCheck, Zap } from 'lucide-react';
 
 const benefits = [
     {
@@ -27,6 +26,11 @@ const benefits = [
         title: 'Bulletproof Documentation',
         description: 'Total legal transparency. You receive immutable environmental disposal manifests for all drained fluids alongside certified weighbridge data for the metal streams.',
     },
+    {
+        icon: Zap,
+        title: 'Zero Operational Disruption',
+        description: 'We strictly adhere to carefully planned execution milestones, ensuring that your active daily operational capabilities remain entirely unaffected during heavy asset decommissioning.',
+    },
 ];
 
 const HeavyEquipmentScrapBenefits = () => {
@@ -43,13 +47,11 @@ const HeavyEquipmentScrapBenefits = () => {
                     </p>
                 </div>
 
-                <div className="ewaste-benefits__grid flex flex-wrap justify-center gap-4 md:gap-6">
+                <div className="ewaste-benefits__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
-                            className={`ewaste-benefits__card scroll-reveal p-4 md:p-[32px] min-h-fit md:min-h-[245px] rounded-2xl bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 backdrop-blur-md bg-white/90 dark:bg-[#111]/90 border border-[#47622A]/10 dark:border-[#799851]/20 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-2 md:gap-4 items-start text-left w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] ${
-                                index >= 3 ? 'lg:w-[calc(40%-16px)] flex-grow' : ''
-                            }`}
+                            className="ewaste-benefits__card scroll-reveal p-4 md:p-[32px] min-h-fit md:min-h-[245px] rounded-2xl bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 backdrop-blur-md bg-white/90 dark:bg-[#111]/90 border border-[#47622A]/10 dark:border-[#799851]/20 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)] transition-all hover:-translate-y-1 flex flex-col gap-2 md:gap-4 items-start text-left"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className="flex flex-row md:flex-col items-center md:items-start gap-2 md:gap-4">

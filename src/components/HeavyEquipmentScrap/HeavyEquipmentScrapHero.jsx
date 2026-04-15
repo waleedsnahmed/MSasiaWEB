@@ -24,10 +24,10 @@ const HeavyEquipmentScrapHero = () => {
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
                                 Controlled Dismantling and Certified Asset Retirement. End-to-end recovery for complex industrial machinery and extremely heavy structural assets.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
+                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
                                 Scrapping reaching end-of-life heavy equipment demands precision planning. MS Asia Enterprises handles the complete process—from on-site hazard assessment and controlled cutting, to heavy-lift logistics and maximum-value material segregation.
                             </p>
                         </div>

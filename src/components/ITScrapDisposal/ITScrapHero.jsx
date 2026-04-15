@@ -24,10 +24,10 @@ const ITScrapHero = () => {
 
                         {/* Concise Description */}
                         <div className="itscrap-hero__content flex flex-col gap-y-3">
-                            <h5 className="itscrap-hero__description text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                            <h5 className="itscrap-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
                                 Every company generates a constant flow of outdated IT hardware. Computers get upgraded, servers reach end of life, networks are modernized, and old equipment keeps piling up. When your organization upgrades its technology infrastructure, you are left with a critical responsibility: the secure and compliant disposal of sensitive IT assets.
                             </h5>
-                            <p className="itscrap-hero__description-secondary text-gray-700 dark:text-gray-300 normal-case font-normal">
+                            <p className="itscrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
                                 MS Asia Enterprises provides a complete Corporate IT Scrap Disposal service that removes the complexity from your hands and handles IT asset disposal from end to end. We provide a safe, documented, traceable, and environmentally responsible way to dispose of IT equipment.
                             </p>
                         </div>

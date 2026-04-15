@@ -28,7 +28,7 @@ const MotorTransformerScrapWhyChooseUs = () => {
     return (
         <section className="mts-why bg-white dark:bg-black !py-0 w-full flex justify-center">
             <div className="mts-why__container max-w-screen-2xl mx-0 md:mx-auto px-0 flex flex-col gap-4 md:gap-[24px] w-full">
-                <div className="mts-why__header text-center flex flex-col items-center justify-start gap-2 md:gap-4 scroll-reveal min-h-[178px]">
+                <div className="mts-why__header text-center flex flex-col items-center justify-start gap-2 md:gap-4 scroll-reveal">
                     <h6 className="mts-why__label text-[#47622A] dark:text-[#799851] uppercase font-bold tracking-wider">The Risks</h6>
                     <h2 className="mts-why__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
                         Dangers of Informal Dismantling

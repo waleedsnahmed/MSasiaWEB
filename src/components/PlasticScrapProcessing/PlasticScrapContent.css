@@ -1,0 +1,85 @@
+/* =============================================
+   PLASTIC SCRAP PROCESSING PAGE — Component Styles
+   File: PlasticScrapContent.css
+   ============================================= */
+
+/* =============================================
+   1. SECTION BACKGROUND FIX (Dark Mode)
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .plastic-scrap-why,
+.dark .plastic-scrap-process,
+.dark .plastic-scrap-categories,
+.dark .plastic-scrap-industries,
+.dark .plastic-scrap-benefits,
+.dark .plastic-scrap-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.plastic-scrap-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.plastic-scrap-process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.plastic-scrap-hero,
+    section.plastic-scrap-why,
+    section.plastic-scrap-process,
+    section.plastic-scrap-categories,
+    section.plastic-scrap-industries,
+    section.plastic-scrap-benefits,
+    section.plastic-scrap-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.plastic-scrap-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.plastic-scrap-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.plastic-scrap-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}

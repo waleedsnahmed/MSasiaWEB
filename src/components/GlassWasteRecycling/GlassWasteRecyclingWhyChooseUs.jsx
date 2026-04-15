@@ -1,0 +1,79 @@
+import React from 'react';
+import { Shield, FileCheck, Zap, TrendingUp } from 'lucide-react';
+
+const whyPoints = [
+    {
+        icon: Shield,
+        title: 'Data Security Catastrophe',
+        description: 'Every decommissioned hard drive, server, or phone contains sensitive data—financial records, customer PII, intellectual property. Informal disposal is a leading cause of data breaches.',
+    },
+    {
+        icon: FileCheck,
+        title: 'Legal & Financial Repercussions',
+        description: 'Non-compliance with the Glass Waste Recycling Rules, governed by the Central Pollution Control Board (CPCB) and State Pollution Control Boards (SPCBs), can lead to severe penalties, operational shutdowns, and reputational damage.',
+    },
+    {
+        icon: Zap,
+        title: 'Environmental Liability',
+        description: 'Electronics contain hazardous substances like lead, mercury, cadmium, and brominated flame retardants. When dumped in landfills, these toxins leach into soil and groundwater, creating long-term ecological and public health issues.',
+    },
+    {
+        icon: TrendingUp,
+        title: 'Lost Resource Value',
+        description: 'Glass Waste Recycling is a rich urban mine. Circuit boards contain gold, silver, palladium, and copper. Disposing of them as trash means throwing away valuable, finite resources that could re-enter the manufacturing cycle.',
+    },
+];
+
+const GlassWasteRecyclingWhyChooseUs = () => {
+    return (
+        <section className="GlassWasteRecycling-why bg-white dark:bg-black !py-0">
+            <div className="GlassWasteRecycling-why__container max-w-screen-2xl mx-0 md:mx-auto px-0 flex flex-col gap-4 md:gap-[24px]">
+                <div className="GlassWasteRecycling-why__header text-center flex flex-col items-center justify-start gap-2 md:gap-4 scroll-reveal">
+                    <h6 className="GlassWasteRecycling-why__label text-[#47622A] dark:text-[#799851] uppercase">Why Choose Us</h6>
+                    <h2 className="GlassWasteRecycling-why__heading !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
+                        Why Proper Electronics Management is Non-Negotiable
+                    </h2>
+                    <p className="GlassWasteRecycling-why__subtitle dark:text-gray-400 text-gray-600 max-w-none">
+                        Electronic waste is India's fastest-growing waste stream, with over 3.2 million metric tons generated annually. <br />
+                        The informal sector handles a significant portion, leading to dangerous practices.
+                    </p>
+                </div>
+
+                <div className="GlassWasteRecycling-why__grid grid md:grid-cols-2 gap-4 ">
+                    {whyPoints.map((point, index) => (
+                        <div
+                            key={index}
+                            className="group GlassWasteRecycling-why__card flex flex-col gap-2 md:gap-4 scroll-reveal p-4 md:p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-[#47622A]/5 to-[#799851]/5 dark:from-[#799851]/10 dark:to-[#47622A]/10 backdrop-blur-md bg-white/90 dark:bg-[#111]/90 border border-[#47622A]/10 dark:border-[#799851]/20 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md"
+                            style={{ animationDelay: `${index * 0.1}s` }}
+                        >
+                            <div className="GlassWasteRecycling-why__card-header flex items-center gap-2 md:gap-4">
+                                <div className="GlassWasteRecycling-why__card-icon-wrap flex items-center justify-center p-[12px] rounded-2xl bg-gradient-to-br from-[#47622A]/10 to-[#799851]/10 dark:from-[#799851]/20 dark:to-[#47622A]/20 shadow-sm border border-[#47622A]/5 dark:border-[#799851]/10 transition-colors duration-300 ease-in-out group-hover:bg-[#22c55e]/10">
+                                    <point.icon className="w-7 h-7 text-[#47622A] dark:text-[#799851] transition-all duration-300 ease-in-out group-hover:text-[#22c55e] dark:group-hover:text-[#22c55e]" strokeWidth={2} />
+                                </div>
+                                <h4 className="GlassWasteRecycling-why__card-title dark:text-white text-gray-900">
+                                    {point.title}
+                                </h4>
+                            </div>
+                            <p className="GlassWasteRecycling-why__card-description dark:text-gray-400 text-gray-600">
+                                {point.description}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="GlassWasteRecycling-why__cta-wrapper flex justify-center scroll-reveal">
+                    <div className="GlassWasteRecycling-why__cta-banner w-full max-w-[1152px] p-4 md:p-[24px] rounded-3xl bg-gradient-to-r from-[#47622A] to-[#799851] dark:!bg-none dark:bg-black text-white relative overflow-hidden">
+                        <div className="GlassWasteRecycling-why__cta-text relative z-10 flex flex-col items-center text-center lg:items-start lg:text-left gap-2 md:gap-[16px]">
+                            <h4 className="GlassWasteRecycling-why__cta-strong block text-white font-bold">MS Asia Enterprises is the definitive solution.</h4>
+                            <p className="font-semibold text-white/90">We close the loop with a formal, auditable process that protects your business, recovers value, and
+                                ensures every component is handled according to the highest environmental and data
+                                security standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default GlassWasteRecyclingWhyChooseUs;

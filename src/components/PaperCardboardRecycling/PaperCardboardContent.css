@@ -1,0 +1,85 @@
+/* =============================================
+   PAPER AND CARDBOARD RECYCLING PAGE — Component Styles
+   File: PaperCardboardContent.css
+   ============================================= */
+
+/* =============================================
+   1. SECTION BACKGROUND FIX (Dark Mode)
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .paper-cardboard-why,
+.dark .paper-cardboard-process,
+.dark .paper-cardboard-categories,
+.dark .paper-cardboard-industries,
+.dark .paper-cardboard-benefits,
+.dark .paper-cardboard-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.paper-cardboard-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.paper-cardboard-process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.paper-cardboard-hero,
+    section.paper-cardboard-why,
+    section.paper-cardboard-process,
+    section.paper-cardboard-categories,
+    section.paper-cardboard-industries,
+    section.paper-cardboard-benefits,
+    section.paper-cardboard-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.paper-cardboard-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.paper-cardboard-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.paper-cardboard-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}

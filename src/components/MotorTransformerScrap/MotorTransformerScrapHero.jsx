@@ -24,10 +24,10 @@ const MotorTransformerScrapHero = () => {
 
                         {/* Concise Description */}
                         <div className="mts-hero__content flex flex-col gap-y-3">
-                            <h5 className="mts-hero__description text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                            <h5 className="mts-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
                                 Industrial and manufacturing facilities regularly replace large electrical components—motors, transformers, and heavy wiring—as part of upgrades or routine preventive maintenance. These components are rich sources of high-value metals, yet often end up cluttering storage areas.
                             </h5>
-                            <p className="mts-hero__description-secondary text-gray-700 dark:text-gray-300 normal-case font-normal">
+                            <p className="mts-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
                                 Instead of leaving them in storage or selling them to informal recyclers, MS Asia Enterprises offers a professional, organized collection and recycling service that extracts maximum capital value while ensuring safe and lawful recovery.
                             </p>
                         </div>

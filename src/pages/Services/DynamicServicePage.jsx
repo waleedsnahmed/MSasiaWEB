@@ -11,9 +11,19 @@ import ChemicalPackingContent from '../../components/ChemicalPacking/ChemicalPac
 import ConstructionDemolitionContent from '../../components/ConstructionDemolition/ConstructionDemolitionContent';
 import HvacScrapContent from '../../components/HvacScrapRecovery/HvacScrapContent';
 import AluminiumScrapContent from '../../components/AluminiumScrap/AluminiumScrapContent';
+import PaperCardboardContent from '../../components/PaperCardboardRecycling/PaperCardboardContent';
+import PlasticScrapContent from '../../components/PlasticScrapProcessing/PlasticScrapContent';
+import RubberTyreContent from '../../components/RubberTyreScrap/RubberTyreContent';
+import TextileFabricContent from '../../components/TextileFabricScrap/TextileFabricContent';
 import BrassBronzeScrapContent from '../../components/BrassBronzeScrap/BrassBronzeScrapContent';
 import FerrousMetalScrapContent from '../../components/FerrousMetalScrap/FerrousMetalScrapContent';
+import NickelAlloyScrapContent from '../../components/NickelAlloyScrap/NickelAlloyScrapContent';
+import NonFerrousMetalScrapContent from '../../components/NonFerrousMetalScrap/NonFerrousMetalScrapContent';
+import StainlessSteelScrapContent from '../../components/StainlessSteelScrap/StainlessSteelScrapContent';
+import LeadScrapContent from '../../components/LeadScrapRecycling/LeadScrapContent';
 import HeavyEquipmentScrapContent from '../../components/HeavyEquipmentScrap/HeavyEquipmentScrapContent';
+import IndustrialMachineryScrapContent from '../../components/IndustrialMachineryScrap/IndustrialMachineryScrapContent';
+import GlassWasteContent from '../../components/GlassWasteRecycling/GlassWasteContent';
 
 const DynamicServicePage = () => {
     const { slug } = useParams();
@@ -37,6 +47,16 @@ const DynamicServicePage = () => {
     const isBrassBronze = slug === 'brass-&-bronze-scrap' || slug === 'brass-and-bronze-scrap' || slug === 'brass-bronze-scrap';
     const isFerrous = slug === 'ferrous-metal-scrap' || slug === 'ferrous-scrap';
     const isHeavyEquipment = slug === 'heavy-equipment-scrap' || slug === 'heavy-machinery-scrap';
+    const isIndustrialMachinery = slug === 'industrial-machinery-scrap';
+    const isLeadScrap = slug === 'lead-scrap-recycling' || slug === 'lead scrap recycling';
+    const isNickelAlloyScrap = slug === 'nickel-alloy-scrap' || slug === 'nickel and alloy scrap' || slug === 'nickel-and-alloy-scrap';
+    const isNonFerrousMetalScrap = slug === 'non-ferrous-metal-scrap' || slug === 'non-ferrous metal recycling' || slug === 'non-ferrous-metal-recycling' || slug === 'non ferrous metal recycling';
+    const isStainlessSteelScrap = slug === 'stainless-steel-scrap' || slug === 'stainless steel scrap';
+    const isGlassWaste = slug === 'glass-waste-recycling';
+    const isPaperCardboard = slug === 'paper-cardboard-recycling' || slug === 'paper and cardboard recycling' || slug === 'paper-and-cardboard-recycling';
+    const isPlasticScrap = slug === 'plastic-scrap-processing' || slug === 'plastic scrap processing' || slug === 'plastic-scrap';
+    const isRubberTyreScrap = slug === 'rubber-and-tyre-scrap' || slug === 'rubber and tyre scrap' || slug === 'rubber-tyre-scrap' || slug === 'rubber-and-tire-scrap';
+    const isTextileFabricScrap = slug === 'textile-and-fabric-scrap' || slug === 'textile and fabric scrap' || slug === 'textile-fabric-scrap';
 
     return (
         <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 flex flex-col gap-4 md:block md:gap-0">
@@ -95,6 +115,26 @@ const DynamicServicePage = () => {
                 <FerrousMetalScrapContent />
             ) : isHeavyEquipment ? (
                 <HeavyEquipmentScrapContent />
+            ) : isStainlessSteelScrap ? (
+                <StainlessSteelScrapContent />
+            ) : isNonFerrousMetalScrap ? (
+                <NonFerrousMetalScrapContent />
+            ) : isNickelAlloyScrap ? (
+                <NickelAlloyScrapContent />
+            ) : isLeadScrap ? (
+                <LeadScrapContent />
+            ) : isIndustrialMachinery ? (
+                <IndustrialMachineryScrapContent />
+            ) : isGlassWaste ? (
+                <GlassWasteContent />
+            ) : isPaperCardboard ? (
+                <PaperCardboardContent />
+            ) : isPlasticScrap ? (
+                <PlasticScrapContent />
+            ) : isRubberTyreScrap ? (
+                <RubberTyreContent />
+            ) : isTextileFabricScrap ? (
+                <TextileFabricContent />
             ) : (
                 <main className="max-w-[1240px] mx-auto px-6 py-16 lg:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -305,3 +345,7 @@ const DynamicServicePage = () => {
 };
 
 export default DynamicServicePage;
+
+
+
+
