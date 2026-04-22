@@ -143,6 +143,22 @@ export const SERVICE_DATA = {
         features: ["Witness Destruction", "DEA Compliance Support", "Reverse Distribution", "Waste Characterization"],
         benefits: ["Diversion Prevention", "Environmental Protection", "Simplified Audits"]
     },
+    "regulated-medical-waste-services": {
+        title: "Regulated Medical Waste Services",
+        subtitle: "Compliance, Safety, and Comprehensive Risk Management",
+        description: "MS Asia Enterprises provides complete Regulated Medical Waste (RMW) management services, ensuring safe collection, transportation, treatment, and disposal in full compliance with regulations.",
+        image: "/images/scene_healthcare.png",
+        features: ["OSHA & EPA Compliance", "Color-Coded Segregation", "Manifest Tracking", "Advanced Sterilization"],
+        benefits: ["Complete Risk Elimination", "Audit Readiness", "Cost Optimization"]
+    },
+    "industrial-and-field-services": {
+        title: "Industrial and Field Services",
+        subtitle: "On-Site Waste & Asset Management",
+        description: "Professional field operations for complex environments. Turnkey on-site solutions for plant decommissioning, equipment dismantling, and scrap recovery.",
+        image: "/images/scene_industrial.png",
+        features: ["Site Evaluation", "Machinery Dismantling", "Hazardous Waste Management", "On-Site Segregation"],
+        benefits: ["Zero Disruption", "Risk Transfer", "Maximum ROI"]
+    },
 
     // --- INDUSTRIES WE SERVE ---
 

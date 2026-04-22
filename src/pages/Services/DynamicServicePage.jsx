@@ -25,6 +25,9 @@ import HeavyEquipmentScrapContent from '../../components/HeavyEquipmentScrap/Hea
 import IndustrialMachineryScrapContent from '../../components/IndustrialMachineryScrap/IndustrialMachineryScrapContent';
 import GlassWasteContent from '../../components/GlassWasteRecycling/GlassWasteContent';
 import BiohazardousWasteDisposalContent from '../../components/BiohazardousWasteDisposal/BiohazardousWasteDisposalContent';
+import IndustrialFieldServicesContent from '../../components/IndustrialFieldServices/IndustrialFieldServicesContent';
+import PharmaceuticalWasteDisposalContent from '../../components/PharmaceuticalWasteDisposal/PharmaceuticalWasteDisposalContent';
+import RegulatedMedicalWasteContent from '../../components/RegulatedMedicalWasteServices/RegulatedMedicalWasteContent';
 
 const DynamicServicePage = () => {
     const { slug } = useParams();
@@ -59,6 +62,9 @@ const DynamicServicePage = () => {
     const isRubberTyreScrap = slug === 'rubber-and-tyre-scrap' || slug === 'rubber and tyre scrap' || slug === 'rubber-tyre-scrap' || slug === 'rubber-and-tire-scrap';
     const isTextileFabricScrap = slug === 'textile-and-fabric-scrap' || slug === 'textile and fabric scrap' || slug === 'textile-fabric-scrap';
     const isBiohazardousWaste = slug === 'biohazardous-medical-waste-disposal' || slug === 'biohazardous medical waste disposal' || slug === 'biohazardous-waste-disposal';
+    const isIndustrialFieldServices = slug === 'industrial-and-field-services' || slug === 'industrial and field services' || slug === 'industrial-field-services';
+    const isPharmaceuticalWaste = slug === 'pharmaceutical-waste' || slug === 'pharmaceutical-waste-disposal' || slug === 'pharmaceutical waste disposal';
+    const isRegulatedMedicalWaste = slug === 'regulated-medical-waste-services' || slug === 'regulated-medical-waste';
 
     return (
         <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 flex flex-col gap-4 md:block md:gap-0">
@@ -139,6 +145,12 @@ const DynamicServicePage = () => {
                 <TextileFabricContent />
             ) : isBiohazardousWaste ? (
                 <BiohazardousWasteDisposalContent />
+            ) : isIndustrialFieldServices ? (
+                <IndustrialFieldServicesContent />
+            ) : isPharmaceuticalWaste ? (
+                <PharmaceuticalWasteDisposalContent />
+            ) : isRegulatedMedicalWaste ? (
+                <RegulatedMedicalWasteContent />
             ) : (
                 <main className="max-w-[1240px] mx-auto px-6 py-16 lg:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">

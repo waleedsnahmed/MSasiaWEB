@@ -1,0 +1,85 @@
+/* =============================================
+   INDUSTRIAL AND FIELD SERVICES PAGE — Component Styles
+   File: IndustrialFieldServicesContent.css
+   ============================================= */
+
+/* =============================================
+   1. WHY CHOOSE US SECTION
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .industrial-why,
+.dark .industrial-process,
+.dark .industrial-categories,
+.dark .industrial-industries,
+.dark .industrial-benefits,
+.dark .industrial-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.industrial-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.industrial-process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.industrial-hero,
+    section.industrial-why,
+    section.industrial-process,
+    section.industrial-categories,
+    section.industrial-industries,
+    section.industrial-benefits,
+    section.industrial-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.industrial-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.industrial-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.industrial-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}
