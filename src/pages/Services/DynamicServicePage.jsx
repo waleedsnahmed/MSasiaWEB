@@ -28,6 +28,21 @@ import BiohazardousWasteDisposalContent from '../../components/BiohazardousWaste
 import IndustrialFieldServicesContent from '../../components/IndustrialFieldServices/IndustrialFieldServicesContent';
 import PharmaceuticalWasteDisposalContent from '../../components/PharmaceuticalWasteDisposal/PharmaceuticalWasteDisposalContent';
 import RegulatedMedicalWasteContent from '../../components/RegulatedMedicalWasteServices/RegulatedMedicalWasteContent';
+import SharpsDisposalContent from '../../components/SharpsDisposalService/SharpsDisposalContent';
+import ClinicsUrgentCareContent from '../../components/ClinicsUrgentCare/ClinicsUrgentCareContent';
+import HospitalsHealthSystemsContent from '../../components/HospitalsHealthSystems/HospitalsHealthSystemsContent';
+import NursingLongTermCareContent from '../../components/NursingLongTermCare/NursingLongTermCareContent';
+import DentalVeterinaryClinicsContent from '../../components/DentalVeterinaryClinics/DentalVeterinaryClinicsContent';
+import DialysisSurgeryCentersContent from '../../components/DialysisSurgeryCenters/DialysisSurgeryCentersContent';
+import AirportsSeaportsContent from '../../components/AirportsSeaports/AirportsSeaportsContent';
+import ChemicalManufacturingPlantsContent from '../../components/ChemicalManufacturingPlants/ChemicalManufacturingPlantsContent';
+import EngineeringConsultingContent from '../../components/EngineeringConsulting/EngineeringConsultingContent';
+import GeneralManufacturingContent from '../../components/GeneralManufacturing/GeneralManufacturingContent';
+import GovernmentMilitaryContent from '../../components/GovernmentMilitary/GovernmentMilitaryContent';
+import RailroadTransportationContent from '../../components/RailroadTransportation/RailroadTransportationContent';
+import RefineryContent from '../../components/Refinery/RefineryContent';
+import SteelPrimaryMetalsContent from '../../components/SteelPrimaryMetals/SteelPrimaryMetalsContent';
+import UtilitiesEnergyContent from '../../components/UtilitiesEnergy/UtilitiesEnergyContent';
 
 const DynamicServicePage = () => {
     const { slug } = useParams();
@@ -65,6 +80,21 @@ const DynamicServicePage = () => {
     const isIndustrialFieldServices = slug === 'industrial-and-field-services' || slug === 'industrial and field services' || slug === 'industrial-field-services';
     const isPharmaceuticalWaste = slug === 'pharmaceutical-waste' || slug === 'pharmaceutical-waste-disposal' || slug === 'pharmaceutical waste disposal';
     const isRegulatedMedicalWaste = slug === 'regulated-medical-waste-services' || slug === 'regulated-medical-waste';
+    const isSharpsDisposal = slug === 'sharps-disposal-service' || slug === 'sharps-disposal';
+    const isClinicsUrgentCare = slug === 'clinics-urgent-care' || slug === 'clinics-and-urgent-care' || slug === 'clinics and urgent care centers' || slug === 'clinics-and-urgent-care-centers';
+    const isHospitalsHealthSystems = slug === 'hospitals-and-health-systems' || slug === 'hospitals and health systems' || slug === 'hospitals-health-systems';
+    const isNursingLongTermCare = slug === 'nursing-and-long-term-care-facilities' || slug === 'nursing and long term care facilities' || slug === 'nursing-long-term-care';
+    const isDentalVeterinaryClinics = slug === 'dental-and-veterinary-clinics' || slug === 'dental and veterinary clinics' || slug === 'dental-veterinary-clinics';
+    const isDialysisSurgeryCenters = slug === 'dialysis-and-surgery-centers' || slug === 'dialysis and surgery centers' || slug === 'dialysis-surgery-centers';
+    const isAirportsSeaports = slug === 'airports-and-seaports' || slug === 'airports and seaports' || slug === 'airports-seaports';
+    const isChemicalManufacturingPlants = slug === 'chemical-and-manufacturing-plants' || slug === 'chemical and manufacturing plants' || slug === 'chemical-manufacturing-plants';
+    const isEngineeringConsulting = slug === 'engineering-and-consulting' || slug === 'engineering and consulting' || slug === 'engineering-consulting';
+    const isGeneralManufacturing = slug === 'general-manufacturing' || slug === 'general manufacturing';
+    const isGovernmentMilitary = slug === 'government-and-military' || slug === 'government and military' || slug === 'government-military';
+    const isRailroadTransportation = slug === 'railroad-and-transportation' || slug === 'railroad and transportation' || slug === 'railroad-transportation' || slug === 'railroad-services';
+    const isRefinery = slug === 'refinery' || slug === 'refinery-operations';
+    const isSteelPrimaryMetals = slug === 'steel-and-primary-metals' || slug === 'steel primary metals' || slug === 'steel-primary-metals';
+    const isUtilitiesEnergy = slug === 'utilities-and-energy' || slug === 'utilities energy' || slug === 'utilities-energy';
 
     return (
         <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 flex flex-col gap-4 md:block md:gap-0">
@@ -151,6 +181,36 @@ const DynamicServicePage = () => {
                 <PharmaceuticalWasteDisposalContent />
             ) : isRegulatedMedicalWaste ? (
                 <RegulatedMedicalWasteContent />
+            ) : isSharpsDisposal ? (
+                <SharpsDisposalContent />
+            ) : isClinicsUrgentCare ? (
+                <ClinicsUrgentCareContent />
+            ) : isHospitalsHealthSystems ? (
+                <HospitalsHealthSystemsContent />
+            ) : isNursingLongTermCare ? (
+                <NursingLongTermCareContent />
+            ) : isDentalVeterinaryClinics ? (
+                <DentalVeterinaryClinicsContent />
+            ) : isDialysisSurgeryCenters ? (
+                <DialysisSurgeryCentersContent />
+            ) : isAirportsSeaports ? (
+                <AirportsSeaportsContent />
+            ) : isChemicalManufacturingPlants ? (
+                <ChemicalManufacturingPlantsContent />
+            ) : isEngineeringConsulting ? (
+                <EngineeringConsultingContent />
+            ) : isGeneralManufacturing ? (
+                <GeneralManufacturingContent />
+            ) : isGovernmentMilitary ? (
+                <GovernmentMilitaryContent />
+            ) : isRailroadTransportation ? (
+                <RailroadTransportationContent />
+            ) : isRefinery ? (
+                <RefineryContent />
+            ) : isSteelPrimaryMetals ? (
+                <SteelPrimaryMetalsContent />
+            ) : isUtilitiesEnergy ? (
+                <UtilitiesEnergyContent />
             ) : (
                 <main className="max-w-[1240px] mx-auto px-6 py-16 lg:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
