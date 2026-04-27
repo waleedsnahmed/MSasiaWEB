@@ -18,18 +18,26 @@ const NonFerrousMetalScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="NonFerrousMetalScrap-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Advanced Non-Ferrous Metal Recycling
+                            Non-Ferrous Recycling
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="NonFerrousMetalScrap-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="NonFerrousMetalScrap-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Non-ferrous metals are the indispensable materials of the modern world. Defined by lighter weight and specific conductivity, this includes high-value metals like aluminum, copper, brass, and alloys.
+                                Handling Non-Ferrous Recycling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="NonFerrousMetalScrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                MS Asia Enterprises provides a structured, professional Non-Ferrous Metal Scrap Recycling Service. We guarantee accurate sorting, safe handling, and maximum material recovery.
+                            <p className="NonFerrousMetalScrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

@@ -18,18 +18,26 @@ const SharpsDisposalHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="sharps-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Sharps Disposal Service
+                            Medical Waste Disposal
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="sharps-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="sharps-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Sharps waste—including needles, syringes, scalpels, lancets, and other piercing medical instruments—represents the highest risk of injury and infection within healthcare, research, and industrial environments. Improper handling and disposal are the primary cause of needle-stick injuries, which can lead to the transmission of bloodborne pathogens and severe regulatory penalties.
+                                Handling Medical Waste Disposal requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="sharps-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                MS Asia Enterprises provides a comprehensive, fully compliant Sharps Disposal Service. Our system is meticulously designed to protect your personnel, patients, and the public by ensuring safe containment, secure transport, and complete, verified destruction of all sharps waste.
+                            <p className="sharps-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

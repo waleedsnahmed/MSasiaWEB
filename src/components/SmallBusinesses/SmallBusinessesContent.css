@@ -1,0 +1,85 @@
+/* =============================================
+   SMALL BUSINESSES PAGE — Component Styles
+   File: SmallBusinessesContent.css
+   ============================================= */
+
+/* =============================================
+   1. WHY CHOOSE US SECTION
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .small-businesses-why,
+.dark .small-businesses-process,
+.dark .small-businesses-categories,
+.dark .small-businesses-industries,
+.dark .small-businesses-benefits,
+.dark .small-businesses-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.small-businesses-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.small-businesses-process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.small-businesses-hero,
+    section.small-businesses-why,
+    section.small-businesses-process,
+    section.small-businesses-categories,
+    section.small-businesses-industries,
+    section.small-businesses-benefits,
+    section.small-businesses-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.small-businesses-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.small-businesses-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.small-businesses-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}

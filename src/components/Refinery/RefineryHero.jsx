@@ -18,18 +18,25 @@ const RefineryHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="refinery-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Refinery Operations
+                            Energy Sector
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="refinery-hero__content flex flex-col gap-y-3">
+                            
                             <h5 className="refinery-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Comprehensive Waste Management Solutions for Oil, Gas & Petrochemical Refineries.
+                                Handling Energy Sector requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="refinery-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Refineries operate in some of the most complex and regulated industrial environments in the world. From crude processing to finished product output, every stage generates hazardous, non-hazardous, and recoverable waste streams that demand expert handling.
+                            <p className="refinery-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

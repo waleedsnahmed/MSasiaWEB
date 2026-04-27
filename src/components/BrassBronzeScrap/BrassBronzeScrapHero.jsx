@@ -18,18 +18,26 @@ const BrassBronzeScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="ewaste-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Brass and Bronze Scrap
+                            Non-Ferrous Metal Recycling
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Precision Recycling for High-Value Copper Alloys. Expert alloy management and value recovery for India's foundry, manufacturing, and engineering sectors.
+                            
+                                
+                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                                Handling Non-Ferrous Metal Recycling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Brass and bronze are essential non-ferrous alloys primarily composed of copper. MS Asia Enterprises operates a technologically advanced sorting service employing metallurgical expertise and X-ray fluorescence (XRF) technology to ensure each kilogram of scrap is accurately identified, purified, and channeled to its appropriate industrial consumer.
+                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

@@ -18,18 +18,25 @@ const BatteryScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="ewaste-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Battery Scrap Collection
+                            Battery Recycling
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Your trusted partner for complete, compliant, and safe handling of all types of industrial and commercial battery waste.
+                            
+                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                                Handling Battery Recycling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Battery scrap isn’t like regular waste. It’s risky, reactive, and regulated for a reason. Whether it’s industrial power backups, UPS components, solar batteries, or heavy machinery cells, they all contain acids and heavy metals that cause contamination. What your business needs is a safe, lawful, value-focused battery disposal partner.
+                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

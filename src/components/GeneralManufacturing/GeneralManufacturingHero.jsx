@@ -18,18 +18,26 @@ const GeneralManufacturingHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="general-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            General Manufacturing
+                            Production Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="general-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="general-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                End-to-End Waste Management Solutions for General Manufacturing Facilities. We provide comprehensive, compliant, and scalable waste management solutions.
+                                Handling Production Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="general-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                These operations generate industrial, hazardous, recyclable, and process-related waste that must be managed efficiently to maintain safety, productivity, and regulatory compliance.
+                            <p className="general-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 

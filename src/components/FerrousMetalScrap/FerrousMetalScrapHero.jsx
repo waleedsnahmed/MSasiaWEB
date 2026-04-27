@@ -18,18 +18,26 @@ const FerrousMetalScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="ewaste-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Ferrous Metal Scrap
+                            Infrastructure Recycling
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Heavy-Duty Collection and High-Volume Recycling. The backbone of sustainable industry for construction, manufacturing, and heavy engineering.
+                            
+                                
+                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                                Handling Infrastructure Recycling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                From decommissioned machinery frames and structural steel beams to daily fabrication off-cuts, MS Asia Enterprises provides a complete Ferrous Metal Scrap Management Solution. We process heterogeneous scrap into furnace-ready, specification-compliant raw material.
+                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

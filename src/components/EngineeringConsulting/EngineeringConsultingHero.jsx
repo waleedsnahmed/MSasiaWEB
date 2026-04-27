@@ -18,18 +18,26 @@ const EngineeringConsultingHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="engineering-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Engineering & Consulting
+                            Project Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="engineering-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="engineering-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Reliable Waste Management Solutions for Engineering & Consulting Firms. We provide project-driven, compliant, and scalable waste management solutions.
+                                Handling Project Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="engineering-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                While these firms may not always generate waste directly, their projects involve construction debris, industrial scrap, hazardous materials, and regulated waste that must be managed safely.
+                            <p className="engineering-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 

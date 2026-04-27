@@ -18,18 +18,26 @@ const MotorTransformerScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="mts-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Motor & Transformer Scrap Recycling
+                            Value Recovery from Industrial Electrical Scrap
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="mts-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="mts-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Industrial and manufacturing facilities regularly replace large electrical components—motors, transformers, and heavy wiring—as part of upgrades or routine preventive maintenance. These components are rich sources of high-value metals, yet often end up cluttering storage areas.
+                                Handling Value Recovery from Industrial Electrical Scrap requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="mts-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Instead of leaving them in storage or selling them to informal recyclers, MS Asia Enterprises offers a professional, organized collection and recycling service that extracts maximum capital value while ensuring safe and lawful recovery.
+                            <p className="mts-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 

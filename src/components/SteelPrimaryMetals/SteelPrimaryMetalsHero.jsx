@@ -18,18 +18,26 @@ const SteelPrimaryMetalsHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="steel-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Steel & Primary Metals
+                            Heavy Industry
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="steel-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="steel-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                For steel mills, foundries, metal producers, and heavy manufacturing facilities, scrap metal is not waste—it is a critical raw material input and a significant financial variable on your balance sheet. The efficient, compliant, and profitable management of internal production scrap and end-of-life capital assets directly impacts your cost of production, operational efficiency, and environmental footprint.
+                                Handling Heavy Industry requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="steel-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                MS Asia Enterprises provides an advanced, fully integrated scrap management and resource recovery service exclusively for the primary metals and heavy manufacturing sector. We function not as a simple hauler or broker, but as a strategic extension of your operations and procurement teams, transforming complex ferrous and non-ferrous scrap streams from a logistical burden into an optimized, transparent, and compliant revenue channel.
+                            <p className="steel-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

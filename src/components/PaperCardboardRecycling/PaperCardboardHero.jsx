@@ -18,18 +18,26 @@ const PaperCardboardHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="paper-cardboard-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Paper and Cardboard Recycling
+                            Paper & Cardboard
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="paper-cardboard-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="paper-cardboard-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Turning Daily Waste into a Valuable Resource. Paper and cardboard waste is generated daily across virtually every commercial sector.
+                                Handling Paper & Cardboard requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="paper-cardboard-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                MS Asia Enterprises provides a structured, efficient Paper and Cardboard Recycling Service. We ensure clean collection, efficient processing, and high fiber recovery, helping your business reduce costs, free up valuable space, and achieve crucial sustainability targets.
+                            <p className="paper-cardboard-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

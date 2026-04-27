@@ -43,6 +43,11 @@ import RailroadTransportationContent from '../../components/RailroadTransportati
 import RefineryContent from '../../components/Refinery/RefineryContent';
 import SteelPrimaryMetalsContent from '../../components/SteelPrimaryMetals/SteelPrimaryMetalsContent';
 import UtilitiesEnergyContent from '../../components/UtilitiesEnergy/UtilitiesEnergyContent';
+import EducationAndResearchContent from '../../components/EducationAndResearch/EducationAndResearchContent';
+import PharmaceuticalBiotechnologyContent from '../../components/PharmaceuticalBiotechnology/PharmaceuticalBiotechnologyContent';
+import RetailAndCommercialContent from '../../components/RetailAndCommercial/RetailAndCommercialContent';
+import SmallBusinessesContent from '../../components/SmallBusinesses/SmallBusinessesContent';
+import LabsAndBloodBanksContent from '../../components/LabsAndBloodBanks/LabsAndBloodBanksContent';
 
 const DynamicServicePage = () => {
     const { slug } = useParams();
@@ -95,7 +100,11 @@ const DynamicServicePage = () => {
     const isRefinery = slug === 'refinery' || slug === 'refinery-operations';
     const isSteelPrimaryMetals = slug === 'steel-and-primary-metals' || slug === 'steel primary metals' || slug === 'steel-primary-metals';
     const isUtilitiesEnergy = slug === 'utilities-and-energy' || slug === 'utilities energy' || slug === 'utilities-energy';
-
+    const isEducationAndResearch = slug === 'education-and-research' || slug === 'education and research' || slug === 'educational-institutions' || slug === 'education-research';
+    const isPharmaceuticalBiotechnology = slug === 'pharmaceutical-and-biotechnology' || slug === 'pharmaceutical and biotechnology' || slug === 'pharmaceutical-biotechnology';
+    const isRetailAndCommercial = slug === 'retail-and-commercial' || slug === 'retail and commercial' || slug === 'retail-pharmacies';
+    const isSmallBusinesses = slug === 'small-businesses' || slug === 'small businesses' || slug === 'small-business';
+    const isLabsAndBloodBanks = slug === 'labs-and-blood-banks' || slug === 'labs and blood banks' || slug === 'blood-banks';
     return (
         <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 flex flex-col gap-4 md:block md:gap-0">
             {/* Spacer for fixed mobile navbar */}
@@ -211,6 +220,16 @@ const DynamicServicePage = () => {
                 <SteelPrimaryMetalsContent />
             ) : isUtilitiesEnergy ? (
                 <UtilitiesEnergyContent />
+            ) : isEducationAndResearch ? (
+                <EducationAndResearchContent />
+            ) : isPharmaceuticalBiotechnology ? (
+                <PharmaceuticalBiotechnologyContent />
+            ) : isRetailAndCommercial ? (
+                <RetailAndCommercialContent />
+            ) : isSmallBusinesses ? (
+                <SmallBusinessesContent />
+            ) : isLabsAndBloodBanks ? (
+                <LabsAndBloodBanksContent />
             ) : (
                 <main className="max-w-[1240px] mx-auto px-6 py-16 lg:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">

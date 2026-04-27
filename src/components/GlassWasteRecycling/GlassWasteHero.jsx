@@ -18,18 +18,26 @@ const GlassWasteHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="glass-waste-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Glass Waste Recycling
+                            Glass Recycling
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="glass-waste-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="glass-waste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Closing the Loop on India's Glass Packaging and Industrial Glass Waste. In homes, restaurants, hotels, and industries across India, glass is a staple of modern life.
+                                Handling Glass Recycling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="glass-waste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                MS Asia Enterprises provides comprehensive solutions that transform discarded glass from a waste burden into a high-quality raw material for the glass manufacturing industry.
+                            <p className="glass-waste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 

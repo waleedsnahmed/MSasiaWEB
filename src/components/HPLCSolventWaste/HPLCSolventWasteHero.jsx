@@ -18,18 +18,26 @@ const HPLCSolventWasteHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="hplc-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            HPLC Solvent Waste Collection
+                            Hazardous Waste Management
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="hplc-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="hplc-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Laboratories and research facilities generate hazardous solvent waste every day, especially from HPLC systems. This waste cannot be disposed of casually because it contains chemicals that pose risks to people and the environment.
+                                Handling Hazardous Waste Management requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="hplc-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                MS Asia Enterprises offers a secure, compliant, and professionally managed HPLC Solvent Waste Collection service designed for labs that need safe waste handling without operational disruption.
+                            <p className="hplc-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 

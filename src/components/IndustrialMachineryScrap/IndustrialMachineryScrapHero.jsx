@@ -18,18 +18,26 @@ const IndustrialMachineryScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
-                        <h1 className="industrial-machinery-scrap-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Industrial Machinery Scrap & Recovery Solutions
+                        
+                            
+                        <h1 className="IndustrialMachineryScrap-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
+                            Machinery Recycling
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="IndustrialMachineryScrap-hero__content flex flex-col gap-y-3">
-                            <h5 className="industrial-machinery-scrap-hero__description text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Maximize asset value and minimize environmental impact with our premier industrial machinery scrap recycling services. We specialize in the safe, efficient, and compliant decommissioning of outdated, damaged, or surplus industrial equipment.
+                            
+                                
+                            <h5 className="IndustrialMachineryScrap-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                                Handling Machinery Recycling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="industrial-machinery-scrap-hero__description-secondary text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                From heavy manufacturing units and CNC machines to compressors, motors, and complete production lines, our structured approach ensures seamless asset disposition. We help businesses clear out unused assets while maintaining strict adherence to local and international environmental waste regulations.
+                            <p className="IndustrialMachineryScrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

@@ -18,18 +18,26 @@ const NursingLongTermCareHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="nursing-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Nursing & Long-Term Care
+                            Healthcare Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="nursing-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="nursing-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Safe, Compliant Waste Management for Residential Care. We provide end-to-end solutions designed to protect your residents and staff.
+                                Handling Healthcare Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="nursing-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                From regulated medical waste to pharmaceutical disposal, our specialized services integrate seamlessly into your continuous care environment, ensuring safety, hygiene, and strict regulatory adherence.
+                            <p className="nursing-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 

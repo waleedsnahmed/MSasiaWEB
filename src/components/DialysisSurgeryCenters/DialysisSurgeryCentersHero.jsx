@@ -18,18 +18,26 @@ const DialysisSurgeryCentersHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="dialysis-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Dialysis & Surgery Centers
+                            Healthcare Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="dialysis-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="dialysis-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Specialized Waste Management for Life-Sustaining Care. We ensure regulatory compliance, operational efficiency, and environmental responsibility.
+                                Handling Healthcare Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="dialysis-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                These facilities generate a variety of medical, biohazardous, and pharmaceutical waste daily. Safe, compliant, and efficient waste management is essential to protect patients, staff, and the environment.
+                            <p className="dialysis-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

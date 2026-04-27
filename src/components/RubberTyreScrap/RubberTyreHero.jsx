@@ -18,18 +18,25 @@ const RubberTyreHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="rubber-tyre-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Rubber & Tyre Scrap
+                            Waste Management Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="rubber-tyre-hero__content flex flex-col gap-y-3">
+                            
                             <h5 className="rubber-tyre-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Comprehensive Solutions for India's End-of-Life Tire & Rubber Waste Management.
+                                Handling Waste Management Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="rubber-tyre-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Addressing a high-risk waste stream with compliant, sustainable, and economically viable solutions. MS Asia Enterprises offers end-to-end rubber and tyre scrap management built on verified safety protocols, environmental compliance, and 100% material recovery.
+                            <p className="rubber-tyre-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

@@ -18,18 +18,26 @@ const PharmaceuticalWasteDisposalHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="pharma-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Pharmaceutical Waste Disposal
+                            Specialized Medical Services
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="pharma-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="pharma-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Secure Destruction of Expired & Controlled Substances. We provide comprehensive, fully compliant collection, transportation, and destruction services for non-hazardous and hazardous pharmaceutical waste.
+                                Handling Specialized Medical Services requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="pharma-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Improper disposal of pharmaceutical waste poses severe risks to public health and the environment. Protect your facility from regulatory fines, prevent drug diversion, and safeguard the environment with our certified, end-to-end disposal solutions tailored for the healthcare and pharmaceutical industries.
+                            <p className="pharma-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

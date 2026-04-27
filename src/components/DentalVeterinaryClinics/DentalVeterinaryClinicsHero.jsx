@@ -18,18 +18,26 @@ const DentalVeterinaryClinicsHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="dental-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Dental & Veterinary Clinics
+                            Healthcare Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="dental-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="dental-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Specialized Waste Management and Recycling Solutions for Clinics. We ensure safety, regulatory compliance, and sustainability across all operations.
+                                Handling Healthcare Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="dental-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Clinics generate a unique combination of waste streams that require careful handling. From sharps and biohazardous materials to amalgam and chemical waste, we provide end-to-end solutions to protect your patients, staff, and the environment.
+                            <p className="dental-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

@@ -18,18 +18,25 @@ const TextileFabricHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="textile-fabric-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Textile & Fabric Scrap
+                            Circular Economy Resourcing
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="textile-fabric-hero__content flex flex-col gap-y-3">
+                            
                             <h5 className="textile-fabric-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Revolutionizing India's Post-Consumer and Industrial Textile Waste Management.
+                                Handling Circular Economy Resourcing requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="textile-fabric-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Responsible collection, comprehensive sorting, and high-value fiber recycling of apparel waste sourced directly from industrial and commercial channels. MS Asia Enterprises is pioneering intelligent mechanical and chemical recycling solutions to close the loop on fashion waste.
+                            <p className="textile-fabric-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

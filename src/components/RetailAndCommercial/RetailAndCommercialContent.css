@@ -1,0 +1,85 @@
+/* =============================================
+   RETAIL AND COMMERCIAL PAGE — Component Styles
+   File: RetailAndCommercialContent.css
+   ============================================= */
+
+/* =============================================
+   1. WHY CHOOSE US SECTION
+   ============================================= */
+
+/* --- Dark Mode: Force Pure Black (#000000) on ALL sections --- */
+.dark .retail-commercial-why,
+.dark .retail-commercial-process,
+.dark .retail-commercial-categories,
+.dark .retail-commercial-industries,
+.dark .retail-commercial-benefits,
+.dark .retail-commercial-contact {
+    background-color: #000000 !important;
+}
+
+/* =============================================
+   2. CATEGORIES GRID SECTION
+   ============================================= */
+
+.retail-commercial-categories__cell {
+    /* Shared cell styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+}
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ROADMAP ANIMATION SYSTEM
+   ============================================= */
+
+.retail-commercial-process {
+    position: relative;
+    overflow: hidden;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (Phone Screens)
+   ============================================= */
+@media (max-width: 767px) {
+    section.retail-commercial-hero,
+    section.retail-commercial-why,
+    section.retail-commercial-process,
+    section.retail-commercial-categories,
+    section.retail-commercial-industries,
+    section.retail-commercial-benefits,
+    section.retail-commercial-contact {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.retail-commercial-contact {
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        background-color: #3d5220 !important;
+    }
+
+    .dark section.retail-commercial-contact {
+        background-color: #000000 !important;
+    }
+
+    h1.retail-commercial-hero__heading {
+        margin-bottom: 0 !important;
+    }
+}

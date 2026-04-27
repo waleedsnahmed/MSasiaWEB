@@ -18,18 +18,25 @@ const ChemicalPackingHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="ewaste-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Lab Pack & Chemical Services
+                            Chemical Handling
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="ewaste-hero__content flex flex-col gap-y-3">
-                            <h5 className="ewaste-hero__description m-0 m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Safe, compliant, and professional chemical packing solutions for industrial, commercial, and laboratory environments.
+                            
+                            <h5 className="ewaste-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
+                                Handling Chemical Handling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="ewaste-hero__description-secondary m-0 m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Chemical waste is one of the most sensitive categories of industrial disposal. Even small errors in handling or packing can lead to contamination, fire hazards, environmental violations, and serious health risks. What your business needs is a systematic, certified, and careful packing process that prepares all chemical waste for safe transport and disposal.
+                            <p className="ewaste-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

@@ -18,18 +18,25 @@ const PlasticScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="plastic-scrap-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Plastic Scrap Processing
+                            Plastics & Polymers
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="plastic-scrap-hero__content flex flex-col gap-y-3">
+                            
                             <h5 className="plastic-scrap-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Responsible collection, segregation, and processing of plastic waste for sustainable recycling.
+                                Handling Plastics & Polymers requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="plastic-scrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Plastic waste is one of the most persistent and complex waste streams. MS Asia Enterprises provides end-to-end plastic scrap processing services designed to recover value, strictly reduce environmental impact, and meticulously ensure regulatory compliance.
+                            <p className="plastic-scrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

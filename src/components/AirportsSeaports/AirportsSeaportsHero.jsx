@@ -18,18 +18,26 @@ const AirportsSeaportsHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="airports-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Airports & Seaports
+                            Transport Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="airports-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="airports-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Integrated, Compliant & End-to-End Waste Solutions. We ensure uninterrupted, safe, and sustainable operations for complex, high-traffic transportation hubs.
+                                Handling Transport Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="airports-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Airports and seaports operate 24/7 under strict security and regulatory oversight. Effective waste management is essential to protect public health, ensure compliance, and maintain efficiency.
+                            <p className="airports-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

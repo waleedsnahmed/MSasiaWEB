@@ -18,18 +18,26 @@ const ClinicsUrgentCareHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="clinics-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Clinics & Urgent Care Centers
+                            Healthcare Waste Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="clinics-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="clinics-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Clinics and urgent care centers are critical points of patient care, providing outpatient medical services, preventive care, and emergency treatment. These facilities generate various types of regulated, biohazardous, and pharmaceutical waste daily.
+                                Handling Healthcare Waste Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="clinics-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                MS Asia Enterprises specializes in providing end-to-end waste management solutions for clinics and urgent care centers, ensuring compliance, safety, and sustainability. We transform waste management from an operational burden into a seamless component of clinical excellence.
+                            <p className="clinics-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

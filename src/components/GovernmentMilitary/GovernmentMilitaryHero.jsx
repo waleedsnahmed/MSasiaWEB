@@ -18,18 +18,26 @@ const GovernmentMilitaryHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="gov-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Government & Military
+                            Mission-Aligned Services
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="gov-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="gov-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Secure Waste Management Solutions for Government & Military Operations. We provide secure, compliant, and mission-aligned solutions tailored to your installations.
+                                Handling Mission-Aligned Services requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="gov-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Government and military organizations operate in highly regulated, mission-critical environments where safety, security, and compliance are non-negotiable.
+                            <p className="gov-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 

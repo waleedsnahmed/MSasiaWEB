@@ -18,18 +18,26 @@ const RegulatedMedicalWasteHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="regulated-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Regulated Medical Waste Services
+                            Compliance & Safety
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="regulated-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="regulated-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Comprehensive, safe, and compliant management of regulated medical waste. RMW includes any waste generated from healthcare, research, or pharmaceutical activities that may pose a risk of infection, injury, or environmental harm.
+                                Handling Compliance & Safety requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="regulated-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Improper handling can lead to serious health hazards, environmental contamination, and regulatory penalties. MS Asia Enterprises provides complete RMW management services, ensuring safe collection, transportation, treatment, and disposal in full compliance with regulations.
+                            <p className="regulated-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

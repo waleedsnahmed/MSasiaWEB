@@ -18,18 +18,26 @@ const IndustrialFieldServicesHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="industrial-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            On-Site Waste, Asset Management, & Decommissioning
+                            Industrial and Field Services
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="industrial-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="industrial-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Professional Field Operations for Complex Environments. We provide turnkey on-site solutions for plant decommissioning, equipment dismantling, and scrap recovery, ensuring your facility remains safe, compliant, and optimized for peak operational efficiency.
+                                Handling Industrial and Field Services requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="industrial-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Industrial facilities—from heavy manufacturing plants to pharmaceutical laboratories and power stations—operate in high-stakes environments. Managing this effectively requires more than a basic pickup service; it demands a specialized field force capable of dismantling, segregating, and recovering assets without halting your ongoing operations.
+                            <p className="industrial-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

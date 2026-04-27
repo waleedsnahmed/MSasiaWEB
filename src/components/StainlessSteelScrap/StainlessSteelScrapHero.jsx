@@ -18,18 +18,26 @@ const StainlessSteelScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="StainlessSteelScrap-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Stainless Steel Scrap
+                            Stainless Steel Recycling
                         </h1>
+
+                        
 
                                                 {/* Concise Description */}
                         <div className="StainlessSteelScrap-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="StainlessSteelScrap-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Stainless steel is the defining material for hygiene, durability, and corrosion resistance. The scrap generated from production off-cuts and decommissioned equipment is an exceptionally high-value secondary raw material.
+                                Handling Stainless Steel Recycling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="StainlessSteelScrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                We deploy advanced metal analysis technology to precisely sort stainless scrap into its pure series (304, 316, 430), ensuring you receive maximum market value while supplying reliable, high-purity feedstock to industrial mills.
+                            <p className="StainlessSteelScrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 

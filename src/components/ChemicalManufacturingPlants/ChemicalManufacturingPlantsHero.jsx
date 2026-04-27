@@ -18,18 +18,26 @@ const ChemicalManufacturingPlantsHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="chemical-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Chemical & Manufacturing Plants
+                            Hazardous Solutions
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="chemical-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="chemical-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Specialized Hazardous Waste Management. We manage complex processes involving hazardous, reactive, flammable, and toxic substances.
+                                Handling Hazardous Solutions requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="chemical-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                These operations generate waste streams that require precise handling, strict segregation, and full regulatory compliance. Improper waste management can result in severe environmental and safety incidents.
+                            <p className="chemical-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

@@ -18,18 +18,26 @@ const LeadScrapHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="LeadScrap-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Lead Scrap Recycling
+                            Lead Recycling
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="LeadScrap-hero__content flex flex-col gap-y-3">
+                            
+                                
                             <h5 className="LeadScrap-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                MS Asia Enterprises operates as a critical link in India's formal lead recycling ecosystem. We provide secure collection, compliant logistics, and channel lead-bearing scrap exclusively to government-approved secondary lead smelters.
+                                Handling Lead Recycling requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="LeadScrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                Lead is a heavy metal that requires careful handling due to its toxic nature. Our structured lead scrap recycling service ensures safe handling, secure transportation, and responsible material recovery in full compliance with regulations.
+                            <p className="LeadScrap-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
+                            
                         </div>
                     </div>
 

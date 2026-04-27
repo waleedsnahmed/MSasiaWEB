@@ -18,21 +18,24 @@ const UtilitiesEnergyHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="utilities-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Utilities & Energy
+                            Energy Sector
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="utilities-hero__content flex flex-col gap-y-3">
+                            
                             <h5 className="utilities-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Comprehensive waste management solutions for the highly regulated energy sector, ensuring safe and uninterrupted operations.
+                                Handling Energy Sector requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="utilities-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                The utility sector generates a uniquely complex portfolio of waste and scrap materials. From decommissioned plants to retired infrastructure, effective management of these materials is a core operational, financial, and reputational imperative.
+                            <p className="utilities-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
-                            <p className="utilities-hero__description-tertiary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                MS Asia Enterprises provides fully integrated solutions for investor-owned utilities, cooperatives, and power producers to de-risk decommissioning, optimize asset recovery, and provide bulletproof compliance.
-                            </p>
+                        
                         </div>
                     </div>
 

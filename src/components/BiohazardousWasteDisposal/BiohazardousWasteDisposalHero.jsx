@@ -18,18 +18,26 @@ const BiohazardousWasteDisposalHero = () => {
                         </div>
 
                         {/* Large Two-Tone Heading */}
+                        
+                            
                         <h1 className="biohaz-hero__heading leading-tight !text-transparent !bg-clip-text bg-gradient-to-r from-[#47622A] to-[#799851]">
-                            Safe, Compliant Biohazardous Medical Waste Disposal
+                            Biohazardous Waste Management
                         </h1>
+
+                        
 
                         {/* Concise Description */}
                         <div className="biohaz-hero__content flex flex-col gap-y-3">
+                            
+                                
+                            
                             <h5 className="biohaz-hero__description m-0 text-gray-700 dark:text-gray-300 font-normal text-[18px]">
-                                Providing India's most comprehensive, technology-driven biohazardous medical waste disposal service. We ensure safe collection, transport, treatment, and complete regulatory compliance under BMW Rules, 2016.
+                                Handling Biohazardous Waste Management requires specialized infrastructure and strict regulatory compliance. We provide customized, end-to-end waste management frameworks that protect your workforce and the environment.
                             </h5>
-                            <p className="biohaz-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal">
-                                We combine advanced treatment technologies, secure logistics, and strict adherence to regulations so healthcare facilities can focus on patient care while we manage their most hazardous waste streams.
+                            <p className="biohaz-hero__description-secondary m-0 text-gray-700 dark:text-gray-300 normal-case font-normal text-[16px]">
+                                Partner with MS Asia Enterprises for verifiable sustainability, operational transparency, and audit-ready documentation at every step.
                             </p>
+                        
                         </div>
                     </div>
 
